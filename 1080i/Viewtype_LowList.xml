@@ -778,7 +778,7 @@
                         <align>center</align>
                         <textcolor>$VAR[SubTitleColorVar]</textcolor>
                         <font>Font_Bold16</font>
-                        <label>$INFO[ListItem.Rating]</label>
+                        <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
                     </control>
                     <control type="image">
                         <posx>750</posx>
@@ -817,7 +817,7 @@
                         <width>645</width>
                         <height>33</height>
                         <font>Font_Info</font>
-                        <label>$VAR[LowListSubTitleVar]</label>
+                        <label>$INFO[ListItem.Year,, • ]$VAR[LowListSubTitleVar]</label>
                     </control>
                     <control type="label">
                         <posx>710</posx>
@@ -825,11 +825,11 @@
                         <height>33</height>
                         <align>center</align>
                         <font>Font_Bold16</font>
-                        <label>$INFO[ListItem.Year]</label>
+                        <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
                     </control>
                     <control type="label">
                         <posx>710</posx>
-                        <posy>33</posy>
+                        <posy>30</posy>
                         <width>80</width>
                         <height>33</height>
                         <align>center</align>

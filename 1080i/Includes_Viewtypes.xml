@@ -465,7 +465,6 @@
                 <width>1920</width>
                 <height>608</height>
                 <texture>views/showcase_floor.png</texture>
-                <colordiffuse>$VAR[ExtendedColorDiffuseVar]</colordiffuse>
             </control>
             <control type="group">
                 <control type="group" id="8860">
@@ -482,17 +481,8 @@
                         <animation effect="slide" time="200" start="0" end="-585" tween="cubic" easing="out" condition="Control.IsVisible(57)">Conditional</animation>
                         <animation effect="slide" time="200" start="0" end="-120" tween="cubic" easing="out" condition="Control.IsVisible(57) + Skin.HasSetting(smallshiftview)">Conditional</animation>
                         <animation effect="slide" time="200" start="0" end="185" tween="cubic" easing="out" condition="Control.IsVisible(52) | Control.IsVisible(53)">Conditional</animation>
-                        <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
+                        <colordiffuse>90000000</colordiffuse>
                         <visible>![Control.IsVisible(500) + Skin.HasTheme(Lite_Floor)]</visible>
-                    </control>
-                    <control type="image">
-                        <posx>-600</posx>
-                        <posy>874</posy>
-                        <width>2490</width>
-                        <height>226</height>
-                        <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
-                        <texture>views/showcase_spot.png</texture>
-                        <visible>Control.IsVisible(50) + !Skin.HasTheme(Lite_Floor)</visible>
                     </control>
                     <control type="image">
                         <width>880</width>
@@ -503,7 +493,7 @@
                         <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
                         <animation effect="slide" time="200" start="0" end="190" tween="cubic" easing="out" condition="Control.IsVisible(52) | Control.IsVisible(53)">Conditional</animation>
                         <animation effect="slide" time="200" start="0" end="60" tween="cubic" easing="out" condition="Control.IsVisible(50) + Window.IsActive(musiclibrary)">Conditional</animation>
-                        <visible>[Control.IsVisible(50) | Control.IsVisible(52) | Control.IsVisible(53)]</visible>
+                        <visible>[Control.IsVisible(52) | Control.IsVisible(53)]</visible>
                         <visible>!Container.Content(years) + !Container.Content(playlists)</visible>
                     </control>
                 </control>
@@ -540,7 +530,7 @@
                 </control>
                 <control type="group">
                     <include>Animation_OpenClose_Furniture</include>
-                    <visible>[Control.IsVisible(518) + !Skin.HasSetting(fspanelfanart)]| Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(500) | [Control.IsVisible(512) + !Skin.HasSetting(addonwallaltbackground)] | Control.IsVisible(500) | Control.IsVisible(550)| Control.IsVisible(508)</visible>
+                    <visible>[Control.IsVisible(518) + !Skin.HasSetting(fspanelfanart)]| Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(500) | [Control.IsVisible(512) + !Skin.HasSetting(addonwallaltbackground)] | Control.IsVisible(500) | Control.IsVisible(550)| Control.IsVisible(508)</visible>
                     <control type="image">
                         <width>1920</width>
                         <height>206</height>

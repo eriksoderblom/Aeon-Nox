@@ -422,6 +422,7 @@
         <value condition="[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !IsEmpty(Skin.String(TVShowsBackground))">$INFO[Skin.String(TVShowsBackground)]</value>
         <value condition="Container.Content(MusicVideos) | Container.Content(Artists) | Container.Content(Albums)">special://skin/backgrounds/music/</value>
         <value condition="Container.Content(addons)">special://skin/backgrounds/programs/</value>
+        <value condition="!IsEmpty(Skin.String(VideosHomeItem.MultiFanart)">$INFO[Skin.String(VideosHomeItem.MultiFanart)]</value>
         <value>special://skin/backgrounds/videos/</value>
     </variable>
     <variable name="NowPlayingBackGroundVar">

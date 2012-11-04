@@ -484,7 +484,7 @@
                     <height>90</height>
                     <align>right</align>
                     <aligny>bottom</aligny>
-                    <label>$INFO[ListItem.Date]$INFO[ListItem.Rating, • ]</label>
+                    <label>$INFO[ListItem.Date]$INFO[ListItem.Rating, • ] $INFO[ListItem.Season, • $LOCALIZE[20373] ]</label>
                     <font>Font_Reg17</font>
                     <textcolor>grey</textcolor>
                     <visible>!IsEmpty(ListItem.Title)</visible>
