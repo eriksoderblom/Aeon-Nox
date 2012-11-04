@@ -3,7 +3,7 @@
   id="skin.aeon.nox"
   version="4.0.0"
   name="Aeon Nox"
-  provider-name="Big_Noid &amp; phil65">
+  provider-name="Big_Noid &amp; phil65 (mod by Erik S)">
   <requires>
     <import addon="xbmc.gui" version="3.0.1"/>
     <import addon="script.favourites" version="3.2.4"/>
