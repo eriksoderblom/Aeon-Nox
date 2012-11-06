@@ -14,40 +14,13 @@
                 <visible>Player.Paused</visible>
                 <visible>VideoPlayer.Content(episodes) | VideoPlayer.Content(movies)</visible>
                 <include>Animation_CommonFade</include>
-                <control type="image" id="8820">
-                    <posx>1470</posx>
-                    <posy>826</posy>
-                    <width>450</width>
-                    <height>254</height>
-                    <texture background="true" fallback="empty.png">$INFO[Player.FolderPath,,clearart.png]</texture>
-                    <aspectratio aligny="bottom">keep</aspectratio>
-                </control>
-                <control type="image" id="8821">
-                    <posx>1470</posx>
-                    <posy>826</posy>
-                    <width>450</width>
-                    <height>254</height>
-                    <texture background="true" fallback="empty.png">$INFO[Player.FolderPath,,../clearart.png]</texture>
-                    <aspectratio aligny="bottom">keep</aspectratio>
-                    <visible>StringCompare(Control.GetLabel(8820),empty.png)</visible>
-                </control>
-                <control type="image" id="8822">
-                    <posx>1448</posx>
-                    <posy>900</posy>
-                    <width>450</width>
-                    <height>176</height>
-                    <texture background="true" fallback="empty.png">$INFO[Player.FolderPath,,logo.png]</texture>
-                    <aspectratio>keep</aspectratio>
-                    <visible>StringCompare(Control.GetLabel(8820),empty.png) + StringCompare(Control.GetLabel(8821),empty.png)</visible>
-                </control>
                 <control type="image">
-                    <posx>1448</posx>
-                    <posy>900</posy>
+                    <posx>1470</posx>
+                    <posy>826</posy>
                     <width>450</width>
-                    <height>176</height>
-                    <texture background="true">$INFO[Player.FolderPath,,../logo.png]</texture>
-                    <aspectratio>keep</aspectratio>
-                    <visible>StringCompare(Control.GetLabel(8820),empty.png) + StringCompare(Control.GetLabel(8821),empty.png) + StringCompare(Control.GetLabel(8822),empty.png)</visible>
+                    <height>254</height>
+                    <texture background="true" fallback="empty.png">$VAR[PlayerArtworkVar]</texture>
+                    <aspectratio aligny="bottom">keep</aspectratio>
                 </control>
             </control>
             <control type="group">
@@ -324,14 +297,6 @@
                 <control type="group">
                     <posy>993</posy>
                     <decscription>bottom bar</decscription>
-                    <animation type="Visible">
-                        <effect type="fade" time="200" start="0" end="100" />
-                        <effect type="slide" time="200" start="0,98" end="0,0" easing="out" tween="cubic" />
-                    </animation>
-                    <animation type="Hidden">
-                        <effect type="fade" time="200" start="100" end="0" />
-                        <effect type="slide" time="200" start="0,0" end="0,98" easing="in" tween="cubic" />
-                    </animation>
                     <animation type="WindowOpen">
                         <effect type="fade" time="200" start="0" end="100" />
                         <effect type="slide" time="200" start="0,98" end="0,0" easing="out" tween="cubic" />
