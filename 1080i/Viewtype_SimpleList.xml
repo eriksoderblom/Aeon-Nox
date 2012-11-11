@@ -28,7 +28,7 @@
                 <posx>40</posx>
                 <posy>10</posy>
                 <width>950</width>
-                <height>932</height>
+                <height>980</height>
                 <scrolltime>100</scrolltime>
                 <orientation>vertical</orientation>
                 <movement>3</movement>
@@ -53,10 +53,10 @@
                 <animation effect="slide" end="0,-36" time="200" condition="Container(520).Row(7)">Conditional</animation>
                 <animation effect="slide" end="0,-43" time="200" condition="Container(520).Row(8)">Conditional</animation>
                 
-                <itemlayout width="900" height="52">
+                <itemlayout width="880" height="52">
 
                     <control type="label">
-                        <posx>130</posx>
+                        <posx>150</posx>
                         <posy>14</posy>
                         <width>600</width>
                         <font>Font_Reg22</font>
@@ -65,7 +65,7 @@
                     </control>
 
                     <control type="label">
-                        <posx>110</posx>
+                        <posx>130</posx>
                         <posy>14</posy>
                         <width>100</width>
                         <align>right</align>
@@ -74,11 +74,20 @@
                         <label>$INFO[ListItem.Year]</label>
                     </control>
 
+                    <control type="image">
+                        <posx>30</posx>
+                        <posy>-2</posy>
+                        <width>36</width>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <height>36</height>
+                        <info>ListItem.Overlay,thumbs/Alt</info>
+                    </control>
+
                 </itemlayout>
                 <focusedlayout width="660" height="48">
 
                     <control type="label">
-                        <posx>130</posx>
+                        <posx>150</posx>
                         <posy>14</posy>
                         <width>600</width>
                         <font>Font_Reg25</font>
@@ -87,13 +96,22 @@
                     </control>
 
                     <control type="label">
-                        <posx>110</posx>
+                        <posx>130</posx>
                         <posy>14</posy>
                         <width>100</width>
                         <align>right</align>
                         <font>Font_Reg21</font>
                         <textcolor>grey</textcolor>
                         <label>$INFO[ListItem.Year]</label>
+                    </control>
+
+                    <control type="image">
+                        <posx>18</posx>
+                        <posy>-2</posy>
+                        <width>42</width>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <height>42</height>
+                        <info>ListItem.Overlay,thumbs/Alt</info>
                     </control>
 
                 </focusedlayout>
@@ -149,12 +167,22 @@
 
                 <control type="label">
                     <posx>800</posx>
-                    <posy>130</posy>
+                    <posy>110</posy>
                     <width>1100</width>
                     <height>30</height>
                     <font>Font_Reg25</font>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <label>$INFO[ListItem.Title]</label>
+                </control>
+
+                <control type="label">
+                    <posx>805</posx>
+                    <posy>145</posy>
+                    <width>1100</width>
+                    <height>30</height>
+                    <font>Font_Reg14</font>
+                    <textcolor>grey</textcolor>
+                    <label>$INFO[ListItem.Tagline]</label>
                 </control>
 
                 <control type="image">
@@ -182,6 +210,14 @@
                 </control>
 
                 <control type="image">
+                    <posx>1012</posx>
+                    <posy>186</posy>
+                    <width>90</width>
+                    <height>90</height>
+                    <include>OverlayVisibility0</include>
+                </control>
+
+                <control type="image">
                     <posx>860</posx>
                     <posy>610</posy>
                     <width>180</width>
@@ -206,7 +242,7 @@
                     <posy>605</posy>
                     <width>1100</width>
                     <height>30</height>
-                    <font>Font_Reg12</font>
+                    <font>Font_Reg14</font>
                     <textcolor>grey</textcolor>
                     <label>$INFO[ListItem.Genre]</label>
                 </control>
@@ -216,7 +252,7 @@
                     <posy>710</posy>
                     <width>300</width>
                     <height>30</height>
-                    <font>Font_Reg12</font>
+                    <font>Font_Reg14</font>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <align>right</align>
                     <scroll>true</scroll>
@@ -229,7 +265,7 @@
                     <posy>740</posy>
                     <width>300</width>
                     <height>30</height>
-                    <font>Font_Reg12</font>
+                    <font>Font_Reg14</font>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <align>right</align>
                     <scroll>true</scroll>
@@ -242,7 +278,7 @@
                     <posy>770</posy>
                     <width>340</width>
                     <height>30</height>
-                    <font>Font_Reg12</font>
+                    <font>Font_Reg14</font>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <align>right</align>
                     <scroll>true</scroll>
@@ -255,7 +291,7 @@
                     <posy>640</posy>
                     <width>750</width>
                     <height>200</height>
-                    <font>Font_Reg12</font>
+                    <font>Font_Reg14</font>
                     <aligny>top</aligny>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <wrapmultiline>true</wrapmultiline>
