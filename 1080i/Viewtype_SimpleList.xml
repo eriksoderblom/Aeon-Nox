@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<includes>
+    <include name="SimpleList">
+        <control type="group">
+            <visible>Control.IsVisible(520)</visible>
+            <include>Animation_VisibleChange400</include>
+            <control type="image">
+                <include>FullscreenDimensions</include>
+                <texture>views/blackback_darker.png</texture>
+                <include>Animation_WindowFade200</include>
+                <visible>Skin.HasSetting(altoverlayinfowall)</visible>
+            </control>
+            <control type="image">
+                <include>FullscreenDimensions</include>
+                <texture>common/white.png</texture>
+                <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
+                <colordiffuse>black</colordiffuse>
+                <visible>!Skin.HasSetting(altoverlayinfowall)</visible>
+                <include>Animation_WindowFade200</include>
+            </control>
+        </control>
+        <control type="group">
+            <visible>Control.IsVisible(520)</visible>
+            <include>Animation_Widgets</include>
+            <!-- Browser -->
+            <control type="fixedlist" id="520">
+                <viewtype label="31237">simplelist</viewtype>
+                <posx>40</posx>
+                <posy>10</posy>
+                <width>950</width>
+                <height>932</height>
+                <scrolltime>100</scrolltime>
+                <orientation>vertical</orientation>
+                <movement>3</movement>
+                <focusposition>4</focusposition>
+                <onup>520</onup>
+                <ondown>520</ondown>
+                <onleft>61</onleft>
+                <onright>9000</onright>
+                <preloaditems>2</preloaditems>
+                <pagecontrol>61</pagecontrol>
+                <scrollsuffix>  •  </scrollsuffix>
+                <visible>Container.Content(episodes) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(musiclibrary)</visible>
+                <animation effect="slide" start="0,0" end="0,65" time="0" condition="Skin.HasSetting(ClassicTopBar) | Skin.HasSetting(altbreadcrumbstexture)">Conditional</animation>
+                <animation effect="slide" end="0,15" time="200" condition="Container(520).Row(0)">Conditional</animation>
+                <animation effect="slide" end="0,8" time="200" condition="Container(520).Row(1)">Conditional</animation>
+                <animation effect="slide" end="0,0" time="200" condition="Container(520).Row(2)">Conditional</animation>
+                <animation effect="slide" end="0,-8" time="200" condition="Container(520).Row(3)">Conditional</animation>
+                <animation effect="slide" end="0,-15" time="200" condition="Container(520).Row(4)">Conditional</animation>
+                <animation effect="slide" end="0,-22" time="200" condition="Container(520).Row(5)">Conditional</animation>
+                <animation effect="slide" end="0,-29" time="200" condition="Container(520).Row(6)">Conditional</animation>
+                <animation effect="slide" end="0,-29" time="200" condition="Container(520).Row(6) + [Skin.HasSetting(episodebanner) | Skin.HasSetting(episodelogo)] + Container.Content(tvshows)">Conditional</animation>
+                <animation effect="slide" end="0,-36" time="200" condition="Container(520).Row(7)">Conditional</animation>
+                <animation effect="slide" end="0,-43" time="200" condition="Container(520).Row(8)">Conditional</animation>
+                
+                <itemlayout width="900" height="52">
+
+                    <control type="label">
+                        <posx>130</posx>
+                        <posy>14</posy>
+                        <width>600</width>
+                        <font>Font_Reg22</font>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+
+                    <control type="label">
+                        <posx>110</posx>
+                        <posy>14</posy>
+                        <width>100</width>
+                        <align>right</align>
+                        <font>Font_Reg19</font>
+                        <textcolor>grey</textcolor>
+                        <label>$INFO[ListItem.Year]</label>
+                    </control>
+
+                </itemlayout>
+                <focusedlayout width="660" height="48">
+
+                    <control type="label">
+                        <posx>130</posx>
+                        <posy>14</posy>
+                        <width>600</width>
+                        <font>Font_Reg25</font>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <label>[B]$INFO[ListItem.Label][/B]</label>
+                    </control>
+
+                    <control type="label">
+                        <posx>110</posx>
+                        <posy>14</posy>
+                        <width>100</width>
+                        <align>right</align>
+                        <font>Font_Reg21</font>
+                        <textcolor>grey</textcolor>
+                        <label>$INFO[ListItem.Year]</label>
+                    </control>
+
+                </focusedlayout>
+            </control>
+
+            <control type="scrollbar" id="61">
+                <posx>30</posx>
+                <animation effect="zoom" start="70" end="100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(61)">Conditional</animation>
+                <posy>80</posy>
+                <width>46</width>
+                <height>900</height>
+                <animation effect="fade" start="100" end="0" time="300" condition="!Control.HasFocus(61)">Conditional</animation>
+                <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
+                <orientation>vertical</orientation>
+                <onleft>9000</onleft>
+                <onright>520</onright>
+            </control>
+
+            <control type="group">
+                <visible>Window.IsActive(videos)</visible>
+
+                <control type="image">
+                    <posx>30</posx>
+                    <posy>160</posy>
+                    <width>540</width>
+                    <height>800</height>
+                    <align>center</align>
+                    <bordersize>18</bordersize>
+                    <include>PanelGlowFade</include>
+                    <include>Animation_VisibleChange400</include>
+                    <visible>Skin.HasSetting(ExtendedGlowMode)</visible>
+                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <visible>!IsEmpty(Control.GetLabel(3822))</visible>
+                    <texture background="true">thumbs/thumb_glass_shadow.png</texture>
+                </control>
+
+                <control type="image" id="3822">
+                    <posx>49</posx>
+                    <posy>190</posy>
+                    <width>502</width>
+                    <height>739</height>
+                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                    <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[EpisodePosterVar]</texture>
+                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                    <bordersize>19</bordersize>
+                    <include>Animation_VisibleChange400</include>
+                </control>
+                
+            </control>
+
+            <control type="group" id="521">
+                <visible>!IsEmpty(ListItem.Icon) + Control.IsVisible(520)</visible>
+
+                <control type="label">
+                    <posx>800</posx>
+                    <posy>130</posy>
+                    <width>1100</width>
+                    <height>30</height>
+                    <font>Font_Reg25</font>
+                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <label>$INFO[ListItem.Title]</label>
+                </control>
+
+                <control type="image">
+                    <posx>795</posx>
+                    <posy>180</posy>
+                    <width>313</width>
+                    <height>422</height>
+                    <fadetime>100</fadetime>
+                    <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+                    <texture fallback="DefaultVideoCover.png">$INFO[ListItem.Icon]</texture>
+                    <bordertexture border="5">views/thumbborderwhite.png</bordertexture>
+                    <bordersize>6</bordersize>
+                </control>
+
+                <control type="image">
+                    <posx>1104</posx>
+                    <posy>180</posy>
+                    <width>750</width>
+                    <height>422</height>
+                    <fadetime>100</fadetime>
+                    <aspectratio align="left" aligny="top">scale</aspectratio>
+                    <texture>$INFO[ListItem.Property(Fanart_Image)]</texture>
+                    <bordertexture border="5">views/thumbborderwhite.png</bordertexture>
+                    <bordersize>6</bordersize>
+                </control>
+
+                <control type="image">
+                    <posx>860</posx>
+                    <posy>610</posy>
+                    <width>180</width>
+                    <height>36</height>
+                    <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                    <texture>$INFO[ListItem.Rating,stars/,.png]</texture>
+                </control>
+
+                <control type="label">
+                    <posx>900</posx>
+                    <posy>660</posy>
+                    <width>100</width>
+                    <height>30</height>
+                    <font>Font_Reg25</font>
+                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <align>center</align>
+                    <label>$INFO[ListItem.Rating]</label>
+                </control>
+
+                <control type="label">
+                    <posx>1115</posx>
+                    <posy>605</posy>
+                    <width>1100</width>
+                    <height>30</height>
+                    <font>Font_Reg12</font>
+                    <textcolor>grey</textcolor>
+                    <label>$INFO[ListItem.Genre]</label>
+                </control>
+
+                <control type="label">
+                    <posx>1085</posx>
+                    <posy>710</posy>
+                    <width>300</width>
+                    <height>30</height>
+                    <font>Font_Reg12</font>
+                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <align>right</align>
+                    <scroll>true</scroll>
+                    <scrollsuffix>  •  </scrollsuffix>
+                    <label>$INFO[ListItem.Director,[COLOR grey]Directed by: [/COLOR]]</label>
+                </control>
+
+                <control type="label">
+                    <posx>1085</posx>
+                    <posy>740</posy>
+                    <width>300</width>
+                    <height>30</height>
+                    <font>Font_Reg12</font>
+                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <align>right</align>
+                    <scroll>true</scroll>
+                    <scrollsuffix>  •  </scrollsuffix>
+                    <label>$INFO[ListItem.Writer,[COLOR grey]Written by: [/COLOR]]</label>
+                </control>
+
+                <control type="label">
+                    <posx>1085</posx>
+                    <posy>770</posy>
+                    <width>340</width>
+                    <height>30</height>
+                    <font>Font_Reg12</font>
+                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <align>right</align>
+                    <scroll>true</scroll>
+                    <scrollsuffix>  •  </scrollsuffix>
+                    <label>$INFO[ListItem.Duration,[COLOR grey]Runtime: [/COLOR], minutes]</label>
+                </control>
+
+                <control type="label">
+                    <posx>1115</posx>
+                    <posy>640</posy>
+                    <width>750</width>
+                    <height>200</height>
+                    <font>Font_Reg12</font>
+                    <aligny>top</aligny>
+                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <wrapmultiline>true</wrapmultiline>
+                    <label>$INFO[ListItem.Plot]</label>
+                </control>
+
+            </control>
+
+        </control>
+    </include>
+</includes>

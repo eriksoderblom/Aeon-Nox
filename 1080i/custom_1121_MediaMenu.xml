@@ -162,6 +162,11 @@
                     <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableWallVL)] + [!IsEmpty(Container.FolderPath) | Window.IsActive(videoplaylist)]</visible>
                 </item>
                 <item>
+                    <label>$LOCALIZE[31237]</label>
+                    <onclick>Container.SetViewMode(520)</onclick>
+                    <visible>Window.IsActive(videos) + Container.Content(movies)</visible>
+                </item>
+                <item>
                     <label>$LOCALIZE[31236]</label>
                     <onclick>Container.SetViewMode(508)</onclick>
                     <visible>Container.Content(TVShows) | Container.Content(movies) | Container.Content(seasons)</visible>

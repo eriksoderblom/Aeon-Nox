@@ -154,7 +154,7 @@
                     <onclick>Skin.ToggleSetting(darkinfopane)</onclick>
                     <selected>Skin.HasSetting(darkinfopane)</selected>
                     <enable>![stringcompare(Window(home).Property(actualViewtype),wall) + Skin.HasSetting(wallfullscreen)]</enable>
-                    <visible>![stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Episode) | Substring(Window(home).Property(actualViewtype),LowList) | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),AddonWall) | [Substring(Window(home).Property(actualViewtype),TriPanel) + !Window.IsActive(videolibrary)]] + Skin.HasSetting(DisableGlowbar)</visible>
+                    <visible>![stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Episode) | Substring(Window(home).Property(actualViewtype),LowList) | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),AddonWall) | Stringcompare(Window(home).Property(actualViewtype),SimpleList) | [Substring(Window(home).Property(actualViewtype),TriPanel) + !Window.IsActive(videolibrary)]] + Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="radiobutton" id="1703">
                     <include>Objects_MediaMenuButtonAlt2</include>

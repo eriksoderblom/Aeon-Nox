@@ -644,7 +644,11 @@ msgctxt "#31236"
 msgid "BannerPlex"
 msgstr ""
 
-#empty strings from id 31237 to 31239
+msgctxt "#31237"
+msgid "SimpleList"
+msgstr ""
+
+#empty strings from id 31238 to 31239
 
 msgctxt "#31240"
 msgid "'New' flag"
