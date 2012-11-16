@@ -191,45 +191,17 @@
                             <animation effect="slide" start="0" end="-60" time="0" condition="!Skin.HasSetting(infopanelcdart)">Conditional</animation>
                             <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
                         </control>
-                        <control type="group">
-                            <posy>-9</posy>
+                        <control type="image">
+                            <posx>100</posx>
+                            <posy>16</posy>
+                            <width>300</width>
+                            <height>300</height>
+                            <aspectratio align="right">keep</aspectratio>
+                            <!--                         <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
+ -->
+                            <texture background="true">$VAR[cdArtVar]</texture>
+                            <bordersize>7</bordersize>
                             <visible>Skin.HasSetting(infopanelcdart)</visible>
-                            <control type="image">
-                                <posx>100</posx>
-                                <posy>25</posy>
-                                <width>300</width>
-                                <height>300</height>
-                                <aspectratio align="right">keep</aspectratio>
-                                <!--                    <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
- -->
-                                <texture background="true">common/cdart/default.png</texture>
-                                <visible>Container.Content(movies)</visible>
-                                <bordersize>7</bordersize>
-                            </control>
-                            <control type="image">
-                                <posx>100</posx>
-                                <posy>25</posy>
-                                <width>300</width>
-                                <height>300</height>
-                                <aspectratio align="right">keep</aspectratio>
-                                <!--                    <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
- -->
-                                <texture background="true">common/cdart/bd.png</texture>
-                                <visible>Container.Content(movies) + IntegerGreaterThan(ListItem.VideoResolution,719)</visible>
-                                <bordersize>7</bordersize>
-                            </control>
-                            <control type="image">
-                                <posx>100</posx>
-                                <posy>25</posy>
-                                <width>300</width>
-                                <height>300</height>
-                                <aspectratio align="right">keep</aspectratio>
-                                <!--                         <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
- -->
-                                <texture background="true">$INFO[ListItem.Art(discart)]</texture>
-                                <visible>Container.Content(movies)</visible>
-                                <bordersize>7</bordersize>
-                            </control>
                         </control>
                         <control type="image">
                             <posx>21</posx>
@@ -357,40 +329,16 @@
                             <animation effect="slide" start="0" end="-60" time="0" condition="!Skin.HasSetting(infopanelcdart)">Conditional</animation>
                             <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
                         </control>
-                        <control type="group">
-                            <posy>-9</posy>
+                        <control type="image">
+                            <posx>100</posx>
+                            <posy>16</posy>
+                            <width>300</width>
+                            <height>300</height>
+                            <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
+                            <aspectratio align="right">keep</aspectratio>
+                            <texture background="true">$VAR[cdArtVar]</texture>
+                            <bordersize>7</bordersize>
                             <visible>Skin.HasSetting(infopanelcdart)</visible>
-                            <control type="image">
-                                <posx>100</posx>
-                                <posy>25</posy>
-                                <width>300</width>
-                                <height>300</height>
-                                <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
-                                <aspectratio align="right">keep</aspectratio>
-                                <texture background="true">common/cdart/default.png</texture>
-                                <bordersize>7</bordersize>
-                            </control>
-                            <control type="image">
-                                <posx>100</posx>
-                                <posy>25</posy>
-                                <width>300</width>
-                                <height>300</height>
-                                <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
-                                <aspectratio align="right">keep</aspectratio>
-                                <texture background="true">common/cdart/bd.png</texture>
-                                <visible>IntegerGreaterThan(ListItem.VideoResolution,719)</visible>
-                                <bordersize>7</bordersize>
-                            </control>
-                            <control type="image">
-                                <posx>100</posx>
-                                <posy>25</posy>
-                                <width>300</width>
-                                <height>300</height>
-                                <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
-                                <aspectratio align="right">keep</aspectratio>
-                                <texture background="true">$INFO[ListItem.Art(discart)]</texture>
-                                <bordersize>7</bordersize>
-                            </control>
                         </control>
                         <control type="group">
                             <posy>-9</posy>
@@ -515,16 +463,6 @@
                             <visible>!Container.Content(tvshows)</visible>
                         </control>
                         <control type="image">
-                            <posy>5</posy>
-                            <posx>5</posx>
-                            <width>374</width>
-                            <height>210</height>
-                            <bordersize>5</bordersize>
-                            <texture background="true" border="5">$INFO[ListItem.Art(fanart)]</texture>
-                            <aspectratio>scale</aspectratio>
-                            <visible>Container.Content(tvshows)</visible>
-                        </control>
-                        <control type="image">
                             <posy>-280</posy>
                             <posx>805</posx>
                             <width>520</width>
@@ -540,7 +478,7 @@
                             <width>374</width>
                             <height>210</height>
                             <bordersize>5</bordersize>
-                            <texture background="true" border="5">$INFO[ListItem.Path,,landscape.jpg]</texture>
+                            <texture background="true" border="5">$VAR[LandscapeThumbVar]</texture>
                             <aspectratio>scale</aspectratio>
                             <visible>Container.Content(tvshows)</visible>
                         </control>
@@ -627,16 +565,6 @@
                             <visible>!Container.Content(tvshows)</visible>
                         </control>
                         <control type="image">
-                            <posy>5</posy>
-                            <posx>5</posx>
-                            <width>374</width>
-                            <height>210</height>
-                            <bordersize>5</bordersize>
-                            <texture background="true" border="5">$INFO[ListItem.Art(fanart)]</texture>
-                            <aspectratio>scale</aspectratio>
-                            <visible>Container.Content(tvshows)</visible>
-                        </control>
-                        <control type="image">
                             <posy>-280</posy>
                             <posx>805</posx>
                             <width>520</width>
@@ -652,7 +580,7 @@
                             <width>374</width>
                             <height>210</height>
                             <bordersize>5</bordersize>
-                            <texture background="true" border="5">$INFO[ListItem.Art(landscape)]</texture>
+                            <texture background="true" border="5">$VAR[LandscapeThumbVar]</texture>
                             <aspectratio>scale</aspectratio>
                             <visible>Container.Content(tvshows)</visible>
                         </control>
@@ -756,40 +684,16 @@
             <animation effect="slide" start="0" end="-60" time="0" condition="!Skin.HasSetting(infopanelcdart)">Conditional</animation>
             <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
         </control>
-        <control type="group">
-            <posy>-9</posy>
+        <control type="image">
+            <posx>100</posx>
+            <posy>16</posy>
+            <width>300</width>
+            <height>300</height>
+            <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
+            <aspectratio align="right">keep</aspectratio>
+            <texture background="true">$VAR[cdArtVar]</texture>
+            <bordersize>7</bordersize>
             <visible>Skin.HasSetting(infopanelcdart)</visible>
-            <control type="image">
-                <posx>100</posx>
-                <posy>25</posy>
-                <width>300</width>
-                <height>300</height>
-                <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
-                <aspectratio align="right">keep</aspectratio>
-                <texture background="true">common/cdart/default.png</texture>
-                <bordersize>7</bordersize>
-            </control>
-            <control type="image">
-                <posx>100</posx>
-                <posy>25</posy>
-                <width>300</width>
-                <height>300</height>
-                <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
-                <aspectratio align="right">keep</aspectratio>
-                <texture background="true">common/cdart/bd.png</texture>
-                <visible>IntegerGreaterThan(ListItem.VideoResolution,719)</visible>
-                <bordersize>7</bordersize>
-            </control>
-            <control type="image">
-                <posx>100</posx>
-                <posy>25</posy>
-                <width>300</width>
-                <height>300</height>
-                <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
-                <aspectratio align="right">keep</aspectratio>
-                <texture background="true">$INFO[ListItem.Art(discart)]</texture>
-                <bordersize>7</bordersize>
-            </control>
         </control>
         <control type="group">
             <posy>-9</posy>
@@ -924,28 +828,15 @@
             <animation effect="slide" start="0" end="-60" time="0" condition="!Skin.HasSetting(infopanelcdart)">Conditional</animation>
             <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
         </control>
-        <control type="group">
-            <posy>-9</posy>
+        <control type="image">
+            <posx>100</posx>
+            <posy>16</posy>
+            <width>300</width>
+            <height>300</height>
+            <aspectratio align="right">keep</aspectratio>
+            <texture background="true">$VAR[cdArtVar]</texture>
+            <bordersize>7</bordersize>
             <visible>Skin.HasSetting(infopanelcdart)</visible>
-            <control type="image">
-                <posx>100</posx>
-                <posy>25</posy>
-                <width>300</width>
-                <height>300</height>
-                <aspectratio align="right">keep</aspectratio>
-                <texture background="true">common/cdart/bd.png</texture>
-                <visible>IntegerGreaterThan(ListItem.VideoResolution,719)</visible>
-                <bordersize>7</bordersize>
-            </control>ol
-            <control type="image">
-                <posx>100</posx>
-                <posy>25</posy>
-                <width>300</width>
-                <height>300</height>
-                <aspectratio align="right">keep</aspectratio>
-                <texture background="true">$INFO[ListItem.Art(discart)]</texture>
-                <bordersize>7</bordersize>
-            </control>
         </control>
         <control type="image">
             <posx>21</posx>
@@ -1224,17 +1115,7 @@
             <width>374</width>
             <height>210</height>
             <bordersize>5</bordersize>
-            <texture background="true" border="5">$INFO[ListItem.Art(fanart)]</texture>
-            <aspectratio>scale</aspectratio>
-            <visible>Container.Content(tvshows)</visible>
-        </control>
-        <control type="image">
-            <posy>6</posy>
-            <posx>5</posx>
-            <width>374</width>
-            <height>210</height>
-            <bordersize>5</bordersize>
-            <texture border="5" background="true">$INFO[ListItem.Art(landscape)]</texture>
+            <texture background="true" border="5">$VAR[LandscapeThumbVar]</texture>
             <aspectratio>scale</aspectratio>
             <visible>Container.Content(tvshows)</visible>
         </control>
@@ -1294,16 +1175,6 @@
             <visible>!Container.Content(tvshows)</visible>
         </control>
         <control type="image">
-            <posy>6</posy>
-            <posx>5</posx>
-            <width>374</width>
-            <height>210</height>
-            <bordersize>5</bordersize>
-            <texture border="5" background="true">$INFO[ListItem.Art(fanart)]</texture>
-            <aspectratio>scale</aspectratio>
-            <visible>Container.Content(tvshows)</visible>
-        </control>
-        <control type="image">
             <posy>-289</posy>
             <posx>405</posx>
             <width>520</width>
@@ -1319,7 +1190,7 @@
             <width>374</width>
             <height>210</height>
             <bordersize>5</bordersize>
-            <texture border="5" background="true">$INFO[ListItem.Art(landscape)]</texture>
+            <texture background="true" border="5">$VAR[LandscapeThumbVar]</texture>
             <aspectratio>scale</aspectratio>
             <visible>Container.Content(tvshows)</visible>
         </control>
