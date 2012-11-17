@@ -233,7 +233,7 @@
                     <posy>3</posy>
                     <width>1300</width>
                     <height>87</height>
-                    <texture>home/submenubar.png</texture>
+                    <texture>home/submenubar_dark.png</texture>
                     <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 </control>
                 <include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>

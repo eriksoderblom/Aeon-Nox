@@ -209,10 +209,10 @@
                     <animation effect="slide" start="0,0" end="0,-60" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(9010) + ![IntegerGreaterThan(Container(9010).NumItems,0) + Skin.HasSetting(showsubmenu)]">conditional</animation>
                     <control type="image">
                         <posx>70</posx>
-                        <posy>3</posy>
+                        <posy>2</posy>
                         <width>1300</width>
                         <height>87</height>
-                        <texture>home/submenubar.png</texture>
+                        <texture>home/submenubar_dark.png</texture>
                         <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                     </control>
                     <include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>

@@ -106,7 +106,7 @@
                 <posy>-46</posy>
                 <width>794</width>
                 <height>87</height>
-                <texture flipx="true">home/timepanel_mid.png</texture>
+                <texture flipx="true">home/timepanel_mid_dark.png</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
                 <visible>!Skin.HasSetting(totalshomehigh)</visible>
@@ -117,7 +117,7 @@
                 <posy>-472</posy>
                 <width>794</width>
                 <height>87</height>
-                <texture flipy="true" flipx="true">home/timepanel_mid.png</texture>
+                <texture flipy="true" flipx="true">home/timepanel_mid_dark.png</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
                 <visible>Skin.HasSetting(totalshomehigh)</visible>
@@ -165,7 +165,7 @@
                 <posy>-46</posy>
                 <width>794</width>
                 <height>87</height>
-                <texture>home/timepanel_mid.png</texture>
+                <texture>home/timepanel_mid_dark.png</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
                 <visible>!Skin.HasSetting(timehomehigh)</visible>
@@ -177,7 +177,7 @@
                 <posy>-472</posy>
                 <width>794</width>
                 <height>87</height>
-                <texture flipy="true">home/timepanel_mid.png</texture>
+                <texture flipy="true">home/timepanel_mid_dark.png</texture>
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
                 <visible>Skin.HasSetting(timehomehigh)</visible>
