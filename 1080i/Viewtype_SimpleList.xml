@@ -32,14 +32,13 @@
                 <scrolltime>100</scrolltime>
                 <orientation>vertical</orientation>
                 <movement>3</movement>
-                <focusposition>4</focusposition>
+                <focusposition>6</focusposition>
                 <onup>520</onup>
                 <ondown>520</ondown>
                 <onleft>61</onleft>
                 <onright>9000</onright>
                 <preloaditems>2</preloaditems>
                 <pagecontrol>61</pagecontrol>
-                <scrollsuffix>  •  </scrollsuffix>
                 <visible>Container.Content(episodes) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(musiclibrary)</visible>
                 <animation effect="slide" start="0,0" end="0,65" time="0" condition="Skin.HasSetting(ClassicTopBar) | Skin.HasSetting(altbreadcrumbstexture)">Conditional</animation>
                 <animation effect="slide" end="0,15" time="200" condition="Container(520).Row(0)">Conditional</animation>
@@ -90,9 +89,11 @@
                         <posx>150</posx>
                         <posy>14</posy>
                         <width>600</width>
-                        <font>Font_Reg25</font>
+                        <font>Font_Bold30</font>
+                        <scrollspeed>60</scrollspeed>
+                        <scrollsuffix>  •  </scrollsuffix>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <label>[B]$INFO[ListItem.Label][/B]</label>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
 
                     <control type="label">
@@ -167,10 +168,10 @@
 
                 <control type="label">
                     <posx>800</posx>
-                    <posy>110</posy>
+                    <posy>100</posy>
                     <width>1100</width>
                     <height>30</height>
-                    <font>Font_Reg25</font>
+                    <font>Font_Reg38</font>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <label>$INFO[ListItem.Title]</label>
                 </control>
