@@ -26,9 +26,9 @@
             <control type="fixedlist" id="520">
                 <viewtype label="31237">simplelist</viewtype>
                 <posx>40</posx>
-                <posy>10</posy>
+                <posy>12</posy>
                 <width>950</width>
-                <height>980</height>
+                <height>1012</height>
                 <scrolltime>100</scrolltime>
                 <orientation>vertical</orientation>
                 <movement>3</movement>
@@ -52,7 +52,7 @@
                 <animation effect="slide" end="0,-36" time="200" condition="Container(520).Row(7)">Conditional</animation>
                 <animation effect="slide" end="0,-43" time="200" condition="Container(520).Row(8)">Conditional</animation>
                 
-                <itemlayout width="880" height="52">
+                <itemlayout width="880" height="48">
 
                     <control type="label">
                         <posx>150</posx>
@@ -83,7 +83,7 @@
                     </control>
 
                 </itemlayout>
-                <focusedlayout width="660" height="48">
+                <focusedlayout width="660" height="52">
 
                     <control type="label">
                         <posx>150</posx>
