@@ -26,7 +26,7 @@
             <control type="fixedlist" id="520">
                 <viewtype label="31237">simplelist</viewtype>
                 <posx>40</posx>
-                <posy>12</posy>
+                <posy>24</posy>
                 <width>950</width>
                 <height>1012</height>
                 <scrolltime>100</scrolltime>
