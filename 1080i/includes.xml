@@ -336,6 +336,18 @@
         <alttexturefocus>dialogs/shutdown_focus_glow.png</alttexturefocus>
         <alttexturenofocus>dialogs/shutdown_nofocus_glow.png</alttexturenofocus>
     </include>
+    <include name="ShutdownNoGlowAlt">
+        <texturenofocus>dialogs/shutdown_nofocus2.png</texturenofocus>
+        <texturefocus>dialogs/shutdown_focus2.png</texturefocus>
+        <alttexturefocus>dialogs/shutdown_focus2.png</alttexturefocus>
+        <alttexturenofocus>dialogs/shutdown_nofocus2.png</alttexturenofocus>
+    </include>
+    <include name="ShutdownGlowAlt">
+        <texturenofocus>dialogs/shutdown_nofocus_glow2.png</texturenofocus>
+        <texturefocus>dialogs/shutdown_focus_glow2.png</texturefocus>
+        <alttexturefocus>dialogs/shutdown_focus_glow2.png</alttexturefocus>
+        <alttexturenofocus>dialogs/shutdown_nofocus_glow2.png</alttexturenofocus>
+    </include>
     <include name="Objects_ContextMenuButton">
         <height>59</height>
         <width>462</width>
@@ -348,8 +360,8 @@
         <font>Font_Reg19_Caps</font>
         <textoffsety>8</textoffsety>
         <textoffsetx>30</textoffsetx>
-        <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlow</include>
-        <include condition="![!Skin.HasSetting(DisableGlowbar)]">ShutdownNoGlow</include>
+        <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlowAlt</include>
+        <include condition="Skin.HasSetting(DisableGlowbar)">ShutdownNoGlowAlt</include>
     </include>
     <include name="Objects_ShutdownMenuButton">
         <height>75</height>
@@ -370,6 +382,7 @@
         <height>63</height>
         <width>67</width>
         <aspectratio aligny="top">scale</aspectratio>
+		<colordiffuse>white2</colordiffuse>
     </include>
     <include name="HiddenObject">
         <posx>-300</posx>
@@ -1219,7 +1232,7 @@
             <width>1132</width>
             <height>1056</height>
             <texture>wall/wall_bg.png</texture>
-            <icolordiffuse>$VAR[DialogColorVar]</icolordiffuse>
+            <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
         </control>
     </include>
     <include name="FullScreenInfoBarLiveTV">
@@ -1228,6 +1241,7 @@
             <width>1920</width>
             <height>180</height>
             <texture>osd/osd_back.png</texture>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
         </control>
         <control type="group" id="1">
             <posy>865</posy>
@@ -1636,6 +1650,7 @@
                 <width>2080</width>
                 <height>87</height>
                 <texture border="80,0,80,0">osd/osd_progress_bar_back.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             </control>
             <control type="progress" id="23">
                 <posx>150</posx>

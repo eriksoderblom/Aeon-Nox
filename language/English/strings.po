@@ -5,12 +5,12 @@
 # Addon Provider: Big_Noid & phil65
 msgid ""
 msgstr ""
-"Project-Id-Version: XBMC-Addons\n"
+"Project-Id-Version: XBMC Skins\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
-"POT-Creation-Date: 2012-11-04 14:35+0000\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: XBMC Translation Team\n"
-"Language-Team: LANGUAGE\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-skins/language/en/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -161,10 +161,6 @@ msgstr ""
 
 msgctxt "#31053"
 msgid "Fullscreen"
-msgstr ""
-
-msgctxt "#31054"
-msgid "Season Fanart"
 msgstr ""
 
 #Playlist Editor labels
@@ -1633,7 +1629,7 @@ msgid "Press RIGHT to see changes"
 msgstr ""
 
 msgctxt "#42004"
-msgid "Extra/Season-FanArt are not supported by XBMC natively"
+msgid "ExtraFanArt is not natively supported by XBMC"
 msgstr ""
 
 msgctxt "#42005"
@@ -2100,7 +2096,6 @@ msgstr ""
 
 #empty string with id 42296
 #<string id="42296">bars</string>
-
 
 msgctxt "#42297"
 msgid "Press DOWN for extended info"
