@@ -122,9 +122,11 @@
 
             <control type="scrollbar" id="61">
                 <posx>30</posx>
+                <animation effect="fade" start="100" end="0" time="300" condition="!Control.HasFocus(61)">Conditional</animation>
                 <posy>80</posy>
                 <width>46</width>
                 <height>900</height>
+                <animation effect="zoom" start="70" end="100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(61)">Conditional</animation>
                 <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
                 <orientation>vertical</orientation>
                 <onleft condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onleft>
