@@ -163,7 +163,7 @@
                 <item>
                     <label>$LOCALIZE[31237]</label>
                     <onclick>Container.SetViewMode(520)</onclick>
-                    <visible>Window.IsActive(videos) + Container.Content(movies)</visible>
+                    <visible>Window.IsActive(videos) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31236]</label>

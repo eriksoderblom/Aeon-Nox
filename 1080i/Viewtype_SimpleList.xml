@@ -32,11 +32,13 @@
                 <scrolltime>100</scrolltime>
                 <orientation>vertical</orientation>
                 <movement>3</movement>
-                <focusposition>6</focusposition>
+                <focusposition>8</focusposition>
                 <onup>520</onup>
                 <ondown>520</ondown>
-                <onleft>61</onleft>
-                <onright>9000</onright>
+                <onleft condition="Control.IsVisible(61)">61</onleft>
+                <onleft>9000</onleft>
+                <onright condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onright>
+                <onright condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(trailerincontextmenu)">9000</onright>
                 <preloaditems>2</preloaditems>
                 <pagecontrol>61</pagecontrol>
                 <visible>Container.Content(episodes) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(musiclibrary)</visible>
@@ -120,14 +122,13 @@
 
             <control type="scrollbar" id="61">
                 <posx>30</posx>
-                <animation effect="zoom" start="70" end="100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(61)">Conditional</animation>
                 <posy>80</posy>
                 <width>46</width>
                 <height>900</height>
-                <animation effect="fade" start="100" end="0" time="300" condition="!Control.HasFocus(61)">Conditional</animation>
                 <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
                 <orientation>vertical</orientation>
-                <onleft>9000</onleft>
+                <onleft condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onleft>
+                <onleft condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(trailerincontextmenu)">9000</onleft>
                 <onright>520</onright>
             </control>
 
@@ -248,43 +249,78 @@
                     <label>$INFO[ListItem.Genre]</label>
                 </control>
 
-                <control type="label">
-                    <posx>1085</posx>
-                    <posy>710</posy>
-                    <width>300</width>
-                    <height>30</height>
-                    <font>Font_Reg14</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
-                    <align>right</align>
-                    <scroll>true</scroll>
-                    <scrollsuffix>  •  </scrollsuffix>
-                    <label>$INFO[ListItem.Director,[COLOR grey]Directed by: [/COLOR]]</label>
+                <control type="group" id="5211">
+                    <visible>Container.Content(movies)</visible>
+
+                    <control type="label">
+                        <posx>1085</posx>
+                        <posy>710</posy>
+                        <width>300</width>
+                        <height>30</height>
+                        <font>Font_Reg14</font>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <align>right</align>
+                        <scroll>true</scroll>
+                        <scrollsuffix>  •  </scrollsuffix>
+                        <label>$INFO[ListItem.Director,[COLOR grey]Directed by: [/COLOR]]</label>
+                    </control>
+
+                    <control type="label">
+                        <posx>1085</posx>
+                        <posy>740</posy>
+                        <width>300</width>
+                        <height>30</height>
+                        <font>Font_Reg14</font>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <align>right</align>
+                        <scroll>true</scroll>
+                        <scrollsuffix>  •  </scrollsuffix>
+                        <label>$INFO[ListItem.Writer,[COLOR grey]Written by: [/COLOR]]</label>
+                    </control>
+
+                    <control type="label">
+                        <posx>1085</posx>
+                        <posy>770</posy>
+                        <width>340</width>
+                        <height>30</height>
+                        <font>Font_Reg14</font>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <align>right</align>
+                        <scroll>true</scroll>
+                        <scrollsuffix>  •  </scrollsuffix>
+                        <label>$INFO[ListItem.Duration,[COLOR grey]Runtime: [/COLOR], minutes]</label>
+                    </control>
                 </control>
 
-                <control type="label">
-                    <posx>1085</posx>
-                    <posy>740</posy>
-                    <width>300</width>
-                    <height>30</height>
-                    <font>Font_Reg14</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
-                    <align>right</align>
-                    <scroll>true</scroll>
-                    <scrollsuffix>  •  </scrollsuffix>
-                    <label>$INFO[ListItem.Writer,[COLOR grey]Written by: [/COLOR]]</label>
-                </control>
+                <control type="group" id="5212">
+                    <visible>Container.Content(tvshows)</visible>
+                    
+                    <control type="label">
+                        <posx>1085</posx>
+                        <posy>710</posy>
+                        <width>300</width>
+                        <height>30</height>
+                        <font>Font_Reg14</font>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <align>right</align>
+                        <scroll>true</scroll>
+                        <scrollsuffix>  •  </scrollsuffix>
+                        <label>$INFO[ListItem.Property(NumEpisodes),[COLOR grey]Episodes: [/COLOR]]</label>
+                    </control>
 
-                <control type="label">
-                    <posx>1085</posx>
-                    <posy>770</posy>
-                    <width>340</width>
-                    <height>30</height>
-                    <font>Font_Reg14</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
-                    <align>right</align>
-                    <scroll>true</scroll>
-                    <scrollsuffix>  •  </scrollsuffix>
-                    <label>$INFO[ListItem.Duration,[COLOR grey]Runtime: [/COLOR], minutes]</label>
+                    <control type="label">
+                        <posx>1085</posx>
+                        <posy>740</posy>
+                        <width>300</width>
+                        <height>30</height>
+                        <font>Font_Reg14</font>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <align>right</align>
+                        <scroll>true</scroll>
+                        <scrollsuffix>  •  </scrollsuffix>
+                        <label>$INFO[ListItem.Property(UnWatchedEpisodes),[COLOR grey]Unwatched: [/COLOR]]</label>
+                    </control>
+
                 </control>
 
                 <control type="label">

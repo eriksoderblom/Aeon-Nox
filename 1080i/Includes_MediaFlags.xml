@@ -50,6 +50,7 @@
                     <animation effect="slide" start="0" end="-68" reversible="true" condition="Control.IsVisible(512)">Conditional</animation>
                     <animation effect="slide" start="0" end="-812" reversible="true" condition="Control.IsVisible(514)">Conditional</animation>
                     <animation effect="slide" start="0" end="1395" reversible="true" condition="Control.IsVisible(516)">Conditional</animation>
+                    <animation effect="slide" start="0" end="1500" reversible="true" condition="Control.IsVisible(520)">Conditional</animation>
                     <animation effect="slide" start="0" end="-60" reversible="true" condition="Control.isVisible(503) + [Skin.HasSetting(landscapeonelogo) | Skin.HasSetting(landscapelogo)]">Conditional</animation>
                 </control>
                 <control type="image">
@@ -58,6 +59,7 @@
                     <include>AudioFlagsVars</include>
                     <animation effect="slide" start="0" end="-45" reversible="true" condition="Control.IsVisible(550)">Conditional</animation>
                     <animation effect="slide" start="0" end="-2205" reversible="true" condition="Control.IsVisible(514)">Conditional</animation>
+                    <animation effect="slide" start="0" end="100" reversible="true" condition="Control.IsVisible(520)">Conditional</animation>
                     <animation effect="slide" start="0" end="-1320" reversible="true" condition="Control.isVisible(503) + [Skin.HasSetting(landscapeonelogo) | Skin.HasSetting(landscapelogo)] + Container.Content(movies)">Conditional</animation>
                     <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
                     <visible>!Control.IsVisible(512)</visible>
