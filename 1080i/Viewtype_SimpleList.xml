@@ -134,43 +134,11 @@
                 <onright>520</onright>
             </control>
 
-            <control type="group">
-                <visible>Window.IsActive(videos)</visible>
-
-                <control type="image">
-                    <posx>30</posx>
-                    <posy>160</posy>
-                    <width>540</width>
-                    <height>800</height>
-                    <align>center</align>
-                    <bordersize>18</bordersize>
-                    <include>PanelGlowFade</include>
-                    <include>Animation_VisibleChange400</include>
-                    <visible>Skin.HasSetting(ExtendedGlowMode)</visible>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>!IsEmpty(Control.GetLabel(3822))</visible>
-                    <texture background="true">thumbs/thumb_glass_shadow.png</texture>
-                </control>
-
-                <control type="image" id="3822">
-                    <posx>49</posx>
-                    <posy>190</posy>
-                    <width>502</width>
-                    <height>739</height>
-                    <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[EpisodePosterVar]</texture>
-                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                    <bordersize>19</bordersize>
-                    <include>Animation_VisibleChange400</include>
-                </control>
-                
-            </control>
-
             <control type="group" id="521">
                 <visible>!IsEmpty(ListItem.Icon) + Control.IsVisible(520)</visible>
 
                 <control type="label">
-                    <posx>800</posx>
+                    <posx>830</posx>
                     <posy>100</posy>
                     <width>1100</width>
                     <height>30</height>
@@ -180,7 +148,7 @@
                 </control>
 
                 <control type="label">
-                    <posx>805</posx>
+                    <posx>835</posx>
                     <posy>145</posy>
                     <width>1100</width>
                     <height>30</height>
@@ -192,10 +160,10 @@
                 <control type="image">
                     <posx>795</posx>
                     <posy>180</posy>
-                    <width>313</width>
+                    <width>320</width>
                     <height>422</height>
                     <fadetime>100</fadetime>
-                    <aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
+                    <aspectratio scalediffuse="false" align="right" aligny="center">keep</aspectratio>
                     <texture fallback="DefaultVideoCover.png">$INFO[ListItem.Icon]</texture>
                     <bordertexture border="5">views/thumbborderwhite.png</bordertexture>
                     <bordersize>6</bordersize>
@@ -222,7 +190,7 @@
                 </control>
 
                 <control type="image">
-                    <posx>860</posx>
+                    <posx>880</posx>
                     <posy>610</posy>
                     <width>180</width>
                     <height>36</height>
@@ -231,7 +199,7 @@
                 </control>
 
                 <control type="label">
-                    <posx>900</posx>
+                    <posx>920</posx>
                     <posy>660</posy>
                     <width>100</width>
                     <height>30</height>
