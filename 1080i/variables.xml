@@ -1308,13 +1308,19 @@
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
         <value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
         <value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
-        <value>$INFO[ListItem.Art(poster)]</value>
+        <value condition="Container.Content(movies) + IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
+      <value>$INFO[ListItem.Art(poster)]</value>
     </variable>
     <variable name="LibraryStructureVar">
         <value condition="Stringcompare(Skin.String(LibraryStructure),1)">ARTIST/ALBUMNAME/</value>
         <value condition="Stringcompare(Skin.String(LibraryStructure),2)">ARTIST/YEAR - ALBUMNAME/</value>
         <value condition="Stringcompare(Skin.String(LibraryStructure),3)">ARTIST/ALBUMNAME (YEAR)/</value>
         <value condition="Stringcompare(Skin.String(LibraryStructure),4)">ARTIST - ALBUMNAME (YEAR)/</value>
+    </variable>
+    <variable name="FavoritesListTypeVar">
+        <value condition="Stringcompare(Skin.String(FavoritesListType),1) | IsEmpty(Skin.String(FavoritesListType))">$LOCALIZE[31165]</value>
+        <value condition="Stringcompare(Skin.String(FavoritesListType),2)">$LOCALIZE[31175]</value>
+        <value condition="Stringcompare(Skin.String(FavoritesListType),3)">$LOCALIZE[41159]</value>
     </variable>
     <variable name="ListPosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
