@@ -182,7 +182,7 @@
                 </control>
 
                 <control type="image">
-                    <posx>1012</posx>
+                    <posx>1014</posx>
                     <posy>186</posy>
                     <width>90</width>
                     <height>90</height>
@@ -190,10 +190,10 @@
                 </control>
 
                 <control type="image">
-                    <posx>880</posx>
+                    <posx>850</posx>
                     <posy>610</posy>
-                    <width>180</width>
-                    <height>36</height>
+                    <width>227</width>
+                    <height>48</height>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                     <texture>$INFO[ListItem.Rating,stars/,.png]</texture>
                 </control>
@@ -210,56 +210,62 @@
                 </control>
 
                 <control type="label">
-                    <posx>1115</posx>
+                    <posx>1110</posx>
                     <posy>605</posy>
                     <width>1100</width>
                     <height>30</height>
                     <font>Font_Reg14</font>
                     <textcolor>grey</textcolor>
-                    <label>$INFO[ListItem.Genre]</label>
+                    <label>$INFO[ListItem.Duration,, minutes • ]$INFO[ListItem.Genre]</label>
                 </control>
 
                 <control type="group" id="5211">
                     <visible>Container.Content(movies)</visible>
 
                     <control type="label">
-                        <posx>1085</posx>
+                        <posx>815</posx>
                         <posy>710</posy>
-                        <width>300</width>
+                        <width>280</width>
                         <height>30</height>
                         <font>Font_Reg14</font>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <align>right</align>
-                        <scroll>true</scroll>
-                        <scrollsuffix>  •  </scrollsuffix>
-                        <label>$INFO[ListItem.Director,[COLOR grey]Directed by: [/COLOR]]</label>
+                        <label>$LOCALIZE[20339]:</label>
                     </control>
 
                     <control type="label">
-                        <posx>1085</posx>
-                        <posy>740</posy>
-                        <width>300</width>
+                        <posx>820</posx>
+                        <posy>735</posy>
+                        <width>280</width>
                         <height>30</height>
                         <font>Font_Reg14</font>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <align>right</align>
+                        <textcolor>grey</textcolor>
                         <scroll>true</scroll>
                         <scrollsuffix>  •  </scrollsuffix>
-                        <label>$INFO[ListItem.Writer,[COLOR grey]Written by: [/COLOR]]</label>
+                        <label>$INFO[ListItem.Director]</label>
                     </control>
 
                     <control type="label">
-                        <posx>1085</posx>
-                        <posy>770</posy>
-                        <width>340</width>
+                        <posx>815</posx>
+                        <posy>780</posy>
+                        <width>280</width>
                         <height>30</height>
                         <font>Font_Reg14</font>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <align>right</align>
+                        <label>$LOCALIZE[20417]:</label>
+                    </control>
+
+                    <control type="label">
+                        <posx>820</posx>
+                        <posy>805</posy>
+                        <width>280</width>
+                        <height>30</height>
+                        <font>Font_Reg14</font>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
                         <scroll>true</scroll>
                         <scrollsuffix>  •  </scrollsuffix>
-                        <label>$INFO[ListItem.Duration,[COLOR grey]Runtime: [/COLOR], minutes]</label>
+                        <label>$INFO[ListItem.Writer]</label>
                     </control>
+
                 </control>
 
                 <control type="group" id="5212">
