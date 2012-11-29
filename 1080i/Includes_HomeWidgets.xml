@@ -656,9 +656,11 @@
     <include name="Furniture_HomeNowPlaying">
         <control type="group">
             <posy>14</posy>
-            <visible>IsEmpty(Control.GetLabel(4325)) | !IsEmpty(Window(home).Property(DisableWidgets))</visible>
+            <visible>[IsEmpty(Control.GetLabel(4325)) + !Skin.HasSetting(movenowplayingwidget)] | [IsEmpty(Control.GetLabel(4321)) + Skin.HasSetting(movenowplayingwidget)] | !IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <animation effect="slide" start="0,0" end="0,35" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <include>Animation_Widgets</include>
+            <animation effect="slide" start="0,0" end="0,390" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="0,600" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(movenowplayingwidget) + !Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" start="0,0" end="0,11" time="400" tween="cubic" easing="inout" condition="[[Skin.HasSetting(highnavhelp) + !Skin.HasSetting(DisableNavHelp)] | [Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]] + Window.IsActive(home)">Conditional</animation>
             <control type="group" id="8995">
                 <posx>22</posx>
@@ -1344,7 +1346,7 @@
                 </control>
                 <include>5010List</include>
                 <control type="group">
-                    <visible>Substring(Control.GetLabel(4321),IconPanel1)</visible>
+                    <visible>Substring(Control.GetLabel(4321),IconPanel)</visible>
                     <include>Animation_VisibleChange400</include>
                     <control type="panel" id="5019">
                         <posx>27</posx>
@@ -2835,36 +2837,11 @@
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),logo,right) | Substring(Control.GetLabel(4321),clearart,right)">
-                    <control type="image">
-                        <posx>10</posx>
-                        <posy>5</posy>
-                        <width>512</width>
-                        <height>340</height>
-                        <aspectratio align="center">keep</aspectratio>
-                        <texture background="true" fallback="XBMC_Logo.png">$VAR[Widget1RootPathVar]</texture>
-                    </control>
-                    <control type="label">
-                        <posx>266</posx>
-                        <posy>307</posy>
-                        <width>532</width>
-                        <height>30</height>
-                        <font>Font_Reg19</font>
-                        <align>center</align>
-                        <label>$VAR[Widget1SubTitleVar]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
+                <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),logo,right)">
+                    <include>WidgetLogoLayout</include>
                 </itemlayout>
-                <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),logo,right) | Substring(Control.GetLabel(4321),clearart,right)">
-                    <control type="image">
-                        <posx>10</posx>
-                        <posy>5</posy>
-                        <width>512</width>
-                        <animation effect="zoom" center="246,170" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
-                        <height>340</height>
-                        <texture background="true" fallback="XBMC_Logo.png">$VAR[Widget1RootPathVar]</texture>
-                        <aspectratio>keep</aspectratio>
-                    </control>
+                <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),logo,right)">
+                    <include>WidgetLogoLayout</include>
                     <control type="image">
                         <width>532</width>
                         <height>350</height>
@@ -2872,27 +2849,18 @@
                         <texture border="5">views/addonwall_select.png</texture>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
-                    <control type="label">
-                        <posx>266</posx>
-                        <posy>307</posy>
+                </focusedlayout>
+                
+                <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),clearart,right)">
+                    <include>WidgetClearArtLayout</include>
+                </itemlayout>
+                <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4321),clearart,right)">
+                    <include>WidgetClearArtLayout</include>
+                    <control type="image">
                         <width>532</width>
-                        <height>30</height>
-                        <font>Font_Reg19</font>
-                        <visible>!Control.HasFocus(5010)</visible>
-                        <label>$VAR[Widget1SubTitleVar]</label>
-                        <align>center</align>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="label">
-                        <posx>266</posx>
-                        <posy>307</posy>
-                        <width>532</width>
-                        <height>30</height>
-                        <font>Font_Reg19</font>
-                        <textcolor>$VAR[FontColorVar]</textcolor>
-                        <label>$VAR[Widget1SubTitleVar]</label>
-                        <align>center</align>
-                        <textoffsetx>15</textoffsetx>
+                        <height>350</height>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texture border="5">views/addonwall_select.png</texture>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                 </focusedlayout>
@@ -5946,5 +5914,54 @@
             <label>$INFO[ListItem.Label]</label>
             <font>Font_Reg18</font>
         </control>
+    </include>
+    <include name="WidgetLogoLayout">
+                    <control type="image">
+                        <posx>10</posx>
+                        <posy>5</posy>
+                        <width>512</width>
+                        <height>340</height>
+                        <aspectratio align="center">keep</aspectratio>
+                        <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Property(Logo)]</texture>
+                    </control>
+                    <control type="label">
+                        <posx>266</posx>
+                        <posy>307</posy>
+                        <width>532</width>
+                        <height>30</height>
+                        <font>Font_Reg19</font>
+                        <align>center</align>
+                        <label>$VAR[Widget1SubTitleVar]</label>
+                        <textoffsetx>15</textoffsetx>
+                    </control>
+    </include>
+    <include name="WidgetClearArtLayout">
+                    <control type="image">
+                        <posx>10</posx>
+                        <posy>5</posy>
+                        <width>512</width>
+                        <height>340</height>
+                        <aspectratio align="center">keep</aspectratio>
+                        <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Property(Logo)]</texture>
+                        <visible>IsEmpty(ListItem.Property(ClearArt)</visible>
+                    </control>
+                    <control type="image">
+                        <posx>10</posx>
+                        <posy>5</posy>
+                        <width>512</width>
+                        <height>340</height>
+                        <aspectratio align="center">keep</aspectratio>
+                        <texture background="true">$INFO[ListItem.Property(ClearArt)]</texture>
+                    </control>
+                    <control type="label">
+                        <posx>266</posx>
+                        <posy>307</posy>
+                        <width>532</width>
+                        <height>30</height>
+                        <font>Font_Reg19</font>
+                        <align>center</align>
+                        <label>$VAR[Widget1SubTitleVar]</label>
+                        <textoffsetx>15</textoffsetx>
+                    </control>
     </include>
 </includes>
