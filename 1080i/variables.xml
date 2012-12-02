@@ -619,12 +619,48 @@
         <value>$INFO[VideoPlayer.Cover]</value>
     </variable>
     <variable name="WatchedIconVar">
-        <value condition="Container.ListItem.IsResumable">OverlayWatching.png</value>
+        <value condition="Container.Content(movies) + ListItem.IsFolder + !Stringcompare(ListItem.Label,..)">common/logo_set.png</value>
+        <value condition="Container.ListItem.IsResumable">dialogs/circle/$INFO[ListItem.PercentPlayed].png</value>
+        <value condition="[[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]">common/star.png</value>
+        <value condition="!IsEmpty(ListItem.Top250)">common/imdb.png</value>
         <value>$INFO[ListItem.Overlay]</value>
     </variable>
-    <variable name="AltWatchedIconVar">
-        <value condition="Container.ListItem.IsResumable">OverlayWatching.png</value>
-        <value>$INFO[ListItem.Overlay,thumbs/Alt]</value>
+    <variable name="VolumeColorVar">
+            <value condition="Stringcompare(Control.GetLabel(20),100)">red</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),95)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),90)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),85)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),80)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),75)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),70)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),65)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),60)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),55)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),50)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),45)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),40)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),35)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),30)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),25)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),20)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),15)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),10)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),5)">blue</value>
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),1)">blue</value>
+            <value>blue</value>
+    </variable>
+    <variable name="VolumeIconVar">
+            <value condition="IntegerGreaterThan(Control.GetLabel(20),9)">dialogs/circle/$INFO[Control.GetLabel(20)].png</value>
+            <value condition="Substring(Control.GetLabel(20),9)">dialogs/circle/9.png</value>
+            <value condition="Substring(Control.GetLabel(20),8)">dialogs/circle/8.png</value>
+            <value condition="Substring(Control.GetLabel(20),7)">dialogs/circle/7.png</value>
+            <value condition="Substring(Control.GetLabel(20),6)">dialogs/circle/6.png</value>
+            <value condition="Substring(Control.GetLabel(20),5)">dialogs/circle/5.png</value>
+            <value condition="Substring(Control.GetLabel(20),4)">dialogs/circle/4.png</value>
+            <value condition="Substring(Control.GetLabel(20),3)">dialogs/circle/3.png</value>
+            <value condition="Substring(Control.GetLabel(20),2)">dialogs/circle/2.png</value>
+            <value condition="Substring(Control.GetLabel(20),1)">dialogs/circle/1.png</value>
+            <value>blue</value>
     </variable>
     <variable name="TVShowClearArtVar">
         <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.clearart)]</value>
@@ -2331,17 +2367,9 @@
         <value condition="Skin.HasSetting(InfoWallTagLine)">$LOCALIZE[351]</value>
         <value>$LOCALIZE[31429]</value>
     </variable>
-    <variable name="posterwrapSettingsVar">
-        <value condition="Skin.HasSetting(posterwrap)">$LOCALIZE[106]</value>
-        <value>$LOCALIZE[107]</value>
-    </variable>
     <variable name="wallgenretvSettingsVar">
         <value condition="Skin.HasSetting(wallgenretv)">$LOCALIZE[515]</value>
         <value>$LOCALIZE[31172]</value>
-    </variable>
-    <variable name="showcasewrapSettingsVar">
-        <value condition="Skin.HasSetting(showcasewrap)">$LOCALIZE[106]</value>
-        <value>$LOCALIZE[107]</value>
     </variable>
     <variable name="VideoInfoThumbPreviewVar">
         <value condition="!IsEmpty(ListItem.Art(poster))">$INFO[listItem.Art(poster)]</value>
@@ -2357,6 +2385,10 @@
         <value condition="VideoPlayer.Content(episodes) + !IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
         <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.clearlogo)]</value>
         <value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
+        <value>$INFO[Player.Art(clearlogo)]</value>
+    </variable>
+    <variable name="Widget1PlayButtonLabelVar">
+        <value condition="VideoPlayer.Content(episodes) + !IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
         <value>$INFO[Player.Art(clearlogo)]</value>
     </variable>
 
@@ -2384,6 +2416,5 @@
     <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(21).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,21)</value>
     <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(22).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,22)</value>
     <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(23).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,23)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(24).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,24)</value>
   </variable>
 </includes>
