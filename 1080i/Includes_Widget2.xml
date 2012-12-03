@@ -7,30 +7,34 @@
             <animation effect="slide" end="0,40" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <visible>IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <visible>!Substring(Control.GetLabel(4325),weather) + !Substring(Control.GetLabel(4325),featured) + !Substring(Control.GetLabel(4325),panel) + !IsEmpty(Control.GetLabel(4325))</visible>
-            <animation effect="slide" end="0,25" time="400" tween="cubic" easing="inout" condition="[[Skin.HasSetting(highnavhelp) + !Skin.HasSetting(DisableNavHelp)] | [Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+            <animation effect="slide" end="0,25" time="400" tween="cubic" easing="inout" condition="[[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
             <include>Animation_Widgets</include>
             <!--Unfocused widget-->
             <control type="group">
                 <visible>!Control.HasFocus(7000)</visible>
                 <animation effect="slide" start="450" end="0" time="300" delay="300" tween="quadratic" easing="out">Visible</animation>
-                <control type="image">
-                    <posx>-12</posx>
-                    <posy>-4</posy>
-                    <width>385</width>
-                    <height>370</height>
-                    <texture border="50">keyboard/keyboard_back_shadow.png</texture>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>-12</posx>
-                    <posy>-5</posy>
-                    <width>385</width>
-                    <height>370</height>
-                    <texture border="20">$VAR[WidgetBackVar]</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+               <control type="group">
+                    <visible>!Substring(Control.GetLabel(4325),transparent)</visible>
+                    <include>Animation_VisibleChange200</include>
+                    <control type="image">
+                        <posx>-12</posx>
+                        <posy>-4</posy>
+                        <width>385</width>
+                        <height>370</height>
+                        <texture border="50">keyboard/keyboard_back_shadow.png</texture>
+                        <include>PanelGlowFade</include>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>Animation_VisibleChange400</include>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>-12</posx>
+                        <posy>-5</posy>
+                        <width>385</width>
+                        <height>370</height>
+                        <texture border="20">$VAR[WidgetBackVar]</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    </control>
                 </control>
                 <control type="label">
                     <posx>15</posx>
@@ -68,8 +72,6 @@
                     <include>Animation_HomeWidget</include>
                     <visible>Substring(Control.GetLabel(4325),tv) + !Substring(Control.GetLabel(4325),featured) + !Substring(Control.GetLabel(4325),panel)</visible>
                 </control>
-                <control type="group">
-                    <visible>!Substring(Control.GetLabel(4325),system)</visible>
                     <control type="image">
                         <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(7000).ListItem.Icon]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -84,32 +86,16 @@
                         <visible>Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),artists) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),actor) | Substring(Control.GetLabel(4325),pics) | Substring(Control.GetLabel(4325),roms)</visible>
                     </control>
                     <control type="image">
-                        <texture background="true" fallback="special://skin/backgrounds/videos/videos.jpg">$INFO[Container(7000).ListItem.Icon]</texture>
+                        <texture background="true" fallback="special://skin/backgrounds/videos/videos.jpg">$VAR[ClassicWidget2ImageVar]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
                         <aspectratio aligny="top" align="center">scale</aspectratio>
-                        <posx>7</posx>
-                        <posy>63</posy>
                         <width>345</width>
                         <height>194</height>
                         <animation effect="fade" time="300">Visible</animation>
                         <animation effect="fade" time="50">Hidden</animation>
-                        <visible>Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),rss)</visible>
+                        <visible>Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),rss) | Substring(Control.GetLabel(4325),musicvideo)</visible>
                     </control>
-                    <control type="image">
-                        <texture background="true" fallback="special://skin/backgrounds/videos/videos.jpg">$INFO[Container(7000).ListItem.Property(Fanart)]</texture>
-                        <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                        <bordersize>7</bordersize>
-                        <aspectratio aligny="top" align="center">scale</aspectratio>
-                        <posx>7</posx>
-                        <posy>63</posy>
-                        <width>345</width>
-                        <height>194</height>
-                        <animation effect="fade" time="300">Visible</animation>
-                        <animation effect="fade" time="50">Hidden</animation>
-                        <visible>[Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo)]</visible>
-                    </control>
-                </control>
                 <control type="group">
                     <visible>Stringcompare(Control.GetLabel(4325),system)</visible>
                     <include condition="Substring(Skin.String(widget2list),system) | Window.IsActive(1124)">HomeSystemWidget</include>
@@ -520,18 +506,8 @@
                     <width>450</width>
                     <height>280</height>
                     <onleft>7993</onleft>
-                    <onright condition="SubString(Control.GetLabel(4325),random) + !SubString(Control.GetLabel(4325),custom) + IsEmpty(Container(7000).ListItem.Property(Trailer))">SetProperty(SkinWidgets_RandomItems_Update,true)</onright>
-                    <onclick condition="SubString(Control.GetLabel(4325),1custom) + IsEmpty(Container(7000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist7.Call)]</onclick>
-                    <onclick condition="SubString(Control.GetLabel(4325),2custom) + IsEmpty(Container(7000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist8.Call)]</onclick>
-                    <onclick condition="SubString(Control.GetLabel(4325),3custom) + IsEmpty(Container(7000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist9.Call)]</onclick>
-                    <onclick condition="SubString(Control.GetLabel(4325),4custom) + IsEmpty(Container(7000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist10.Call)]</onclick>
-                    <onclick condition="SubString(Control.GetLabel(4325),5custom) + IsEmpty(Container(7000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist11.Call)]</onclick>
-                    <onclick condition="SubString(Control.GetLabel(4325),6custom) + IsEmpty(Container(7000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist12.Call)]</onclick>
-                    <onright condition="!IsEmpty(Container(7000).ListItem.Property(Trailer))">PlayMedia($ESCINFO[Container(7000).ListItem.Property(Trailer)])</onright>
-                    <onup>7000</onup>
-                    <ondown condition="!Skin.HasSetting(lowermainmenu) | IsEmpty(Control.GetLabel(4321))">7993</ondown>
-                    <ondown condition="Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
-                    <onback>7993</onback>
+                    <onright>7993</onright>
+                    <include>NavigationWidget2</include>
                     <preloaditems>2</preloaditems>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <itemlayout height="34" width="450">
@@ -609,21 +585,85 @@
                     </content>
                 </control>
             </control>
-                <control type="button" id="6014">
-                    <include>HiddenObject</include>
-                    <onfocus condition="Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),tv)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),rss)">PlayMedia($ESCINFO[Container(6010).ListItem.Property(Media)])</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),roms)">System.Exec($ESCINFO[Container(6010).ListItem.Property(Path)])</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),babe)">SetFocus(22222)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),album)">Playlist.Clear</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),album)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
-                    <onfocus condition="!Substring(Control.GetLabel(4325),artist) + !Substring(Control.GetLabel(4325),addons)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),addons)">RunAddon($INFO[Container(6010).ListItem.Property(Path)])</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),randompics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),recentpics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onfocus>
-                </control>
+<!--             <control type="button" id="6014">
+                <include>HiddenObject</include>
+                <onfocus condition="Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),tv)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),rss)">PlayMedia($ESCINFO[Container(6010).ListItem.Property(Media)])</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),roms)">System.Exec($ESCINFO[Container(6010).ListItem.Property(Path)])</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),babe)">SetFocus(22222)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),album)">Playlist.Clear</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),album)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
+                <onfocus condition="!Substring(Control.GetLabel(4325),artist) + !Substring(Control.GetLabel(4325),addons)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),addons)">RunAddon($INFO[Container(6010).ListItem.Property(Path)])</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),randompics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),recentpics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onfocus>
+            </control> -->
+            <control type="button" id="6014">
+                <include>HiddenObject</include>
+                <onfocus condition="Substring(Control.GetLabel(4325),babe)">SetFocus(22222)</onfocus>
+                <onfocus condition="!Substring(Control.GetLabel(4325),babe)">SetFocus(7020)</onfocus>
+            </control>
+              <control type="grouplist" id="7020">
+                        <posx>-830</posx>
+                        <posy>28</posy>
+                        <width>1373</width>
+                        <onup>7020</onup>
+                        <ondown>7020</ondown>
+                        <include>Animation_Widgets</include>
+                        <visible allowhiddenfocus="true">ControlGroup(7020).HasFocus</visible>
+                        <onback>SetFocus(7000)</onback>
+                        <onleft>SetFocus(7000)</onleft>
+                        <onright>SetFocus(7000)</onright>
+                        <orientation>vertical</orientation>
+                        <control type="image" id="1">
+                            <posy>-39</posy>
+                            <width>462</width>
+                            <height>39</height>
+                            <texture>dialogs/context_top_shutdown.png</texture>
+                        </control>
+                            <control type="button" id="7032">
+                                <label>$LOCALIZE[208]</label>
+                                <include>Objects_ContextMenuButton</include>
+                                <onclick condition="Substring(Control.GetLabel(4325),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(7000).ListItem.Property(Path)],return)</onclick>
+                                <onclick condition="Substring(Control.GetLabel(4325),album)">Playlist.Clear</onclick>
+                                <onclick condition="!Substring(Control.GetLabel(4325),artist) + !Substring(Control.GetLabel(4325),addons) + !Substring(Control.GetLabel(4325),artists) + !Substring(Control.GetLabel(4325),rss)">$INFO[Container(7000).ListItem.Property(Path)]</onclick>
+                                <onclick condition="Substring(Control.GetLabel(4325),addons)">RunAddon($INFO[Container(7000).ListItem.Property(Path)])</onclick>
+                                <onclick condition="Substring(Control.GetLabel(4325),rss)">PlayMedia($ESCINFO[Container(7000).ListItem.Property(Media)])</onclick>
+                            </control>
+                            <control type="button" id="7016">
+                                <label>$LOCALIZE[20410]</label>
+                                <onclick>PlayMedia($ESCINFO[Container(7000).ListItem.Property(Trailer)])</onclick>
+                                <include>Objects_ContextMenuButton</include>
+                                <visible>!IsEmpty(Container(7000).ListItem.Property(Trailer))</visible>
+                            </control>                 
+                            <control type="button" id="7035">
+                                <label>$LOCALIZE[31087]</label>
+                                <onclick condition="SubString(Control.GetLabel(4325),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
+                                <onclick condition="SubString(Control.GetLabel(4325),2custom)">$INFO[Skin.String(SmartPlaylist2.Call)]</onclick>
+                                <onclick condition="SubString(Control.GetLabel(4325),3custom)">$INFO[Skin.String(SmartPlaylist3.Call)]</onclick>
+                                <onclick condition="SubString(Control.GetLabel(4325),4custom)">$INFO[Skin.String(SmartPlaylist4.Call)]</onclick>
+                                <onclick condition="SubString(Control.GetLabel(4325),5custom)">$INFO[Skin.String(SmartPlaylist5.Call)]</onclick>
+                                <onclick condition="SubString(Control.GetLabel(4325),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
+                                <onclick condition="Substring(Control.GetLabel(4325),actors)">RunScript(script.metadata.actors,borntoday,10,random)</onclick>
+                                <onclick condition="Substring(Control.GetLabel(4325),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
+                                <onclick condition="!Substring(Control.GetLabel(4325),custom) + !Substring(Control.GetLabel(4325),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
+                                <include>Objects_ContextMenuButton</include>
+                                <visible>Substring(Control.GetLabel(4325),random) | Substring(Control.GetLabel(4325),actors)</visible>
+                            </control>
+                            <control type="button" id="7023">
+                                <label>$LOCALIZE[31066]</label>
+                                <onclick>SetFocus(7000)</onclick>
+                                <include>Objects_ContextMenuButton</include>
+                            </control>
+                        <control type="image" id="2">
+                            <posy>699</posy>
+                            <width>462</width>
+                            <height>40</height>
+                            <texture>dialogs/context_bottom.png</texture>
+                        </control>
+                    </control>    
         </control>
     </include>
     <include name="HomePanelWidget2">
@@ -631,7 +671,7 @@
             <posx>135</posx>
             <posy>-4</posy>
             <animation effect="slide" end="0,35" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" end="0,25" time="400" tween="cubic" easing="inout" condition="[[Skin.HasSetting(highnavhelp) + !Skin.HasSetting(DisableNavHelp)] | [Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+            <animation effect="slide" end="0,25" time="400" tween="cubic" easing="inout" condition="[[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
             <width>1920</width>
             <height>825</height>
             <visible>[Substring(Control.GetLabel(4325),featured) | Substring(Control.GetLabel(4325),panel)]</visible>
@@ -653,6 +693,8 @@
                 <control type="group">
                     <visible>!Substring(Control.GetLabel(4325),transparent)</visible>
                     <include>Animation_VisibleChange200</include>
+                    <animation effect="zoom" end="70,100" center="0" time="400" easing="in" tween="cubic" condition="Stringcompare(Container(6010).NumItems,2)">Conditional</animation>
+                    <animation effect="zoom" end="35,100" center="0" time="400" easing="in" tween="cubic" condition="Stringcompare(Container(6010).NumItems,1)">Conditional</animation>
                     <control type="image">
                         <width>1650</width>
                         <height>402</height>
@@ -674,224 +716,6 @@
                 </control>
                 <include>6010List</include>
                 <control type="group">
-                    <visible>Substring(Control.GetLabel(4325),Icon)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <control type="panel" id="6019">
-                        <posx>27</posx>
-                        <posy>26</posy>
-                        <width>1596</width>
-                        <height>360</height>
-                        <aligny>center</aligny>
-                        <scrolltime>0</scrolltime>
-                        <onup condition="Container(6019).HasFocus(1)">SetProperty(CustomYesNoDialog,IconPanelItem11,home)</onup>
-                        <onup condition="Container(6019).HasFocus(2)">SetProperty(CustomYesNoDialog,IconPanelItem12,home)</onup>
-                        <onup condition="Container(6019).HasFocus(3)">SetProperty(CustomYesNoDialog,IconPanelItem13,home)</onup>
-                        <onup condition="Container(6019).HasFocus(4)">SetProperty(CustomYesNoDialog,IconPanelItem14,home)</onup>
-                        <onup condition="Container(6019).HasFocus(5)">SetProperty(CustomYesNoDialog,IconPanelItem15,home)</onup>
-                        <onup condition="Container(6020).HasFocus(6)">SetProperty(CustomYesNoDialog,IconPanelItem16,home)</onup>
-                        <onup condition="Container(6020).HasFocus(7)">SetProperty(CustomYesNoDialog,IconPanelItem17,home)</onup>
-                        <onup condition="Container(6020).HasFocus(8)">SetProperty(CustomYesNoDialog,IconPanelItem18,home)</onup>
-                        <onup condition="Container(6020).HasFocus(9)">SetProperty(CustomYesNoDialog,IconPanelItem19,home)</onup>
-                        <onup condition="Container(6020).HasFocus(10)">SetProperty(CustomYesNoDialog,IconPanelItem20,home)</onup>
-                        <onup>ActivateWindow(1137)</onup>
-                        <ondown condition="!Skin.HasSetting(lowermainmenu) | IsEmpty(Control.GetLabel(4321))">7993</ondown>
-                        <ondown condition="Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
-                        <onup condition="!Skin.HasSetting(lowermainmenu)">7993</onup>
-                        <orientation>horizontal</orientation>
-                        <itemlayout width="319" height="360">
-                            <control type="group">
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <texture background="true">DefaultAddon.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
-                                    <info>ListItem.Icon</info>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <font>Font_Reg17</font>
-                                    <textcolor>grey2</textcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                </control>
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <colordiffuse>99FFFFFF</colordiffuse>
-                                    <texture>common/black.png</texture>
-                                    <include>Animation_VisibleChange400</include>
-                                    <visible>Control.HasFocus(6019)</visible>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="319" height="360">
-                            <control type="group">
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <texture background="true">DefaultAddon.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
-                                    <info>ListItem.Icon</info>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <font>Font_Reg17</font>
-                                    <textcolor>grey2</textcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                    <visible>!Control.HasFocus(6019)</visible>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <font>Font_Reg17</font>
-                                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                    <visible>Control.HasFocus(6019)</visible>
-                                </control>
-                            </control>
-                            <control type="image">
-                                <width>319</width>
-                                <height>319</height>
-                                <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                                <texture border="5">views/addonwall_select.png</texture>
-                                <include>Animation_VisibleChange200</include>
-                                <visible>Control.HasFocus(6019)</visible>
-                            </control>
-                        </focusedlayout>
-                        <content>
-                            <item id="1">
-                                <label>$INFO[Skin.String(IconPanelItem11.Label)]</label>
-                                <onclick>SetProperty(MenuItem,IconPanelItem11,home)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem11.Path)) +!stringcompare(Skin.String(IconPanelItem11.Type),4) + !stringcompare(Skin.String(IconPanelItem11.Type),5) + !stringcompare(Skin.String(IconPanelItem11.Type),6) + !stringcompare(Skin.String(IconPanelItem11.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem11.Path)])</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem11.Path)) + stringcompare(Skin.String(IconPanelItem11.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem11.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem11.Path)) + stringcompare(Skin.String(IconPanelItem11.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem11.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem11.Path)) + stringcompare(Skin.String(IconPanelItem11.Type),6) | Stringcompare(Skin.String(IconPanelItem11.Type),7)">$INFO[Skin.String(IconPanelItem11.Path)]</onclick>
-                                <onclick condition="IsEmpty(Skin.String(IconPanelItem11.Path))">ActivateWindow(1135)</onclick>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel1)</visible>
-                                <icon>$INFO[Skin.String(IconPanelItem11.Icon)]</icon>
-                            </item>
-                            <item id="2">
-                                <label>$INFO[Skin.String(IconPanelItem12.Label)]</label>
-                                <onclick>SetProperty(MenuItem,IconPanelItem12,home)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem12.Path)) +!stringcompare(Skin.String(IconPanelItem12.Type),4) + !stringcompare(Skin.String(IconPanelItem12.Type),5) + !stringcompare(Skin.String(IconPanelItem12.Type),6) + !stringcompare(Skin.String(IconPanelItem12.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem12.Path)])</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem12.Path)) + stringcompare(Skin.String(IconPanelItem12.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem12.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem12.Path)) + stringcompare(Skin.String(IconPanelItem12.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem12.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem12.Path)) + stringcompare(Skin.String(IconPanelItem12.Type),6) | Stringcompare(Skin.String(IconPanelItem12.Type),7)">$INFO[Skin.String(IconPanelItem12.Path)]</onclick>
-                                <onclick condition="IsEmpty(Skin.String(IconPanelItem12.Path))">ActivateWindow(1135)</onclick>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel1)</visible>
-                                <icon>$INFO[Skin.String(IconPanelItem12.Icon)]</icon>
-                            </item>
-                            <item id="3">
-                                <label>$INFO[Skin.String(IconPanelItem13.Label)]</label>
-                                <onclick>SetProperty(MenuItem,IconPanelItem13,home)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem13.Path)) +!stringcompare(Skin.String(IconPanelItem13.Type),4) + !stringcompare(Skin.String(IconPanelItem13.Type),5) + !stringcompare(Skin.String(IconPanelItem13.Type),6) + !stringcompare(Skin.String(IconPanelItem13.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem13.Path)])</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem13.Path)) + stringcompare(Skin.String(IconPanelItem13.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem13.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem13.Path)) + stringcompare(Skin.String(IconPanelItem13.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem13.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem13.Path)) + stringcompare(Skin.String(IconPanelItem13.Type),6) | Stringcompare(Skin.String(IconPanelItem13.Type),7)">$INFO[Skin.String(IconPanelItem13.Path)]</onclick>
-                                <onclick condition="IsEmpty(Skin.String(IconPanelItem13.Path))">ActivateWindow(1135)</onclick>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel1)</visible>
-                                <icon>$INFO[Skin.String(IconPanelItem13.Icon)]</icon>
-                            </item>
-                            <item id="4">
-                                <label>$INFO[Skin.String(IconPanelItem14.Label)]</label>
-                                <onclick>SetProperty(MenuItem,IconPanelItem14,home)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem14.Path)) +!stringcompare(Skin.String(IconPanelItem14.Type),4) + !stringcompare(Skin.String(IconPanelItem14.Type),5) + !stringcompare(Skin.String(IconPanelItem14.Type),6) + !stringcompare(Skin.String(IconPanelItem14.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem14.Path)])</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem14.Path)) + stringcompare(Skin.String(IconPanelItem14.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem14.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem14.Path)) + stringcompare(Skin.String(IconPanelItem14.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem14.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem14.Path)) + stringcompare(Skin.String(IconPanelItem14.Type),6) | Stringcompare(Skin.String(IconPanelItem14.Type),7)">$INFO[Skin.String(IconPanelItem14.Path)]</onclick>
-                                <onclick condition="IsEmpty(Skin.String(IconPanelItem14.Path))">ActivateWindow(1135)</onclick>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel1)</visible>
-                                <icon>$INFO[Skin.String(IconPanelItem14.Icon)]</icon>
-                            </item>
-                            <item id="5">
-                                <label>$INFO[Skin.String(IconPanelItem15.Label)]</label>
-                                <onclick>SetProperty(MenuItem,IconPanelItem15,home)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem15.Path)) +!stringcompare(Skin.String(IconPanelItem15.Type),4) + !stringcompare(Skin.String(IconPanelItem15.Type),5) + !stringcompare(Skin.String(IconPanelItem15.Type),6) + !stringcompare(Skin.String(IconPanelItem15.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem15.Path)])</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem15.Path)) + stringcompare(Skin.String(IconPanelItem15.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem15.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem15.Path)) + stringcompare(Skin.String(IconPanelItem15.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem15.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem15.Path)) + stringcompare(Skin.String(IconPanelItem15.Type),6) | Stringcompare(Skin.String(IconPanelItem15.Type),7)">$INFO[Skin.String(IconPanelItem15.Path)]</onclick>
-                                <onclick condition="IsEmpty(Skin.String(IconPanelItem15.Path))">ActivateWindow(1135)</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem15.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel1)</visible>
-                            </item>
-                            <item id="6">
-                                <label>$INFO[Skin.String(IconPanelItem16.Label)]</label>
-                                <onclick>SetProperty(MenuItem,IconPanelItem16,home)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem16.Path)) +!stringcompare(Skin.String(IconPanelItem16.Type),4) + !stringcompare(Skin.String(IconPanelItem16.Type),5) + !stringcompare(Skin.String(IconPanelItem16.Type),6) + !stringcompare(Skin.String(IconPanelItem16.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem16.Path)])</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem16.Path)) + stringcompare(Skin.String(IconPanelItem16.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem16.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem16.Path)) + stringcompare(Skin.String(IconPanelItem16.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem16.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem16.Path)) + stringcompare(Skin.String(IconPanelItem16.Type),6) | Stringcompare(Skin.String(IconPanelItem16.Type),7)">$INFO[Skin.String(IconPanelItem16.Path)]</onclick>
-                                <onclick condition="IsEmpty(Skin.String(IconPanelItem16.Path))">ActivateWindow(1135)</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem16.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel2)</visible>
-                            </item>
-                            <item id="7">
-                                <label>$INFO[Skin.String(IconPanelItem17.Label)]</label>
-                                <onclick>SetProperty(MenuItem,IconPanelItem17,home)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem17.Path)) +!stringcompare(Skin.String(IconPanelItem17.Type),4) + !stringcompare(Skin.String(IconPanelItem17.Type),5) + !stringcompare(Skin.String(IconPanelItem17.Type),6) + !stringcompare(Skin.String(IconPanelItem17.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem17.Path)])</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem17.Path)) + stringcompare(Skin.String(IconPanelItem17.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem17.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem17.Path)) + stringcompare(Skin.String(IconPanelItem17.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem17.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem17.Path)) + stringcompare(Skin.String(IconPanelItem17.Type),6) | Stringcompare(Skin.String(IconPanelItem17.Type),7)">$INFO[Skin.String(IconPanelItem17.Path)]</onclick>
-                                <onclick condition="IsEmpty(Skin.String(IconPanelItem17.Path))">ActivateWindow(1135)</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem17.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel2)</visible>
-                            </item>
-                            <item id="8">
-                                <label>$INFO[Skin.String(IconPanelItem18.Label)]</label>
-                                <onclick>SetProperty(MenuItem,IconPanelItem18,home)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem18.Path)) +!stringcompare(Skin.String(IconPanelItem18.Type),4) + !stringcompare(Skin.String(IconPanelItem18.Type),5) + !stringcompare(Skin.String(IconPanelItem18.Type),6) + !stringcompare(Skin.String(IconPanelItem18.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem18.Path)])</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem18.Path)) + stringcompare(Skin.String(IconPanelItem18.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem18.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem18.Path)) + stringcompare(Skin.String(IconPanelItem18.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem18.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem18.Path)) + stringcompare(Skin.String(IconPanelItem18.Type),6) | Stringcompare(Skin.String(IconPanelItem18.Type),7)">$INFO[Skin.String(IconPanelItem18.Path)]</onclick>
-                                <onclick condition="IsEmpty(Skin.String(IconPanelItem18.Path))">ActivateWindow(1135)</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem18.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel2)</visible>
-                            </item>
-                            <item id="9">
-                                <label>$INFO[Skin.String(IconPanelItem19.Label)]</label>
-                                <onclick>SetProperty(MenuItem,IconPanelItem19,home)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem19.Path)) +!stringcompare(Skin.String(IconPanelItem19.Type),4) + !stringcompare(Skin.String(IconPanelItem19.Type),5) + !stringcompare(Skin.String(IconPanelItem19.Type),6) + !stringcompare(Skin.String(IconPanelItem19.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem19.Path)])</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem19.Path)) + stringcompare(Skin.String(IconPanelItem19.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem19.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem19.Path)) + stringcompare(Skin.String(IconPanelItem19.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem19.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem19.Path)) + stringcompare(Skin.String(IconPanelItem19.Type),6) | Stringcompare(Skin.String(IconPanelItem19.Type),7)">$INFO[Skin.String(IconPanelItem19.Path)]</onclick>
-                                <onclick condition="IsEmpty(Skin.String(IconPanelItem19.Path))">ActivateWindow(1135)</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem19.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel2)</visible>
-                            </item>
-                            <item id="10">
-                                <label>$INFO[Skin.String(IconPanelItem20.Label)]</label>
-                                <onclick>SetProperty(MenuItem,IconPanelItem20,home)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem20.Path)) +!stringcompare(Skin.String(IconPanelItem20.Type),4) + !stringcompare(Skin.String(IconPanelItem20.Type),5) + !stringcompare(Skin.String(IconPanelItem20.Type),6) + !stringcompare(Skin.String(IconPanelItem20.Type),7)">RunAddon($INFO[Skin.String(IconPanelItem20.Path)])</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem20.Path)) + stringcompare(Skin.String(IconPanelItem20.Type),4)">ActivateWindow(Videos,$INFO[Skin.String(IconPanelItem20.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem20.Path)) + stringcompare(Skin.String(IconPanelItem20.Type),5)">ActivateWindow(MusicLibrary,$INFO[Skin.String(IconPanelItem20.Path)],return)</onclick>
-                                <onclick condition="!IsEmpty(Skin.String(IconPanelItem20.Path)) + stringcompare(Skin.String(IconPanelItem20.Type),6) | Stringcompare(Skin.String(IconPanelItem20.Type),7)">$INFO[Skin.String(IconPanelItem20.Path)]</onclick>
-                                <onclick condition="IsEmpty(Skin.String(IconPanelItem20.Path))">ActivateWindow(1135)</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem20.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel2)</visible>
-                            </item>
-                        </content>
-                    </control>
-                </control>
-                <control type="group">
                     <visible>Substring(Control.GetLabel(4325),concertspanel)</visible>
                     <include>Animation_VisibleChange400</include>
                     <control type="panel" id="6051">
@@ -902,11 +726,8 @@
                         <preloaditems>2</preloaditems>
                         <onleft>6051</onleft>
                         <onright>6051</onright>
-                        <onup>7993</onup>
+                        <include>NavigationWidget2</include>
                         <orientation>horizontal</orientation>
-                        <ondown condition="!Skin.HasSetting(lowermainmenu) | IsEmpty(Control.GetLabel(4321))">7993</ondown>
-                        <ondown condition="Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
-                        <onback>7993</onback>
                         <scrolltime>200</scrolltime>
                         <itemlayout height="116" width="399">
                             <control type="image">
@@ -1000,15 +821,15 @@
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4325),wunderground)</visible>
                     <include>Animation_VisibleChange400</include>
-                                    <control type="image">
-                    <posx>1015</posx>
-                    <posy>26</posy>
-                    <width>610</width>
-                    <height>350</height>
-                    <texture>common/white.png</texture>
-                    <visible>Control.HasFocus(6050)</visible>
-                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                </control>
+                    <control type="image">
+                        <posx>1015</posx>
+                        <posy>26</posy>
+                        <width>610</width>
+                        <height>350</height>
+                        <texture>common/white.png</texture>
+                        <visible>Control.HasFocus(6050)</visible>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    </control>
                     <include condition="Substring(Skin.String(widget2list),wunderground) + SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
                 </control>
                 <control type="button" id="6050">
@@ -1018,12 +839,9 @@
                     <onright>ClearProperty(weatherwidget,home)</onright>
                     <onright>SetFocus(7993)</onright>
                     <onup>ClearProperty(weatherwidget,home)</onup>
-                    <onup>SetFocus(7993)</onup>
-                    <ondown condition="!Skin.HasSetting(lowermainmenu) | IsEmpty(Control.GetLabel(4321))">7993</ondown>
-                    <ondown condition="Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
+                        <include>NavigationWidget2</include>
                     <ondown>ClearProperty(weatherwidget,home)</ondown>
                     <onback>ClearProperty(weatherwidget,home)</onback>
-                    <onback>7993</onback>
                     <onclick condition="Substring(Control.GetLabel(4325),wunderground)">SetProperty(weatherwidget,wunderground,home)</onclick>
                     <onclick condition="Substring(Control.GetLabel(4325),googlepanel)">SetProperty(weatherwidget,googlepanel,home)</onclick>
                     <visible>SubString(Control.GetLabel(4325),wunderground) | Substring(Control.GetLabel(4325),googlepanel)</visible>
@@ -1438,6 +1256,8 @@
                     <height>360</height>
                     <texture border="50">featured/panel_featured_overlay.png</texture>
                     <include>Animation_VisibleChange200</include>
+                    <animation effect="zoom" end="70,100" center="0" time="400" easing="in" tween="cubic" condition="Stringcompare(Container(6010).NumItems,2)">Conditional</animation>
+                    <animation effect="zoom" end="35,100" center="0" time="400" easing="in" tween="cubic" condition="Stringcompare(Container(6010).NumItems,1)">Conditional</animation>
                     <visible>!Substring(Control.GetLabel(4325),transparent)</visible>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
@@ -1466,15 +1286,15 @@
                     <include>Animation_DialogPopup</include>
                 </control>
             </control>
-                            <control type="button" id="6014">
-                    <include>HiddenObject</include>
-                    <onfocus>SetProperty(PanelWidget2Info,true,home)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)">SetFocus(6020)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),rss) | Substring(Control.GetLabel(4325),roms)">SetFocus(6021)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),babe)">ClearProperty(PanelWidget2Info,home)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),babe)">SetFocus(22223)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),album) | Substring(Control.GetLabel(4325),artist) | Substring(Control.GetLabel(4325),pics)">SetFocus(6030)</onfocus>
-                </control>
+            <control type="button" id="6014">
+                <include>HiddenObject</include>
+                <onfocus>SetProperty(PanelWidget2Info,true,home)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)">SetFocus(6020)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),rss) | Substring(Control.GetLabel(4325),roms)">SetFocus(6021)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),babe)">ClearProperty(PanelWidget2Info,home)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),babe)">SetFocus(22223)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),album) | Substring(Control.GetLabel(4325),artist) | Substring(Control.GetLabel(4325),pics)">SetFocus(6030)</onfocus>
+            </control>
             <control type="group">
                 <visible>!IsEmpty(Window(Home).Property(PanelWidget2Info))</visible>
                 <animation type="Visible" reversible="false">
@@ -5151,8 +4971,8 @@
             <onclick>SetFocus(6014)</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.1.Thumb)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MostPlayedROM.1.Fanart)]</property>
-             <property name="Path">$ESCINFO[Window(Home).Property(MostPlayedROM.1.LaunchCommand)]</property>
-           <property name="Plot">$INFO[Window(Home).Property(MostPlayedROM.1.Plot)]</property>
+            <property name="Path">$ESCINFO[Window(Home).Property(MostPlayedROM.1.LaunchCommand)]</property>
+            <property name="Plot">$INFO[Window(Home).Property(MostPlayedROM.1.Plot)]</property>
             <property name="Genre">$INFO[Window(Home).Property(MostPlayedROM.1.Genre)]</property>
             <property name="Publisher">$INFO[Window(Home).Property(MostPlayedROM.1.Publisher)]</property>
             <property name="Year">$INFO[Window(Home).Property(MostPlayedROM.1.Year)]</property>
@@ -5260,7 +5080,7 @@
     </include>
     <include name="6010List">
         <control type="group">
-            <visible>Substring(Control.GetLabel(4325),panel) + !Substring(Control.GetLabel(4325),icon)+ !Substring(Control.GetLabel(4325),concerts) + !Substring(Control.GetLabel(4325),google)</visible>
+            <visible>!Substring(Control.GetLabel(4325),concerts) + !Substring(Control.GetLabel(4325),weather)</visible>
             <include>Animation_VisibleChange400</include>
             <control type="panel" id="6010">
                 <posx>27</posx>
@@ -5271,11 +5091,8 @@
                 <animation effect="fade" start="100" end="0" time="0" condition="!Substring(Control.GetLabel(4325),panel)">Conditional</animation>
                 <onleft>6010</onleft>
                 <onright>6010</onright>
-                <onup>SetFocus(6014)</onup>
-                <ondown condition="!Skin.HasSetting(lowermainmenu) | IsEmpty(Control.GetLabel(4321))">7993</ondown>
-                <ondown condition="Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
+                <include>NavigationWidget2</include>
                 <onback>ClearProperty(PanelWidget2Info,Home)</onback>
-                <onback>7993</onback>
                 <preloaditems>1</preloaditems>
                 <scrolltime tween="quadratic" easing="out">400</scrolltime>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),landscape)">
@@ -5304,17 +5121,17 @@
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),roms)">
                     <include condition="[Substring(Skin.String(widget2list),roms) | Window.IsActive(1124)] + System.HasAddon(script.games.rom.collection.browser)">WidgetRCBLayout</include>
                 </itemlayout>
-                <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),banner,right)">
+                <focusedlayout width="798" height="170" condition="Substring(Control.GetLabel(4325),banner,right)">
                     <include condition="Substring(Skin.String(widget2list),banner) | Window.IsActive(1124)">WidgetBannerLayout</include>
                     <control type="image">
                         <width>798</width>
-                        <height>350</height>
+                        <height>180</height>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <texture border="5">views/addonwall_select.png</texture>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),banner,right)">
+                <itemlayout width="798" height="170" condition="Substring(Control.GetLabel(4325),banner,right)">
                     <include condition="Substring(Skin.String(widget2list),banner) | Window.IsActive(1124)">WidgetBannerLayout</include>
                 </itemlayout>
                 <itemlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),logo,right)">
@@ -5381,14 +5198,14 @@
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                 </focusedlayout>
-                <itemlayout width="319" height="360" condition="Substring(Control.GetLabel(4325),panel,right) + [Substring(Control.GetLabel(4325),babe) | Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),artists)]">
+                <itemlayout width="319" height="360" condition="[Substring(Control.GetLabel(4325),panel,right) + [Substring(Control.GetLabel(4325),babe) | Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),artists)]] | Substring(Control.GetLabel(4325),icon)">
                     <control type="group">
                         <control type="image">
                             <posx>5</posx>
                             <posy>5</posy>
                             <width>309</width>
                             <height>309</height>
-                            <texture background="true">DefaultAlbumCover.png</texture>
+                            <texture background="true">DefaultAddon.png</texture>
                             <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
                             <info>ListItem.Icon</info>
                         </control>
@@ -5415,14 +5232,14 @@
                         </control>
                     </control>
                 </itemlayout>
-                <focusedlayout width="319" height="360" condition="Substring(Control.GetLabel(4325),panel,right) + [Substring(Control.GetLabel(4325),babe) | Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),artists)]">
+                <focusedlayout width="319" height="360" condition="[Substring(Control.GetLabel(4325),panel,right) + [Substring(Control.GetLabel(4325),babe) | Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),artists)]] | Substring(Control.GetLabel(4325),icon)">
                     <control type="group">
                         <control type="image">
                             <posx>5</posx>
                             <posy>5</posy>
                             <width>309</width>
                             <height>309</height>
-                            <texture background="true">DefaultAlbumCover.png</texture>
+                            <texture background="true">DefaultAddon.png</texture>
                             <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
                             <info>ListItem.Icon</info>
                         </control>
@@ -5652,14 +5469,16 @@
                     <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),5custom)">Custom5Widget2</include>
                     <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),6custom)">Custom6Widget2</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),babe)">DailyBabesContent2</include>
-                            <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),nextaired)">NextAiredWidget2Content1124</include>
-                            <include condition="Substring(Skin.String(widget2list),nextaired) + !Window.IsActive(1124)">NextAiredWidget2Content</include>
+                    <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),nextaired)">NextAiredWidget2Content1124</include>
+                    <include condition="Substring(Skin.String(widget2list),nextaired) + !Window.IsActive(1124)">NextAiredWidget2Content</include>
                     <include condition="System.HasAddon(script.rssclient) + [Window.IsActive(1124) | Substring(Skin.String(widget2list),rss1)]">RSS1Widget2Content1124</include>
                     <include condition="System.HasAddon(script.rssclient) + Substring(Skin.String(widget2list),rss1)">RSS1Widget2Content</include>
                     <include condition="System.HasAddon(script.rssclient) + [Window.IsActive(1124) | Substring(Skin.String(widget2list),rss2)]">RSS2Widget2Content1124</include>
                     <include condition="System.HasAddon(script.rssclient) + Substring(Skin.String(widget2list),rss2)">RSS2Widget2Content</include>
                     <include condition="System.HasAddon(script.rssclient) + [Window.IsActive(1124) | Substring(Skin.String(widget2list),rss3)]">RSS3Widget2Content1124</include>
                     <include condition="System.HasAddon(script.rssclient) + Substring(Skin.String(widget2list),rss3)">RSS3Widget2Content</include>
+                    <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),IconPanel1)">IconPanel1Items2</include>
+                    <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),IconPanel2)">IconPanel2Items2</include>
                 </content>
             </control>
         </control>
@@ -6621,7 +6440,6 @@
         </item>
     </include>
     <include name="NextAiredWidget2Content">
- 
         <item id="4">
             <thumb>$INFO[Window(Home).Property(NextAired.4.Thumb)]</thumb>
             <label>$INFO[Window(Home).Property(NextAired.4.Label)]</label>
@@ -6702,5 +6520,12 @@
             <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.8.Library)],return)</onclick>
             <visible>Substring(Control.GetLabel(4325),nextaired) + !IsEmpty(Window(Home).Property(NextAired.8.Label))</visible>
         </item>
+    </include>
+    <include name="NavigationWidget2">
+    
+                        <onup>7993</onup>
+                        <ondown condition="!Skin.HasSetting(lowermainmenu) | IsEmpty(Control.GetLabel(4321))">7993</ondown>
+                        <ondown condition="Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
+                        <onback>7993</onback>                       
     </include>
 </includes>

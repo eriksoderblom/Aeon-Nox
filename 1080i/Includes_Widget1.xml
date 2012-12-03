@@ -111,24 +111,28 @@
             <control type="group">
                 <visible>!Control.HasFocus(8000)</visible>
                 <animation effect="slide" start="450" end="0" time="300" delay="300" tween="quadratic" easing="out">Visible</animation>
-                <control type="image">
-                    <posx>-12</posx>
-                    <posy>-4</posy>
-                    <width>385</width>
-                    <height>370</height>
-                    <texture border="50">keyboard/keyboard_back_shadow.png</texture>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>-12</posx>
-                    <posy>-5</posy>
-                    <width>385</width>
-                    <height>370</height>
-                    <texture border="20">$VAR[WidgetBackVar]</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+               <control type="group">
+                    <visible>!Substring(Control.GetLabel(4321),transparent)</visible>
+                    <include>Animation_VisibleChange200</include>
+                    <control type="image">
+                        <posx>-12</posx>
+                        <posy>-4</posy>
+                        <width>385</width>
+                        <height>370</height>
+                        <texture border="50">keyboard/keyboard_back_shadow.png</texture>
+                        <include>PanelGlowFade</include>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>Animation_VisibleChange400</include>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>-12</posx>
+                        <posy>-5</posy>
+                        <width>385</width>
+                        <height>370</height>
+                        <texture border="20">$VAR[WidgetBackVar]</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    </control>
                 </control>
                 <control type="label">
                     <posx>15</posx>
@@ -167,81 +171,13 @@
                     <visible>Substring(Control.GetLabel(4321),tv) + !Substring(Control.GetLabel(4321),featured) + !Substring(Control.GetLabel(4321),panel)</visible>
                 </control>
                 <control type="group">
-                    <visible>!Substring(Control.GetLabel(4321),system)</visible>
-                    <control type="group" id="8030">
-                        <posx>10</posx>
-                        <visible>[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + StringCompare(Control.GetLabel(4322),widgetfanart)</visible>
-                        <control type="group">
-                            <posx>-16</posx>
-                            <posy>56</posy>
-                            <control type="image">
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$INFO[Container(8000).ListItem(-1).Thumb]</texture>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <posx>19</posx>
-                                <posy>19</posy>
-                                <width>110</width>
-                                <height>165</height>
-                                <animation effect="fade" time="300">Visible</animation>
-                                <animation effect="fade" time="50">Hidden</animation>
-                            </control>
-                            <control type="image">
-                                <width>148</width>
-                                <height>203</height>
-                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
-                                <bordertexture border="19">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19</bordersize>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <posx>207</posx>
-                            <posy>56</posy>
-                            <control type="image">
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$INFO[Container(8000).ListItem(1).Thumb]</texture>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <posx>19</posx>
-                                <posy>19</posy>
-                                <width>110</width>
-                                <height>165</height>
-                                <animation effect="fade" time="300">Visible</animation>
-                                <animation effect="fade" time="50">Hidden</animation>
-                            </control>
-                            <control type="image">
-                                <width>148</width>
-                                <height>203</height>
-                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
-                                <bordertexture border="19">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19</bordersize>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <posx>82.5</posx>
-                            <posy>44</posy>
-                            <control type="image">
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$INFO[Container(8000).ListItem(0).Thumb]</texture>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <posx>19</posx>
-                                <posy>19</posy>
-                                <width>130</width>
-                                <height>195</height>
-                                <animation effect="fade" time="300">Visible</animation>
-                                <animation effect="fade" time="50">Hidden</animation>
-                            </control>
-                            <control type="image">
-                                <width>168</width>
-                                <height>234</height>
-                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
-                                <bordertexture border="19">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19</bordersize>
-                            </control>
-                        </control>
-                    </control>
+                        <posx>7</posx>
+                        <posy>63</posy>
                     <control type="image">
                         <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(8000).ListItem.Icon]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
                         <aspectratio aligny="top" align="center">keep</aspectratio>
-                        <posx>7</posx>
-                        <posy>63</posy>
                         <width>345</width>
                         <height>240</height>
                         <animation effect="fade" time="300">Visible</animation>
@@ -249,30 +185,15 @@
                         <visible>Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),actor) | Substring(Control.GetLabel(4321),pics) | Substring(Control.GetLabel(4321),roms)</visible>
                     </control>
                     <control type="image">
-                        <texture background="true" fallback="DefaultTVShows.png">$INFO[Container(8000).ListItem.Icon]</texture>
+                        <texture background="true" fallback="special://skin/backgrounds/videos/videos.jpg">$VAR[ClassicWidgetImageVar]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
                         <aspectratio aligny="top" align="center">scale</aspectratio>
-                        <posx>7</posx>
-                        <posy>63</posy>
                         <width>345</width>
                         <height>194</height>
                         <animation effect="fade" time="300">Visible</animation>
                         <animation effect="fade" time="50">Hidden</animation>
-                        <visible>Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),rss)</visible>
-                    </control>
-                    <control type="image">
-                        <texture background="true" fallback="special://skin/backgrounds/videos/videos.jpg">$INFO[Container(8000).ListItem.Property(Fanart)]</texture>
-                        <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                        <bordersize>7</bordersize>
-                        <aspectratio aligny="top" align="center">scale</aspectratio>
-                        <posx>7</posx>
-                        <posy>63</posy>
-                        <width>345</width>
-                        <height>194</height>
-                        <animation effect="fade" time="300">Visible</animation>
-                        <animation effect="fade" time="50">Hidden</animation>
-                        <visible>[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + !StringCompare(Control.GetLabel(4322),widgetfanart)</visible>
+                        <visible>Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),rss) | Substring(Control.GetLabel(4321),musicvideo)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -684,19 +605,8 @@
                     <width>450</width>
                     <height>280</height>
                     <onleft>8993</onleft>
-                    <onright condition="SubString(Control.GetLabel(4321),random) + !SubString(Control.GetLabel(4321),custom) + IsEmpty(Container(8000).ListItem.Property(Trailer))">SetProperty(SkinWidgets_RandomItems_Update,true)</onright>
-                    <onright condition="SubString(Control.GetLabel(4321),1custom) + IsEmpty(Container(8000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist1.Call)]</onright>
-                    <onright condition="SubString(Control.GetLabel(4321),2custom) + IsEmpty(Container(8000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist2.Call)]</onright>
-                    <onright condition="SubString(Control.GetLabel(4321),3custom) + IsEmpty(Container(8000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist3.Call)]</onright>
-                    <onright condition="SubString(Control.GetLabel(4321),4custom) + IsEmpty(Container(8000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist4.Call)]</onright>
-                    <onright condition="SubString(Control.GetLabel(4321),5custom) + IsEmpty(Container(8000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist5.Call)]</onright>
-                    <onright condition="SubString(Control.GetLabel(4321),6custom) + IsEmpty(Container(8000).ListItem.Property(Trailer))">$INFO[Skin.String(SmartPlaylist6.Call)]</onright>
-                    <onright condition="!IsEmpty(Container(8000).ListItem.Property(Trailer))">PlayMedia($ESCINFO[Container(8000).ListItem.Property(Trailer)])</onright>
-                    <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">SetFocus(4445)</onup>
-                    <onup condition="!Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onup>
-                    <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">8000</onup>
-                    <ondown>8000</ondown>
-                    <onback>8993</onback>
+                    <onright>8993</onright>
+                    <include>NavigationWidget1</include>
                     <preloaditems>2</preloaditems>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <itemlayout height="34" width="450">
@@ -776,21 +686,86 @@
                     </content>
                 </control>
             </control>
-                                        <control type="button" id="5014">
-                    <include>HiddenObject</include>
-                    <onfocus condition="Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),tv)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),rss)">PlayMedia($ESCINFO[Container(5010).ListItem.Property(Media)])</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),roms)">System.Exec($ESCINFO[Container(5010).ListItem.Property(Path)])</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),babe)">SetFocus(22222)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),album)">Playlist.Clear</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),album)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
-                    <onfocus condition="!Substring(Control.GetLabel(4321),artist) + !Substring(Control.GetLabel(4321),addons)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),addons)">RunAddon($INFO[Container(5010).ListItem.Property(Path)])</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),randompics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onfocus>
-                    <onfocus condition="Substring(Control.GetLabel(4321),recentpics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onfocus>
-                </control>
+            <control type="button" id="5014">
+                <include>HiddenObject</include>
+                <onfocus condition="Substring(Control.GetLabel(4321),babe)">SetFocus(22222)</onfocus>
+                <onfocus condition="!Substring(Control.GetLabel(4321),babe)">SetFocus(8020)</onfocus>
+            </control>
+    <!--         <control type="button" id="5014">
+                <include>HiddenObject</include>
+                <onfocus condition="Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4321),tv)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4321),rss)">PlayMedia($ESCINFO[Container(5010).ListItem.Property(Media)])</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4321),roms)">System.Exec($ESCINFO[Container(5010).ListItem.Property(Path)])</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4321),babe)">SetFocus(22222)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4321),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4321),album)">Playlist.Clear</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4321),album)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
+                <onfocus condition="!Substring(Control.GetLabel(4321),artist) + !Substring(Control.GetLabel(4321),addons)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4321),addons)">RunAddon($INFO[Container(5010).ListItem.Property(Path)])</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4321),randompics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onfocus>
+                <onfocus condition="Substring(Control.GetLabel(4321),recentpics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onfocus>
+            </control>
+ -->            
+                 <control type="grouplist" id="8020">
+                        <posx>-830</posx>
+                        <posy>28</posy>
+                        <width>1373</width>
+                        <onup>8020</onup>
+                        <ondown>8020</ondown>
+                        <include>Animation_Widgets</include>
+                        <visible allowhiddenfocus="true">ControlGroup(8020).HasFocus</visible>
+                        <onback>SetFocus(8000)</onback>
+                        <onleft>SetFocus(8000)</onleft>
+                        <onright>SetFocus(8000)</onright>
+                        <orientation>vertical</orientation>
+                        <control type="image" id="1">
+                            <posy>-39</posy>
+                            <width>462</width>
+                            <height>39</height>
+                            <texture>dialogs/context_top_shutdown.png</texture>
+                        </control>
+                            <control type="button" id="8032">
+                                <label>$LOCALIZE[208]</label>
+                                <include>Objects_ContextMenuButton</include>
+                                <onclick condition="Substring(Control.GetLabel(4321),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(8000).ListItem.Property(Path)],return)</onclick>
+                                <onclick condition="Substring(Control.GetLabel(4321),album)">Playlist.Clear</onclick>
+                                <onclick condition="!Substring(Control.GetLabel(4321),artist) + !Substring(Control.GetLabel(4321),addons) + !Substring(Control.GetLabel(4321),artists) + !Substring(Control.GetLabel(4321),rss)">$INFO[Container(8000).ListItem.Property(Path)]</onclick>
+                                <onclick condition="Substring(Control.GetLabel(4321),addons)">RunAddon($INFO[Container(8000).ListItem.Property(Path)])</onclick>
+                                <onclick condition="Substring(Control.GetLabel(4321),rss)">PlayMedia($ESCINFO[Container(8000).ListItem.Property(Media)])</onclick>
+                            </control>
+                            <control type="button" id="8016">
+                                <label>$LOCALIZE[20410]</label>
+                                <onclick>PlayMedia($ESCINFO[Container(8000).ListItem.Property(Trailer)])</onclick>
+                                <include>Objects_ContextMenuButton</include>
+                                <visible>!IsEmpty(Container(8000).ListItem.Property(Trailer))</visible>
+                            </control>                 
+                            <control type="button" id="8035">
+                                <label>$LOCALIZE[31087]</label>
+                                <onclick condition="SubString(Control.GetLabel(4321),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
+                                <onclick condition="SubString(Control.GetLabel(4321),2custom)">$INFO[Skin.String(SmartPlaylist2.Call)]</onclick>
+                                <onclick condition="SubString(Control.GetLabel(4321),3custom)">$INFO[Skin.String(SmartPlaylist3.Call)]</onclick>
+                                <onclick condition="SubString(Control.GetLabel(4321),4custom)">$INFO[Skin.String(SmartPlaylist4.Call)]</onclick>
+                                <onclick condition="SubString(Control.GetLabel(4321),5custom)">$INFO[Skin.String(SmartPlaylist5.Call)]</onclick>
+                                <onclick condition="SubString(Control.GetLabel(4321),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
+                                <onclick condition="Substring(Control.GetLabel(4321),actors)">RunScript(script.metadata.actors,borntoday,10,random)</onclick>
+                                <onclick condition="Substring(Control.GetLabel(4321),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
+                                <onclick condition="!Substring(Control.GetLabel(4321),custom) + !Substring(Control.GetLabel(4321),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
+                                <include>Objects_ContextMenuButton</include>
+                                <visible>Substring(Control.GetLabel(4321),random) | Substring(Control.GetLabel(4321),actors)</visible>
+                            </control>
+                            <control type="button" id="8023">
+                                <label>$LOCALIZE[31066]</label>
+                                <onclick>SetFocus(8000)</onclick>
+                                <include>Objects_ContextMenuButton</include>
+                            </control>
+                        <control type="image" id="2">
+                            <posy>699</posy>
+                            <width>462</width>
+                            <height>40</height>
+                            <texture>dialogs/context_bottom.png</texture>
+                        </control>
+                    </control>            
         </control>
     </include>
     <include name="Custom1Widget">
@@ -3266,7 +3241,7 @@
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedEpisode.1.VideoAspect)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedEpisode.1.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedEpisode.1.AudioChannels)]</property>
-            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.1.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.1.Play)]</property>
             <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))</visible>
         </item>
@@ -3290,7 +3265,7 @@
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedEpisode.2.VideoAspect)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedEpisode.2.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedEpisode.2.AudioChannels)]</property>
-            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.2.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.2.Play)]</property>
             <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.2.Title))</visible>
         </item>
@@ -3314,7 +3289,7 @@
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedEpisode.3.VideoAspect)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedEpisode.3.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedEpisode.3.AudioChannels)]</property>
-            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.3.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.3.Play)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.3.Title))</visible>
             <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
         </item>
@@ -3338,7 +3313,7 @@
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedEpisode.4.VideoAspect)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedEpisode.4.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedEpisode.4.AudioChannels)]</property>
-            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.4.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.4.Play)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.4.Title))</visible>
             <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
         </item>
@@ -3364,7 +3339,7 @@
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedEpisode.5.VideoAspect)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedEpisode.5.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedEpisode.5.AudioChannels)]</property>
-            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.5.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.5.Play)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.5.Title))</visible>
             <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
         </item>
@@ -3388,7 +3363,7 @@
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedEpisode.6.VideoAspect)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedEpisode.6.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedEpisode.6.AudioChannels)]</property>
-            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.6.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.6.Play)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.6.Title))</visible>
             <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
         </item>
@@ -3412,7 +3387,7 @@
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedEpisode.7.VideoAspect)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedEpisode.7.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedEpisode.7.AudioChannels)]</property>
-            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.7.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.7.Play)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.7.Title))</visible>
             <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
         </item>
@@ -3436,7 +3411,7 @@
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedEpisode.8.VideoAspect)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedEpisode.8.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedEpisode.8.AudioChannels)]</property>
-            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.8.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RecommendedEpisode.8.Play)]</property>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.8.Title))</visible>
             <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
         </item>
@@ -4197,7 +4172,7 @@
             <visible>Substring(Control.GetLabel(4321),mostplayedroms,left)</visible>
         </item>
     </include>
-        <include name="RSS1WidgetContent1124">
+    <include name="RSS1WidgetContent1124">
         <item>
             <onclick>SetFocus(5014)</onclick>
             <label>$INFO[Window(home).Property(RSS1.RSS.1.Title)]</label>

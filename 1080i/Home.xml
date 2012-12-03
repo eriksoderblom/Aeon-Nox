@@ -7,7 +7,6 @@
     <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),randompics) | Substring(Skin.String(widget2list),randompics) | Substring(Skin.String(backgroundlist),randompics)]">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
     <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),random) | Substring(Skin.String(widget2list),random) | Substring(Skin.String(backgroundlist),random)]">SetProperty(SkinWidgets_RandomItems_Update,true)</onload>
     <onload>ClearProperty(DontRunTVShowScripts,Home)</onload>
-    <onload>ClearProperty(FocusOnSubmenu,home)</onload>
     <onload>AlarmClock(BGMove,Control.Move(4324,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(WidgetMove,Control.Move(8000,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(Widget2Move,Control.Move(7000,1),00:07,silent,loop)</onload>
@@ -182,7 +181,6 @@
             <include>RecentWidget</include>
             <include>RecentWidget2</include>
         </control>
-        <include>PosterWidgetTrailerLabel</include>
         <!-- Library Totals -->
         <include>LibraryStats</include>
         <!-- Time Panel-->
@@ -196,6 +194,20 @@
             <control type="group">
                 <animation effect="zoom" end="80" center="960,520" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
                 <!-- Submenu -->
+                               <control type="image">
+                    <posx>935</posx>
+                    <posy>613</posy>
+                    <width>50</width>
+                    <height>15</height>
+                    <colordiffuse>CCFFFFFF</colordiffuse>
+                    <texture>arrowdown.png</texture>
+                    <animation effect="slide" end="0,40" time="0" condition="[!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)]">Conditional</animation>
+                    <visible>Control.HasFocus(9000)</visible>
+                    <animation effect="slide" start="0,-100" end="0,0" time="700" tween="cubic" easing="out" delay="1400">WindowOpen</animation>
+                    <visible>!Skin.HasSetting(showsubmenu)</visible>
+                    <visible>!IsEmpty(Container(9000).ListItem.Property(SubMenu))</visible>
+                     <animation effect="zoom" start="100,0" end="100,100" time="500" delay="200" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
+                 </control>
                 <control type="group" id="9001">
                     <posx>240</posx>
                     <posy>609</posy>
@@ -269,13 +281,12 @@
                 <control type="button" id="8993">
                     <include>HiddenObject</include>
                     <onfocus>AlarmClock(WidgetMove,Control.Move(8000,1),00:07,silent,loop)</onfocus>
-                    <onfocus>ClearProperty(FocusOnSubmenu,home)</onfocus>
+                    <onfocus>ClearProperty(PanelWidgetInfo,Home)</onfocus>
                     <onfocus>SetFocus(9000)</onfocus>
                 </control>
                 <control type="button" id="7993">
                     <include>HiddenObject</include>
                     <onfocus>AlarmClock(Widget2Move,Control.Move(7000,1),00:07,silent,loop)</onfocus>
-                    <onfocus>ClearProperty(FocusOnSubmenu,home)</onfocus>
                     <onfocus>SetFocus(9000)</onfocus>
                 </control>
                 <!--focus first widget-->
@@ -285,11 +296,6 @@
                     <onfocus condition="Control.IsVisible(8998)">CancelAlarm(WidgetMove,true)</onfocus>
                     <onfocus condition="Control.IsVisible(8998)">SetFocus(8000,0)</onfocus>
                     <onfocus condition="Control.IsVisible(8998)">SetFocus(8000)</onfocus>
-                    <onfocus condition="Stringcompare(Control.GetLabel(4321),weather)">ActivateWindow(weather)</onfocus>
-                    <onfocus condition="Stringcompare(Control.GetLabel(4325),system)">ActivateWindow(settings)</onfocus>
-                    <onfocus condition="[IsEmpty(Window(Home).Property(NextAired.1.Label)) + Substring(Control.GetLabel(4321),nextaired)]">SetFocus(8993)</onfocus>
-                    <onfocus condition="[IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + Substring(Control.GetLabel(4321),watchlistmovies)]">SetFocus(8993)</onfocus>
-                    <onfocus condition="[IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + Substring(Control.GetLabel(4321),watchlisttv)]">SetFocus(8993)</onfocus>
                 </control>
                 <!--focus second widget-->
                 <control type="button" id="4445">
@@ -298,10 +304,6 @@
                     <onfocus condition="Control.IsVisible(7998)">CancelAlarm(Widget2Move,true)</onfocus>
                     <onfocus condition="Control.IsVisible(7998)">SetFocus(7000,0)</onfocus>
                     <onfocus condition="Control.IsVisible(7998)">SetFocus(7000)</onfocus>
-                    <onfocus condition="Stringcompare(Control.GetLabel(4325),weather)">ActivateWindow(weather)</onfocus>
-                    <onfocus condition="Stringcompare(Control.GetLabel(4325),system)">ActivateWindow(settings)</onfocus>
-                    <onfocus condition="[IsEmpty(Window(Home).Property(NextAired.1.Label)) + Substring(Control.GetLabel(4325),nextaired)]">SetFocus(8993)</onfocus>
-                    <onfocus condition="[IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + Substring(Control.GetLabel(4325),watchlistmovies)]">SetFocus(8993)</onfocus>
                 </control>
                 <include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
                 <include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList</include>
