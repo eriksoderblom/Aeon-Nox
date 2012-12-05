@@ -3,7 +3,7 @@
     <include name="contents501list">
         <visible>[!Container.Content(episodes) | SubString(Container.FolderPath,videodb://5/)] + !Container.Content(addons)</visible>
         <posx>-69</posx>
-        <posy>554</posy>
+        <posy>540</posy>
         <width>2058</width>
         <height>525</height>
         <onleft>501</onleft>
@@ -20,9 +20,9 @@
         <include>Animation_OpenCloseZoom_New</include>
         <itemlayout height="600" width="294" condition="[[Skin.HasSetting(noflow) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] + !Control.IsVisible(6000)">
             <control type="group">
-                <animation effect="zoom" start="100" end="90" center="147,345" time="300" easing="out" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases)">Conditional</animation>
+                <animation effect="zoom" start="100" end="90" center="147,345" time="300" easing="out" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + Container.Content(movies)">Conditional</animation>
                 <animation effect="fade" time="0" delay="800">Visible</animation>
-                <posy>16</posy>
+                <posy>30</posy>
                 <include>MovieShowCaseGlow</include>
                 <include>MovieShowCaseGlow</include>
                 <control type="image">
@@ -36,8 +36,8 @@
                 </control>
                 <control type="image">
                     <include>MovieSchowcaseDVDCoverVars</include>
-                    <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-                    <texture background="true">thumbs/boxes/movies/$VAR[GlobalCaseVar]</texture>
+                    
+                    <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
                 </control>
                 <include>MovieShowcaseThumbReflectionDVD</include>
                 <control type="image">
@@ -50,8 +50,8 @@
             <control type="group">
                 <animation effect="fade" time="0" delay="800">Visible</animation>
                 <animation effect="zoom" start="100" end="120" center="147,345" time="300" easing="out" reversible="false" tween="cubic">Focus</animation>
-                <animation effect="zoom" start="100" end="90" center="147,345" time="300" easing="out" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases)">Conditional</animation>
-                <posy>16</posy>
+                <animation effect="zoom" start="100" end="90" center="147,345" time="300" easing="out" reversible="false" tween="cubic" condition="Skin.HasSetting(usecases) + Container.Content(movies)">Conditional</animation>
+                <posy>30</posy>
                 <include>MovieShowCaseGlow</include>
                 <control type="image">
                     <include>MovieShowcaseThumb</include>
@@ -65,8 +65,8 @@
                 <include>MovieShowcaseThumbReflectionDVD</include>
                 <control type="image">
                     <include>MovieSchowcaseDVDCoverVars</include>
-                    <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-                    <texture background="true">thumbs/boxes/movies/$VAR[GlobalCaseVar]</texture>
+                    
+                    <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[GlobalCaseVar]</texture>
                 </control>
                 <control type="image">
                     <include>WatchedOverlayShowCase</include>
@@ -471,10 +471,12 @@
                                 <include>MovieShowcaseThumbReflectionMain</include>
                                 <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                             </control>
+                                            <include>MovieShowcaseThumbReflectionDVD</include>
+
                             <control type="image">
                                 <include>MovieSchowcaseDVDCoverVars</include>
-                                <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-                                <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase0Var]</texture>
+                                
+                                <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase0Var]</texture>
                             </control>
                             <control type="image">
                                 <include>WatchedOverlayShowCase</include>
@@ -490,25 +492,25 @@
     </include>
     <include name="MovieShowcaseThumbReflectionDVD">
         <control type="image">
-            <posx>-30</posx>
-            <posy>396</posy>
+            <posx>-27</posx>
+            <posy>397</posy>
             <width>325</width>
             <height>180</height>
             <colordiffuse>d1FFFFFF</colordiffuse>
             <fadetime>0</fadetime>
-            <bordertexture>thumbs/boxes/poster_shadow_reflect.png</bordertexture>
             <texture background="true">thumbs/boxes/poster_glass_reflect.png</texture>
             <aspectratio scalediffuse="false">scale</aspectratio>
             <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
-            <visible>Skin.HasSetting(usecases)</visible>
+            <visible>Skin.HasSetting(usecases) + Skin.HasSetting(clearcases) + Container.Content(movies)</visible>
         </control>
     </include>
     <include name="MovieSchowcaseDVDCoverVars">
-        <visible>Skin.HasSetting(usecases)</visible>
+        <visible>Skin.HasSetting(usecases) + Container.Content(movies)</visible>
         <posx>-28</posx>
-        <posy>0</posy>
-        <width>325</width>
-        <height>411</height>
+        <posy>-22</posy>
+        <width>324</width>
+        <height>434</height>
+        <fadetime>0</fadetime>
     </include>
     <!-- Movie Showcase Variables: Main thumbs -->
     <include name="MovieShowcaseThumbDimensions">
@@ -521,8 +523,9 @@
         <posx>19</posx>
         <posy>397</posy>
         <width>262</width>
-        <height>384</height>
-        <animation effect="slide" start="0,00" end="0,7" time="300" tween="linear" condition="Skin.HasSetting(usecases)">Conditional</animation>
+        <height>304</height>
+        <animation effect="slide" start="0,00" end="0,2" time="0" tween="linear" condition="Skin.HasSetting(usecases) + Container.Content(movies)">Conditional</animation>
+        <animation effect="slide" start="0,00" end="0,7" time="0" tween="linear" condition="Skin.HasSetting(usecases) + !Skin.HasSetting(clearcases) + Container.Content(movies)">Conditional</animation>
     </include>
     <include name="MovieShowCaseGlow">
         <control type="image">
@@ -534,7 +537,7 @@
             <bordersize>18</bordersize>
             <include>Animation_VisibleChange400</include>
             <include>PanelGlowFade</include>
-            <visible>!Skin.HasSetting(usecases)</visible>
+            <visible>![Skin.HasSetting(usecases) + Container.Content(movies)]</visible>
             <visible>Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)</visible>
             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             <texture background="true">thumbs/thumb_glass_shadow.png</texture>
@@ -569,13 +572,16 @@
         <posy>10</posy>
         <width>90</width>
         <height>90</height>
+        <fadetime>0</fadetime>
+        <animation effect="slide" start="0,0" end="6,-3" time="300" tween="linear" condition="Skin.HasSetting(usecases) + Container.Content(movies)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-29" time="300" tween="linear" condition="Container.Content(movies) + Skin.HasSetting(usecases) + !Skin.HasSetting(clearcases)">Conditional</animation>
     </include>
     <!-- Movie Showcase Variables: Thumb glass overlays -->
     <include name="MovieShowcaseGlassOverlay">
         <control type="image">
             <include>MovieShowcaseThumbDimensions</include>
             <texture diffuse="thumbs/thumb_mask.png">thumbs/thumb_glass.png</texture>
-            <visible>!Skin.HasSetting(usecases)</visible>
+            <visible>![Skin.HasSetting(usecases) + Container.Content(movies)]</visible>
         </control>
     </include>
     <!-- Movie Showcase Items-->
@@ -592,8 +598,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase-7Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-7Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -614,8 +620,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase-6Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-6Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -636,8 +642,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase-5Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-5Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -658,8 +664,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase-4Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-4Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -680,8 +686,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase-3Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-3Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -702,8 +708,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase-2Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-2Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -724,8 +730,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase-1Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase-1Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -746,8 +752,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase0Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase0Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -768,8 +774,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase1Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase1Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -790,8 +796,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase2Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase2Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -812,8 +818,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase3Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase3Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -834,8 +840,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase4Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase4Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -856,8 +862,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase5Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase5Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -878,8 +884,8 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase6Var]</texture>
+            
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase6Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">
@@ -900,8 +906,7 @@
         </control>
         <control type="image">
             <include>MovieSchowcaseDVDCoverVars</include>
-            <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
-            <texture background="true">thumbs/boxes/movies/$VAR[ShowcaseCase7Var]</texture>
+            <texture background="true">thumbs/boxes/$VAR[ShowcaseCasePathVar]/$VAR[ShowcaseCase7Var]</texture>
         </control>
         <include>MovieShowcaseThumbReflectionDVD</include>
         <control type="image">

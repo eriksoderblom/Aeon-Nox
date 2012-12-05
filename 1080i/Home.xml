@@ -45,6 +45,11 @@
             <include>HiddenObject</include>
             <onfocus>$VAR[HomeCustomStartupFocus]</onfocus>
             <onfocus>SetFocus(9000)</onfocus>
+            <onleft>SetFocus(9000)</onleft>
+            <onright>SetFocus(9000)</onright>
+            <ondown>SetFocus(9000)</ondown>
+            <onup>SetFocus(9000)</onup>
+            <onclick>SetFocus(9000)</onclick>
         </control>
         <include>MainMenuCommonContent</include>
         <!-- Fanart -->
@@ -199,11 +204,10 @@
                     <posy>613</posy>
                     <width>50</width>
                     <height>15</height>
-                    <colordiffuse>CCFFFFFF</colordiffuse>
+                    <colordiffuse>white</colordiffuse>
                     <texture>arrowdown.png</texture>
-                    <animation effect="slide" end="0,40" time="0" condition="[!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)]">Conditional</animation>
-                    <visible>Control.HasFocus(9000)</visible>
-                    <animation effect="slide" start="0,-100" end="0,0" time="700" tween="cubic" easing="out" delay="1400">WindowOpen</animation>
+<!--                     <animation effect="slide" end="0,40" time="0" condition="[!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)]">Conditional</animation>
+ -->                    <visible>Control.HasFocus(9000)</visible>
                     <visible>!Skin.HasSetting(showsubmenu)</visible>
                     <visible>!IsEmpty(Container(9000).ListItem.Property(SubMenu))</visible>
                      <animation effect="zoom" start="100,0" end="100,100" time="500" delay="200" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
