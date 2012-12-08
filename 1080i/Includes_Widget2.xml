@@ -12,7 +12,7 @@
             <!--Unfocused widget-->
             <control type="group">
                 <visible>!Control.HasFocus(7000)</visible>
-                <animation effect="slide" start="450" end="0" time="300" delay="300" tween="quadratic" easing="out">Visible</animation>
+                <animation effect="slide" start="450" end="0" time="300" delay="300" tween="quadratic">Visible</animation>
                 <control type="group">
                     <visible>!Substring(Control.GetLabel(4325),transparent)</visible>
                     <include>Animation_VisibleChange200</include>
@@ -90,6 +90,8 @@
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                     <bordersize>7</bordersize>
                     <aspectratio aligny="top" align="center">scale</aspectratio>
+                    <posx>7</posx>
+                    <posy>63</posy>
                     <width>345</width>
                     <height>194</height>
                     <animation effect="fade" time="300">Visible</animation>
@@ -121,7 +123,7 @@
                 <posx>-3050</posx>
                 <posy>-13</posy>
                 <animation type="Conditional" condition="true">
-                    <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" easing="out" />
+                    <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" />
                 </animation>
                 <animation effect="slide" end="1530,0" time="500" easing="inout" tween="cubic" condition="Control.HasFocus(7000)">Conditional</animation>
                 <control type="group">
@@ -430,7 +432,7 @@
                 <posx>513</posx>
                 <posy>-18</posy>
                 <animation type="Conditional" condition="true">
-                    <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" easing="out" />
+                    <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" />
                 </animation>
                 <control type="image">
                     <posx>-2</posx>
@@ -509,7 +511,7 @@
                     <onright>7993</onright>
                     <include>NavigationWidget2</include>
                     <preloaditems>2</preloaditems>
-                    <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                    <scrolltime tween="quadratic">200</scrolltime>
                     <itemlayout height="34" width="450">
                         <control type="image">
                             <posx>-15</posx>
@@ -612,7 +614,7 @@
                 <onup>7020</onup>
                 <ondown>7020</ondown>
                 <animation type="Visible" reversible="false">
-                    <effect type="zoom" start="150" end="100" center="-545,0" time="900" tween="cubic" easing="out" />
+                    <effect type="zoom" start="150" end="100" center="-545,0" time="900" tween="cubic" />
                     <effect type="fade" end="100" time="900" />
                 </animation>
                 <animation type="Hidden" reversible="false">
@@ -688,7 +690,7 @@
             <include>Animation_Widgets</include>
             <animation type="Conditional" condition="true">
                 <effect type="fade" start="100" end="90" time="500" tween="cubic" easing="inout" />
-                <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" easing="out" />
+                <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" />
             </animation>
             <control type="group">
                 <animation type="Conditional" condition="!IsEmpty(Window(Home).Property(PanelWidget2Info))" reversible="false">
@@ -909,6 +911,7 @@
                             <width>466</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
+                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(6001).ListItem.Label]$INFO[Container(6001).ListItem.Label2, - ]</label>
                             <textoffsetx>15</textoffsetx>
                             <visible>!Control.HasFocus(6010) + !Control.HasFocus(6001)</visible>
@@ -957,7 +960,8 @@
                             <include>NavigationWidget2</include>
                             <onfocus>CancelAlarm(HomeTileMid,true)</onfocus>
                             <onunfocus>AlarmClock(HomeTileMid,Control.Move(6002,1),00:15,silent,loop)</onunfocus>
-                            <onclick condition="!Substring(Control.GetLabel(4325),music)">SetProperty(Featured,custom,home)</onclick>
+                            <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,randomtv,home)</onclick>
+                            <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
@@ -979,7 +983,8 @@
                                 <include>FeaturedWidgetSquareLayout</include> 
                             </focusedlayout>
                             <content>
-                                <include condition="Substring(Skin.String(widget2list),featuredtv) | Substring(Skin.String(widget2list),featuredmovies)">FeaturedWidget2MiddleMovies</include>
+                                <include condition="Substring(Skin.String(widget2list),featuredmovies)">FeaturedWidget2MiddleMovies</include>
+                                <include condition="Substring(Skin.String(widget2list),featuredtv)">FeaturedWidget2MiddleTV</include>
                                 <include condition="Substring(Skin.String(widget2list),featuredmusic)">FeaturedWidget2MiddleMusic</include>
                             </content>
                         </control>
@@ -988,6 +993,7 @@
                             <width>246</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
+                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(6002).ListItem.Label]</label>
                             <visible>![Control.HasFocus(6011) | Control.HasFocus(6002)]</visible>
                             <textoffsetx>15</textoffsetx>
@@ -1084,6 +1090,7 @@
                             <width>466</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
+                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(6003).ListItem.Label]$INFO[Container(6003).ListItem.Label2, - ]</label>
                             <textoffsetx>15</textoffsetx>
                             <visible>![Control.HasFocus(6012) | Control.HasFocus(6003)]</visible>
@@ -1236,7 +1243,7 @@
                         <width>218</width>
                         <height>340</height>
                         <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[Container(6010).ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio>scale</aspectratio>
                     </control>
                     <control type="label">
                         <posx>223</posx>
@@ -1269,8 +1276,7 @@
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                     <control type="image">
-                        <posx>1261</posx>
-                        <posy>10</posy>
+                        <posx>1295</posx>
                         <width>300</width>
                         <height>116</height>
                         <aspectratio>keep</aspectratio>
@@ -1387,8 +1393,7 @@
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                     <control type="image" id="9308">
-                        <posx>1261</posx>
-                        <posy>10</posy>
+                        <posx>1295</posx>
                         <width>300</width>
                         <height>116</height>
                         <aspectratio>keep</aspectratio>
@@ -1396,7 +1401,7 @@
                         <texture background="true">$INFO[Container(6010).ListItem.Property(Logo)]</texture>
                     </control>
                     <control type="grouplist" id="6021">
-                        <posx>615</posx>
+                        <posx>625</posx>
                         <posy>98</posy>
                         <width>1373</width>
                         <onleft>6021</onleft>
@@ -1470,7 +1475,7 @@
                         <width>340</width>
                         <height>340</height>
                         <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(6010).ListItem.Icon]</texture>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <aspectratio>scale</aspectratio>
                     </control>
                     <control type="label">
                         <posx>345</posx>
@@ -3590,7 +3595,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.1.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.1.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.1.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.1.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.1.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),randomaddons,left)</visible>
         </item>
@@ -3601,7 +3606,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.2.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.2.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.2.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.2.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.2.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),randomaddons,left)</visible>
         </item>
@@ -3612,7 +3617,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.3.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.3.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.3.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.3.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.3.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),randomaddons,left)</visible>
         </item>
@@ -3623,7 +3628,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.4.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.4.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.4.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.4.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.4.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),randomaddons,left)</visible>
         </item>
@@ -3634,7 +3639,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.5.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.5.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.5.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.5.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.5.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),randomaddons,left)</visible>
         </item>
@@ -3647,7 +3652,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.6.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.6.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.6.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.6.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.6.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),randomaddons,left)</visible>
         </item>
@@ -3658,7 +3663,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.7.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.7.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.7.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.7.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.7.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),randomaddons,left)</visible>
         </item>
@@ -3669,7 +3674,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.8.Version)]</property>
             <property name="Summary">$INFO[Window(Home).Property(RandomAddon.8.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.8.Art(fanart))]</property>
-            <property name="Path">$INFO[Window(Home).Property(RandomAddon.8.Path)]</property>
+            <property name="Path">$INFO[Window(Home).Property(RandomAddon.8.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),randomaddons,left)</visible>
         </item>
@@ -5000,7 +5005,7 @@
                 <include>NavigationWidget2</include>
                 <onback>ClearProperty(PanelWidget2Info,Home)</onback>
                 <preloaditems>1</preloaditems>
-                <scrolltime tween="quadratic" easing="out">400</scrolltime>
+                <scrolltime tween="quadratic">400</scrolltime>
                 <focusedlayout width="532" height="340" condition="Substring(Control.GetLabel(4325),landscape)">
                     <include condition="Substring(Skin.String(widget2list),landscape) | Window.IsActive(1124)">WidgetLandscapeLayout</include>
                     <control type="image">
@@ -5072,7 +5077,7 @@
                         <posy>5</posy>
                         <width>218</width>
                         <height>340</height>
-                        <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                        <aspectratio align="center">scale</aspectratio>
                         <texture background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>scale</aspectratio>
                     </control>
@@ -5112,7 +5117,7 @@
                             <width>309</width>
                             <height>309</height>
                             <texture background="true">DefaultAddon.png</texture>
-                            <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+                            <aspectratio aligny="top">scale</aspectratio>
                             <info>ListItem.Icon</info>
                         </control>
                         <control type="label">
@@ -5146,7 +5151,7 @@
                             <width>309</width>
                             <height>309</height>
                             <texture background="true">DefaultAddon.png</texture>
-                            <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
+                            <aspectratio aligny="top">scale</aspectratio>
                             <info>ListItem.Icon</info>
                         </control>
                         <control type="label">
@@ -5206,6 +5211,7 @@
                             <width>389</width>
                             <height>30</height>
                             <font>Font_Reg19</font>
+                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[ListItem.Label2]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -5215,6 +5221,7 @@
                             <width>389</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
+                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[ListItem.Property(Folder),,/]$INFO[ListItem.Property(EpisodeNumber),, - ]$INFO[ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -5254,7 +5261,7 @@
                             <width>389</width>
                             <height>30</height>
                             <font>Font_Reg19</font>
-                            <visible>!Control.HasFocus(6010)</visible>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
                             <label>$INFO[ListItem.Label2]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -5264,30 +5271,8 @@
                             <width>389</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-                            <visible>!Control.HasFocus(6010)</visible>
-                            <label>$INFO[ListItem.Property(Folder),,/]$INFO[ListItem.Property(EpisodeNumber),, - ]$INFO[ListItem.Label]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="label">
-                            <posx>5</posx>
-                            <posy>275</posy>
-                            <width>389</width>
-                            <height>30</height>
-                            <font>Font_Reg19</font>
-                            <textcolor>$VAR[FontColorVar]</textcolor>
-                            <label>$INFO[ListItem.Label2]</label>
-                            <textoffsetx>15</textoffsetx>
-                            <visible>Control.HasFocus(6010)</visible>
-                        </control>
-                        <control type="label">
-                            <posx>5</posx>
-                            <posy>305</posy>
-                            <width>389</width>
-                            <height>40</height>
-                            <font>Font_Reg15</font>
                             <textcolor>$VAR[FontColorVar]</textcolor>
                             <label>$INFO[ListItem.Property(Folder),,/]$INFO[ListItem.Property(EpisodeNumber),, - ]$INFO[ListItem.Label]</label>
-                            <visible>Control.HasFocus(6010)</visible>
                             <textoffsetx>15</textoffsetx>
                         </control>
                     </control>
@@ -5511,9 +5496,9 @@
             <property name="NavItem">item4.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.4.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.4.Play)]</onclick>
-            <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.4.Title))</visible>
             <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
-        </item>
+             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.4.Title))</visible>
+       </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedEpisode.5.EpisodeNo)]</label2>
@@ -5531,8 +5516,8 @@
             <property name="NavItem">item6.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.6.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.6.Play)]</onclick>
-            <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.6.Title))</visible>
             <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.6.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.7.Title)]</label>
@@ -5541,8 +5526,8 @@
             <property name="NavItem">item7.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.7.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.7.Play)]</onclick>
-            <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.7.Title))</visible>
             <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.7.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.8.Title)]</label>
@@ -5551,8 +5536,8 @@
             <property name="NavItem">item8.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.8.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.8.Play)]</onclick>
-            <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.8.Title))</visible>
             <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+            <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.8.Title))</visible>
         </item>
     </include>
     <include name="FeaturedWidget2LeftMusic">
@@ -5647,59 +5632,96 @@
     </include>
     <include name="FeaturedWidget2MiddleMovies">
         <item>
-            <label fallback="ADD-ON1">$INFO[Skin.String(HomeMenuTileVideos1.Label)]</label>
-            <label2>$INFO[Skin.String(HomeMenuTileVideos1.Path)]</label2>
-            <onclick>SetProperty(MenuItem,HomeMenuTileVideos1,home)</onclick>
-            <onclick>ActivateWindow(1135)</onclick>
-            <icon>DefaultAddonVideo.png</icon>
-            <thumb>$INFO[Skin.String(HomeMenuTileVideos1.Icon)]</thumb>
+            <label>$INFO[Window(Home).Property(RecommendedMovie.1.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.1.Art(poster))]</icon>
             <property name="NavItem">item1.png</property>
-            <property name="Type">$INFO[Skin.String(HomeMenuTileVideos1.Type)]</property>
-            <visible>Stringcompare(Control.GetLabel(4325),featuredmovies) | Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+            <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.1.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.1.Art(fanart))]</property>
+            <onclick>$INFO[Window(Home).Property(RecommendedMovie.1.Play)]</onclick>
+            <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
-            <label fallback="ADD-ON2">$INFO[Skin.String(HomeMenuTileVideos2.Label)]</label>
-            <label2>$INFO[Skin.String(HomeMenuTileVideos2.Path)]</label2>
-            <onclick>SetProperty(MenuItem,HomeMenuTileVideos2,home)</onclick>
-            <onclick>ActivateWindow(1135)</onclick>
-            <icon>DefaultAddonVideo.png</icon>
-            <thumb>$INFO[Skin.String(HomeMenuTileVideos2.Icon)]</thumb>
+            <label>$INFO[Window(Home).Property(RecommendedMovie.2.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.2.Art(poster))]</icon>
             <property name="NavItem">item2.png</property>
-            <property name="Type">$INFO[Skin.String(HomeMenuTileVideos2.Type)]</property>
-            <visible>Stringcompare(Control.GetLabel(4325),featuredmovies) | Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+            <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.2.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.2.Art(fanart))]</property>
+            <onclick>$INFO[Window(Home).Property(RecommendedMovie.2.Play)]</onclick>
+            <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
-            <label fallback="ADD-ON3">$INFO[Skin.String(HomeMenuTileVideos3.Label)]</label>
-            <label2>$INFO[Skin.String(HomeMenuTileVideos3.Path)]</label2>
-            <onclick>SetProperty(MenuItem,HomeMenuTileVideos3,home)</onclick>
-            <onclick>ActivateWindow(1135)</onclick>
-            <icon>DefaultAddonVideo.png</icon>
-            <thumb>$INFO[Skin.String(HomeMenuTileVideos3.Icon)]</thumb>
+            <label>$INFO[Window(Home).Property(RecommendedMovie.3.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.3.Art(poster))]</icon>
             <property name="NavItem">item3.png</property>
-            <property name="Type">$INFO[Skin.String(HomeMenuTileVideos3.Type)]</property>
-            <visible>Stringcompare(Control.GetLabel(4325),featuredmovies) | Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+            <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.3.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.3.Art(fanart))]</property>
+            <onclick>$INFO[Window(Home).Property(RecommendedMovie.3.Play)]</onclick>
+            <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
-            <label fallback="ADD-ON4">$INFO[Skin.String(HomeMenuTileVideos4.Label)]</label>
-            <label2>$INFO[Skin.String(HomeMenuTileVideos4.Path)]</label2>
-            <onclick>SetProperty(MenuItem,HomeMenuTileVideos4,home)</onclick>
-            <onclick>ActivateWindow(1135)</onclick>
-            <icon>DefaultAddonVideo.png</icon>
-            <thumb>$INFO[Skin.String(HomeMenuTileVideos4.Icon)]</thumb>
+            <label>$INFO[Window(Home).Property(RecommendedMovie.4.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.4.Art(poster))]</icon>
             <property name="NavItem">item4.png</property>
-            <property name="Type">$INFO[Skin.String(HomeMenuTileVideos4.Type)]</property>
-            <visible>Stringcompare(Control.GetLabel(4325),featuredmovies) | Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+            <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.4.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.4.Art(fanart))]</property>
+            <onclick>$INFO[Window(Home).Property(RecommendedMovie.4.Play)]</onclick>
+            <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
-            <label fallback="ADD-ON5">$INFO[Skin.String(HomeMenuTileVideos5.Label)]</label>
-            <label2>$INFO[Skin.String(HomeMenuTileVideos5.Path)]</label2>
-            <onclick>SetProperty(MenuItem,HomeMenuTileVideos5,home)</onclick>
-            <onclick>ActivateWindow(1135)</onclick>
-            <icon>DefaultAddonVideo.png</icon>
-            <thumb>$INFO[Skin.String(HomeMenuTileVideos5.Icon)]</thumb>
+            <label>$INFO[Window(Home).Property(RecommendedMovie.5.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.5.Art(poster))]</icon>
             <property name="NavItem">item5.png</property>
-            <property name="Type">$INFO[Skin.String(HomeMenuTileVideos5.Type)]</property>
-            <visible>Stringcompare(Control.GetLabel(4325),featuredmovies) | Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+            <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.5.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.5.Art(fanart))]</property>
+            <onclick>$INFO[Window(Home).Property(RecommendedMovie.5.Play)]</onclick>
+            <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
+        </item>
+    </include>
+    <include name="FeaturedWidget2MiddleTV">
+        <item>
+            <label>$INFO[Window(Home).Property(RandomEpisode.1.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.poster))]</icon>
+            <property name="NavItem">item1.png</property>
+            <property name="Year">$INFO[Window(Home).Property(RandomEpisode.1.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
+            <onclick>$INFO[Window(Home).Property(RandomEpisode.1.Play)]</onclick>
+            <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(Home).Property(RandomEpisode.2.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.poster))]</icon>
+            <property name="NavItem">item2.png</property>
+            <property name="Year">$INFO[Window(Home).Property(RandomEpisode.2.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.fanart))]</property>
+            <onclick>$INFO[Window(Home).Property(RandomEpisode.2.Play)]</onclick>
+            <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(Home).Property(RandomEpisode.3.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.poster))]</icon>
+            <property name="NavItem">item3.png</property>
+            <property name="Year">$INFO[Window(Home).Property(RandomEpisode.3.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.fanart))]</property>
+            <onclick>$INFO[Window(Home).Property(RandomEpisode.3.Play)]</onclick>
+            <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(Home).Property(RandomEpisode.4.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.poster))]</icon>
+            <property name="NavItem">item4.png</property>
+            <property name="Year">$INFO[Window(Home).Property(RandomEpisode.4.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.fanart))]</property>
+            <onclick>$INFO[Window(Home).Property(RandomEpisode.4.Play)]</onclick>
+            <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(Home).Property(RandomEpisode.5.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.poster))]</icon>
+            <property name="NavItem">item5.png</property>
+            <property name="Year">$INFO[Window(Home).Property(RandomEpisode.5.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.fanart))]</property>
+            <onclick>$INFO[Window(Home).Property(RandomEpisode.5.Play)]</onclick>
+            <visible>Stringcompare(Control.GetLabel(4325),featuredtv)</visible>
         </item>
     </include>
     <include name="FeaturedWidget2MiddleMusic">
@@ -5766,7 +5788,7 @@
             <property name="NavItem">item1.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.1.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.1.Art(fanart))]</property>
-            <onclick>$INFO[Window(Home).Property(RecentMovie.1.Path)])</onclick>
+            <onclick>$INFO[Window(Home).Property(RecentMovie.1.Play)]</onclick>
             <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
@@ -5775,7 +5797,7 @@
             <property name="NavItem">item2.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.2.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.2.Art(fanart))]</property>
-            <onclick>$INFO[Window(Home).Property(RecentMovie.2.Path)])</onclick>
+            <onclick>$INFO[Window(Home).Property(RecentMovie.2.Play)]</onclick>
             <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
@@ -5784,7 +5806,7 @@
             <property name="NavItem">item3.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.3.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.3.Art(fanart))]</property>
-            <onclick>$INFO[Window(Home).Property(RecentMovie.3.Path)])</onclick>
+            <onclick>$INFO[Window(Home).Property(RecentMovie.3.Play)]</onclick>
             <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
@@ -5793,7 +5815,7 @@
             <property name="NavItem">item4.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.4.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.4.Art(fanart))]</property>
-            <onclick>$INFO[Window(Home).Property(RecentMovie.4.Path)])</onclick>
+            <onclick>$INFO[Window(Home).Property(RecentMovie.4.Play)]</onclick>
             <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
@@ -5802,7 +5824,7 @@
             <property name="NavItem">item5.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.5.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.5.Art(fanart))]</property>
-            <onclick>$INFO[Window(Home).Property(RecentMovie.5.Path)])</onclick>
+            <onclick>$INFO[Window(Home).Property(RecentMovie.5.Play)]</onclick>
             <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
@@ -5811,7 +5833,7 @@
             <property name="NavItem">item6.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.6.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.6.Art(fanart))]</property>
-            <onclick>$INFO[Window(Home).Property(RecentMovie.6.Path)])</onclick>
+            <onclick>$INFO[Window(Home).Property(RecentMovie.6.Play)]</onclick>
             <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
@@ -5820,7 +5842,7 @@
             <property name="NavItem">item7.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.7.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.7.Art(fanart))]</property>
-            <onclick>$INFO[Window(Home).Property(RecentMovie.7.Path)])</onclick>
+            <onclick>$INFO[Window(Home).Property(RecentMovie.7.Play)]</onclick>
             <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
         <item>
@@ -5829,7 +5851,7 @@
             <property name="NavItem">item8.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.8.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.8.Art(fanart))]</property>
-            <onclick>$INFO[Window(Home).Property(RecentMovie.8.Path)])</onclick>
+            <onclick>$INFO[Window(Home).Property(RecentMovie.8.Play)]</onclick>
             <visible>Stringcompare(Control.GetLabel(4325),featuredmovies)</visible>
         </item>
     </include>
@@ -5838,7 +5860,6 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.1.EpisodeNo)]</label2>
             <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.1.Art(thumb))]</icon>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</thumb>
             <property name="NavItem">item1.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.1.Play)]</onclick>
@@ -5848,7 +5869,6 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.2.EpisodeNo)]</label2>
             <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.2.Art(thumb))]</icon>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</thumb>
             <property name="NavItem">item2.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.2.Play)]</onclick>
@@ -5858,7 +5878,6 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.3.EpisodeNo)]</label2>
             <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.3.Art(thumb))]</icon>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.fanart))]</thumb>
             <property name="NavItem">item3.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.3.Play)]</onclick>
@@ -5868,7 +5887,6 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.4.EpisodeNo)]</label2>
             <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.4.Art(thumb))]</icon>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.fanart))]</thumb>
             <property name="NavItem">item4.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.4.Play)]</onclick>
@@ -5878,7 +5896,6 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.5.EpisodeNo)]</label2>
             <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.5.Art(thumb))]</icon>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.5.Art(tvshow.fanart))]</thumb>
             <property name="NavItem">item5.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.5.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.5.Play)]</onclick>
@@ -5888,7 +5905,6 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.6.EpisodeNo)]</label2>
             <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.6.Art(thumb))]</icon>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.6.Art(tvshow.fanart))]</thumb>
             <property name="NavItem">item6.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.6.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.6.Play)]</onclick>
@@ -5898,7 +5914,6 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.7.EpisodeNo)]</label2>
             <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.7.Art(thumb))]</icon>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.7.Art(tvshow.fanart))]</thumb>
             <property name="NavItem">item7.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.7.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.7.Play)]</onclick>
@@ -5908,7 +5923,6 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.8.EpisodeNo)]</label2>
             <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecentEpisode.8.Art(thumb))]</icon>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.8.Art(tvshow.fanart))]</thumb>
             <property name="NavItem">item8.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.8.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.8.Play)]</onclick>
@@ -6426,7 +6440,6 @@
         </item>
     </include>
     <include name="NavigationWidget2">
-
         <onup>7993</onup>
         <ondown condition="!Skin.HasSetting(lowermainmenu) | IsEmpty(Control.GetLabel(4321))">7993</ondown>
         <ondown condition="Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>

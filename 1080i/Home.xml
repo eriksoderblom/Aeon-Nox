@@ -51,6 +51,24 @@
             <onup>SetFocus(9000)</onup>
             <onclick>SetFocus(9000)</onclick>
         </control>
+        <control type="button" id="9006">
+            <include>HiddenObject</include>
+            <onfocus condition="Stringcompare(Container(9000).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(9000).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(9000).ListItem.Property(Path),videodb://1/)">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
+<!--             <onclick condition="IsEmpty(Skin.String(TVShowHomeItem.Type)) + !Library.HasContent(TVShows)">Notification($LOCALIZE[257],$LOCALIZE[42295])</onclick>
+ -->            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),0) | stringcompare(Container(9000).ListItem.Property(Type),1) | stringcompare(Container(9000).ListItem.Property(Type),2) | stringcompare(Container(9000).ListItem.Property(Type),3)">RunAddon($INFO[Container(9000).ListItem.Property(Path)])</onfocus>
+            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(9000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(9000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),6) | Stringcompare(Container(9000).ListItem.Property(Type),7)  | Stringcompare(Container(9000).ListItem.Property(Type),custom)">$INFO[Container(9000).ListItem.Property(Path)]</onfocus>
+        </control>
+        <control type="button" id="9007">
+            <include>HiddenObject</include>
+            <onfocus condition="Stringcompare(Container(5010).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(5010).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(5010).ListItem.Property(Path),videodb://1/)">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
+            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),0) | stringcompare(Container(5010).ListItem.Property(Type),1) | stringcompare(Container(5010).ListItem.Property(Type),2) | stringcompare(Container(5010).ListItem.Property(Type),3)">RunAddon($INFO[Container(5010).ListItem.Property(Path)])</onfocus>
+            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),6) | Stringcompare(Container(5010).ListItem.Property(Type),7)  | Stringcompare(Container(5010).ListItem.Property(Type),custom)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
+            <onfocus condition="IsEmpty(Container(5010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
+        </control>
         <include>MainMenuCommonContent</include>
         <!-- Fanart -->
         <control type="group">
@@ -62,8 +80,8 @@
                 <aspectratio align="center" aligny="top">scale</aspectratio>
                 <animation effect="fade" time="600">Visible</animation>
                 <animation effect="fade" time="600">Hidden</animation>
-                <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" delay="600" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-                <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" delay="600" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+                <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" delay="600" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+                <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" delay="600" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
                 <visible>!Control.IsVisible(2355) + ![Substring(Control.GetLabel(4322),case) | Substring(Control.GetLabel(4322),dailybabe)]</visible>
             </control>
             <include condition="SubString(Skin.String(backgroundlist),dailybabe)">DailyBabeBG</include>
@@ -90,16 +108,16 @@
                 <visible>[Control.HasFocus(8000) | Control.HasFocus(7000) | ControlGroup(5000).HasFocus | ControlGroup(6000).HasFocus] | [Player.HasAudio + Skin.HasSetting(musicfanarthome)]</visible>
                 <animation effect="fade" time="600">Visible</animation>
                 <animation effect="fade" time="600">Hidden</animation>
-                <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-                <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+                <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+                <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             </control>
             <!-- Music ExtraFanart -->
             <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
             <include condition="Skin.HasSetting(artistslideshowhome)">MusicArtistSlideshowHome</include>
+            <include>CommonMediaPlayingBackground</include>
+            <include condition="Substring(Skin.String(backgroundlist),googleweather2) + System.HasAddon(script.widget.weatherworld)">WorldWeatherIcons</include>
         </control>
         <!-- Home Fullscreen Video -->
-        <include>CommonMediaPlayingBackground</include>
-        <include condition="Substring(Skin.String(backgroundlist),googleweather2) + System.HasAddon(script.widget.weatherworld)">WorldWeatherIcons</include>
         <control type="group">
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>Animation_VisibleChange400</include>
@@ -321,13 +339,14 @@
         <!--Weather info-->
         <include condition="!IsEmpty(Weather.Plugin) + SubString(Skin.String(widgetlist),weather)">Weather_Widget</include>
         <include condition="!IsEmpty(Weather.Plugin) + SubString(Skin.String(widget2list),weather)">Weather_Widget2</include>
+        <include>ExtraInfoPanels</include>
         <!-- Music Info -->
         <include condition="!Skin.HasSetting(nohomepageMusicinfo) | !Skin.HasSetting(homepageVideoinfo)">Furniture_HomeNowPlaying</include>
         <control type="group">
             <visible>!IsEmpty(Window(home).Property(DisableWidgets)) + !Player.HasMedia</visible>
             <include>Animation_WindowFade200</include>
             <animation type="Visible">
-                <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
+                <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" />
                 <effect type="fade" end="100" time="300" />
             </animation>
             <animation type="Hidden">
@@ -384,7 +403,6 @@
             <control type="image">
                 <fadetime>600</fadetime>
                 <include>FullscreenDimensions</include>
-                <include>Animation_WindowFade250</include>
                 <aspectratio align="center" aligny="top">keep</aspectratio>
                 <texture background="true">$VAR[HomeFSImageVar]</texture>
                 <animation effect="fade" time="500">Visible</animation>
