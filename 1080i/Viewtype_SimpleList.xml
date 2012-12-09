@@ -76,12 +76,12 @@
                     </control>
 
                     <control type="image">
-                        <posx>30</posx>
-                        <posy>-2</posy>
-                        <width>36</width>
+                        <posx>28</posx>
+                        <posy>-4</posy>
+                        <width>40</width>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <height>36</height>
-                        <info>ListItem.Overlay,thumbs/Alt</info>
+                        <height>40</height>
+                        <texture>$VAR[WatchedIconVar]</texture>
                     </control>
 
                 </itemlayout>
@@ -109,12 +109,12 @@
                     </control>
 
                     <control type="image">
-                        <posx>18</posx>
-                        <posy>-2</posy>
-                        <width>42</width>
+                        <posx>16</posx>
+                        <posy>-6</posy>
+                        <width>44</width>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <height>42</height>
-                        <info>ListItem.Overlay,thumbs/Alt</info>
+                        <height>44</height>
+                        <texture>$VAR[WatchedIconVar]</texture>
                     </control>
 
                 </focusedlayout>
@@ -216,7 +216,7 @@
                     <height>30</height>
                     <font>Font_Reg14</font>
                     <textcolor>grey</textcolor>
-                    <label>$INFO[ListItem.Duration,, minutes • ]$INFO[ListItem.Genre]</label>
+                    <label>$INFO[ListItem.Duration,, minutes]$INFO[ListItem.Genre, • ]</label>
                 </control>
 
                 <control type="group" id="5211">
@@ -260,7 +260,7 @@
                         <width>280</width>
                         <height>30</height>
                         <font>Font_Reg14</font>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <textcolor>grey</textcolor>
                         <scroll>true</scroll>
                         <scrollsuffix>  •  </scrollsuffix>
                         <label>$INFO[ListItem.Writer]</label>
