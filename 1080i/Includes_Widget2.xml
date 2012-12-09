@@ -869,11 +869,9 @@
                         </control>
                         <control type="button" id="6010">
                             <include>HiddenObject</include>
-                            <onunfocus>AlarmClock(HomeTileLeft,Control.Move(6001,1),00:07,silent,loop)</onunfocus>
                             <include>NavigationWidget2</include>
                             <onleft>6012</onleft>
                             <onright>6011</onright>
-                            <onfocus>CancelAlarm(HomeTileLeft,true)</onfocus>
                             <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,randommovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,randomalbums,home)</onclick>
@@ -883,11 +881,8 @@
                         <control type="wraplist" id="6001">
                             <width>614</width>
                             <height>360</height>
-                            <onup>AlarmClock(HomeTileLeft,Control.Move(6001,1),00:07,silent,loop)</onup>
                             <onup>6011</onup>
-                            <ondown>AlarmClock(HomeTileLeft,Control.Move(6001,1),00:07,silent,loop)</ondown>
                             <ondown>7993</ondown>
-                            <onback>AlarmClock(HomeTileLeft,Control.Move(6001,1),00:07,silent,loop)</onback>
                             <onback>7993</onback>
                             <orientation>horizontal</orientation>
                             <pagecontrol>60</pagecontrol>
@@ -958,8 +953,6 @@
                             <onleft>6010</onleft>
                             <onright>6012</onright>
                             <include>NavigationWidget2</include>
-                            <onfocus>CancelAlarm(HomeTileMid,true)</onfocus>
-                            <onunfocus>AlarmClock(HomeTileMid,Control.Move(6002,1),00:15,silent,loop)</onunfocus>
                             <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,randomtv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
@@ -1049,11 +1042,9 @@
                         </control>
                         <control type="button" id="6012">
                             <include>HiddenObject</include>
-                            <onunfocus>AlarmClock(HomeTileRight,Control.Move(6003,1),00:10,silent,loop)</onunfocus>
                             <onleft>6011</onleft>
                             <onright>6010</onright>
                             <include>NavigationWidget2</include>
-                            <onfocus>CancelAlarm(HomeTileRight,true)</onfocus>
                             <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,recentmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,recenttv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,recentalbums,home)</onclick>
@@ -1062,11 +1053,8 @@
                         <control type="wraplist" id="6003">
                             <width>614</width>
                             <height>360</height>
-                            <onup>AlarmClock(HomeTileRight,Control.Move(6003,1),00:10,silent,loop)</onup>
                             <onup>6010</onup>
-                            <ondown>AlarmClock(HomeTileRight,Control.Move(6003,1),00:10,silent,loop)</ondown>
                             <ondown>7993</ondown>
-                            <onback>AlarmClock(HomeTileRight,Control.Move(6003,1),00:10,silent,loop)</onback>
                             <onback>7993</onback>
                             <orientation>horizontal</orientation>
                             <pagecontrol>60</pagecontrol>
@@ -4989,6 +4977,100 @@
             <visible>Substring(Control.GetLabel(4325),mostplayedroms,left)</visible>
         </item>
     </include>
+    <include name="IconPanel1Items2">
+        <item id="1">
+            <label>$INFO[Skin.String(IconPanelItem11.Label)]</label>
+            <property name="Path">$INFO[Skin.String(IconPanelItem11.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem11.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem11,home)</onclick>
+            <onclick>SetFocus(9008)</onclick>
+            <icon>$INFO[Skin.String(IconPanelItem11.Icon)]</icon>
+            <visible>Substring(Control.GetLabel(4325),IconPanel1)</visible>
+        </item>
+        <item id="2">
+            <label>$INFO[Skin.String(IconPanelItem12.Label)]</label>
+            <property name="Path">$INFO[Skin.String(IconPanelItem12.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem12.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem12,home)</onclick>
+            <onclick>SetFocus(9008)</onclick>
+            <icon>$INFO[Skin.String(IconPanelItem12.Icon)]</icon>
+            <visible>Substring(Control.GetLabel(4325),IconPanel1)</visible>
+        </item>
+        <item id="3">
+            <label>$INFO[Skin.String(IconPanelItem13.Label)]</label>
+            <property name="Path">$INFO[Skin.String(IconPanelItem13.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem13.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem13,home)</onclick>
+            <onclick>SetFocus(9008)</onclick>
+            <icon>$INFO[Skin.String(IconPanelItem13.Icon)]</icon>
+            <visible>Substring(Control.GetLabel(4325),IconPanel1)</visible>
+        </item>
+        <item id="4">
+            <label>$INFO[Skin.String(IconPanelItem14.Label)]</label>
+            <property name="Path">$INFO[Skin.String(IconPanelItem14.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem14.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem14,home)</onclick>
+            <onclick>SetFocus(9008)</onclick>
+            <icon>$INFO[Skin.String(IconPanelItem14.Icon)]</icon>
+            <visible>Substring(Control.GetLabel(4325),IconPanel1)</visible>
+        </item>
+        <item id="5">
+            <label>$INFO[Skin.String(IconPanelItem15.Label)]</label>
+            <property name="Path">$INFO[Skin.String(IconPanelItem15.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem15.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem15,home)</onclick>
+            <onclick>SetFocus(9008)</onclick>
+            <icon>$INFO[Skin.String(IconPanelItem15.Icon)]</icon>
+            <visible>Substring(Control.GetLabel(4325),IconPanel1)</visible>
+        </item>
+    </include>
+    <include name="IconPanel2Items2">
+        <item id="6">
+            <label>$INFO[Skin.String(IconPanelItem16.Label)]</label>
+            <property name="Path">$INFO[Skin.String(IconPanelItem16.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem16.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem16,home)</onclick>
+            <onclick>SetFocus(9008)</onclick>
+            <icon>$INFO[Skin.String(IconPanelItem16.Icon)]</icon>
+            <visible>Substring(Control.GetLabel(4325),IconPanel2)</visible>
+        </item>
+        <item id="7">
+            <label>$INFO[Skin.String(IconPanelItem17.Label)]</label>
+            <property name="Path">$INFO[Skin.String(IconPanelItem17.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem17.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem17,home)</onclick>
+            <onclick>SetFocus(9008)</onclick>
+            <icon>$INFO[Skin.String(IconPanelItem17.Icon)]</icon>
+            <visible>Substring(Control.GetLabel(4325),IconPanel2)</visible>
+        </item>
+        <item id="8">
+            <label>$INFO[Skin.String(IconPanelItem18.Label)]</label>
+            <property name="Path">$INFO[Skin.String(IconPanelItem18.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem18.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem18,home)</onclick>
+            <onclick>SetFocus(9008)</onclick>
+            <icon>$INFO[Skin.String(IconPanelItem18.Icon)]</icon>
+            <visible>Substring(Control.GetLabel(4325),IconPanel2)</visible>
+        </item>
+        <item id="9">
+            <label>$INFO[Skin.String(IconPanelItem19.Label)]</label>
+            <property name="Path">$INFO[Skin.String(IconPanelItem19.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem19.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem19,home)</onclick>
+            <onclick>SetFocus(9008)</onclick>
+            <icon>$INFO[Skin.String(IconPanelItem19.Icon)]</icon>
+            <visible>Substring(Control.GetLabel(4325),IconPanel2)</visible>
+        </item>
+        <item id="10">
+            <label>$INFO[Skin.String(IconPanelItem20.Label)]</label>
+            <property name="Path">$INFO[Skin.String(IconPanelItem20.Path)]</property>
+            <property name="Type">$INFO[Skin.String(IconPanelItem20.Type)]</property>
+            <onclick>SetProperty(MenuItem,IconPanelItem20,home)</onclick>
+            <onclick>SetFocus(9008)</onclick>
+            <icon>$INFO[Skin.String(IconPanelItem20.Icon)]</icon>
+            <visible>Substring(Control.GetLabel(4325),IconPanel2)</visible>
+        </item>      
+    </include>
     <include name="6010List">
         <control type="group">
             <visible>!Substring(Control.GetLabel(4325),concerts) + !Substring(Control.GetLabel(4325),weather)</visible>
@@ -6303,15 +6385,14 @@
         </item>
     </include>
     <include name="NextAiredWidget2Content1124">
-        <item id="1">
-            <thumb>$INFO[Window(Home).Property(NextAired.1.Thumb)]</thumb>
+        <item>
+            <thumb>$INFO[Window(Home).Property(NextAired.1.Art(poster))]</thumb>
             <label>$INFO[Window(Home).Property(NextAired.1.Label)]</label>
             <label2>$INFO[Window(Home).Property(NextAired.1.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.1.ShortTime)]</label2>
-            <property name="NavItem">item1.png</property>
             <property name="Status">$INFO[Window(Home).Property(NextAired.1.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.1.NextTitle)]</property>
-            <property name="Fanart">$INFO[Window(Home).Property(NextAired.1.Art(fanart))]</property>
-            <property name="NextNumber">$INFO[Window(Home).Property(NextAired.1.NextNumber)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(NextAired.1.Fanart)]</property>
+            <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.1.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.1.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.1.LatestDate)]</property>
             <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.1.LatestTitle)]</property>
@@ -6321,121 +6402,157 @@
             <property name="Logo">$INFO[Window(Home).Property(NextAired.1.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(NextAired.1.Art(clearart))]</property>
             <property name="Landscape">$INFO[Window(Home).Property(NextAired.1.Art(landscape))]</property>
-            <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.1.Library)],return)</onclick>
+            <property name="Path">ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.1.Library)],return)</property>
+            <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),nextaired) + !IsEmpty(Window(Home).Property(NextAired.1.Label))</visible>
         </item>
-        <item id="2">
-            <thumb>$INFO[Window(Home).Property(NextAired.2.Thumb)]</thumb>
+        <item>
+            <thumb>$INFO[Window(Home).Property(NextAired.2.Art(poster))]</thumb>
             <label>$INFO[Window(Home).Property(NextAired.2.Label)]</label>
             <label2>$INFO[Window(Home).Property(NextAired.2.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.2.ShortTime)]</label2>
-            <property name="NavItem">item2.png</property>
             <property name="Status">$INFO[Window(Home).Property(NextAired.2.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.2.NextTitle)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(NextAired.2.Fanart)]</property>
-            <property name="NextNumber">$INFO[Window(Home).Property(NextAired.2.NextNumber)]</property>
+            <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.2.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.2.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.2.LatestDate)]</property>
             <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.2.LatestTitle)]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(NextAired.2.Runtime)]</property>
-            <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.2.Library)],return)</onclick>
+            <property name="Poster">$INFO[Window(Home).Property(NextAired.2.Art(poster))]</property>
+            <property name="Banner">$INFO[Window(Home).Property(NextAired.2.Art(banner))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(NextAired.2.Art(clearlogo))]</property>
+            <property name="Clearart">$INFO[Window(Home).Property(NextAired.2.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(NextAired.2.Art(landscape))]</property>
+            <property name="Path">ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.2.Library)],return)</property>
+            <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),nextaired) + !IsEmpty(Window(Home).Property(NextAired.2.Label))</visible>
         </item>
-        <item id="3">
-            <thumb>$INFO[Window(Home).Property(NextAired.3.Thumb)]</thumb>
+        <item>
+            <thumb>$INFO[Window(Home).Property(NextAired.3.Art(poster))]</thumb>
             <label>$INFO[Window(Home).Property(NextAired.3.Label)]</label>
             <label2>$INFO[Window(Home).Property(NextAired.3.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.3.ShortTime)]</label2>
-            <property name="NavItem">item3.png</property>
             <property name="Status">$INFO[Window(Home).Property(NextAired.3.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.3.NextTitle)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(NextAired.3.Fanart)]</property>
-            <property name="NextNumber">$INFO[Window(Home).Property(NextAired.3.NextNumber)]</property>
+            <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.3.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.3.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.3.LatestDate)]</property>
             <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.3.LatestTitle)]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(NextAired.3.Runtime)]</property>
-            <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.3.Library)],return)</onclick>
+            <property name="Poster">$INFO[Window(Home).Property(NextAired.3.Art(poster))]</property>
+            <property name="Banner">$INFO[Window(Home).Property(NextAired.3.Art(banner))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(NextAired.3.Art(clearlogo))]</property>
+            <property name="Clearart">$INFO[Window(Home).Property(NextAired.3.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(NextAired.3.Art(landscape))]</property>
+            <property name="Path">ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.3.Library)],return)</property>
+            <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),nextaired) + !IsEmpty(Window(Home).Property(NextAired.3.Label))</visible>
         </item>
     </include>
     <include name="NextAiredWidget2Content">
-        <item id="4">
-            <thumb>$INFO[Window(Home).Property(NextAired.4.Thumb)]</thumb>
+        <item>
+            <thumb>$INFO[Window(Home).Property(NextAired.4.Art(poster))]</thumb>
             <label>$INFO[Window(Home).Property(NextAired.4.Label)]</label>
             <label2>$INFO[Window(Home).Property(NextAired.4.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.4.ShortTime)]</label2>
-            <property name="NavItem">item4.png</property>
             <property name="Status">$INFO[Window(Home).Property(NextAired.4.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.4.NextTitle)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(NextAired.4.Fanart)]</property>
-            <property name="NextNumber">$INFO[Window(Home).Property(NextAired.4.NextNumber)]</property>
+            <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.4.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.4.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.4.LatestDate)]</property>
             <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.4.LatestTitle)]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(NextAired.4.Runtime)]</property>
-            <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.4.Library)],return)</onclick>
+            <property name="Poster">$INFO[Window(Home).Property(NextAired.4.Art(poster))]</property>
+            <property name="Banner">$INFO[Window(Home).Property(NextAired.4.Art(banner))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(NextAired.4.Art(clearlogo))]</property>
+            <property name="Clearart">$INFO[Window(Home).Property(NextAired.4.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(NextAired.4.Art(landscape))]</property>
+            <property name="Path">ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.4.Library)],return)</property>
+            <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),nextaired) + !IsEmpty(Window(Home).Property(NextAired.4.Label))</visible>
         </item>
-        <item id="5">
-            <thumb>$INFO[Window(Home).Property(NextAired.5.Thumb)]</thumb>
+        <item>
+            <thumb>$INFO[Window(Home).Property(NextAired.5.Art(poster))]</thumb>
             <label>$INFO[Window(Home).Property(NextAired.5.Label)]</label>
             <label2>$INFO[Window(Home).Property(NextAired.5.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.5.ShortTime)]</label2>
-            <property name="NavItem">item5.png</property>
             <property name="Status">$INFO[Window(Home).Property(NextAired.5.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.5.NextTitle)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(NextAired.5.Fanart)]</property>
-            <property name="NextNumber">$INFO[Window(Home).Property(NextAired.5.NextNumber)]</property>
+            <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.5.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.5.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.5.LatestDate)]</property>
             <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.5.LatestTitle)]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(NextAired.5.Runtime)]</property>
-            <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.5.Library)],return)</onclick>
+            <property name="Poster">$INFO[Window(Home).Property(NextAired.5.Art(poster))]</property>
+            <property name="Banner">$INFO[Window(Home).Property(NextAired.5.Art(banner))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(NextAired.5.Art(clearlogo))]</property>
+            <property name="Clearart">$INFO[Window(Home).Property(NextAired.5.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(NextAired.5.Art(landscape))]</property>
+            <property name="Path">ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.5.Library)],return)</property>
+            <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),nextaired) + !IsEmpty(Window(Home).Property(NextAired.5.Label))</visible>
         </item>
-        <item id="6">
-            <thumb>$INFO[Window(Home).Property(NextAired.6.Thumb)]</thumb>
+        <item>
+            <thumb>$INFO[Window(Home).Property(NextAired.6.Art(poster))]</thumb>
             <label>$INFO[Window(Home).Property(NextAired.6.Label)]</label>
             <label2>$INFO[Window(Home).Property(NextAired.6.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.6.ShortTime)]</label2>
-            <property name="NavItem">item6.png</property>
             <property name="Status">$INFO[Window(Home).Property(NextAired.6.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.6.NextTitle)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(NextAired.6.Fanart)]</property>
-            <property name="NextNumber">$INFO[Window(Home).Property(NextAired.6.NextNumber)]</property>
+            <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.6.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.6.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.6.LatestDate)]</property>
             <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.6.LatestTitle)]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(NextAired.6.Runtime)]</property>
-            <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.6.Library)],return)</onclick>
+            <property name="Poster">$INFO[Window(Home).Property(NextAired.6.Art(poster))]</property>
+            <property name="Banner">$INFO[Window(Home).Property(NextAired.6.Art(banner))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(NextAired.6.Art(clearlogo))]</property>
+            <property name="Clearart">$INFO[Window(Home).Property(NextAired.6.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(NextAired.6.Art(landscape))]</property>
+            <property name="Path">ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.6.Library)],return)</property>
+            <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),nextaired) + !IsEmpty(Window(Home).Property(NextAired.6.Label))</visible>
         </item>
-        <item id="7">
-            <thumb>$INFO[Window(Home).Property(NextAired.7.Thumb)]</thumb>
+        <item>
+            <thumb>$INFO[Window(Home).Property(NextAired.7.Art(poster))]</thumb>
             <label>$INFO[Window(Home).Property(NextAired.7.Label)]</label>
             <label2>$INFO[Window(Home).Property(NextAired.7.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.7.ShortTime)]</label2>
-            <property name="NavItem">item7.png</property>
             <property name="Status">$INFO[Window(Home).Property(NextAired.7.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.7.NextTitle)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(NextAired.7.Fanart)]</property>
-            <property name="NextNumber">$INFO[Window(Home).Property(NextAired.7.NextNumber)]</property>
+            <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.7.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.7.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.7.LatestDate)]</property>
             <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.7.LatestTitle)]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(NextAired.7.Runtime)]</property>
-            <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.7.Library)],return)</onclick>
+            <property name="Poster">$INFO[Window(Home).Property(NextAired.7.Art(poster))]</property>
+            <property name="Banner">$INFO[Window(Home).Property(NextAired.7.Art(banner))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(NextAired.7.Art(clearlogo))]</property>
+            <property name="Clearart">$INFO[Window(Home).Property(NextAired.7.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(NextAired.7.Art(landscape))]</property>
+            <property name="Path">ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.7.Library)],return)</property>
+            <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),nextaired) + !IsEmpty(Window(Home).Property(NextAired.7.Label))</visible>
         </item>
-        <item id="8">
-            <thumb>$INFO[Window(Home).Property(NextAired.8.Thumb)]</thumb>
+        <item>
+            <thumb>$INFO[Window(Home).Property(NextAired.8.Art(poster))]</thumb>
             <label>$INFO[Window(Home).Property(NextAired.8.Label)]</label>
             <label2>$INFO[Window(Home).Property(NextAired.8.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.8.ShortTime)]</label2>
-            <property name="NavItem">item8.png</property>
             <property name="Status">$INFO[Window(Home).Property(NextAired.8.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.8.NextTitle)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(NextAired.8.Fanart)]</property>
-            <property name="NextNumber">$INFO[Window(Home).Property(NextAired.8.NextNumber)]</property>
+            <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.8.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.8.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.8.LatestDate)]</property>
             <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.8.LatestTitle)]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(NextAired.8.Runtime)]</property>
-            <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.8.Library)],return)</onclick>
+            <property name="Poster">$INFO[Window(Home).Property(NextAired.8.Art(poster))]</property>
+            <property name="Banner">$INFO[Window(Home).Property(NextAired.8.Art(banner))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(NextAired.8.Art(clearlogo))]</property>
+            <property name="Clearart">$INFO[Window(Home).Property(NextAired.8.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(NextAired.8.Art(landscape))]</property>
+            <property name="Path">ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.8.Library)],return)</property>
+            <onclick>SetFocus(6014)</onclick>
             <visible>Substring(Control.GetLabel(4325),nextaired) + !IsEmpty(Window(Home).Property(NextAired.8.Label))</visible>
         </item>
     </include>
