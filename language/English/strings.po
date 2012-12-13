@@ -221,7 +221,9 @@ msgctxt "#31053"
 msgid "Fullscreen"
 msgstr ""
 
-#empty string with id 31054
+msgctxt "#31054"
+msgid "Shadow"
+msgstr ""
 #Playlist Editor labels
 
 msgctxt "#31055"
@@ -438,7 +440,9 @@ msgctxt "#31111"
 msgid "Recording"
 msgstr ""
 
-#empty string with id 31112
+msgctxt "#31112"
+msgid "Coloured"
+msgstr ""
 
 msgctxt "#31113"
 msgid "Single Image"
@@ -690,7 +694,9 @@ msgctxt "#31220"
 msgid "Random episodes"
 msgstr ""
 
-#empty string with id 31221
+msgctxt "#31221"
+msgid "Default"
+msgstr ""
 
 msgctxt "#31222"
 msgid "Random movies"
@@ -924,7 +930,9 @@ msgctxt "#31326"
 msgid "Most played albums"
 msgstr ""
 
-#empty string with id 31327
+msgctxt "#31327"
+msgid "Most played ROMs"
+msgstr ""
 
 msgctxt "#31328"
 msgid "Recently Added"
@@ -1375,7 +1383,15 @@ msgctxt "#31621"
 msgid "Use Alaska paused label for video OSD"
 msgstr ""
 
-#empty strings from id 31622 to 31626
+msgctxt "#31622"
+msgid "Label"
+msgstr ""
+
+msgctxt "#31623"
+msgid "Slot"
+msgstr ""
+
+#empty strings from id 31624 to 31626
 
 msgctxt "#31627"
 msgid "Hide OSD player controls"
@@ -1697,7 +1713,9 @@ msgctxt "#41151"
 msgid "Custom"
 msgstr ""
 
-#empty string with id 41152
+msgctxt "#41152"
+msgid "Activate featured overlay when pressing up"
+msgstr ""
 
 msgctxt "#41153"
 msgid "Favourite"
@@ -1707,7 +1725,9 @@ msgctxt "#41154"
 msgid "Function"
 msgstr ""
 
-#empty string with id 41155
+msgctxt "#41155"
+msgid "Activate Bottom Menu (Play DVD, toggle widgets)"
+msgstr ""
 
 msgctxt "#41156"
 msgid "Choose Type"
@@ -1768,7 +1788,9 @@ msgctxt "#42008"
 msgid "You need to set a path"
 msgstr ""
 
-#empty string with id 42009
+msgctxt "#42009"
+msgid "Bar Style"
+msgstr ""
 
 msgctxt "#42010"
 msgid "This feature requires the ColorPicker add-on"
