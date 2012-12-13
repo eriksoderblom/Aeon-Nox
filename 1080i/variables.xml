@@ -937,11 +937,11 @@
     </variable>
     <variable name="SubMenuImageVar">
         <value condition="Skin.HasSetting(shadowbars)">home/submenubar_shadow.png</value>
-        <value>home/submenubar.png</value>
+        <value>home/submenubar_dark.png</value>
     </variable>
     <variable name="TimePanelImageVar">
         <value condition="Skin.HasSetting(shadowbars)">home/timepanel_mid_shadow.png</value>
-        <value>home/timepanel_mid.png</value>
+        <value>home/timepanel_mid_dark.png</value>
     </variable>
     <variable name="BarStyleLabelVar">
         <value condition="Skin.HasSetting(shadowbars)">$LOCALIZE[31054]</value>
