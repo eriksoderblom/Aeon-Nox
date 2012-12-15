@@ -1816,6 +1816,15 @@
                         <visible>!IsEmpty(Container(5010).ListItem.Property(Discart))</visible>
                     </control>
                     <control type="image">
+                        <posx>1455</posx>
+                        <posy>-70</posy>
+                        <width>330</width>
+                        <height>300</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture background="true">$INFO[Container(5010).ListItem.Thumb]</texture>
+                        <visible>!IsEmpty(Container(5010).ListItem.Thumb) + Substring(Control.GetLabel(4321),tv)</visible>
+                    </control>
+                    <control type="image">
                         <posx>5</posx>
                         <posy>-345</posy>
                         <width>460</width>
@@ -1846,6 +1855,7 @@
                         <ondown>ClearProperty(PanelWidgetInfo,Home)</ondown>
                         <ondown>SetFocus(5010)</ondown>
                         <orientation>horizontal</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
                         <control type="button" id="5015">
                             <label>$LOCALIZE[208]</label>
                             <include>WidgetMenuLabel</include>
@@ -1893,6 +1903,12 @@
                             <onclick>ClearProperty(PanelWidgetInfo,Home)</onclick>
                             <onclick>SetFocus(5010)</onclick>
                             <include>WidgetMenuLabel</include>
+                        </control>
+                        <control type="spincontrol" id="5019">
+                            <posx>0</posx>
+                            <posy>-20</posy>
+                            <width>50</width>
+                            <height>88</height>
                         </control>
                     </control>
                     <control type="image">
@@ -1979,7 +1995,7 @@
                             <textoffsetx>15</textoffsetx>
                         </control>
                     </control>
-                    <control type="textbox">
+                    <control type="textbox" id="5060">
                         <posx>482</posx>
                         <posy>-70</posy>
                         <width>1290</width>
@@ -1987,21 +2003,24 @@
                         <aligny>top</aligny>
                         <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
+                                  <pagecontrol>5019</pagecontrol>
+          
                         <label>$INFO[Container(5010).ListItem.Property(Plot)]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        <visible>IsEmpty(Container(5010).ListItem.Property(Discart))</visible>
+                        <visible>IsEmpty(Container(5010).ListItem.Property(Discart)) + !Substring(Control.GetLabel(4321),tv)</visible>
                     </control>
-                    <control type="textbox">
+                    <control type="textbox" id="5060">
                         <posx>482</posx>
                         <posy>-70</posy>
                         <width>960</width>
                         <height>308</height>
                         <aligny>top</aligny>
-                        <font>Font_Reg19</font>
+                                   <pagecontrol>5019</pagecontrol>
+                       <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
                         <label>$INFO[Container(5010).ListItem.Property(Plot)]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        <visible>!IsEmpty(Container(5010).ListItem.Property(Discart))</visible>
+                        <visible>!IsEmpty(Container(5010).ListItem.Property(Discart)) | Substring(Control.GetLabel(4321),tv)</visible>
                     </control>
                     <control type="grouplist">
                         <orientation>horizontal</orientation>
@@ -2132,6 +2151,7 @@
                         <aligny>top</aligny>
                         <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
+                        <pagecontrol>5034</pagecontrol>
                         <label fallback="414">$VAR[Widget2TextboxVar]</label>
                         <visible>!Substring(Control.GetLabel(4321),pics)</visible>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -2158,6 +2178,7 @@
                         <ondown>ClearProperty(PanelWidgetInfo,Home)</ondown>
                         <ondown>SetFocus(5010)</ondown>
                         <orientation>horizontal</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
                         <control type="button" id="5032">
                             <label>$LOCALIZE[208]</label>
                             <include>WidgetMenuLabel</include>
@@ -2179,6 +2200,12 @@
                             <onclick>ClearProperty(PanelWidgetInfo,Home)</onclick>
                             <onclick>SetFocus(5010)</onclick>
                             <include>WidgetMenuLabel</include>
+                        </control>
+                        <control type="spincontrol" id="5034">
+                            <posx>0</posx>
+                            <posy>-20</posy>
+                            <width>50</width>
+                            <height>88</height>
                         </control>
                     </control>
                 </control>
@@ -5190,7 +5217,7 @@
         <onback>8993</onback>
     </include>
     <include name="IconPanel1Items">
-        <item id="1">
+        <item>
             <label>$INFO[Skin.String(IconPanelItem1.Label)]</label>
             <property name="Path">$INFO[Skin.String(IconPanelItem1.Path)]</property>
             <property name="Type">$INFO[Skin.String(IconPanelItem1.Type)]</property>
@@ -5199,7 +5226,7 @@
             <icon>$INFO[Skin.String(IconPanelItem1.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel1)</visible>
         </item>
-        <item id="2">
+        <item>
             <label>$INFO[Skin.String(IconPanelItem2.Label)]</label>
             <property name="Path">$INFO[Skin.String(IconPanelItem2.Path)]</property>
             <property name="Type">$INFO[Skin.String(IconPanelItem2.Type)]</property>
@@ -5208,7 +5235,7 @@
             <icon>$INFO[Skin.String(IconPanelItem2.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel1)</visible>
         </item>
-        <item id="3">
+        <item>
             <label>$INFO[Skin.String(IconPanelItem3.Label)]</label>
             <property name="Path">$INFO[Skin.String(IconPanelItem3.Path)]</property>
             <property name="Type">$INFO[Skin.String(IconPanelItem3.Type)]</property>
@@ -5217,7 +5244,7 @@
             <icon>$INFO[Skin.String(IconPanelItem3.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel1)</visible>
         </item>
-        <item id="4">
+        <item>
             <label>$INFO[Skin.String(IconPanelItem4.Label)]</label>
             <property name="Path">$INFO[Skin.String(IconPanelItem4.Path)]</property>
             <property name="Type">$INFO[Skin.String(IconPanelItem4.Type)]</property>
@@ -5226,7 +5253,7 @@
             <icon>$INFO[Skin.String(IconPanelItem4.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel1)</visible>
         </item>
-        <item id="5">
+        <item>
             <label>$INFO[Skin.String(IconPanelItem5.Label)]</label>
             <property name="Path">$INFO[Skin.String(IconPanelItem5.Path)]</property>
             <property name="Type">$INFO[Skin.String(IconPanelItem5.Type)]</property>
@@ -5237,7 +5264,7 @@
         </item>
     </include>
     <include name="IconPanel2Items">
-        <item id="6">
+        <item>
             <label>$INFO[Skin.String(IconPanelItem6.Label)]</label>
             <property name="Path">$INFO[Skin.String(IconPanelItem6.Path)]</property>
             <property name="Type">$INFO[Skin.String(IconPanelItem6.Type)]</property>
@@ -5246,7 +5273,7 @@
             <icon>$INFO[Skin.String(IconPanelItem6.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel2)</visible>
         </item>
-        <item id="7">
+        <item>
             <label>$INFO[Skin.String(IconPanelItem7.Label)]</label>
             <property name="Path">$INFO[Skin.String(IconPanelItem7.Path)]</property>
             <property name="Type">$INFO[Skin.String(IconPanelItem7.Type)]</property>
@@ -5255,7 +5282,7 @@
             <icon>$INFO[Skin.String(IconPanelItem7.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel2)</visible>
         </item>
-        <item id="8">
+        <item>
             <label>$INFO[Skin.String(IconPanelItem8.Label)]</label>
             <property name="Path">$INFO[Skin.String(IconPanelItem8.Path)]</property>
             <property name="Type">$INFO[Skin.String(IconPanelItem8.Type)]</property>
@@ -5264,7 +5291,7 @@
             <icon>$INFO[Skin.String(IconPanelItem8.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel2)</visible>
         </item>
-        <item id="9">
+        <item>
             <label>$INFO[Skin.String(IconPanelItem9.Label)]</label>
             <property name="Path">$INFO[Skin.String(IconPanelItem9.Path)]</property>
             <property name="Type">$INFO[Skin.String(IconPanelItem9.Type)]</property>
@@ -5273,7 +5300,7 @@
             <icon>$INFO[Skin.String(IconPanelItem9.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel2)</visible>
         </item>
-        <item id="10">
+        <item>
             <label>$INFO[Skin.String(IconPanelItem10.Label)]</label>
             <property name="Path">$INFO[Skin.String(IconPanelItem10.Path)]</property>
             <property name="Type">$INFO[Skin.String(IconPanelItem10.Type)]</property>
