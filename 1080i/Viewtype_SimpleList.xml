@@ -37,8 +37,7 @@
                 <ondown>520</ondown>
                 <onleft condition="Control.IsVisible(61)">61</onleft>
                 <onleft>9000</onleft>
-                <onright condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onright>
-                <onright condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(trailerincontextmenu)">9000</onright>
+                <onright>9000</onright>
                 <preloaditems>2</preloaditems>
                 <pagecontrol>61</pagecontrol>
                 <visible>Container.Content(episodes) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(musiclibrary)</visible>
@@ -129,8 +128,7 @@
                 <animation effect="zoom" start="70" end="100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(61)">Conditional</animation>
                 <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
                 <orientation>vertical</orientation>
-                <onleft condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onleft>
-                <onleft condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(trailerincontextmenu)">9000</onleft>
+                <onleft>9000</onleft>
                 <onright>520</onright>
             </control>
 
