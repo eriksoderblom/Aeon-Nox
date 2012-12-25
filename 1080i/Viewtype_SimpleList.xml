@@ -24,7 +24,7 @@
             <include>Animation_Widgets</include>
             <!-- Browser -->
             <control type="fixedlist" id="520">
-                <viewtype label="31237">simplelist</viewtype>
+                <viewtype label="31249">simplelist</viewtype>
                 <posx>40</posx>
                 <posy>24</posy>
                 <width>950</width>
