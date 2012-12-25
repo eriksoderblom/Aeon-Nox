@@ -1,9 +1,72 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
+    <include name="AlternateTimeAndStats">
+        <control type="group">
+            <posy>472</posy>
+            <visible>Skin.HasSetting(AlternateTimeStats) + [!Skin.HasSetting(DisableLibraryStats) | !Skin.HasSetting(DisableTimePanel)]</visible>
+            <animation effect="slide" end="-1860,0" time="300">WindowClose</animation>
+            <animation effect="slide" start="-1860,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
+            <animation effect="slide" start="-1860" end="0" time="300">VisibleChange</animation>
+            <animation effect="slide" start="-1860,0" end="0,0" delay="1000" time="600" condition="Window.Previous(startup)">WindowOpen</animation>
+            <animation effect="slide" end="0,338" time="400" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + ![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
+            <animation effect="slide" end="0,-472" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)">Conditional</animation>
+            <control type="image">
+                <width>1860</width>
+                <height>87</height>
+                <texture flipy="true" flipx="true" border="0,0,80,0">$VAR[TimePanelImageVar]</texture>
+                <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                <animation effect="rotatex" end="180" time="400" center="20" tween="cubic" easing="inout" condition="![Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
+            </control>
+            <control type="label">
+                <posx>15</posx>
+                <posy>-1</posy>
+                <width>880</width>
+                <height>36</height>
+                <font>Font_Info_Caps</font>
+                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                <scroll>true</scroll>
+                <label>$VAR[LibraryStatsVar]</label>
+                <visible>!Skin.HasSetting(DisableLibraryStats) + !StringCompare(Control.GetLabel(4326),mixed)</visible>
+            </control>
+            <control type="fadelabel">
+                <posx>15</posx>
+                <posy>-1</posy>
+                <width>880</width>
+                <height>36</height>
+                <font>Font_Info_Caps</font>
+                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+				<pauseatend>10000</pauseatend>
+				<resetonlabelchange>false</resetonlabelchange>
+				<label>$INFO[Window(Home).Property(Movies.Count),[COLOR grey]$LOCALIZE[31502]:[/COLOR] ,[COLOR grey]  •  $LOCALIZE[16102]:[/COLOR] ]$INFO[Window(Home).Property(Movies.Watched),,[COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] ]$INFO[Window(Home).Property(Movies.UnWatched)]</label>
+				<label>[COLOR grey]$LOCALIZE[20343]:[/COLOR] $INFO[Window(Home).Property(TVShows.Count)][COLOR grey]  •  $LOCALIZE[20360]:[/COLOR] $INFO[Window(Home).Property(Episodes.Count)][COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(Episodes.UnWatched)]</label>
+				<label>[COLOR grey]$LOCALIZE[133]:[/COLOR] $INFO[Window(Home).Property(Music.ArtistsCount)][COLOR grey]  •  $LOCALIZE[132]:[/COLOR] $INFO[Window(Home).Property(Music.AlbumsCount)][COLOR grey]  •  $LOCALIZE[134]:[/COLOR] $INFO[Window(Home).Property(Music.SongsCount)]</label>
+				<label>$INFO[Window(Home).Property(MyPicsDBRandom.Categories),[COLOR grey]$LOCALIZE[42292]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBRandom.Collections),[COLOR grey]  •  $LOCALIZE[42290]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBRandom.Folders),[COLOR grey]  •  $LOCALIZE[42291]:[/COLOR] ]</label>
+				<label>$INFO[Window(Home).Property(MyPicsDBLatest.Categories),[COLOR grey]$LOCALIZE[42292]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBLatest.Collections),[COLOR grey]  •  $LOCALIZE[42290]:[/COLOR] ]$INFO[Window(Home).Property(MyPicsDBLatest.Folders),[COLOR grey]  •  $LOCALIZE[42291]:[/COLOR] ]</label>
+				<label>$INFO[PVR.NowRecordingDateTime,$LOCALIZE[19158]  [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ]$INFO[PVR.NowRecordingTitle, • [B][COLOR=FF48D1CC],[/COLOR][/B] ]$INFO[PVR.NowRecordingChannel,[B][COLOR=white]( ,)[/COLOR][/B]]</label>
+				<label>$INFO[PVR.NextRecordingDateTime,$LOCALIZE[19157]  [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] -  • ]$INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</label>
+				<label>$INFO[Window(Weather).Property(Location),[COLOR grey], • $LOCALIZE[402]: [/COLOR]]$INFO[Window(weather).Property(Current.FeelsLike)] $INFO[System.TemperatureUnits,,[COLOR grey] • $LOCALIZE[406]:[/COLOR] ]$INFO[Window(weather).Property(Current.Humidity)]</label>
+				<label>$INFO[Window(Home).Property(RandomAddon.Count),[COLOR grey]$LOCALIZE[20161] $LOCALIZE[24001]:[/COLOR] ]</label>
+				<label>$INFO[Window(Home).Property(favourite.count),[COLOR grey]$LOCALIZE[31509]:[/COLOR] ]</label>
+				<label>$INFO[System.CPUUsage,[COLOR grey]$LOCALIZE[13271][/COLOR] ]$INFO[System.memory(used.percent),[COLOR grey] • $LOCALIZE[31309][/COLOR] ]</label>
+                <visible>!Skin.HasSetting(DisableLibraryStats) + StringCompare(Control.GetLabel(4326),mixed)</visible>
+            </control>
+            <control type="label">
+                <posy>-1</posy>
+                <posx>1776</posx>
+                <width>1000</width>
+                <height>36</height>
+                <align>right</align>
+                <font>Font_Info_Caps</font>
+                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                <label>[COLOR grey]$INFO[Window(Weather).Property(Current.Condition)]  •  [/COLOR]$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey] •  $INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</label>
+				<visible>!Skin.HasSetting(DisableTimePanel)</visible>
+            </control>
+        </control>
+    </include>
     <include name="LibraryStats">
         <control type="group">
             <posy>472</posy>
-            <visible>!Skin.HasSetting(DisableLibraryStats)</visible>
+            <visible>!Skin.HasSetting(DisableLibraryStats) + !Skin.HasSetting(AlternateTimeStats)</visible>
             <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
             <animation effect="slide" end="-750,0" time="300">WindowClose</animation>
             <animation effect="slide" start="-750,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
@@ -47,7 +110,7 @@
         <control type="group">
             <posx>748r</posx>
             <posy>472</posy>
-            <visible>!Skin.HasSetting(DisableTimePanel)</visible>
+            <visible>!Skin.HasSetting(DisableTimePanel) + !Skin.HasSetting(AlternateTimeStats)</visible>
             <animation effect="slide" end="750,0" time="300">WindowClose</animation>
             <animation effect="slide" start="750,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
             <animation effect="slide" start="750,0" end="0,0" delay="1000" time="600" condition="Window.Previous(startup)">WindowOpen</animation>
@@ -1889,38 +1952,38 @@
                         <include condition="Substring(Skin.String(widgetlist),watchlistmusicvideosclassic)">WatchListMusicVideosItems</include>
                         <include condition="Substring(Skin.String(widgetlist),randommusicvideosclassic)">MusicvideoRandomItems</include>
                         <include condition="Substring(Skin.String(widgetlist),watchlistmoviesclassic)">WatchlistMoviesItems</include>
-                        <include condition="Substring(Skin.String(widgetlist),albums1custom)">Custom1WidgetMusic</include>
-                        <include condition="Substring(Skin.String(widgetlist),albums1custom)">Custom1WidgetMusicHome</include>
-                        <include condition="Substring(Skin.String(widgetlist),movies1custom)">Custom1Widget</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv1custom)">Custom1WidgetEpisodes</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv1custom)">Custom1WidgetEpisodesHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums1custom)">Custom1WidgetMusic</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums1custom)">Custom1WidgetMusicHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),movies2custom)">Custom2Widget</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv2custom)">Custom2WidgetEpisodes</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv2custom)">Custom2WidgetEpisodesHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums2custom)">Custom2WidgetMusic</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums2custom)">Custom2WidgetMusicHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),movies3custom)">Custom3Widget</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv3custom)">Custom3WidgetEpisodes</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv3custom)">Custom3WidgetEpisodesHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums3custom)">Custom3WidgetMusic</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums3custom)">Custom3WidgetMusicHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),movies4custom)">Custom4Widget</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv4custom)">Custom4WidgetEpisodes</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv4custom)">Custom4WidgetEpisodesHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums4custom)">Custom4WidgetMusic</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums4custom)">Custom4WidgetMusicHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),movies5custom)">Custom5Widget</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv5custom)">Custom5WidgetEpisodes</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv5custom)">Custom5WidgetEpisodesHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums5custom)">Custom5WidgetMusic</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums5custom)">Custom5WidgetMusicHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),movies6custom)">Custom6Widget</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv6custom)">Custom6Widget</include>
-                        <include condition="SubString(Skin.String(widgetlist),tv6custom)">Custom6WidgetHome</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums6custom)">Custom6WidgetMusic</include>
-                        <include condition="SubString(Skin.String(widgetlist),albums6custom)">Custom6WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + Substring(Skin.String(widgetlist),albums1customclassic)">Custom1WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + Substring(Skin.String(widgetlist),albums1customclassic)">Custom1WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + Substring(Skin.String(widgetlist),movies1customclassic)">Custom1Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv1customclassic)">Custom1WidgetEpisodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv1customclassic)">Custom1WidgetEpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums1customclassic)">Custom1WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums1customclassic)">Custom1WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),movies2customclassic)">Custom2Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv2customclassic)">Custom2WidgetEpisodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv2customclassic)">Custom2WidgetEpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums2customclassic)">Custom2WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums2customclassic)">Custom2WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),movies3customclassic)">Custom3Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv3customclassic)">Custom3WidgetEpisodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv3customclassic)">Custom3WidgetEpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums3customclassic)">Custom3WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums3customclassic)">Custom3WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),movies4customclassic)">Custom4Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv4customclassic)">Custom4WidgetEpisodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv4customclassic)">Custom4WidgetEpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums4customclassic)">Custom4WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums4customclassic)">Custom4WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),movies5customclassic)">Custom5Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv5customclassic)">Custom5WidgetEpisodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv5customclassic)">Custom5WidgetEpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums5customclassic)">Custom5WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums5customclassic)">Custom5WidgetMusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),movies6customclassic)">Custom6Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv6customclassic)">Custom6Widget</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),tv6customclassic)">Custom6WidgetHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums6customclassic)">Custom6WidgetMusic</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widgetlist),albums6customclassic)">Custom6WidgetMusicHome</include>
                         <include condition="Substring(Skin.String(widgetlist),randomalbumsclassic)">RandomAlbumsItems</include>
                         <include condition="Substring(Skin.String(widgetlist),randomalbumsclassic)">RandomAlbumsItemsHome</include>
                         <include condition="Substring(Skin.String(widgetlist),randomartistsclassic)">RandomArtistsItems</include>
@@ -3590,36 +3653,36 @@
                         <include condition="Substring(Skin.String(widget2list),randommusicvideosclassic)">MusicvideoRandomItems2</include>
                         <include condition="Substring(Skin.String(widget2list),watchlistmusicvideosclassic)">WatchListMusicVideosItems2</include>
                         <include condition="Substring(Skin.String(widget2list),watchlistmoviesclassic)">WatchlistMoviesItems2</include>
-                        <include condition="SubString(Skin.String(widget2list),movies7custom)">Custom1Widget2</include>
-                        <include condition="SubString(Skin.String(widget2list),tv7custom)">Custom1Widget2Episodes</include>
-                        <include condition="SubString(Skin.String(widget2list),tv7custom)">Custom1Widget2EpisodesHome</include>
-                        <include condition="SubString(Skin.String(widget2list),albums7custom)">Custom1Widget2Music</include>
-                        <include condition="SubString(Skin.String(widget2list),albums7custom)">Custom1Widget2MusicHome</include>
-                        <include condition="SubString(Skin.String(widget2list),movies8custom)">Custom2Widget2</include>
-                        <include condition="SubString(Skin.String(widget2list),tv8custom)">Custom2Widget2Episodes</include>
-                        <include condition="SubString(Skin.String(widget2list),tv8custom)">Custom2Widget2EpisodesHome</include>
-                        <include condition="SubString(Skin.String(widget2list),albums8custom)">Custom2Widget2Music</include>
-                        <include condition="SubString(Skin.String(widget2list),albums8custom)">Custom2Widget2MusicHome</include>
-                        <include condition="SubString(Skin.String(widget2list),movies9custom)">Custom3Widget2</include>
-                        <include condition="SubString(Skin.String(widget2list),tv9custom)">Custom3Widget2Episodes</include>
-                        <include condition="SubString(Skin.String(widget2list),tv9custom)">Custom3Widget2EpisodesHome</include>
-                        <include condition="SubString(Skin.String(widget2list),albums9custom)">Custom3Widget2Music</include>
-                        <include condition="SubString(Skin.String(widget2list),albums9custom)">Custom3Widget2MusicHome</include>
-                        <include condition="SubString(Skin.String(widget2list),movies10custom)">Custom4Widget2</include>
-                        <include condition="SubString(Skin.String(widget2list),tv10custom)">Custom4Widget2Episodes</include>
-                        <include condition="SubString(Skin.String(widget2list),tv10custom)">Custom4Widget2EpisodesHome</include>
-                        <include condition="SubString(Skin.String(widget2list),albums10custom)">Custom4Widget2Music</include>
-                        <include condition="SubString(Skin.String(widget2list),albums10custom)">Custom4Widget2MusicHome</include>
-                        <include condition="SubString(Skin.String(widget2list),movies11custom)">Custom5Widget2</include>
-                        <include condition="SubString(Skin.String(widget2list),tv11custom)">Custom5Widget2Episodes</include>
-                        <include condition="SubString(Skin.String(widget2list),tv11custom)">Custom5Widget2EpisodesHome</include>
-                        <include condition="SubString(Skin.String(widget2list),albums11custom)">Custom5Widget2Music</include>
-                        <include condition="SubString(Skin.String(widget2list),albums11custom)">Custom5Widget2MusicHome</include>
-                        <include condition="SubString(Skin.String(widget2list),movies12custom)">Custom6Widget2</include>
-                        <include condition="SubString(Skin.String(widget2list),tv12custom)">Custom6Widget2Episodes</include>
-                        <include condition="SubString(Skin.String(widget2list),tv12custom)">Custom6Widget2EpisodesHome</include>
-                        <include condition="SubString(Skin.String(widget2list),albums12custom)">Custom6Widget2Music</include>
-                        <include condition="SubString(Skin.String(widget2list),albums12custom)">Custom6Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies7customclassic)">Custom1Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv7customclassic)">Custom1Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv7customclassic)">Custom1Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums7customclassic)">Custom1Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums7customclassic)">Custom1Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies8customclassic)">Custom2Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv8customclassic)">Custom2Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv8customclassic)">Custom2Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums8customclassic)">Custom2Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums8customclassic)">Custom2Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies9customclassic)">Custom3Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv9customclassic)">Custom3Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv9customclassic)">Custom3Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums9customclassic)">Custom3Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums9customclassic)">Custom3Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies10customclassic)">Custom4Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv10customclassic)">Custom4Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv10customclassic)">Custom4Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums10customclassic)">Custom4Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums10customclassic)">Custom4Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies11customclassic)">Custom5Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv11customclassic)">Custom5Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv11customclassic)">Custom5Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums11customclassic)">Custom5Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums11customclassic)">Custom5Widget2MusicHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),movies12customclassic)">Custom6Widget2</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv12customclassic)">Custom6Widget2Episodes</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),tv12customclassic)">Custom6Widget2EpisodesHome</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums12customclassic)">Custom6Widget2Music</include>
+                        <include condition="System.HasAddon(script.randomandlastitems) + SubString(Skin.String(widget2list),albums12customclassic)">Custom6Widget2MusicHome</include>
                         <include condition="Substring(Skin.String(widget2list),randomalbumsclassic)">RandomAlbumsItems2</include>
                         <include condition="Substring(Skin.String(widget2list),randomalbumsclassic)">RandomAlbumsItems2Home</include>
                         <include condition="Substring(Skin.String(widget2list),randomartistsclassic)">RandomArtistsItems2</include>
@@ -5091,36 +5154,36 @@
                     <include condition="System.HasAddon(plugin.image.mypicsdb)">LatestPicturesItems</include>
                     <include condition="System.HasAddon(plugin.image.mypicsdb) + !Window.IsActive(1124) + Substring(Skin.String(widgetlist),recentpics)">LatestPicturesItemsHome</include>
                     <include condition="System.HasAddon(script.games.rom.collection.browser) + [Window.IsActive(1124) | Substring(Skin.String(widgetlist),mostplayedroms)]">MostPlayedRomsItems</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies1custom)">Custom1Widget</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv1custom)">Custom1WidgetEpisodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv1custom)">Custom1WidgetEpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums1custom)">Custom1WidgetMusic</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums1custom)">Custom1WidgetMusicHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies2custom)">Custom2Widget</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv2custom)">Custom2WidgetEpisodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv2custom)">Custom2WidgetEpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums2custom)">Custom2WidgetMusic</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums2custom)">Custom2WidgetMusicHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies3custom)">Custom3Widget</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv3custom)">Custom3WidgetEpisodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv3custom)">Custom3WidgetEpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums3custom)">Custom3WidgetMusic</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums3custom)">Custom3WidgetMusicHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies4custom)">Custom4Widget</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv4custom)">Custom4WidgetEpisodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv4custom)">Custom4WidgetEpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums4custom)">Custom4WidgetMusic</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums4custom)">Custom4WidgetMusicHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies5custom)">Custom5Widget</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv5custom)">Custom5WidgetEpisodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv5custom)">Custom5WidgetEpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums5custom)">Custom5WidgetMusic</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums5custom)">Custom5WidgetMusicHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies6custom)">Custom6Widget</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv6custom)">Custom6WidgetEpisodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv6custom)">Custom6WidgetEpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums6custom)">Custom6WidgetMusic</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums6custom)">Custom6WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies1custom)]">Custom1Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv1custom)]">Custom1WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv1custom)]">Custom1WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums1custom)]">Custom1WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums1custom)]">Custom1WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies2custom)]">Custom2Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv2custom)]">Custom2WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv2custom)]">Custom2WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums2custom)]">Custom2WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums2custom)]">Custom2WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies3custom)]">Custom3Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv3custom)]">Custom3WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv3custom)]">Custom3WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums3custom)]">Custom3WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums3custom)]">Custom3WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies4custom)]">Custom4Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv4custom)]">Custom4WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv4custom)]">Custom4WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums4custom)]">Custom4WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums4custom)]">Custom4WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies5custom)]">Custom5Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv5custom)]">Custom5WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv5custom)]">Custom5WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums5custom)]">Custom5WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums5custom)]">Custom5WidgetMusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),movies6custom)]">Custom6Widget</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),tv6custom)]">Custom6WidgetEpisodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),tv6custom)]">Custom6WidgetEpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widgetlist),albums6custom)]">Custom6WidgetMusic</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widgetlist),albums6custom)]">Custom6WidgetMusicHome</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widgetlist),babe)">DailyBabesContent</include>
                     <include condition="Library.HasContent(tvshows) + [Window.IsActive(1124) | Substring(Skin.String(widgetlist),nextaired)]">NextAiredWidgetContent1124</include>
                     <include condition="Library.HasContent(tvshows) + Substring(Skin.String(widgetlist),nextaired) + !Window.IsActive(1124)">NextAiredWidgetContent</include>
@@ -5512,36 +5575,36 @@
                     <include condition="System.HasAddon(plugin.image.mypicsdb)">LatestPicturesItems2</include>
                     <include condition="System.HasAddon(plugin.image.mypicsdb) + !Window.IsActive(1124) + Substring(Skin.String(widget2list),recentpics)">LatestPicturesItems2Home</include>
                     <include condition="System.HasAddon(script.games.rom.collection.browser) + [Window.IsActive(1124) | Substring(Skin.String(widget2list),mostplayedroms)]">MostPlayedRomsItems2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),movies7custom)">Custom1Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),tv7custom)">Custom1Widget2Episodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv7custom)">Custom1Widget2EpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),albums7custom)">Custom1Widget2Music</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums7custom)">Custom1Widget2MusicHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),movies8custom)">Custom2Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),tv8custom)">Custom2Widget2Episodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv8custom)">Custom2Widget2EpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),albums8custom)">Custom2Widget2Music</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums8custom)">Custom2Widget2MusicHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),movies9custom)">Custom3Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),tv9custom)">Custom3Widget2Episodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv9custom)">Custom3Widget2EpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),albums9custom)">Custom3Widget2Music</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums9custom)">Custom3Widget2MusicHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),movies10custom)">Custom4Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),tv10custom)">Custom4Widget2Episodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv10custom)">Custom4Widget2EpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),albums10custom)">Custom4Widget2Music</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums10custom)">Custom4Widget2MusicHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),movies11custom)">Custom5Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),tv11custom)">Custom5Widget2Episodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv11custom)">Custom5Widget2EpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),albums11custom)">Custom5Widget2Music</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums11custom)">Custom5Widget2MusicHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),movies12custom)">Custom6Widget2</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),tv12custom)">Custom6Widget2Episodes</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv12custom)">Custom6Widget2EpisodesHome</include>
-                    <include condition="Window.IsActive(1124) | SubString(Skin.String(widget2list),albums12custom)">Custom6Widget2Music</include>
-                    <include condition="!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums12custom)">Custom6Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies7custom)]">Custom1Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv7custom)]">Custom1Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv7custom)]">Custom1Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums7custom)]">Custom1Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums7custom)]">Custom1Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies8custom)]">Custom2Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv8custom)]">Custom2Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv8custom)]">Custom2Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums8custom)]">Custom2Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums8custom)]">Custom2Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies9custom)]">Custom3Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv9custom)]">Custom3Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv9custom)]">Custom3Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums9custom)]">Custom3Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums9custom)]">Custom3Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies10custom)]">Custom4Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv10custom)]">Custom4Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv10custom)]">Custom4Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums10custom)]">Custom4Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums10custom)]">Custom4Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies11custom)]">Custom5Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv11custom)]">Custom5Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv11custom)]">Custom5Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums11custom)]">Custom5Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums11custom)]">Custom5Widget2MusicHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),movies12custom)]">Custom6Widget2</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),tv12custom)]">Custom6Widget2Episodes</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),tv12custom)]">Custom6Widget2EpisodesHome</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [Window.IsActive(1124) | SubString(Skin.String(widget2list),albums12custom)]">Custom6Widget2Music</include>
+                    <include condition="System.HasAddon(script.randomandlastitems) + [!Window.IsActive(1124) + SubString(Skin.String(widget2list),albums12custom)]">Custom6Widget2MusicHome</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),babe)">DailyBabesContent2</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widget2list),nextaired)">NextAiredWidget2Content1124</include>
                     <include condition="Substring(Skin.String(widget2list),nextaired) + !Window.IsActive(1124)">NextAiredWidget2Content</include>
@@ -6098,7 +6161,7 @@
                 <height>300</height>
                 <align>right</align>
                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                <label>$LOCALIZE[404][CR]Sun Length[CR]Sunrise[CR]Sunset[CR]Moonrise[CR]Moon Phase[CR]Sun Diff</label>
+                <label>$LOCALIZE[404][CR]$LOCALIZE[31219][CR]$LOCALIZE[31224][CR]$LOCALIZE[31225][CR]$LOCALIZE[31232][CR]$LOCALIZE[31226][CR]$LOCALIZE[31197]</label>
             </control>
             <control type="label">
                 <posx>570</posx>
@@ -6135,7 +6198,7 @@
                     <height>300</height>
                     <align>right</align>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>$LOCALIZE[42257][CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]$LOCALIZE[42258][CR]Pressure</label>
+                    <label>$LOCALIZE[42257][CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]$LOCALIZE[42258][CR]$LOCALIZE[31239]</label>
                 </control>
                 <control type="label">
                     <posx>200</posx>
@@ -6151,7 +6214,7 @@
                     <height>300</height>
                     <align>right</align>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>$LOCALIZE[404][CR]Visibility[CR]Sunrise[CR]Sunset[CR]Moon Phase[CR]Average Day (Low)[CR]Average Day (High)</label>
+                    <label>$LOCALIZE[404][CR]$LOCALIZE[31223][CR]$LOCALIZE[31224][CR]$LOCALIZE[31225][CR]$LOCALIZE[31226][CR]$LOCALIZE[31237][CR]$LOCALIZE[31238]</label>
                 </control>
                 <control type="label">
                     <posx>610</posx>
