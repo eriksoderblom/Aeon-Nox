@@ -1914,6 +1914,18 @@
         <value condition="Window.IsActive(musicinformation)">$INFO[ListItem.FileNameAndPath,,/cdart.png]</value>
         <value>$INFO[ListItem.Path,,cdart.png]</value>
     </variable>
+    <variable name="cdARTWidget1Var">
+        <value condition="Stringcompare(Skin.String(LibraryStructure),2)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container(5010).ListItem.Label2]\$INFO[Container(5010).ListItem.Property(Year)] - $INFO[Container(5010).ListItem.Label,,\cdart.png]</value>
+        <value condition="Stringcompare(Skin.String(LibraryStructure),3)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container(5010).ListItem.Label2]\$INFO[Container(5010).ListItem.Label] $INFO[Container(5010).ListItem.Property(Year),(,)\cdart.png]</value>
+        <value condition="Stringcompare(Skin.String(LibraryStructure),4)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container(5010).ListItem.Label2] - $INFO[Container(5010).ListItem.Label] $INFO[Container(5010).ListItem.Property(Year),(,)\cdart.png]</value>
+        <value>$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container(5010).ListItem.Label2]\$INFO[Container(5010).ListItem.Label,,\cdart.png]</value>
+    </variable>
+    <variable name="cdARTWidget2Var">
+        <value condition="Stringcompare(Skin.String(LibraryStructure),2)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container(6010).ListItem.Label2]\$INFO[Container(6010).ListItem.Property(Year)] - $INFO[Container(6010).ListItem.Label,,\cdart.png]</value>
+        <value condition="Stringcompare(Skin.String(LibraryStructure),3)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container(6010).ListItem.Label2]\$INFO[Container(6010).ListItem.Label] $INFO[Container(6010).ListItem.Property(Year),(,)\cdart.png]</value>
+        <value condition="Stringcompare(Skin.String(LibraryStructure),4)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container(6010).ListItem.Label2] - $INFO[Container(6010).ListItem.Label] $INFO[Container(6010).ListItem.Property(Year),(,)\cdart.png]</value>
+        <value>$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container(6010).ListItem.Label2]\$INFO[Container(6010).ListItem.Label,,\cdart.png]</value>
+    </variable>
     <variable name="ContextBottomVar">
         <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_bottom_glow.png</value>
         <value>dialogs/context_bottom.png</value>
@@ -2312,10 +2324,6 @@
         <value condition="Substring(Control.GetLabel(4322),6,right)">$INFO[Window(Home).Property(SmartPlaylist6.10.Art(poster))]</value>
     </variable>
     <variable name="FanartFallbackToIcon">
-        <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-        <value>$INFO[ListItem.Icon]</value>
-    </variable>
-    <variable name="FolderJPGVar">
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value>$INFO[ListItem.Icon]</value>
     </variable>

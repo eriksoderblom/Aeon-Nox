@@ -100,6 +100,7 @@
             <visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
             <label>587</label>
             <hinttext></hinttext>
+            <visible>!Container.Content()</visible>
             <include>Objects_MediaMenuButtonIcons</include>
         </control>
         <control type="radiobutton" id="20">
@@ -110,6 +111,7 @@
             <onclick>SetFocus(50)</onclick>
             <onclick>Filter</onclick>
             <include>Objects_MediaMenuButtonIcons</include>
+            <visible>!Container.Content()</visible>
         </control>
         <control type="button" id="8">
             <include>Objects_MediaMenuButtonIcons</include>
@@ -121,6 +123,13 @@
             <onclick>ReplaceWindow(MusicFiles)</onclick>
             <selected>Window.IsVisible(MusicLibrary)</selected>
             <visible>Window.IsActive(MusicLibrary)</visible>
+        </control>
+        <control type="button" id="1666">
+            <include>Objects_MediaMenuButtonIcons</include>
+            <label>42315</label>
+            <onclick>SetFocus(50)</onclick>
+            <onclick>ActivateWindow(1148)</onclick>
+            <visible>SubString(Container.FolderPath,special://musicplaylists/,left)</visible>
         </control>
     </include>
     <include name="VideoLibraryAltButtons_Left">
@@ -138,6 +147,7 @@
             <visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
             <label>587</label>
             <hinttext></hinttext>
+            <visible>!Container.Content()</visible>
             <include>Objects_MediaMenuButtonIcons</include>
         </control>
         <control type="radiobutton" id="20">
@@ -147,11 +157,13 @@
             <selected>Container.Filtered</selected>
             <onclick>SetFocus(50)</onclick>
             <onclick>Filter</onclick>
+            <visible>!Container.Content()</visible>
             <include>Objects_MediaMenuButtonIcons</include>
         </control>
         <control type="button" id="10">
             <include>Objects_MediaMenuButtonIcons</include>
             <label>-</label>
+            <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
         </control>
         <control type="radiobutton" id="7">
             <label>-</label>
@@ -164,6 +176,13 @@
             <onclick>xbmc.mastermode</onclick>
             <selected>system.ismaster</selected>
             <visible>system.haslocks</visible>
+        </control>
+        <control type="button" id="1666">
+            <include>Objects_MediaMenuButtonIcons</include>
+            <label>42315</label>
+            <onclick>SetFocus(50)</onclick>
+            <onclick>ActivateWindow(1148)</onclick>
+            <visible>SubString(Container.FolderPath,special://videoplaylists/,left)</visible>
         </control>
     </include>
     <include name="MusicFilesButtons">
@@ -373,11 +392,13 @@
                         <onleft>ClearProperty(viewtypeselect,home)</onleft>
                         <onleft>ActivateWindow(1121)</onleft>
                         <label>103</label>
+                        <visible>Control.IsEnabled(3)</visible>
                     </control>
                     <control type="togglebutton" id="4">
                         <label>$LOCALIZE[31164]: $LOCALIZE[584]</label>
                         <altlabel>$LOCALIZE[31164]: $LOCALIZE[585]</altlabel>
                         <include>Objects_MediaMenuButtonIcons</include>
+                         <visible>Control.IsEnabled(4)</visible>
                     </control>
                     <include condition="Window.IsActive(videolibrary)">VideoLibraryAltButtons_Left</include>
                     <include condition="Window.IsActive(AddonBrowser)">AddonBrowserButtons</include>
@@ -556,7 +577,18 @@
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/QUICKPAR.png</texture>
                         <visible>Control.IsVisible(7) + Window.IsActive(videolibrary)</visible>
-                        <visible>!SubString(Container.FolderPath,videodb://,left)</visible>
+                    </control>
+                    <control type="image">
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(11)">Conditional</animation>
+                        <include>MediaMenuIcons</include>
+                        <texture>special://skin/extras/BigIcons/Lock.png</texture>
+                        <visible>Control.IsVisible(11) + Window.IsActive(videolibrary)</visible>
+                    </control>
+                    <control type="image">
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(1666)">Conditional</animation>
+                        <include>MediaMenuIcons</include>
+                        <texture>special://skin/extras/BigIcons/Application.png</texture>
+                        <visible>Control.IsVisible(1666)</visible>
                     </control>
                     <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(5)">Conditional</animation>
@@ -691,13 +723,6 @@
                 <height>260</height>
                 <width>260</width>
                 <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[MusicPlayer.Cover]</texture>
-            </control>
-            <control type="image">
-                <posx>20</posx>
-                <height>260</height>
-                <width>260</width>
-                <texture diffuse="thumbs/cdcover_mask.png">$INFO[Player.FolderPath,,folder.jpg]</texture>
-                <visible>!Skin.HasSetting(NowPlayingFolderJPG)</visible>
             </control>
             <control type="image">
                 <posy>-20</posy>
