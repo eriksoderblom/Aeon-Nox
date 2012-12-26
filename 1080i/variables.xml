@@ -424,8 +424,11 @@
         <value condition="!IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
         <value condition="Container.Content(MusicVideos) | Container.Content(Artists) | Container.Content(Albums)">special://skin/backgrounds/music/</value>
         <value condition="Container.Content(addons)">special://skin/backgrounds/programs/</value>
-        <value condition="!IsEmpty(Skin.String(CustomHomeItem1.MultiFanart) + StringCompare(Skin.String(CustomHomeItem1.Label),Container.FolderName)">$INFO[Skin.String(CustomHomeItem1.MultiFanart)]</value>
-        <value condition="!IsEmpty(Skin.String(VideosHomeItem.MultiFanart)">$INFO[Skin.String(VideosHomeItem.MultiFanart)]</value>
+        <!-- Unique backdrops for my Sports and Video folders -->
+        <!-- Could not get SubString(Container.FolderPath,Skin.String(CustomHomeItem1.MultiFanart)) to work -->
+        <value condition="!IsEmpty(Skin.String(CustomHomeItem1.MultiFanart)) + SubString(Container.FolderPath,Sports)">$INFO[Skin.String(CustomHomeItem1.MultiFanart)]</value>
+        <value condition="!IsEmpty(Skin.String(VideosHomeItem.MultiFanart))">$INFO[Skin.String(VideosHomeItem.MultiFanart)]</value>
+        <!-- End -->
         <value>special://skin/backgrounds/videos/</value>
     </variable>
     <variable name="MovieFanartVar">
