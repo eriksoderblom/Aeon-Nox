@@ -134,7 +134,7 @@
             </control>
             <control type="label">
                 <posx>510</posx>
-                <posy>1016</posy>
+                <posy>1012</posy>
                 <width>900</width>
                 <align>center</align>
                 <font>Font_ShowcaseMainLabel2_Caps</font>
@@ -207,7 +207,7 @@
                 <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
             </animation>
             <posx>20</posx>
-            <posy>-600</posy>
+            <posy>-900</posy>
             <control type="image">
                 <width>130</width>
                 <height>80</height>
