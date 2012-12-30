@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<includes>
+﻿<includes>
     <include name="HomePanelWidget_1124">
         <control type="group" id="5000">
             <posx>135</posx>
@@ -121,11 +120,6 @@
                         <include>ConcertsPanelContent1124</include>
                     </content>
                 </control>
-            </control>
-            <control type="group">
-                <visible>Substring(Control.GetLabel(4321),googlepanel)</visible>
-                <include>Animation_VisibleChange400</include>
-                <include condition="SubString(Weather.Plugin,google)">GooglePanelWidget</include>
             </control>
             <control type="group">
                 <visible>Substring(Control.GetLabel(4321),wunderground)</visible>
@@ -569,11 +563,6 @@
                         <include>ConcertsPanelContent1124</include>
                     </content>
                 </control>
-            </control>
-            <control type="group">
-                <visible>Substring(Control.GetLabel(4325),googlepanel)</visible>
-                <include>Animation_VisibleChange400</include>
-                <include condition="SubString(Weather.Plugin,google)">GooglePanelWidget</include>
             </control>
             <control type="group">
                 <visible>Substring(Control.GetLabel(4325),wunderground)</visible>
