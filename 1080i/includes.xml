@@ -797,32 +797,32 @@
     </include>
     <include name="AutoConfig">
         <onload>Skin.ResetSettings</onload>
-        <onload>Skin.SetString(diffuse_programs,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_music,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_videolibrary,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_PVR,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_pictures,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_featured,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_addons,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_musicplaylist,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_videoplaylist,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_mainmenu,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_weather,FFEEEEEE)</onload>
-        <onload>Skin.SetString(diffuse_color,FF111111)</onload>
-        <onload>Skin.SetString(diffuse_settings,FFEEEEEE)</onload>
-        <onload>Skin.SetString(font_color,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_videolibrary,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_music,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_programs,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_pictures,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_mainmenu,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_addons,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_musicplaylist,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_videoplaylist,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_weather,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_featured,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_settings,FFFFFFFF)</onload>
-        <onload>Skin.SetString(font_PVR,FFFFFFFF)</onload>
+        <onload>Skin.SetString(diffuse_programs,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_music,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_videolibrary,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_PVR,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_pictures,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_featured,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_addons,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_musicplaylist,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_videoplaylist,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_mainmenu,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_weather,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_color,FF6db9e5)</onload>
+        <onload>Skin.SetString(diffuse_settings,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_color,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_videolibrary,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_music,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_programs,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_pictures,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_mainmenu,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_addons,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_musicplaylist,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_videoplaylist,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_weather,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_featured,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_settings,FF6db9e5)</onload>
+        <onload>Skin.SetString(font_PVR,FF6db9e5)</onload>
         <onload>Skin.SetString(BackgroundDarkness,80FFFFFF)</onload>
         <onload>Skin.SetString(LibraryStructure,2)</onload>
         <onload>Skin.SetBool(alternativerss)</onload>
