@@ -60,7 +60,7 @@
                         <posy>14</posy>
                         <width>600</width>
                         <font>Font_Reg22</font>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <textcolor>grey2</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
 
@@ -93,7 +93,6 @@
                         <font>Font_Bold30</font>
                         <scrollspeed>60</scrollspeed>
                         <scrollsuffix>  •  </scrollsuffix>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
 
@@ -141,7 +140,6 @@
                     <width>1100</width>
                     <height>30</height>
                     <font>Font_Reg38</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
                     <label>$INFO[ListItem.Title]</label>
                 </control>
 
@@ -192,7 +190,7 @@
                     <posy>610</posy>
                     <width>227</width>
                     <height>48</height>
-                    <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                    <colordiffuse>white6</colordiffuse>
                     <texture>$INFO[ListItem.Rating,stars/,.png]</texture>
                 </control>
 
@@ -202,7 +200,7 @@
                     <width>100</width>
                     <height>30</height>
                     <font>Font_Reg25</font>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <textcolor>white6</textcolor>
                     <align>center</align>
                     <label>$INFO[ListItem.Rating]</label>
                 </control>
@@ -226,7 +224,7 @@
                         <width>280</width>
                         <height>30</height>
                         <font>Font_Reg14</font>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <textcolor>white6</textcolor>
                         <label>$LOCALIZE[20339]:</label>
                     </control>
 
@@ -248,7 +246,7 @@
                         <width>280</width>
                         <height>30</height>
                         <font>Font_Reg14</font>
-                        <textcolor>$VAR[TitleColorVar]</textcolor>
+                        <textcolor>white6</textcolor>
                         <label>$LOCALIZE[20417]:</label>
                     </control>
 
@@ -304,7 +302,7 @@
                     <height>200</height>
                     <font>Font_Reg14</font>
                     <aligny>top</aligny>
-                    <textcolor>$VAR[TitleColorVar]</textcolor>
+                    <textcolor>white6</textcolor>
                     <wrapmultiline>true</wrapmultiline>
                     <label>$INFO[ListItem.Plot]</label>
                 </control>
