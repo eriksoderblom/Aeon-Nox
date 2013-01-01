@@ -60,7 +60,7 @@
                         <posy>14</posy>
                         <width>600</width>
                         <font>Font_Reg22</font>
-                        <textcolor>grey2</textcolor>
+                        <textcolor>white2</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
 
@@ -78,7 +78,6 @@
                         <posx>28</posx>
                         <posy>-4</posy>
                         <width>40</width>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <height>40</height>
                         <texture>$VAR[WatchedIconVar]</texture>
                     </control>
@@ -93,6 +92,7 @@
                         <font>Font_Bold30</font>
                         <scrollspeed>60</scrollspeed>
                         <scrollsuffix>  •  </scrollsuffix>
+                        <textcolor>$VAR[TitleColorVar]</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
 
@@ -110,7 +110,6 @@
                         <posx>16</posx>
                         <posy>-6</posy>
                         <width>44</width>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <height>44</height>
                         <texture>$VAR[WatchedIconVar]</texture>
                     </control>
@@ -190,7 +189,7 @@
                     <posy>610</posy>
                     <width>227</width>
                     <height>48</height>
-                    <colordiffuse>white6</colordiffuse>
+                    <colordiffuse>white</colordiffuse>
                     <texture>$INFO[ListItem.Rating,stars/,.png]</texture>
                 </control>
 
@@ -200,7 +199,7 @@
                     <width>100</width>
                     <height>30</height>
                     <font>Font_Reg25</font>
-                    <textcolor>white6</textcolor>
+                    <textcolor>white</textcolor>
                     <align>center</align>
                     <label>$INFO[ListItem.Rating]</label>
                 </control>
