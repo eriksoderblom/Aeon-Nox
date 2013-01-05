@@ -8,5 +8,6 @@ My modifications are:
 * Darker bars on home screen (time, library stats and submenu)
 * Video browser uses the background from Video menu option on home screen (if one is set)
 * Scrollbar on left instead of right on List view
-* Removed floor glow on List view
+* Removed floor on List view
 * Unwatched episodes instead of year on low list, moved year label
+* Show season number on selected episode on episode view
