@@ -162,6 +162,7 @@
                 <item>
                     <label>$LOCALIZE[31249]</label>
                     <onclick>Container.SetViewMode(520)</onclick>
+                    <visible>!Skin.HasSetting(DisableSimpleListVL)</visible>
                     <visible>Window.IsActive(videos) + [Container.Content(movies) | Container.Content(tvshows)]</visible>
                 </item>
                 <item>
