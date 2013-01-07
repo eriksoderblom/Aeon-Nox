@@ -113,7 +113,7 @@
                 <include condition="!Skin.HasSetting(DisablePanelVL)">Panel</include>
                 <include condition="!Skin.HasSetting(DisableInfoPanelVL)">Viewtype_FullscreenPanel</include>
                 <!-- view id = 520 -->
-                <include>SimpleList</include>
+                <include condition="!Skin.HasSetting(DisableSimpleListVL)">SimpleList</include>
             </control>
             <control type="group">
                 <control type="button" id="7000">
