@@ -4436,53 +4436,108 @@
     <include name="FeaturedWidget2MiddleMovies">
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.1.Title)]</label>
-            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.1.Art(poster))]</icon>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.1.Art(fanart))]</icon>
             <property name="NavItem">item1.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.1.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.1.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.1.Art(clearlogo))]</property>
+            <property name="InProgress">overlayprogress.png</property>
             <onclick>$INFO[Window(Home).Property(RecommendedMovie.1.Play)]</onclick>
-            <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.2.Title)]</label>
-            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.2.Art(poster))]</icon>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.2.Art(fanart))]</icon>
             <property name="NavItem">item2.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.2.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.2.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.2.Art(clearlogo))]</property>
+            <property name="InProgress">overlayprogress.png</property>
             <onclick>$INFO[Window(Home).Property(RecommendedMovie.2.Play)]</onclick>
-            <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.2.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.3.Title)]</label>
-            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.3.Art(poster))]</icon>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.3.Art(fanart))]</icon>
             <property name="NavItem">item3.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.3.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.3.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.3.Art(clearlogo))]</property>
+            <property name="InProgress">overlayprogress.png</property>
             <onclick>$INFO[Window(Home).Property(RecommendedMovie.3.Play)]</onclick>
-            <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.3.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.4.Title)]</label>
-            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.4.Art(poster))]</icon>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.4.Art(fanart))]</icon>
             <property name="NavItem">item4.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.4.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.4.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.4.Art(clearlogo))]</property>
+            <property name="InProgress">overlayprogress.png</property>
             <onclick>$INFO[Window(Home).Property(RecommendedMovie.4.Play)]</onclick>
-            <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.4.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.5.Title)]</label>
-            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.5.Art(poster))]</icon>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RecommendedMovie.5.Art(fanart))]</icon>
             <property name="NavItem">item5.png</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.5.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.5.Art(fanart))]</property>
+            <property name="InProgress">overlayprogress.png</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.5.Art(clearlogo))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedMovie.5.Play)]</onclick>
-            <visible>Substring(Control.GetLabel(4325),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4325),featuredmovies) + !IsEmpty(Window(Home).Property(RecommendedMovie.5.Title))</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(Home).Property(RandomMovie.11.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.11.Art(fanart))]</icon>
+            <property name="NavItem">item1.png</property>
+            <property name="Year">$INFO[Window(Home).Property(RandomMovie.11.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.11.Art(fanart))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.11.Art(clearlogo))]</property>
+            <onclick>$INFO[Window(Home).Property(RandomMovie.11.Play)]</onclick>
+            <visible>Substring(Control.GetLabel(4325),featuredmovies) + IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(Home).Property(RandomMovie.12.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.12.Art(fanart))]</icon>
+            <property name="NavItem">item2.png</property>
+            <property name="Year">$INFO[Window(Home).Property(RandomMovie.12.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.12.Art(fanart))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.12.Art(clearlogo))]</property>
+            <onclick>$INFO[Window(Home).Property(RandomMovie.12.Play)]</onclick>
+            <visible>Substring(Control.GetLabel(4325),featuredmovies) + IsEmpty(Window(Home).Property(RecommendedMovie.2.Title))</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(Home).Property(RandomMovie.13.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.13.Art(fanart))]</icon>
+            <property name="NavItem">item3.png</property>
+            <property name="Year">$INFO[Window(Home).Property(RandomMovie.13.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.13.Art(fanart))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.13.Art(clearlogo))]</property>
+            <onclick>$INFO[Window(Home).Property(RandomMovie.13.Play)]</onclick>
+            <visible>Substring(Control.GetLabel(4325),featuredmovies) + IsEmpty(Window(Home).Property(RecommendedMovie.3.Title))</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(Home).Property(RandomMovie.14.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.14.Art(fanart))]</icon>
+            <property name="NavItem">item4.png</property>
+            <property name="Year">$INFO[Window(Home).Property(RandomMovie.14.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.14.Art(fanart))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.14.Art(clearlogo))]</property>
+            <onclick>$INFO[Window(Home).Property(RandomMovie.14.Play)]</onclick>
+            <visible>Substring(Control.GetLabel(4325),featuredmovies) + IsEmpty(Window(Home).Property(RecommendedMovie.4.Title))</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(Home).Property(RandomMovie.15.Title)]</label>
+            <icon fallback="DefaultTVShows.png">$INFO[Window(Home).Property(RandomMovie.15.Art(fanart))]</icon>
+            <property name="NavItem">item5.png</property>
+            <property name="Year">$INFO[Window(Home).Property(RandomMovie.15.Year)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.15.Art(fanart))]</property>
+            <property name="Logo">$INFO[Window(Home).Property(RandomMovie.15.Art(clearlogo))]</property>
+            <onclick>$INFO[Window(Home).Property(RandomMovie.15.Play)]</onclick>
+            <visible>Substring(Control.GetLabel(4325),featuredmovies) + IsEmpty(Window(Home).Property(RecommendedMovie.5.Title))</visible>
         </item>
     </include>
     <include name="FeaturedWidget2MiddleTV">
@@ -4854,7 +4909,6 @@
                         <label>31374</label>
                         <align>center</align>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>38</posx>
@@ -4865,7 +4919,6 @@
                         <font>Font_Info</font>
                         <scroll>true</scroll>
                         <align>center</align>
-                        
                     </control>
                     <control type="image">
                         <posx>82</posx>
@@ -4882,7 +4935,6 @@
                         <font>Font_Bold35</font>
                         <align>center</align>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                        
                         <visible>!IsEmpty(Window(weather).Property(Current.Temperature))</visible>
                         <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
                     </control>
@@ -4900,7 +4952,6 @@
                         <info>Window(weather).Property(Day0.Title)</info>
                         <align>center</align>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>38</posx>
@@ -4911,7 +4962,6 @@
                         <font>Font_Info</font>
                         <scroll>true</scroll>
                         <align>center</align>
-                        
                     </control>
                     <control type="image">
                         <posx>82</posx>
@@ -4930,7 +4980,6 @@
                         <align>right</align>
                         <label>$LOCALIZE[419] :</label>
                         <textcolor>grey2</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>150</posx>
@@ -4939,7 +4988,6 @@
                         <width>142</width>
                         <font>Font_Reg19</font>
                         <textcolor>red</textcolor>
-                        
                         <visible>!IsEmpty(Window(weather).Property(Day0.HighTemp))</visible>
                         <label>$INFO[Window(weather).Property(Day0.HighTemp)] $INFO[System.TemperatureUnits]</label>
                     </control>
@@ -4952,7 +5000,6 @@
                         <align>right</align>
                         <label>$LOCALIZE[418] :</label>
                         <textcolor>grey2</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>150</posx>
@@ -4962,7 +5009,6 @@
                         <label>$INFO[Window(weather).Property(Day0.LowTemp)] $INFO[System.TemperatureUnits]</label>
                         <font>Font_Reg19</font>
                         <textcolor>blue</textcolor>
-                        
                         <visible>!IsEmpty(Window(weather).Property(Day0.LowTemp))</visible>
                     </control>
                 </control>
@@ -4979,7 +5025,6 @@
                         <info>Window(weather).Property(Day1.Title)</info>
                         <align>center</align>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>38</posx>
@@ -4990,7 +5035,6 @@
                         <font>Font_Info</font>
                         <scroll>true</scroll>
                         <align>center</align>
-                        
                     </control>
                     <control type="image">
                         <posx>82</posx>
@@ -5009,7 +5053,6 @@
                         <align>right</align>
                         <label>$LOCALIZE[419] :</label>
                         <textcolor>grey2</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>150</posx>
@@ -5018,7 +5061,6 @@
                         <width>142</width>
                         <font>Font_Reg19</font>
                         <textcolor>red</textcolor>
-                        
                         <visible>!IsEmpty(Window(weather).Property(Day1.HighTemp))</visible>
                         <label>$INFO[Window(weather).Property(Day1.HighTemp)] $INFO[System.TemperatureUnits]</label>
                     </control>
@@ -5031,7 +5073,6 @@
                         <align>right</align>
                         <label>$LOCALIZE[418] :</label>
                         <textcolor>grey2</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>150</posx>
@@ -5041,7 +5082,6 @@
                         <label>$INFO[Window(weather).Property(Day1.LowTemp)] $INFO[System.TemperatureUnits]</label>
                         <font>Font_Reg19</font>
                         <textcolor>blue</textcolor>
-                        
                         <visible>!IsEmpty(Window(weather).Property(Day1.LowTemp))</visible>
                     </control>
                 </control>
@@ -5058,7 +5098,6 @@
                         <info>Window(weather).Property(Day2.Title)</info>
                         <align>center</align>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>38</posx>
@@ -5069,7 +5108,6 @@
                         <font>Font_Info</font>
                         <scroll>true</scroll>
                         <align>center</align>
-                        
                     </control>
                     <control type="image">
                         <posx>82</posx>
@@ -5088,7 +5126,6 @@
                         <align>right</align>
                         <label>$LOCALIZE[419] :</label>
                         <textcolor>grey2</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>150</posx>
@@ -5097,7 +5134,6 @@
                         <width>142</width>
                         <font>Font_Reg19</font>
                         <textcolor>red</textcolor>
-                        
                         <visible>!IsEmpty(Window(weather).Property(Day2.HighTemp))</visible>
                         <label>$INFO[Window(weather).Property(Day2.HighTemp)] $INFO[System.TemperatureUnits]</label>
                     </control>
@@ -5110,7 +5146,6 @@
                         <align>right</align>
                         <label>$LOCALIZE[418] :</label>
                         <textcolor>grey2</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>150</posx>
@@ -5120,7 +5155,6 @@
                         <label>$INFO[Window(weather).Property(Day2.LowTemp)] $INFO[System.TemperatureUnits]</label>
                         <font>Font_Reg19</font>
                         <textcolor>blue</textcolor>
-                        
                         <visible>!IsEmpty(Window(weather).Property(Day2.LowTemp))</visible>
                     </control>
                 </control>
@@ -5137,7 +5171,6 @@
                         <info>Window(weather).Property(Day3.Title)</info>
                         <align>center</align>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>38</posx>
@@ -5148,7 +5181,6 @@
                         <font>Font_Info</font>
                         <scroll>true</scroll>
                         <align>center</align>
-                        
                     </control>
                     <control type="image">
                         <posx>82</posx>
@@ -5167,7 +5199,6 @@
                         <align>right</align>
                         <label>$LOCALIZE[419] :</label>
                         <textcolor>grey2</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>150</posx>
@@ -5176,7 +5207,6 @@
                         <width>142</width>
                         <font>Font_Reg19</font>
                         <textcolor>red</textcolor>
-                        
                         <visible>!IsEmpty(Window(weather).Property(Day3.HighTemp))</visible>
                         <label>$INFO[Window(weather).Property(Day3.HighTemp)] $INFO[System.TemperatureUnits]</label>
                     </control>
@@ -5189,7 +5219,6 @@
                         <align>right</align>
                         <label>$LOCALIZE[418] :</label>
                         <textcolor>grey2</textcolor>
-                        
                     </control>
                     <control type="label">
                         <posx>150</posx>
@@ -5199,7 +5228,6 @@
                         <label>$INFO[Window(weather).Property(Day3.LowTemp)] $INFO[System.TemperatureUnits]</label>
                         <font>Font_Reg19</font>
                         <textcolor>blue</textcolor>
-                        
                         <visible>!IsEmpty(Window(weather).Property(Day3.LowTemp))</visible>
                     </control>
                 </control>
