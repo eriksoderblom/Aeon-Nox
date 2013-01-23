@@ -146,15 +146,27 @@
                 <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                 <label>[COLOR grey]$INFO[System.Date]  •[/COLOR]  $INFO[System.Time]</label>
             </control>
-            <control type="label">
-                <posx>30</posx>
-                <width>330</width>
-                <height>36</height>
-                <font>Font_Info_Caps</font>
+            <control type="grouplist">
                 <visible>Weather.IsFetched + !Skin.HasSetting(shorterhomebars)</visible>
                 <include>Animation_VisibleChange400</include>
+             <orientation>horizontal</orientation>
+                <posx>30</posx>
+                <usecontrolcoords>true</usecontrolcoords>
+            <control type="label">
+                <width min="0" max="700">auto</width>
+                <height>36</height>
+                <font>Font_Info_Caps</font>
                 <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey]• $INFO[Window(Weather).Property(Current.Condition)][/COLOR]</label>
+                <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits] [COLOR grey]• [/COLOR]</label>
+            </control>
+            <control type="image">
+                <posy>-8</posy>
+                <posx>-10</posx>
+                <width>55</width>
+                <height>55</height>
+                <texture>weather/small/$INFO[Weather.FanartCode].png</texture>
+                <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+            </control>
             </control>
         </control>
     </include>
@@ -2004,10 +2016,11 @@
                     <include>Objects_ContextMenuButton</include>
                     <onclick condition="Substring(Control.GetLabel(4321),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(8000).ListItem.Property(Path)],return)</onclick>
                     <onclick condition="Substring(Control.GetLabel(4321),album)">Playlist.Clear</onclick>
-                    <onclick condition="!Substring(Control.GetLabel(4321),artist) + !Substring(Control.GetLabel(4321),addons) + !Substring(Control.GetLabel(4321),artists) + !Substring(Control.GetLabel(4321),rss)">$INFO[Container(8000).ListItem.Property(Path)]</onclick>
+                    <onclick condition="!Substring(Control.GetLabel(4321),artist) + !Substring(Control.GetLabel(4321),addons) + !Substring(Control.GetLabel(4321),artists) + !Substring(Control.GetLabel(4321),rss) + !Substring(Control.GetLabel(4321),roms)">$INFO[Container(8000).ListItem.Property(Path)]</onclick>
                     <onclick condition="Substring(Control.GetLabel(4321),addons)">RunAddon($INFO[Container(8000).ListItem.Property(Path)])</onclick>
                     <onclick condition="Substring(Control.GetLabel(4321),rss)">PlayMedia($ESCINFO[Container(8000).ListItem.Property(Media)])</onclick>
                     <onclick condition="SubString(Control.GetLabel(4321),actor)">RunScript(script.metadata.actors,$INFO[Container(8000).ListItem.Label])</onclick>
+                    <onclick condition="Substring(Control.GetLabel(4321),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Container(8000).ListItem.Property(Id)])</onclick>
                 </control>
                 <control type="button" id="8016">
                     <label>$LOCALIZE[20410]</label>
@@ -2241,6 +2254,7 @@
                             <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,randommovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,randomalbums,home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$INFO[Container(5001).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
                         <control type="wraplist" id="5001">
@@ -2321,6 +2335,7 @@
                             <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,randomtv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$INFO[Container(5002).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
                         <control type="wraplist" id="5002">
@@ -2413,6 +2428,7 @@
                             <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,recentmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,recenttv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,recentalbums,home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$INFO[Container(5003).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
                         <control type="wraplist" id="5003">
@@ -2661,7 +2677,8 @@
                         <control type="button" id="5015">
                             <label>$LOCALIZE[208]</label>
                             <include>WidgetMenuLabel</include>
-                            <onclick condition="!SubString(Control.GetLabel(4321),actor)">$INFO[Container(5010).ListItem.Property(Path)]</onclick>
+                            <onclick condition="Substring(Control.GetLabel(4321),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Container(5010).ListItem.Property(Id)])</onclick>
+                            <onclick condition="!SubString(Control.GetLabel(4321),actor) + !Substring(Control.GetLabel(4321),roms)">$INFO[Container(5010).ListItem.Property(Path)]</onclick>
                             <onclick condition="SubString(Control.GetLabel(4321),actor)">RunScript(script.metadata.actors,$INFO[Container(5010).ListItem.Label])</onclick>
                         </control>
                         <control type="button" id="5016">
@@ -3693,10 +3710,11 @@
                     <include>Objects_ContextMenuButton</include>
                     <onclick condition="Substring(Control.GetLabel(4325),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(7000).ListItem.Property(Path)],return)</onclick>
                     <onclick condition="Substring(Control.GetLabel(4325),album)">Playlist.Clear</onclick>
-                    <onclick condition="!Substring(Control.GetLabel(4325),artist) + !Substring(Control.GetLabel(4325),addons) + !Substring(Control.GetLabel(4325),artists) + !Substring(Control.GetLabel(4325),rss)">$INFO[Container(7000).ListItem.Property(Path)]</onclick>
+                    <onclick condition="!Substring(Control.GetLabel(4325),artist) + !Substring(Control.GetLabel(4325),addons) + !Substring(Control.GetLabel(4325),artists) + !Substring(Control.GetLabel(4325),rss) + !Substring(Control.GetLabel(4325),roms)">$INFO[Container(7000).ListItem.Property(Path)]</onclick>
                     <onclick condition="Substring(Control.GetLabel(4325),addons)">RunAddon($INFO[Container(7000).ListItem.Property(Path)])</onclick>
                     <onclick condition="Substring(Control.GetLabel(4325),rss)">PlayMedia($ESCINFO[Container(7000).ListItem.Property(Media)])</onclick>
                     <onclick condition="SubString(Control.GetLabel(4325),actor)">RunScript(script.metadata.actors,$INFO[Container(7000).ListItem.Label])</onclick>
+                    <onclick condition="Substring(Control.GetLabel(4325),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Container(7000).ListItem.Property(Id)])</onclick>
                 </control>
                 <control type="button" id="7016">
                     <label>$LOCALIZE[20410]</label>
@@ -3926,6 +3944,7 @@
                             <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,randommovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,randomalbums,home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$INFO[Container(6001).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                             <visible>SubString(Control.GetLabel(4325),featured)</visible>
                         </control>
@@ -4007,6 +4026,7 @@
                             <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,randomtv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$INFO[Container(6002).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
                         <control type="wraplist" id="6002">
@@ -4099,6 +4119,7 @@
                             <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,recentmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,recenttv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,recentalbums,home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$INFO[Container(6003).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
                         <control type="wraplist" id="6003">
@@ -4346,7 +4367,8 @@
                         <control type="button" id="6015">
                             <label>$LOCALIZE[208]</label>
                             <include>WidgetMenuLabel</include>
-                            <onclick condition="!SubString(Control.GetLabel(4325),actor)">$INFO[Container(6010).ListItem.Property(Path)]</onclick>
+                            <onclick condition="Substring(Control.GetLabel(4325),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Container(6010).ListItem.Property(Id)])</onclick>
+                            <onclick condition="!SubString(Control.GetLabel(4325),actor) + !Substring(Control.GetLabel(4325),roms)">$INFO[Container(6010).ListItem.Property(Path)]</onclick>
                             <onclick condition="SubString(Control.GetLabel(4325),actor)">RunScript(script.metadata.actors,$INFO[Container(6010).ListItem.Label])</onclick>
                         </control>
                         <control type="button" id="6016">
