@@ -66,6 +66,15 @@
         <value condition="Stringcompare(System.Time(mm),58)">FFC9C0BB</value>
         <value condition="Stringcompare(System.Time(mm),59)">FF99E0CC</value>
     </variable>
+    <variable name="NewsFeedVar">
+        <value condition="Stringcompare(System.Language,German)">http://pipes.yahoo.com/pipes/pipe.run?_id=5cc10db1ae3a763e4919c6de8fb58551&amp;_render=rss&amp;youtubeid=tagesschau</value>
+        <!--       <value condition="Stringcompare(System.Language,Australia)">http://pipes.yahoo.com/pipes/pipe.run?_id=5cc10db1ae3a763e4919c6de8fb58551&amp;_render=rss&amp;youtubeid=7NEWS</value> -->
+        <value>http://pipes.yahoo.com/pipes/pipe.run?_id=5cc10db1ae3a763e4919c6de8fb58551&amp;_render=rss&amp;youtubeid=Channel4News</value>
+    </variable>
+    <variable name="QuickConfigIconVar">
+        <value condition="!IsEmpty(Window(home).Property(quicknavsetup))">special://skin/extras/BigIcons/ButtonStop.png</value>
+        <value>special://skin/extras/BigIcons/Gears.png</value>
+    </variable>
     <variable name="DefaultAreaColorVar">
         <value condition="[Window.IsActive(fullscreeninfo) | Window.IsActive(fullscreenvideo) | Window.IsActive(videoosd) | Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)| Window.IsActive(videobookmarks)] + !IsEmpty(Skin.String(diffuse_videolibrary))">$INFO[Skin.String(diffuse_videolibrary)]</value>
         <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicosd) | Window.IsActive(musicfiles) | Window.IsActive(visualisation)] + !IsEmpty(Skin.String(diffuse_music))">$INFO[Skin.String(diffuse_music)]</value>
@@ -100,26 +109,6 @@
         <value condition="[Window.IsActive(1128) | Window.IsActive(1138)] + !IsEmpty(Skin.String(diffuse_color))">$INFO[Skin.String(diffuse_color)]</value>
         <value condition="Substring(Skin.CurrentTheme,whit)">$VAR[WhiteAreaColorVar]</value>
         <value>$VAR[DefaultAreaColorVar]</value>
-    </variable>
-    <variable name="HomeDVDButtonColorVar">
-        <value condition="Control.HasFocus(2017)">$VAR[ColorDiffuseVar]</value>
-        <value>white3</value>
-    </variable>
-    <variable name="HomeWidgetButtonColorVar">
-        <value condition="Control.HasFocus(2016)">$VAR[ColorDiffuseVar]</value>
-        <value>white3</value>
-    </variable>
-    <variable name="HomeMusicInfoButtonColorVar">
-        <value condition="Control.HasFocus(2018)">$VAR[ColorDiffuseVar]</value>
-        <value>white3</value>
-    </variable>
-    <variable name="HomeFeaturedButtonColorVar">
-        <value condition="Control.HasFocus(2019)">$VAR[ColorDiffuseVar]</value>
-        <value>white3</value>
-    </variable>
-    <variable name="HomeNextAiredButtonColorVar">
-        <value condition="Control.HasFocus(2014)">$VAR[ColorDiffuseVar]</value>
-        <value>white3</value>
     </variable>
     <variable name="DefaultFontColorVar">
         <value condition="[Window.IsActive(fullscreeninfo) | Window.IsActive(fullscreenvideo) | Window.IsActive(videoosd) | Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)| Window.IsActive(videobookmarks)] + !IsEmpty(Skin.String(font_videolibrary))">$INFO[Skin.String(font_videolibrary)]</value>
@@ -479,11 +468,6 @@
         <value condition="ControlGroup(450).HasFocus">special://skin/backgrounds/music/</value>
         <value>special://skin/backgrounds/videos/</value>
     </variable>
-    <variable name="BigFanListVar">
-        <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>
-        <value condition="Container.Content(years)">$INFO[ListItem.Label,special://skin/extras/year/video/fanart/,.jpg]</value>
-        <value>$INFO[ListItem.Art(fanart)]</value>
-    </variable>
     <!--Infopanel variables-->
     <variable name="InfoPanelLayoutVar">
         <value condition="StringCompare(Control.GetLabel(4420),fourthumbs)">views/four_thumbs_layout.png</value>
@@ -770,6 +754,14 @@
         <value condition="Skin.HasSetting(biggergap)">$LOCALIZE[31861]</value>
         <value>$LOCALIZE[31083]</value>
     </variable>
+    <variable name="MovieWallPathVar">
+        <value condition="Stringcompare(Control.GetLabel(4322),moviewall1)">$INFO[Skin.String(MovieWall_Folder_Path_1)]</value>
+        <value condition="Stringcompare(Control.GetLabel(4322),moviewall2)">$INFO[Skin.String(MovieWall_Folder_Path_2)]</value>
+        <value condition="Stringcompare(Control.GetLabel(4322),moviewall3)">$INFO[Skin.String(MovieWall_Folder_Path_3)]</value>
+        <value condition="Stringcompare(Control.GetLabel(4322),moviewall4)">$INFO[Skin.String(MovieWall_Folder_Path_4)]</value>
+        <value condition="Stringcompare(Control.GetLabel(4322),moviewall5)">$INFO[Skin.String(MovieWall_Folder_Path_5)]</value>
+        <value>-</value>
+    </variable>
     <variable name="LibraryStatsVar">
         <value condition="Stringcompare(Control.GetLabel(4326),movies)">[COLOR grey]$LOCALIZE[31502]:[/COLOR] $INFO[Window(Home).Property(Movies.Count)][COLOR grey]  •  $LOCALIZE[16102]:[/COLOR] $INFO[Window(Home).Property(Movies.Watched)][COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(Movies.UnWatched)]</value>
         <value condition="Stringcompare(Control.GetLabel(4326),tvshows)">[COLOR grey]$LOCALIZE[20343]:[/COLOR] $INFO[Window(Home).Property(TVShows.Count)][COLOR grey]  •  $LOCALIZE[20360]:[/COLOR] $INFO[Window(Home).Property(Episodes.Count)][COLOR grey]  •  $LOCALIZE[16101]:[/COLOR] $INFO[Window(Home).Property(Episodes.UnWatched)]</value>
@@ -900,13 +892,9 @@
         <value condition="!Skin.HasSetting(preferplot) + !IsEmpty(ListItem.PlotOutline)">$INFO[ListItem.PlotOutline]</value>
         <value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
     </variable>
-    <variable name="Widget1SubTitleVar">
-        <value condition="Substring(Control.GetLabel(4321),movie)">$INFO[ListItem.Property(Tagline)]</value>
-        <value condition="Substring(Control.GetLabel(4321),tv)">$INFO[ListItem.Property(EpisodeNumber)]: $INFO[ListItem.Label]</value>
-    </variable>
-    <variable name="Widget2SubTitleVar">
-        <value condition="Substring(Control.GetLabel(4325),movie)">$INFO[ListItem.Property(Tagline)]</value>
-        <value condition="Substring(Control.GetLabel(4325),tv)">$INFO[ListItem.Property(EpisodeNumber)]: $INFO[ListItem.Label]</value>
+    <variable name="WidgetSubTitleVar">
+        <value condition="!IsEmpty(ListItem.Property(Tagline))">$INFO[ListItem.Property(Tagline)]</value>
+        <value condition="!IsEmpty(ListItem.Property(EpisodeNumber))">$INFO[ListItem.Property(EpisodeNumber),,:] $INFO[ListItem.Label]</value>
     </variable>
     <variable name="WidgetTypeLabelVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.WidgetTitle)]</value>
@@ -1663,13 +1651,6 @@
         <value condition="Control.HasFocus(171)">$INFO[Container(171).ListItem.Art(fanart)]</value>
         <value condition="Control.HasFocus(181)">$INFO[Container(181).ListItem.Art(fanart)]</value>
     </variable>
-    <!-- Now Playing -->
-    <variable name="NowPlayingVideoLabel2Var">
-        <value condition="VideoPlayer.Content(Movies)">$INFO[VideoPlayer.Director]</value>
-        <value condition="VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.TvShowTitle]</value>
-        <value condition="VideoPlayer.Content(MusicVideos)">$INFO[VideoPlayer.Artist]</value>
-        <value>$INFO[VideoPlayer.Path]</value>
-    </variable>
     <!-- TriPanel -->
     <variable name="TriPanelDetail1Var">
         <value condition="System.HasAddon(script.metadata.actors) + [Container.Content(actors) | Container.Content(directors)]">$ADDON[script.metadata.actors 32012]</value>
@@ -2003,10 +1984,6 @@
     <variable name="ShutdownTopVar">
         <value condition="!Skin.HasSetting(DisableGlowbar)">dialogs/context_top_shutdown_glow.png</value>
         <value>dialogs/context_top_shutdown.png</value>
-    </variable>
-    <variable name="FakeListRCB">
-        <value condition="Control.HasFocus(500) | Control.HasFocus(600) | Control.HasFocus(700) | Control.HasFocus(800) | Control.HasFocus(900)">$VAR[ColorDiffuseVar]</value>
-        <value>grey2</value>
     </variable>
     <variable name="LandscapeLogoLabelVar">
         <value condition="Container.Content(movies)">$INFO[Listitem.Tagline]</value>
@@ -2469,10 +2446,6 @@
         <value condition="VideoPlayer.Content(episodes) + !IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
         <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.clearlogo)]</value>
         <value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
-        <value>$INFO[Player.Art(clearlogo)]</value>
-    </variable>
-    <variable name="Widget1PlayButtonLabelVar">
-        <value condition="VideoPlayer.Content(episodes) + !IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
         <value>$INFO[Player.Art(clearlogo)]</value>
     </variable>
     <variable name="HomeCustomStartupFocus">

@@ -7,7 +7,6 @@
         </control>
         <control type="image" id="2">
             <include>FullscreenDimensions</include>
-            <visibility>false</visibility>
         </control>
         <control type="group">
             <visible>MusicPlayer.Offset(number).Exists + !IntegerGreaterThan(Player.TimeRemaining,20)</visible>
@@ -16,8 +15,8 @@
             <include>Dialogs_Tablet</include>
             <include>Dialogs_Exclam</include>
             <control type="label">
-                <include>Dialogs_Label1</include>
                 <label>$INFO[MusicPlayer.offset(1).Title,$LOCALIZE[209] :]</label>
+                <include>Dialogs_Label1</include>
             </control>
         </control>
     </controls>

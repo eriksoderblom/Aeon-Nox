@@ -51,10 +51,10 @@
             <control type="image">
                 <posx>380</posx>
                 <posy>60</posy>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <width>340</width>
                 <height>880</height>
                 <texture border="20">osd/osd_settings_back.png</texture>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
             <control type="panel" id="4">
                 <posx>400</posx>
@@ -69,17 +69,17 @@
                     <control type="image">
                         <width>300</width>
                         <height>40</height>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texture>button-nofocus.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     </control>
                     <control type="label">
                         <posx>150</posx>
                         <width>300</width>
                         <height>40</height>
-                        <align>center</align>
                         <textoffsetx>10</textoffsetx>
-                        <font>Font_Reg15_Caps</font>
+                        <align>center</align>
                         <label>$INFO[ListItem.Label]</label>
+                        <font>Font_Reg15_Caps</font>
                     </control>
                 </itemlayout>
                 <focusedlayout height="40" width="300">
@@ -87,18 +87,18 @@
                         <control type="image">
                             <width>300</width>
                             <height>40</height>
-                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                             <texture>views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                         <control type="label">
                             <posx>150</posx>
                             <width>300</width>
                             <height>40</height>
-                            <align>center</align>
                             <textoffsetx>10</textoffsetx>
-                            <scroll>true</scroll>
-                            <font>Font_Reg15_Caps</font>
+                            <align>center</align>
                             <label>$INFO[ListItem.Label]</label>
+                            <font>Font_Reg15_Caps</font>
+                            <scroll>true</scroll>
                         </control>
                     </control>
                 </focusedlayout>

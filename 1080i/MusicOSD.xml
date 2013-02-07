@@ -21,10 +21,10 @@
                     <width>513</width>
                     <height>87</height>
                     <align>center</align>
-                    <font>Font_Reg17_Caps</font>
-                    <textcolor>FF363636</textcolor>
-                    <shadowcolor>88e5e5e5</shadowcolor>
                     <label>$LOCALIZE[31897]</label>
+                    <font>Font_Reg17_Caps</font>
+                    <shadowcolor>88e5e5e5</shadowcolor>
+                    <textcolor>FF363636</textcolor>
                 </control>
             </control>
             <control type="image">
@@ -49,8 +49,8 @@
                 <posx>440r</posx>
                 <width>200</width>
                 <height>125</height>
-                <label>$INFO[System.CurrentControl]</label>
                 <align>right</align>
+                <label>$INFO[System.CurrentControl]</label>
                 <font>Font_Reg20</font>
                 <textcolor>grey</textcolor>
                 <wrapmultiline>true</wrapmultiline>

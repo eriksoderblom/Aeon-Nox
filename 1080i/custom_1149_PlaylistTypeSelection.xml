@@ -20,10 +20,10 @@
             <control type="image">
                 <posx>380</posx>
                 <posy>200</posy>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <width>640</width>
                 <height>300</height>
                 <texture border="20">osd/osd_settings_back.png</texture>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
             <control type="panel" id="4">
                 <posx>400</posx>
@@ -38,16 +38,16 @@
                     <control type="image">
                         <width>300</width>
                         <height>60</height>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texture>button-nofocus.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     </control>
                     <control type="label">
                         <width>300</width>
                         <height>60</height>
                         <textoffsetx>10</textoffsetx>
+                        <label>$INFO[ListItem.Label]</label>
                         <font>Font_Reg19</font>
                         <textcolor>grey2</textcolor>
-                        <label>$INFO[ListItem.Label]</label>
                     </control>
                 </itemlayout>
                 <focusedlayout height="60" width="300">
@@ -56,16 +56,16 @@
                         <control type="image">
                             <width>300</width>
                             <height>60</height>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <texture>views/tripanel/listselect_fo.png</texture>
+                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         </control>
                         <control type="label">
                             <width>300</width>
                             <height>60</height>
                             <textoffsetx>10</textoffsetx>
-                            <scroll>true</scroll>
-                            <font>Font_Reg19</font>
                             <label>$INFO[ListItem.Label]</label>
+                            <font>Font_Reg19</font>
+                            <scroll>true</scroll>
                         </control>
                     </control>
                     <control type="group">
@@ -73,82 +73,55 @@
                         <control type="image">
                             <width>300</width>
                             <height>60</height>
-                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                             <texture>button-nofocus.png</texture>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                         <control type="label">
                             <width>300</width>
                             <textoffsetx>10</textoffsetx>
+                            <label>$INFO[ListItem.Label]</label>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
-                            <label>$INFO[ListItem.Label]</label>
                         </control>
                     </control>
                 </focusedlayout>
                 <content>
-                    <item>
-                        <label>31222</label>
-                        <onclick>SetProperty(Type,Movie,home)</onclick>
-                        <onclick>SetProperty(Method,Random,home)</onclick>
-                        <onclick>SetProperty(Resume,False,home)</onclick>
+                    <item id="459">
+                        <label>$LOCALIZE[31456]</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(CDWall_Folder_Path)][/COLOR]</label2>
+                        <include>Default_SettingButton</include>
                         <onclick>Dialog.Close(1149)</onclick>
-                        <onclick>ActivateWindow(1152)</onclick>
+                        <onclick>Skin.SetPath(CDWall_Folder_Path)</onclick>
                     </item>
-                    <item>
-                        <label>31323</label>
-                        <onclick>SetProperty(Type,Movie,home)</onclick>
-                        <onclick>SetProperty(Method,Last,home)</onclick>
-                        <onclick>SetProperty(Resume,False,home)</onclick>
+                    <item id="460">
+                        <label>$LOCALIZE[31455] (1)</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(MovieWall_Folder_Path_1)][/COLOR]</label2>
                         <onclick>Dialog.Close(1149)</onclick>
-                        <onclick>ActivateWindow(1152)</onclick>
+                        <onclick>Skin.SetPath(MovieWall_Folder_Path_1)</onclick>
                     </item>
-                    <item>
-                        <label>31335</label>
-                        <onclick>SetProperty(Type,Movie,home)</onclick>
-                        <onclick>SetProperty(Method,Last,home)</onclick>
-                        <onclick>SetProperty(Resume,True,home)</onclick>
+                    <item id="461">
+                        <label>$LOCALIZE[31455] (2)</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(MovieWall_Folder_Path_2)][/COLOR]</label2>
                         <onclick>Dialog.Close(1149)</onclick>
-                        <onclick>ActivateWindow(1152)</onclick>
+                        <onclick>Skin.SetPath(MovieWall_Folder_Path_2)</onclick>
                     </item>
-                    <item>
-                        <label>31220</label>
-                        <onclick>SetProperty(Type,Episode,home)</onclick>
-                        <onclick>SetProperty(Method,Random,home)</onclick>
-                        <onclick>SetProperty(Resume,False,home)</onclick>
+                    <item id="462">
+                        <label>$LOCALIZE[31455] (3)</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(MovieWall_Folder_Path_3)][/COLOR]</label2>
                         <onclick>Dialog.Close(1149)</onclick>
-                        <onclick>ActivateWindow(1152)</onclick>
+                        <onclick>Skin.SetPath(MovieWall_Folder_Path_3)</onclick>
                     </item>
-                    <item>
-                        <label>31324</label>
-                        <onclick>SetProperty(Type,Episode,home)</onclick>
-                        <onclick>SetProperty(Method,Last,home)</onclick>
-                        <onclick>SetProperty(Resume,False,home)</onclick>
+                    <item id="463">
+                        <label>$LOCALIZE[31455] (4)</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(MovieWall_Folder_Path_4)][/COLOR]</label2>
                         <onclick>Dialog.Close(1149)</onclick>
-                        <onclick>ActivateWindow(1152)</onclick>
+                        <onclick>Skin.SetPath(MovieWall_Folder_Path_4)</onclick>
                     </item>
-                    <item>
-                        <label>31329</label>
-                        <onclick>SetProperty(Type,Episode,home)</onclick>
-                        <onclick>SetProperty(Method,Latest,home)</onclick>
-                        <onclick>SetProperty(Resume,True,home)</onclick>
+                    <item id="464">
+                        <label>$LOCALIZE[31455] (5)</label>
+                        <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(MovieWall_Folder_Path_5)][/COLOR]</label2>
                         <onclick>Dialog.Close(1149)</onclick>
-                        <onclick>ActivateWindow(1152)</onclick>
-                    </item>
-                    <item>
-                        <label>31330</label>
-                        <onclick>SetProperty(Type,Music,home)</onclick>
-                        <onclick>SetProperty(Method,Random,home)</onclick>
-                        <onclick>SetProperty(Resume,False,home)</onclick>
-                        <onclick>Dialog.Close(1149)</onclick>
-                        <onclick>ActivateWindow(1125)</onclick>
-                    </item>
-                    <item>
-                        <label>31331</label>
-                        <onclick>SetProperty(Type,Music,home)</onclick>
-                        <onclick>SetProperty(Method,Last,home)</onclick>
-                        <onclick>SetProperty(Resume,False,home)</onclick>
-                        <onclick>Dialog.Close(1149)</onclick>
-                        <onclick>ActivateWindow(1125)</onclick>
+                        <onclick>Skin.SetPath(MovieWall_Folder_Path_5)</onclick>
                     </item>
                 </content>
             </control>

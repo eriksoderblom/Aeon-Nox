@@ -2,9 +2,9 @@
 <window>
     <defaultcontrol always="true">1</defaultcontrol>
     <coordinates>
-        <system>1</system>
         <posx>510</posx>
         <posy>352</posy>
+        <system>1</system>
     </coordinates>
     <include>Animation_WindowFade200</include>
     <controls>
@@ -23,8 +23,8 @@
             <posy>27</posy>
             <width>840</width>
             <height>45</height>
-            <font>Font_Reg18</font>
             <label>13406</label>
+            <font>Font_Reg18</font>
             <shadowcolor>black</shadowcolor>
         </control>
         <control type="label" id="2">

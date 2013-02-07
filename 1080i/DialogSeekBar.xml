@@ -3,9 +3,9 @@
     <defaultcontrol>1</defaultcontrol>
     <visible>[Player.Seeking | Player.DisplayAfterSeek | Player.Paused | Player.Forwarding | Player.Rewinding] + ![VideoPlayer.Content(livetv) | Window.IsVisible(videoosd) | Window.IsVisible(fullscreeninfo) | Window.IsActive(script-XBMC-Subtitles-main.xml)] + Window.IsVisible(fullscreenvideo)</visible>
     <coordinates>
-        <system>1</system>
         <posx>0</posx>
         <posy>0</posy>
+        <system>1</system>
     </coordinates>
     <controls>
         <control type="group">
@@ -19,8 +19,8 @@
                     <posy>826</posy>
                     <width>450</width>
                     <height>254</height>
-                    <texture background="true">$VAR[PlayerArtworkVar]</texture>
                     <aspectratio aligny="bottom">keep</aspectratio>
+                    <texture background="true">$VAR[PlayerArtworkVar]</texture>
                 </control>
             </control>
             <control type="group">
@@ -53,10 +53,10 @@
                     <width>420</width>
                     <height>42</height>
                     <align>center</align>
-                    <font>Font_Reg19_Caps</font>
-                    <textcolor>FF363636</textcolor>
-                    <shadowcolor>88e5e5e5</shadowcolor>
                     <label>$VAR[VideoPlayerSeekVar]</label>
+                    <font>Font_Reg19_Caps</font>
+                    <shadowcolor>88e5e5e5</shadowcolor>
+                    <textcolor>FF363636</textcolor>
                 </control>
             </control>
             <control type="group">
@@ -111,19 +111,19 @@
                     <posy>45</posy>
                     <width>300</width>
                     <height>42</height>
+                    <align>right</align>
+                    <label>$INFO[Player.Time]</label>
                     <font>Font_Reg19</font>
                     <textcolor>osdseek</textcolor>
-                    <label>$INFO[Player.Time]</label>
-                    <align>right</align>
                 </control>
                 <control type="label">
                     <posx>1290</posx>
                     <posy>45</posy>
                     <width>300</width>
                     <height>42</height>
+                    <label>$INFO[Player.Duration]</label>
                     <font>Font_Reg19</font>
                     <textcolor>osdseek</textcolor>
-                    <label>$INFO[Player.Duration]</label>
                     <visible>!Skin.HasSetting(PreferRemaining)</visible>
                 </control>
                 <control type="label">
@@ -131,9 +131,9 @@
                     <posy>45</posy>
                     <width>300</width>
                     <height>42</height>
+                    <label>$INFO[Player.TimeRemaining,- ]</label>
                     <font>Font_Reg19</font>
                     <textcolor>osdseek</textcolor>
-                    <label>$INFO[Player.TimeRemaining,- ]</label>
                     <visible>Skin.HasSetting(PreferRemaining)</visible>
                 </control>
             </control>
@@ -148,27 +148,27 @@
                 <include>Animation_CommonFade</include>
                 <usecontrolcoords>true</usecontrolcoords>
                 <control type="image">
+                    <posy>3</posy>
                     <width>90</width>
                     <height>87</height>
                     <aspectratio>keep</aspectratio>
-                    <colordiffuse>FFe5e5e5</colordiffuse>
                     <texture flipx="true">osd/ff.png</texture>
+                    <colordiffuse>FFe5e5e5</colordiffuse>
                     <animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
-                    <posy>3</posy>
                     <visible>Player.Rewinding</visible>
                 </control>
                 <control type="label">
-                    <include>Objects_OSDSeekForward</include>
                     <label>$VAR[VideoPlayerForwardRewindVar]</label>
+                    <include>Objects_OSDSeekForward</include>
                 </control>
                 <control type="image">
+                    <posy>3</posy>
                     <width>90</width>
                     <height>87</height>
                     <aspectratio>keep</aspectratio>
-                    <colordiffuse>FFe5e5e5</colordiffuse>
                     <texture>osd/ff.png</texture>
+                    <colordiffuse>FFe5e5e5</colordiffuse>
                     <animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
-                    <posy>3</posy>
                     <visible>Player.Forwarding</visible>
                 </control>
             </control>
@@ -194,10 +194,10 @@
                     <width>748</width>
                     <height>42</height>
                     <align>right</align>
-                    <font>Font_Reg19_Caps</font>
-                    <textcolor>FF363636</textcolor>
-                    <shadowcolor>88e5e5e5</shadowcolor>
                     <label>$LOCALIZE[21396]: $INFO[player.chapter]$INFO[player.chaptercount, / ]</label>
+                    <font>Font_Reg19_Caps</font>
+                    <shadowcolor>88e5e5e5</shadowcolor>
+                    <textcolor>FF363636</textcolor>
                     <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
                 </control>
             </control>
@@ -252,19 +252,19 @@
                         <posy>45</posy>
                         <width>300</width>
                         <height>42</height>
+                        <align>right</align>
+                        <label>$INFO[Player.Time]</label>
                         <font>Font_Reg19</font>
                         <textcolor>osdseek</textcolor>
-                        <label>$INFO[Player.Time]</label>
-                        <align>right</align>
                     </control>
                     <control type="label">
                         <posx>1290</posx>
                         <posy>45</posy>
                         <width>300</width>
                         <height>42</height>
+                        <label>$INFO[Player.Duration]</label>
                         <font>Font_Reg19</font>
                         <textcolor>osdseek</textcolor>
-                        <label>$INFO[Player.Duration]</label>
                         <visible>!Skin.HasSetting(PreferRemaining)</visible>
                     </control>
                     <control type="label">
@@ -272,9 +272,9 @@
                         <posy>45</posy>
                         <width>300</width>
                         <height>42</height>
+                        <label>$INFO[Player.TimeRemaining,- ]</label>
                         <font>Font_Reg19</font>
                         <textcolor>osdseek</textcolor>
-                        <label>$INFO[Player.TimeRemaining,- ]</label>
                         <visible>Skin.HasSetting(PreferRemaining)</visible>
                     </control>
                 </control>
@@ -289,27 +289,27 @@
                     <usecontrolcoords>true</usecontrolcoords>
                     <include>Animation_CommonFade</include>
                     <control type="image">
+                        <posy>3</posy>
                         <width>90</width>
                         <height>87</height>
                         <aspectratio>keep</aspectratio>
-                        <colordiffuse>FFe5e5e5</colordiffuse>
                         <texture flipx="true">osd/ff.png</texture>
+                        <colordiffuse>FFe5e5e5</colordiffuse>
                         <animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
-                        <posy>3</posy>
                         <visible>Player.Rewinding</visible>
                     </control>
                     <control type="label">
-                        <include>Objects_OSDSeekForward</include>
                         <label>$VAR[VideoPlayerForwardRewindVar]</label>
+                        <include>Objects_OSDSeekForward</include>
                     </control>
                     <control type="image">
+                        <posy>3</posy>
                         <width>90</width>
                         <height>87</height>
                         <aspectratio>keep</aspectratio>
-                        <colordiffuse>FFe5e5e5</colordiffuse>
                         <texture>osd/ff.png</texture>
+                        <colordiffuse>FFe5e5e5</colordiffuse>
                         <animation effect="fade" start="100" end="60" time="800" pulse="true" condition="true">Conditional</animation>
-                        <posy>3</posy>
                         <visible>Player.Forwarding</visible>
                     </control>
                 </control>
@@ -335,10 +335,10 @@
                         <width>748</width>
                         <height>42</height>
                         <align>right</align>
-                        <font>Font_Reg19_Caps</font>
-                        <textcolor>FF363636</textcolor>
-                        <shadowcolor>88e5e5e5</shadowcolor>
                         <label>$LOCALIZE[21396]: $INFO[player.chapter]$INFO[player.chaptercount, / ]</label>
+                        <font>Font_Reg19_Caps</font>
+                        <shadowcolor>88e5e5e5</shadowcolor>
+                        <textcolor>FF363636</textcolor>
                         <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
                     </control>
                 </control>
@@ -375,10 +375,10 @@
                         <width>420</width>
                         <height>42</height>
                         <align>center</align>
-                        <font>Font_Reg19_Caps</font>
-                        <textcolor>FF363636</textcolor>
-                        <shadowcolor>88e5e5e5</shadowcolor>
                         <label>$VAR[VideoPlayerSeekVar]</label>
+                        <font>Font_Reg19_Caps</font>
+                        <shadowcolor>88e5e5e5</shadowcolor>
+                        <textcolor>FF363636</textcolor>
                     </control>
                 </control>
             </control>
@@ -416,10 +416,10 @@
                         <width>420</width>
                         <height>42</height>
                         <align>center</align>
-                        <font>Font_Reg19_Caps</font>
-                        <textcolor>FF363636</textcolor>
-                        <shadowcolor>88e5e5e5</shadowcolor>
                         <label>$VAR[VideoPlayerSeekVar]</label>
+                        <font>Font_Reg19_Caps</font>
+                        <shadowcolor>88e5e5e5</shadowcolor>
+                        <textcolor>FF363636</textcolor>
                     </control>
                 </control>
                 <control type="image">
@@ -438,8 +438,8 @@
                     <height>68</height>
                     <align>center</align>
                     <aligny>bottom</aligny>
-                    <font>Font_ShowcaseMainLabel2_Caps</font>
                     <label>$INFO[VideoPlayer.Title]</label>
+                    <font>Font_ShowcaseMainLabel2_Caps</font>
                     <scroll>true</scroll>
                     <animation effect="slide" start="0,15" end="0,15" time="0" condition="[IsEmpty(Player.ChapterName) | SubString(Player.ChapterName,0,left)] + [[IsEmpty(VideoPlayer.Tagline) + VideoPlayer.Content(movies)] | [IsEmpty(VideoPlayer.Artist) + VideoPlayer.Content(musicvideos)]] | VideoPlayer.Content(files)">Conditional</animation>
                 </control>
@@ -450,49 +450,49 @@
                     <height>68</height>
                     <align>center</align>
                     <aligny>top</aligny>
+                    <label>$VAR[VideoPlayerSubTitleVar]</label>
                     <font>Font_Reg19</font>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
-                    <label>$VAR[VideoPlayerSubTitleVar]</label>
                     <scroll>true</scroll>
                 </control>
                 <control type="image">
                     <posx>15</posx>
                     <posy>12</posy>
-                    <include>OSDFlagVars</include>
                     <texture fallback="flags/source/defaultsource.png">$VAR[VideoSourceFlagVar,flags/source/,.png]</texture>
+                    <include>OSDFlagVars</include>
                 </control>
                 <control type="image">
                     <posx>165</posx>
                     <posy>12</posy>
-                    <include>OSDFlagVars</include>
                     <texture fallback="flags/studios/default-studio.png">$INFO[VideoPlayer.Studio,flags/studios/,.png]</texture>
+                    <include>OSDFlagVars</include>
                     <visible>!VideoPlayer.Content(files)</visible>
                 </control>
                 <control type="image">
                     <posx>315</posx>
                     <posy>12</posy>
-                    <include>OSDFlagVars</include>
                     <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[VideoRatingFlagVar,flags/rating/,.png]</texture>
+                    <include>OSDFlagVars</include>
                     <visible>!VideoPlayer.Content(files)</visible>
                 </control>
                 <control type="image">
                     <posx>1470</posx>
                     <posy>12</posy>
-                    <include>OSDFlagVars</include>
                     <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
+                    <include>OSDFlagVars</include>
                     <animation effect="slide" end="-1305" condition="VideoPlayer.Content(files)">Conditional</animation>
                 </control>
                 <control type="image">
                     <posx>1620</posx>
                     <posy>12</posy>
-                    <include>OSDFlagVars</include>
                     <texture fallback="flags/resolution/defaultscreen.png">$INFO[VideoPlayer.VideoResolution,flags/resolution/,.png]</texture>
+                    <include>OSDFlagVars</include>
                 </control>
                 <control type="image">
                     <posx>1770</posx>
                     <posy>12</posy>
-                    <include>OSDFlagVars</include>
                     <texture fallback="flags/audio/defaultsound.png">$INFO[VideoPlayer.AudioCodec,flags/info/]$INFO[VideoPlayer.AudioChannels,,.png]</texture>
+                    <include>OSDFlagVars</include>
                 </control>
             </control>
             <control type="group" id="4004">
