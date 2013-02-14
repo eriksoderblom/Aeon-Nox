@@ -18,7 +18,7 @@
                     <animation effect="slide" end="0,-50" time="120" condition="!Skin.HasSetting(nohighlist) + Control.HasFocus(7002)">Conditional</animation>
                     <animation effect="slide" end="0,-165" time="120" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
                     <control type="group">
-                        <visible>Container.Content(movies) + Skin.HasSetting(lowlisttagline) + !IsEmpty(ListItem.Tagline) + !Control.HasFocus(7002)</visible>
+                        <visible>Container.Content(movies) + [Skin.HasSetting(lowlisttagline) | Control.HasFocus(7002)] + !IsEmpty(ListItem.Tagline)</visible>
                         <!--                         <animation type="Visible">
                             <effect type="slide" start="0,50" end="0,0" time="400" easing="in" tween="cubic" />
                             <effect type="fade" end="100" time="300" />
@@ -146,17 +146,29 @@
                         <texture>views/lowlistpanel_line.png</texture>
                         <colordiffuse>66FFFFFF</colordiffuse>
                     </control>
-                    <control type="image">
-                        <posx>855</posx>
-                        <posy>607</posy>
-                        <width>628</width>
-                        <height>360</height>
-                        <aspectratio>scale</aspectratio>
-                        <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-                        <fadetime>400</fadetime>
-                        <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
-                        <bordersize>7</bordersize>
-                        <visible>!Container.Content(episodes)</visible>
+                    <control type="group">
+                       <visible>!Container.Content(episodes)</visible>
+                        <control type="image">
+                            <posx>855</posx>
+                            <posy>607</posy>
+                            <width>628</width>
+                            <height>360</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+                            <fadetime>400</fadetime>
+                            <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
+                            <bordersize>7</bordersize>
+                        </control>
+                        <control type="multiimage">
+                            <posx>862</posx>
+                            <posy>614</posy>
+                            <width>614</width>
+                            <height>346</height>
+                            <aspectratio>scale</aspectratio>
+                            <imagepath background="true">$INFO[ListItem.Path]/extrathumbs/</imagepath>
+                            <fadetime>1000</fadetime>
+                            <timeperimage>8000</timeperimage>
+                        </control>
                     </control>
                     <control type="image">
                         <posx>855</posx>
@@ -170,17 +182,6 @@
                         <bordersize>7</bordersize>
                         <visible>Container.Content(episodes)</visible>
                     </control>
-                    <control type="multiimage">
-                        <posx>862</posx>
-                        <posy>614</posy>
-                        <width>614</width>
-                        <height>346</height>
-                        <aspectratio>scale</aspectratio>
-                        <imagepath background="true">$INFO[ListItem.Path]/extrathumbs/</imagepath>
-                        <fadetime>1000</fadetime>
-                        <timeperimage>8000</timeperimage>
-                        <visible>!Container.Content(episodes)</visible>
-                    </control>
                 </control>
                 <control type="group">
                     <visible>Control.HasFocus(7002)</visible>
@@ -190,17 +191,8 @@
                         <width>1465</width>
                         <height>60</height>
                         <align>center</align>
-                        <label>$INFO[ListItem.Tagline]</label>
-                        <font>Font_Reg25_Caps</font>
-                        <textcolor>white3</textcolor>
-                    </control>
-                    <control type="fadelabel">
-                        <posx>450</posx>
-                        <posy>975</posy>
-                        <width>818</width>
-                        <height>105</height>
                         <label>$INFO[ListItem.Title]</label>
-                        <font>Font_OSDTitle2_Caps</font>
+                        <font>Font_Reg25_Caps</font>
                         <textcolor>white3</textcolor>
                     </control>
                     <control type="label">
@@ -221,7 +213,6 @@
                         <label fallback="31006">$VAR[FanartPanelValue1Var]</label>
                         <textcolor>white6</textcolor>
                         <scroll>true</scroll>
-                        <scroll>true</scroll>
                     </control>
                     <control type="label">
                         <posx>450</posx>
@@ -240,7 +231,6 @@
                         <aligny>top</aligny>
                         <label fallback="31006">$VAR[FanartPanelValue2Var]</label>
                         <textcolor>white6</textcolor>
-                        <scroll>true</scroll>
                         <scroll>true</scroll>
                     </control>
                     <control type="label">
@@ -311,7 +301,6 @@
                         <label fallback="31006">$VAR[FanartPanelValue6Var]</label>
                         <textcolor>white6</textcolor>
                         <scroll>true</scroll>
-                        <scroll>true</scroll>
                     </control>
                     <control type="textbox">
                         <posx>1500</posx>
@@ -362,7 +351,10 @@
                         <include>OSDFlagVars</include>
                         <visible>!ListItem.IsFolder</visible>
                     </control>
-                    <control type="image">
+                    <control type="group">
+                        <visible>Container.Content(tvshows) | [Container.Content(seasons) + !IsEmpty(ListItem.TVShowTitle)]</visible>
+                        <visible>Skin.HasSetting(NextAiredInfo)</visible>
+                                        <control type="image">
                         <posx>1770</posx>
                         <posy>987</posy>
                         <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
@@ -379,6 +371,44 @@
                         <fadetime>400</fadetime>
                         <visible>![Skin.HasSetting(lowlistbanner) + Container.Content(tvshows)]</visible>
                         <visible>Container.Content(tvshows) | [Container.Content(seasons) + !IsEmpty(ListItem.TVShowTitle)]</visible>
+                    </control>
+                   </control>
+                    <control type="group">
+                        <visible>Container.Content(tvshows) | [Container.Content(seasons) + !IsEmpty(ListItem.TVShowTitle)]</visible>
+                        <visible>!Skin.HasSetting(NextAiredInfo)</visible>
+                    <control type="image">
+                        <posx>1397</posx>
+                        <posy>987</posy>
+                        <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
+                    <control type="image">
+                        <posx>1520</posx>
+                        <posy>987</posy>
+                        <width>80</width>
+                        <height>80</height>
+                        <aspectratio scalediffuse="true">keep</aspectratio>
+                        <texture background="true">tvguide/$INFO[Window(Home).Property(NextAired.StatusID)].png</texture>
+                        <fadetime>400</fadetime>
+                    </control>
+                    <control type="label">
+                        <posx>1625</posx>
+                        <posy>966</posy>
+                        <width>330</width>
+                        <height>90</height>
+                        <align>left</align>
+                        <font>Font_Bold16</font>
+                        <label>Last: $VAR[LastEpisodeVar]</label>
+                    </control>
+                    <control type="label">
+                        <posx>1625</posx>
+                        <posy>995</posy>
+                        <width>330</width>
+                        <height>90</height>
+                        <align>left</align>
+                        <font>Font_Bold16</font>
+                        <label>Next: $VAR[NextEpisodeVar]</label>
+                    </control>
                     </control>
                 </control>
                 <control type="group">
@@ -638,7 +668,6 @@
                         <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture background="true">thumbs/boxes/tvshows/$VAR[GlobalCaseVar]</texture>
                         <fadetime>50</fadetime>
-                        <fadetime>400</fadetime>
                         <visible>Skin.HasSetting(usecaseslowlist) + Container.Content(movies)</visible>
                         <include>Animation_VisibleChange200</include>
                     </control>

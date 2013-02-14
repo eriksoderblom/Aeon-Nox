@@ -258,7 +258,6 @@
                     <width>387</width>
                     <height>381</height>
                     <aspectratio>keep</aspectratio>
-                    <aspectratio>keep</aspectratio>
                     <fadetime>300</fadetime>
                     <visible>Skin.HasSetting(cdartinvis)</visible>
                     <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="600">Visible</animation>
@@ -279,7 +278,6 @@
                     <width>387</width>
                     <height>381</height>
                     <aspectratio>keep</aspectratio>
-                    <aspectratio>keep</aspectratio>
                     <fadetime>300</fadetime>
                     <visible>Skin.HasSetting(cdartinvis)</visible>
                     <animation effect="slide" start="-180" end="0" time="560" tween="cubic" delay="600">Visible</animation>
@@ -299,7 +297,6 @@
                     <posy>-243</posy>
                     <width>387</width>
                     <height>381</height>
-                    <aspectratio>keep</aspectratio>
                     <aspectratio>keep</aspectratio>
                     <fadetime>300</fadetime>
                     <visible>Skin.HasSetting(cdartinvis)</visible>
@@ -399,7 +396,7 @@
                     <posy>70</posy>
                     <control type="image">
                         <posx>525</posx>
-                        <posy>-148</posy>
+                        <posy>-188</posy>
                         <width>900</width>
                         <height>4</height>
                         <texture>views/list_divider.png</texture>
@@ -407,7 +404,7 @@
                     </control>
                     <control type="image">
                         <posx>525</posx>
-                        <posy>-63</posy>
+                        <posy>-83</posy>
                         <width>900</width>
                         <height>4</height>
                         <texture>views/list_divider.png</texture>
@@ -560,7 +557,7 @@
                 </control>
                 <control type="grouplist">
                     <posx>610</posx>
-                    <posy>76</posy>
+                    <posy>71</posy>
                     <width>1920</width>
                     <height>150</height>
                     <animation effect="fade" start="100" end="0" time="240" condition="Window.IsVisible(musicosd)">Conditional</animation>
@@ -571,22 +568,10 @@
                         <height>75</height>
                         <align>right</align>
                         <aligny>bottom</aligny>
-                        <label>$INFO[MusicPlayer.Time,, / ]$INFO[MusicPlayer.Duration]</label>
+                        <label>$VAR[PlayerTimeLabelVar]</label>
                         <font>Font_MainClassic</font>
                         <shadowcolor>black</shadowcolor>
                         <textcolor>white3</textcolor>
-                        <visible>Player.HasDuration</visible>
-                    </control>
-                    <control type="label">
-                        <width min="10" max="1250">auto</width>
-                        <height>75</height>
-                        <align>right</align>
-                        <aligny>bottom</aligny>
-                        <label>$INFO[MusicPlayer.Time,, / ]∞</label>
-                        <font>Font_MainClassic</font>
-                        <shadowcolor>black</shadowcolor>
-                        <textcolor>white3</textcolor>
-                        <visible>!Player.HasDuration</visible>
                     </control>
                 </control>
                 <control type="label">
