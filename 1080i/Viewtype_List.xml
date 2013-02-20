@@ -39,7 +39,7 @@
                 <effect type="rotatey" center="1530" start="-90" end="0" time="360" delay="360" tween="cubic" />
             </animation>
             <include>Animation_ListSlideRight</include>
-                <visible>[Skin.HasSetting(roundedcovers) + !Container.Content(episodes)] | [Skin.HasSetting(listshowposter) + Container.Content(episodes)]</visible>
+            <visible>[Skin.HasSetting(roundedcovers) + !Container.Content(episodes)] | [Skin.HasSetting(listshowposter) + Container.Content(episodes)]</visible>
             <visible>[Container.Content(movies) |Container.Content(episodes) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons) | Container.Content(genres) | Container.Content(musicvideos) | [Window.IsActive(programs) + !Container.Content(addons)]]</visible>
             <control type="image">
                 <posx>-211</posx>
@@ -320,7 +320,7 @@
                     <height>868</height>
                     <texture>views/listpanel_detailwide.png</texture>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>[Container.Content(episodes) | Container.Content(songs)]</visible>
+                    <visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(albums)]</visible>
                 </control>
                 <control type="image">
                     <posx>990</posx>
@@ -329,7 +329,7 @@
                     <height>850</height>
                     <texture>views/listpanel_detailwide.png</texture>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(albums) | Container.Content(songs) | [Container.Content(addons) + Window.IsActive(addonbrowser)]</visible>
+                    <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(albums) | Container.Content(songs) | [Container.Content(addons) + Window.IsActive(addonbrowser)] | [Container.Content(files) + Window.IsActive(musicfiles)] | Window.IsActive(pictures)</visible>
                 </control>
                 <control type="image">
                     <posx>1026</posx>
@@ -580,23 +580,22 @@
                         <texture border="1">osd/osd_settings_buttonnf.png</texture>
                     </control>
                     <control type="label">
-                        <posx>68</posx>
-                        <width>1000</width>
+                        <posx>158</posx>
+                        <width>720</width>
                         <height>98</height>
                         <font>Font_Reg22</font>
                         <textcolor>grey2</textcolor>
                         <info>ListItem.Label</info>
-                        <visible>IsEmpty(ListItem.Label2) + ![Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]</visible>
+                        <visible>!IsEmpty(ListItem.Label2)</visible>
                     </control>
                     <control type="label">
-                        <posx>68</posx>
-                        <width>810</width>
+                        <posx>158</posx>
+                        <width>900</width>
                         <height>98</height>
                         <font>Font_Reg22</font>
                         <textcolor>grey2</textcolor>
                         <info>ListItem.Label</info>
-                        <animation effect="slide" end="100,0" time="0" condition="[Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]">Conditional</animation>
-                        <visible>!IsEmpty(ListItem.Label2) | [Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]</visible>
+                        <visible>IsEmpty(ListItem.Label2)</visible>
                     </control>
                     <control type="textbox">
                         <posx>900</posx>
@@ -617,12 +616,11 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     </control>
                     <control type="image">
-                        <posx>60</posx>
+                        <posx>49</posx>
                         <posy>5</posy>
                         <width>90</width>
                         <height>90</height>
-                        <texture fallback="-">$INFO[ListItem.Icon,defaulticons/]</texture>
-                        <visible>[Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]</visible>
+                        <texture fallback="-">$INFO[ListItem.ActualIcon,defaulticons/]</texture>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     </control>
                 </itemlayout>
@@ -643,21 +641,20 @@
                         <animation effect="fade" start="100" end="25" tween="sine" easing="inout" time="240" condition="!Control.HasFocus(50)">Conditional</animation>
                     </control>
                     <control type="label">
-                        <posx>68</posx>
-                        <width>1000</width>
+                        <posx>158</posx>
+                        <width>720</width>
                         <height>98</height>
                         <font>Font_Reg22</font>
                         <info>ListItem.Label</info>
-                        <visible>IsEmpty(ListItem.Label2) + ![Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]</visible>
+                        <visible>!IsEmpty(ListItem.Label2)</visible>
                     </control>
                     <control type="label">
-                        <posx>68</posx>
-                        <width>810</width>
+                        <posx>158</posx>
+                        <width>900</width>
                         <height>98</height>
                         <font>Font_Reg22</font>
                         <info>ListItem.Label</info>
-                        <animation effect="slide" end="100,0" time="0" condition="[Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]">Conditional</animation>
-                        <visible>!IsEmpty(ListItem.Label2) | [Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]</visible>
+                        <visible>IsEmpty(ListItem.Label2)</visible>
                     </control>
                     <control type="textbox">
                         <posx>900</posx>
@@ -677,12 +674,11 @@
                         <colordiffuse>white2</colordiffuse>
                     </control>
                     <control type="image">
-                        <posx>60</posx>
+                        <posx>49</posx>
                         <posy>5</posy>
                         <width>90</width>
                         <height>90</height>
-                        <texture fallback="-">$INFO[ListItem.Icon,defaulticons/]</texture>
-                        <visible>[Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]</visible>
+                        <texture fallback="-">$INFO[ListItem.ActualIcon,defaulticons/]</texture>
                         <colordiffuse>white2</colordiffuse>
                     </control>
                 </focusedlayout>

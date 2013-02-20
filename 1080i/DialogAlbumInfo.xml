@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol>5000</defaultcontrol>
-    <onload codition="!Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(usescriptalbumlist)">SetProperty(CURRENTARTIST,$INFO[ListItem.Artist])</onload>
-    <onload codition="!Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(usescriptalbumlist)">SetProperty(ArtistSlideshow.ExternalCall,True)</onload>
-    <onload codition="!Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(usescriptalbumlist)">RunScript(script.artistslideshow,windowid=12001&amp;artistfield=CURRENTARTIST)</onload>
-    <onunload codition="System.HasAddon(script.artistslideshow) + Skin.HasSetting(usescriptalbumlist)">clearProperty(ArtistSlideshow.ExternalCall)</onunload>
+    <onload condition="!Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(usescriptalbumlist)">SetProperty(CURRENTARTIST,$INFO[ListItem.Artist])</onload>
+    <onload condition="!Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(usescriptalbumlist)">SetProperty(ArtistSlideshow.ExternalCall,True)</onload>
+    <onload condition="!Player.HasAudio + System.HasAddon(script.artistslideshow) + Skin.HasSetting(usescriptalbumlist)">RunScript(script.artistslideshow,windowid=12001&amp;artistfield=CURRENTARTIST)</onload>
+    <onunload condition="System.HasAddon(script.artistslideshow) + Skin.HasSetting(usescriptalbumlist)">clearProperty(ArtistSlideshow.ExternalCall)</onunload>
     <animation type="WindowOpen" reversible="false">
         <effect type="zoom" start="150" end="100" center="960,540" time="400" tween="cubic" />
         <effect type="fade" end="100" time="200" />
@@ -713,7 +713,7 @@
                     <posy>-20</posy>
                     <width>500</width>
                     <height>60</height>
-                    <texture>osd/osd_settings_buttonnf.png</texture>
+                    <texture border="1">osd/osd_settings_buttonnf.png</texture>
                 </control>
                 <control type="label">
                     <posx>10</posx>
@@ -744,7 +744,7 @@
                         <posy>-20</posy>
                         <width>500</width>
                         <height>60</height>
-                        <texture>osd/osd_settings_buttonnf.png</texture>
+                        <texture border="1">osd/osd_settings_buttonnf.png</texture>
                     </control>
                     <control type="label">
                         <posx>10</posx>
@@ -803,7 +803,7 @@
                     <posy>-20</posy>
                     <width>500</width>
                     <height>60</height>
-                    <texture>osd/osd_settings_buttonnf.png</texture>
+                    <texture border="1">osd/osd_settings_buttonnf.png</texture>
                 </control>
                 <control type="label">
                     <posx>10</posx>
@@ -823,7 +823,7 @@
                         <posy>-20</posy>
                         <width>500</width>
                         <height>60</height>
-                        <texture>osd/osd_settings_buttonnf.png</texture>
+                        <texture border="1">osd/osd_settings_buttonnf.png</texture>
                     </control>
                     <control type="label">
                         <posx>10</posx>
@@ -906,7 +906,7 @@
                     <posy>-20</posy>
                     <width>500</width>
                     <height>60</height>
-                    <texture>osd/osd_settings_buttonnf.png</texture>
+                    <texture border="1">osd/osd_settings_buttonnf.png</texture>
                 </control>
                 <control type="label">
                     <posx>10</posx>
@@ -926,7 +926,7 @@
                         <posy>-20</posy>
                         <width>500</width>
                         <height>60</height>
-                        <texture>osd/osd_settings_buttonnf.png</texture>
+                        <texture border="1">osd/osd_settings_buttonnf.png</texture>
                     </control>
                     <control type="label">
                         <posx>10</posx>

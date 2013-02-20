@@ -40,6 +40,7 @@
             <height>60</height>
             <label>$LOCALIZE[13406]</label>
             <font>Font_Bold19</font>
+            <textcolor>$VAR[TitleColorVar]</textcolor>
         </control>
         <control type="label" id="4">
             <posx>375</posx>
@@ -65,7 +66,7 @@
                 <control type="image">
                     <width>1172</width>
                     <height>60</height>
-                    <texture>osd/osd_settings_buttonnf.png</texture>
+                    <texture border="1">osd/osd_settings_buttonnf.png</texture>
                 </control>
                 <control type="label">
                     <posx>45</posx>

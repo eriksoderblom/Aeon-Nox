@@ -62,7 +62,7 @@
         <control type="button" id="5999">
             <include>HiddenObject</include>
             <visible>!Control.HasFocus(109)</visible>
-            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] +  [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52) | Control.IsVisible(550)]</visible>
+            <visible>[Skin.HasSetting(darkinfopane) | !Skin.HasSetting(DisableGlowbar)] + [Control.IsVisible(7550) | Control.IsVisible(510) | Control.IsVisible(50) | Control.IsVisible(518) | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | Control.IsVisible(52) | Control.IsVisible(550)]</visible>
         </control>
         <control type="image">
             <texture>diffuseoverlay.png</texture>
@@ -135,16 +135,6 @@
                     <onclick condition="Container.Content(tvshows) | Container.Content(seasons)">SetFocus(50)</onclick>
                     <onclick condition="Container.Content(tvshows) | Container.Content(seasons)">Select</onclick>
                     <visible>Control.IsVisible(9900) + !Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
-                </control>
-                <control type="button" id="7002">
-                    <include>HiddenObject</include>
-                    <onup>Control.Move(511,-1)</onup>
-                    <onleft>50</onleft>
-                    <onright condition="!Skin.HasSetting(kioskmode)">9000</onright>
-                    <ondown>Control.Move(511,1)</ondown>
-                    <onback>50</onback>
-                    <onclick>PlayMedia($ESCINFO[ListItem.FileNameAndPath])</onclick>
-                    <visible>Control.IsVisible(511)</visible>
                 </control>
                 <control type="button" id="7566">
                     <include>HiddenObject</include>
