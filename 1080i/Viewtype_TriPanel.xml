@@ -594,13 +594,13 @@
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                         <control type="image">
-                            <posx>40</posx>
+                            <posx>43</posx>
                             <posy>2</posy>
                             <width>47</width>
                             <height>47</height>
-                            <texture fallback="-">$INFO[ListItem.Icon,defaulticons/]</texture>
-                            <visible>[Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]</visible>
+                            <texture>$VAR[SmallListIconVar,defaulticons/]</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                            <visible>IsEmpty(ListItem.Year) + !Container.Content(episodes) + ![Window.IsActive(programs) + !IsEmpty(ListItem.Premiered)]</visible>
                         </control>
                     </itemlayout>
                     <focusedlayout condition="!Skin.HasSetting(tripanelbiglist) + ![[Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv)] | [Container.Content(movies) + Skin.HasSetting(tripanelbannermovies)]]" height="51">
@@ -670,13 +670,13 @@
                             <texture>$VAR[WatchedIconVar]</texture>
                         </control>
                         <control type="image">
-                            <posx>40</posx>
+                            <posx>43</posx>
                             <posy>2</posy>
                             <width>47</width>
                             <height>47</height>
-                            <texture fallback="-">$INFO[ListItem.Icon,defaulticons/]</texture>
-                            <visible>[Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]</visible>
+                            <texture>$VAR[SmallListIconVar,defaulticons/]</texture>
                             <colordiffuse>white2</colordiffuse>
+                            <visible>IsEmpty(ListItem.Year) + !Container.Content(episodes) + ![Window.IsActive(programs) + !IsEmpty(ListItem.Premiered)]</visible>
                         </control>
                     </focusedlayout>
                     <itemlayout condition="Skin.HasSetting(tripanelbiglist) + ![[Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv)] | [Container.Content(movies) + Skin.HasSetting(tripanelbannermovies)]]" height="96">
@@ -751,13 +751,13 @@
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         </control>
                         <control type="image">
-                            <posx>30</posx>
+                            <posx>32</posx>
                             <posy>12</posy>
                             <width>70</width>
                             <height>70</height>
-                            <texture fallback="-">$INFO[ListItem.Icon,defaulticons/]</texture>
-                            <visible>[Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]</visible>
+                            <texture>$VAR[SmallListIconVar,defaulticons/]</texture>
                             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                            <visible>IsEmpty(ListItem.Year)</visible>
                         </control>
                     </itemlayout>
                     <focusedlayout condition="Skin.HasSetting(tripanelbiglist) + ![[Container.Content(tvshows) + Skin.HasSetting(tripanelbannertv)] | [Container.Content(movies) + Skin.HasSetting(tripanelbannermovies)]]" height="96">
@@ -836,13 +836,13 @@
                             <texture>$VAR[WatchedIconVar]</texture>
                         </control>
                         <control type="image">
-                            <posx>30</posx>
+                            <posx>32</posx>
                             <posy>12</posy>
                             <width>70</width>
                             <height>70</height>
-                            <texture fallback="-">$INFO[ListItem.Icon,defaulticons/]</texture>
-                            <visible>[Substring(ListItem.ActualIcon,Default,Left) + Substring(ListItem.Icon,Default,Left)]</visible>
+                            <texture>$VAR[SmallListIconVar,defaulticons/]</texture>
                             <colordiffuse>white2</colordiffuse>
+                            <visible>IsEmpty(ListItem.Year)</visible>
                         </control>
                     </focusedlayout>
                 </control>
