@@ -164,6 +164,7 @@
                     <posy>-8</posy>
                     <width>55</width>
                     <height>55</height>
+                    <colordiffuse>white2</colordiffuse>
                     <texture>weather/small/$INFO[Weather.FanartCode].png</texture>
                 </control>
             </control>
@@ -1753,26 +1754,28 @@
                         <posy>330</posy>
                         <width>900</width>
                         <height>38</height>
-                        <label>$INFO[Container(8000).ListItem.Label]</label>
+                        <label>$INFO[Container(8000).ListItem.Label][COLOR=$VAR[HomeMenuWidgetTextVar]]$INFO[Container(8000).ListItem.Property(Year), [,]][/COLOR]</label>
                         <font>Font_Reg22_Caps</font>
                         <textcolor>white3</textcolor>
                     </control>
                     <control type="label">
-                        <posy>120</posy>
+                        <posy>125</posy>
                         <width>800</width>
-                        <height>150</height>
-                        <label fallback="-">$INFO[Container(8000).ListItem.Property(Year)]</label>
+                        <height>38</height>
+                        <label>$INFO[Container(8000).ListItem.Property(Genre)]</label>
                         <font>Font_Reg20_Caps</font>
                         <textcolor>white3</textcolor>
                         <wrapmultiline>true</wrapmultiline>
                     </control>
                     <control type="textbox">
-                        <posy>120</posy>
+                        <posy>125</posy>
                         <width>688</width>
-                        <height>150</height>
+                        <height>200</height>
                         <aligny>top</aligny>
                         <label fallback="-">$INFO[Container(8000).ListItem.Property(Description)]</label>
                         <textcolor>white3</textcolor>
+                        <visible>IsEmpty(Container(8000).ListItem.Property(Genre))</visible>
+                        <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
                 <control type="image">
@@ -2881,7 +2884,12 @@
                         </control>
                         <control type="image">
                             <texture>$INFO[Container(5010).ListItem.Property(AudioChannels),flags/info/channels/,.png]</texture>
-                            <include>HomeInfoWidgetVars</include>
+        <width>150</width>
+        <height>90</height>
+        <aspectratio>keep</aspectratio>
+        <fadetime>IconCrossfadeTime2</fadetime>
+        <colordiffuse>white2</colordiffuse>
+        <animation effect="fade" time="200">VisibleChange</animation>
                         </control>
                         <control type="image">
                             <texture>$INFO[Container(5010).ListItem.Property(VideoResolution),flags/info/,.png]</texture>
@@ -3467,36 +3475,31 @@
                     <posx>430</posx>
                     <posy>-20</posy>
                     <control type="label">
-                        <posy>68</posy>
-                        <width>800</width>
-                        <height>38</height>
-                        <label>$INFO[Container(7000).ListItem.Label2]</label>
-                        <font>Font_Reg24_Caps</font>
-                    </control>
-                    <control type="label">
                         <posy>330</posy>
                         <width>900</width>
                         <height>38</height>
-                        <label>$INFO[Container(7000).ListItem.Label]</label>
+                        <label>$INFO[Container(7000).ListItem.Label][COLOR=$VAR[HomeMenuWidgetTextVar]]$INFO[Container(7000).ListItem.Property(Year), [,]][/COLOR]</label>
                         <font>Font_Reg22_Caps</font>
                         <textcolor>white3</textcolor>
                     </control>
                     <control type="label">
-                        <posy>120</posy>
+                        <posy>125</posy>
                         <width>800</width>
-                        <height>150</height>
-                        <label fallback="-">$INFO[Container(7000).ListItem.Property(Year)]</label>
+                        <height>38</height>
+                        <label>$INFO[Container(7000).ListItem.Property(Genre)]</label>
                         <font>Font_Reg20_Caps</font>
                         <textcolor>white3</textcolor>
                         <wrapmultiline>true</wrapmultiline>
                     </control>
                     <control type="textbox">
-                        <posy>120</posy>
+                        <posy>125</posy>
                         <width>688</width>
-                        <height>150</height>
+                        <height>200</height>
                         <aligny>top</aligny>
                         <label fallback="-">$INFO[Container(7000).ListItem.Property(Description)]</label>
                         <textcolor>white3</textcolor>
+                        <visible>IsEmpty(Container(7000.Property(Genre))</visible>
+                        <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
                 <control type="image">
@@ -4582,7 +4585,12 @@
                         </control>
                         <control type="image">
                             <texture>$INFO[Container(6010).ListItem.Property(AudioChannels),flags/info/channels/,.png]</texture>
-                            <include>HomeInfoWidgetVars</include>
+        <width>150</width>
+        <height>90</height>
+        <aspectratio>keep</aspectratio>
+        <fadetime>IconCrossfadeTime2</fadetime>
+        <colordiffuse>white2</colordiffuse>
+        <animation effect="fade" time="200">VisibleChange</animation>
                         </control>
                         <control type="image">
                             <texture>$INFO[Container(6010).ListItem.Property(VideoResolution),flags/info/,.png]</texture>
@@ -5215,7 +5223,7 @@
                 <preloaditems>1</preloaditems>
                 <scrolltime tween="quadratic">400</scrolltime>
                 <itemlayout width="536" height="360" condition="Substring(Control.GetLabel(4325),landscape)">
-                    <include condition="Substring(Skin.String(widgetlist),landscape) | Window.IsActive(1124)">WidgetLandscapeLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),landscape) | Window.IsActive(1124)">WidgetLandscapeLayout</include>
                     <control type="image">
                         <width>536</width>
                         <height>360</height>
@@ -5233,10 +5241,10 @@
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
-                    <include condition="Substring(Skin.String(widgetlist),landscape) | Window.IsActive(1124)">WidgetLandscapeLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),landscape) | Window.IsActive(1124)">WidgetLandscapeLayout</include>
                 </focusedlayout>
                 <itemlayout width="536" height="360" condition="Substring(Control.GetLabel(4325),roms)">
-                    <include condition="[Substring(Skin.String(widgetlist),roms) | Window.IsActive(1124)] + System.HasAddon(script.games.rom.collection.browser)">WidgetRCBLayout</include>
+                    <include condition="[Substring(Skin.String(widget2list),roms) | Window.IsActive(1124)] + System.HasAddon(script.games.rom.collection.browser)">WidgetRCBLayout</include>
                 </itemlayout>
                 <focusedlayout width="536" height="360" condition="Substring(Control.GetLabel(4325),roms)">
                     <control type="image">
@@ -5246,7 +5254,7 @@
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
-                    <include condition="[Substring(Skin.String(widgetlist),roms) | Window.IsActive(1124)] + System.HasAddon(script.games.rom.collection.browser)">WidgetRCBLayout</include>
+                    <include condition="[Substring(Skin.String(widget2list),roms) | Window.IsActive(1124)] + System.HasAddon(script.games.rom.collection.browser)">WidgetRCBLayout</include>
                 </focusedlayout>
                 <itemlayout width="229.7" height="360" condition="Substring(Control.GetLabel(4325),panelcoverposter)">
                     <control type="image">
@@ -5286,7 +5294,7 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="804" height="180" condition="Substring(Control.GetLabel(4325),bannerlayout)">
-                    <include condition="Substring(Skin.String(widgetlist),banner) | Window.IsActive(1124)">WidgetBannerLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),banner) | Window.IsActive(1124)">WidgetBannerLayout</include>
                 </itemlayout>
                 <focusedlayout width="804" height="180" condition="Substring(Control.GetLabel(4325),bannerlayout)">
                     <control type="image">
@@ -5296,7 +5304,7 @@
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
-                    <include condition="Substring(Skin.String(widgetlist),banner) | Window.IsActive(1124)">WidgetBannerLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),banner) | Window.IsActive(1124)">WidgetBannerLayout</include>
                 </focusedlayout>
                 <itemlayout width="536" height="360" condition="Substring(Control.GetLabel(4325),logolayout)">
                     <include>WidgetLogoLayout</include>
@@ -5500,7 +5508,7 @@
                     </control>
                 </focusedlayout>
                 <itemlayout height="450" width="536" condition="Substring(Control.GetLabel(4325),panel2poster)">
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
                 </itemlayout>
                 <focusedlayout height="450" width="536" condition="Substring(Control.GetLabel(4325),panel2poster)">
                     <control type="image">
@@ -5510,10 +5518,10 @@
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetPosterLayout</include>
                 </focusedlayout>
                 <itemlayout width="804" height="340" condition="Substring(Control.GetLabel(4325),panel2episode)">
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
                 </itemlayout>
                 <focusedlayout width="804" height="340" condition="Substring(Control.GetLabel(4325),panel2episode)">
                     <control type="image">
@@ -5523,10 +5531,10 @@
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetEpisodeLayout</include>
                 </focusedlayout>
                 <itemlayout width="804" height="360" condition="Substring(Control.GetLabel(4325),panel2square)">
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
                 </itemlayout>
                 <focusedlayout width="804" height="360" condition="Substring(Control.GetLabel(4325),panel2square)">
                     <control type="image">
@@ -5536,7 +5544,7 @@
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
-                    <include condition="Substring(Skin.String(widgetlist),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
+                    <include condition="Substring(Skin.String(widget2list),panel2) | Window.IsActive(1124)">Panel2WidgetSquareLayout</include>
                 </focusedlayout>
                 <content>
                     <include condition="Library.HasContent(movies) + [Window.IsActive(1124) | Substring(Skin.String(widget2list),recentmoviespanel)]">LatestMoviesItems2</include>
