@@ -10,14 +10,6 @@
                 <include>Animation_WindowFade200</include>
                 <visible>Skin.HasSetting(altoverlayinfowall)</visible>
             </control>
-            <control type="image">
-                <include>FullscreenDimensions</include>
-                <texture>common/white.png</texture>
-                <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-                <colordiffuse>black</colordiffuse>
-                <visible>!Skin.HasSetting(altoverlayinfowall)</visible>
-                <include>Animation_WindowFade200</include>
-            </control>
         </control>
         <control type="group">
             <visible>Control.IsVisible(520)</visible>
@@ -26,13 +18,12 @@
             <control type="fixedlist" id="520">
                 <viewtype label="31249">simplelist</viewtype>
                 <posx>40</posx>
-                <posy>40</posy>
+                <posy>50</posy>
                 <width>950</width>
                 <height>1012</height>
                 <scrolltime>100</scrolltime>
                 <orientation>vertical</orientation>
-                <movement>3</movement>
-                <focusposition>8</focusposition>
+                <focusposition>6</focusposition>
                 <onup>520</onup>
                 <ondown>520</ondown>
                 <onleft condition="Control.IsVisible(61)">61</onleft>
@@ -40,18 +31,7 @@
                 <onright>9000</onright>
                 <preloaditems>2</preloaditems>
                 <pagecontrol>61</pagecontrol>
-                <visible>Container.Content(episodes) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(musiclibrary)</visible>
-                <animation effect="slide" start="0,0" end="0,65" time="0" condition="Skin.HasSetting(ClassicTopBar) | Skin.HasSetting(altbreadcrumbstexture)">Conditional</animation>
-                <animation effect="slide" end="0,15" time="200" condition="Container(520).Row(0)">Conditional</animation>
-                <animation effect="slide" end="0,8" time="200" condition="Container(520).Row(1)">Conditional</animation>
-                <animation effect="slide" end="0,0" time="200" condition="Container(520).Row(2)">Conditional</animation>
-                <animation effect="slide" end="0,-8" time="200" condition="Container(520).Row(3)">Conditional</animation>
-                <animation effect="slide" end="0,-15" time="200" condition="Container(520).Row(4)">Conditional</animation>
-                <animation effect="slide" end="0,-22" time="200" condition="Container(520).Row(5)">Conditional</animation>
-                <animation effect="slide" end="0,-29" time="200" condition="Container(520).Row(6)">Conditional</animation>
-                <animation effect="slide" end="0,-29" time="200" condition="Container(520).Row(6) + [Skin.HasSetting(episodebanner) | Skin.HasSetting(episodelogo)] + Container.Content(tvshows)">Conditional</animation>
-                <animation effect="slide" end="0,-36" time="200" condition="Container(520).Row(7)">Conditional</animation>
-                <animation effect="slide" end="0,-43" time="200" condition="Container(520).Row(8)">Conditional</animation>
+                <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
                 
                 <itemlayout width="880" height="48">
 
