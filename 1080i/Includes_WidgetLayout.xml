@@ -85,7 +85,6 @@
             <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
             <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
             <control type="image">
-                <posy>1</posy>
                 <width>794</width>
                 <height>87</height>
                 <texture flipy="true" flipx="true">$VAR[TimePanelImageVar]</texture>
