@@ -7,7 +7,7 @@
             <control type="group">
                 <posx>8</posx>
                 <posy>112</posy>
-                <animation effect="slide" end="1070,-205" time="500" condition="Control.IsVisible(52)">Conditional</animation>
+                <animation effect="slide" tween="cubic" end="1070,-205" time="500" condition="Control.IsVisible(52)">Conditional</animation>
                 <animation effect="zoom" end="127" center="auto" time="500" tween="cubic" condition="Control.IsVisible(52)">Conditional</animation>
                 <control type="group" id="5801">
                     <visible>Container(510).OnPrevious | Container(52).OnPrevious</visible>
@@ -1646,7 +1646,7 @@
                 <pagecontrol>61</pagecontrol>
                 <focusposition>1</focusposition>
                 <visible>!IsEmpty(Container.FolderPath) + !Container.Content(years)</visible>
-                <visible>!Container.Content(addons) + [!Container.Content(episodes) | SubString(Container.FolderPath,videodb://5/)]</visible>
+                <visible>!Container.Content(countries) + !Container.Content(addons) + [!Container.Content(episodes) | SubString(Container.FolderPath,videodb://5/)]</visible>
                 <itemlayout width="210" height="750"></itemlayout>
                 <focusedlayout width="210" height="750"></focusedlayout>
             </control>

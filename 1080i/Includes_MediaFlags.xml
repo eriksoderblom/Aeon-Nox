@@ -257,7 +257,7 @@
                     <height>88</height>
                     <aligny>bottom</aligny>
                     <label>$INFO[ListItem.Genre]</label>
-                    <font>Font_Reg21</font>
+                    <font>Font_Bold15_Caps</font>
                     <textcolor>floor</textcolor>
                 </control>
             </control>
@@ -302,9 +302,9 @@
                     <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
                     <include>AudioFlagsVars</include>
                 </control>
-            <control type="image">
-                <posx>1500</posx>
-                <posy>980</posy>
+                <control type="image">
+                    <posx>1500</posx>
+                    <posy>980</posy>
                     <texture>flags/studios/default-studio.png</texture>
                     <include>AudioFlagsVars</include>
                     <visible>IsEmpty(ListItem.Property(Album_Label))</visible>
