@@ -365,9 +365,8 @@
                 </control>
                 <control type="button" id="3">
                     <label>103</label>
-                    <include>Objects_MediaMenuButtonIcons</include>
                     <onleft>ClearProperty(viewtypeselect,home)</onleft>
-                    <onleft>ActivateWindow(1121)</onleft>
+                    <include>Objects_MediaMenuButtonIcons</include>
                     <visible>Control.IsEnabled(3)</visible>
                 </control>
                 <control type="togglebutton" id="4">
@@ -632,10 +631,10 @@
             <include>QuickNavLabel</include>
             <control type="group">
                 <visible>Container.Content(movies)</visible>
-<!--                 <posx>20</posx>
+                <!--                 <posx>20</posx>
                 <posy>720</posy> -->
                 <include condition="Window.IsActive(videos)">Media_Menu_NowPlaying</include>
- <!--        <control type="image">
+                <!--        <control type="image">
             <width>369</width>
             <height>204</height>
             <texture background="true">$INFO[Window(Home).Property(RecommendedMovie.1.Art(landscape))]</texture>
@@ -893,7 +892,7 @@
             <textoffsetx>0</textoffsetx>
             <textoffsety>2</textoffsety>
             <align>center</align>
-            <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
+            <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>settings/listselect_nf.png</texturenofocus>
             <label>$LOCALIZE[31633]</label>
             <font>Font_Reg15_Caps</font>

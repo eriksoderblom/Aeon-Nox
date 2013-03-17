@@ -122,13 +122,17 @@
         <animation effect="slide" time="560" start="750,0" end="0,0" tween="cubic">WindowOpen</animation>
         <animation effect="slide" time="240" end="750,0" tween="cubic" easing="in">WindowClose</animation>
         <animation effect="slide" time="560" start="750,0" end="0,0" tween="cubic">VisibleChange</animation>
-        <animation effect="fade" time="160" start="100" end="0">Hidden</animation>
     </include>
     <include name="Animation_ListSlideLeft">
         <animation effect="slide" time="560" start="-1275,0" end="0,0" tween="cubic">WindowOpen</animation>
         <animation effect="slide" time="240" end="-1275,0" tween="cubic" easing="in">WindowClose</animation>
         <animation effect="slide" time="560" start="-1275,0" end="0,0" tween="cubic">VisibleChange</animation>
-        <animation effect="fade" time="160" start="100" end="0">Hidden</animation>
+    </include>
+    <include name="Animation_FlagSlideDown">
+        <animation effect="slide" time="560" delay="1500" start="0,300" end="0,0" tween="cubic">WindowOpen</animation>
+        <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">WindowClose</animation>
+        <animation effect="slide" time="560" start="0,300" end="0,0" tween="cubic">Visible</animation>
+        <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
     </include>
     <include name="Animation_HideStripShow">
         <animation type="Conditional" condition="Control.HasFocus(109)">
@@ -242,6 +246,30 @@
         <effect type="rotatex" center="201" start="-90" end="90" time="0" delay="440" />
         <effect type="fade" start="100" end="0" time="0" delay="440" />
         <effect type="rotatex" center="201" start="90" end="0" time="440" delay="440" tween="cubic" />
+    </include>
+    <include name="Animation_LargePanelFlipUp1">
+        <effect type="rotatex" center="301" end="90" time="440" tween="cubic" easing="in" />
+        <effect type="rotatex" center="301" start="90" end="-90" time="0" delay="440" />
+        <effect type="fade" end="100" time="0" delay="440" />
+        <effect type="rotatex" center="301" start="-90" end="0" time="440" delay="440" tween="cubic" />
+    </include>
+    <include name="Animation_LargePanelFlipUp2">
+        <effect type="rotatex" center="301" end="90" time="440" tween="cubic" easing="in" />
+        <effect type="rotatex" center="301" start="90" end="-90" time="0" delay="440" />
+        <effect type="fade" start="100" end="0" time="0" delay="440" />
+        <effect type="rotatex" center="301" start="-90" end="0" time="440" delay="440" tween="cubic" />
+    </include>
+    <include name="Animation_LargePanelFlipDown1">
+        <effect type="rotatex" center="301" end="-90" time="440" tween="cubic" easing="in" />
+        <effect type="rotatex" center="301" start="-90" end="90" time="0" delay="440" />
+        <effect type="fade" end="100" time="0" delay="440" />
+        <effect type="rotatex" center="301" start="90" end="0" time="440" delay="440" tween="cubic" />
+    </include>
+    <include name="Animation_LargePanelFlipDown2">
+        <effect type="rotatex" center="301" end="-90" time="440" tween="cubic" easing="in" />
+        <effect type="rotatex" center="301" start="-90" end="90" time="0" delay="440" />
+        <effect type="fade" start="100" end="0" time="0" delay="440" />
+        <effect type="rotatex" center="301" start="90" end="0" time="440" delay="440" tween="cubic" />
     </include>
     <include name="Animation_Widgets">
         <animation type="WindowOpen" reversible="false" condition="Window.Previous(Startup)">

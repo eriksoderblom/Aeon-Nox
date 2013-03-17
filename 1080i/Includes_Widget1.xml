@@ -15,6 +15,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist1.1.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist1.1.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist1.1.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist1.1.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist1.1.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist1.1.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist1.1.Art(banner))]</property>
@@ -48,6 +49,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist1.2.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist1.2.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist1.2.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist1.2.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist1.2.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist1.2.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist1.2.Art(banner))]</property>
@@ -81,6 +83,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist1.3.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist1.3.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist1.3.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist1.3.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist1.3.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist1.3.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist1.3.Art(banner))]</property>
@@ -114,6 +117,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist1.4.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist1.4.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist1.4.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist1.4.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist1.4.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist1.4.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist1.4.Art(banner))]</property>
@@ -147,6 +151,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist1.5.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist1.5.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist1.5.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist1.5.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist1.5.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist1.5.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist1.5.Art(banner))]</property>
@@ -180,6 +185,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist1.6.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist1.6.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist1.6.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist1.6.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist1.6.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist1.6.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist1.6.Art(banner))]</property>
@@ -213,6 +219,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist1.7.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist1.7.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist1.7.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist1.7.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist1.7.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist1.7.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist1.7.Art(banner))]</property>
@@ -246,6 +253,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist1.8.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist1.8.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist1.8.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist1.8.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist1.8.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist1.8.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist1.8.Art(banner))]</property>
@@ -281,6 +289,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist2.1.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist2.1.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist2.1.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist2.1.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist2.1.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist2.1.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist2.1.Art(banner))]</property>
@@ -314,6 +323,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist2.2.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist2.2.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist2.2.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist2.2.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist2.2.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist2.2.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist2.2.Art(banner))]</property>
@@ -347,6 +357,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist2.3.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist2.3.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist2.3.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist2.3.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist2.3.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist2.3.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist2.3.Art(banner))]</property>
@@ -380,6 +391,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist2.4.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist2.4.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist2.4.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist2.4.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist2.4.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist2.4.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist2.4.Art(banner))]</property>
@@ -413,6 +425,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist2.5.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist2.5.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist2.5.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist2.5.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist2.5.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist2.5.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist2.5.Art(banner))]</property>
@@ -446,6 +459,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist2.6.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist2.6.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist2.6.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist2.6.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist2.6.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist2.6.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist2.6.Art(banner))]</property>
@@ -479,6 +493,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist2.7.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist2.7.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist2.7.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist2.7.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist2.7.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist2.7.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist2.7.Art(banner))]</property>
@@ -512,6 +527,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist2.8.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist2.8.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist2.8.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist2.8.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist2.8.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist2.8.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist2.8.Art(banner))]</property>
@@ -547,6 +563,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist3.1.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist3.1.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist3.1.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist3.1.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist3.1.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist3.1.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist3.1.Art(banner))]</property>
@@ -580,6 +597,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist3.2.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist3.2.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist3.2.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist3.2.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist3.2.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist3.2.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist3.2.Art(banner))]</property>
@@ -613,6 +631,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist3.3.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist3.3.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist3.3.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist3.3.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist3.3.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist3.3.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist3.3.Art(banner))]</property>
@@ -646,6 +665,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist3.4.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist3.4.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist3.4.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist3.4.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist3.4.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist3.4.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist3.4.Art(banner))]</property>
@@ -679,6 +699,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist3.5.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist3.5.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist3.5.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist3.5.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist3.5.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist3.5.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist3.5.Art(banner))]</property>
@@ -712,6 +733,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist3.6.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist3.6.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist3.6.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist3.6.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist3.6.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist3.6.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist3.6.Art(banner))]</property>
@@ -745,6 +767,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist3.7.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist3.7.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist3.7.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist3.7.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist3.7.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist3.7.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist3.7.Art(banner))]</property>
@@ -778,6 +801,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist3.8.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist3.8.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist3.8.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist3.8.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist3.8.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist3.8.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist3.8.Art(banner))]</property>
@@ -813,6 +837,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist4.1.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist4.1.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist4.1.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist4.1.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist4.1.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist4.1.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist4.1.Art(banner))]</property>
@@ -846,6 +871,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist4.2.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist4.2.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist4.2.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist4.2.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist4.2.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist4.2.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist4.2.Art(banner))]</property>
@@ -879,6 +905,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist4.3.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist4.3.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist4.3.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist4.3.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist4.3.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist4.3.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist4.3.Art(banner))]</property>
@@ -912,6 +939,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist4.4.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist4.4.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist4.4.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist4.4.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist4.4.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist4.4.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist4.4.Art(banner))]</property>
@@ -945,6 +973,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist4.5.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist4.5.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist4.5.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist4.5.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist4.5.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist4.5.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist4.5.Art(banner))]</property>
@@ -978,6 +1007,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist4.6.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist4.6.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist4.6.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist4.6.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist4.6.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist4.6.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist4.6.Art(banner))]</property>
@@ -1011,6 +1041,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist4.7.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist4.7.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist4.7.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist4.7.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist4.7.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist4.7.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist4.7.Art(banner))]</property>
@@ -1044,6 +1075,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist4.8.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist4.8.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist4.8.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist4.8.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist4.8.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist4.8.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist4.8.Art(banner))]</property>
@@ -1079,6 +1111,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist5.1.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist5.1.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist5.1.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist5.1.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist5.1.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist5.1.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist5.1.Art(banner))]</property>
@@ -1112,6 +1145,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist5.2.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist5.2.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist5.2.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist5.2.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist5.2.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist5.2.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist5.2.Art(banner))]</property>
@@ -1145,6 +1179,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist5.3.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist5.3.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist5.3.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist5.3.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist5.3.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist5.3.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist5.3.Art(banner))]</property>
@@ -1178,6 +1213,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist5.4.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist5.4.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist5.4.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist5.4.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist5.4.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist5.4.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist5.4.Art(banner))]</property>
@@ -1211,6 +1247,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist5.5.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist5.5.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist5.5.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist5.5.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist5.5.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist5.5.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist5.5.Art(banner))]</property>
@@ -1244,6 +1281,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist5.6.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist5.6.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist5.6.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist5.6.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist5.6.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist5.6.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist5.6.Art(banner))]</property>
@@ -1277,6 +1315,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist5.7.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist5.7.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist5.7.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist5.7.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist5.7.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist5.7.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist5.7.Art(banner))]</property>
@@ -1310,6 +1349,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist5.8.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist5.8.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist5.8.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist5.8.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist5.8.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist5.8.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist5.8.Art(banner))]</property>
@@ -1345,6 +1385,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist6.1.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist6.1.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist6.1.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist6.1.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist6.1.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist6.1.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist6.1.Art(banner))]</property>
@@ -1378,6 +1419,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist6.2.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist6.2.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist6.2.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist6.2.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist6.2.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist6.2.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist6.2.Art(banner))]</property>
@@ -1411,6 +1453,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist6.3.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist6.3.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist6.3.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist6.3.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist6.3.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist6.3.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist6.3.Art(banner))]</property>
@@ -1444,6 +1487,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist6.4.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist6.4.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist6.4.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist6.4.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist6.4.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist6.4.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist6.4.Art(banner))]</property>
@@ -1477,6 +1521,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist6.5.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist6.5.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist6.5.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist6.5.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist6.5.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist6.5.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist6.5.Art(banner))]</property>
@@ -1510,6 +1555,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist6.6.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist6.6.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist6.6.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist6.6.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist6.6.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist6.6.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist6.6.Art(banner))]</property>
@@ -1543,6 +1589,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist6.7.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist6.7.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist6.7.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist6.7.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist6.7.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist6.7.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist6.7.Art(banner))]</property>
@@ -1576,6 +1623,7 @@
             <property name="VideoResolution">$INFO[Window(Home).Property(SmartPlaylist6.8.VideoResolution)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(SmartPlaylist6.8.VideoCodec)]</property>
             <property name="Studio">$INFO[Window(Home).Property(SmartPlaylist6.8.Studio)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(SmartPlaylist6.8.DBID)]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(SmartPlaylist6.8.PercentPlayed)]</property>
             <property name="Discart">$INFO[Window(Home).Property(SmartPlaylist6.8.Art(discart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(SmartPlaylist6.8.Art(banner))]</property>
@@ -1599,115 +1647,123 @@
     <include name="MusicvideoLatestItems">
         <item>
             <label>$INFO[Window(Home).Property(RecentMusicVideo.1.Title)]</label>
+            <label2>$INFO[Window(Home).Property(RecentMusicVideo.1.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecentMusicVideo.1.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RecentMusicVideo.1.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMusicVideo.1.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMusicVideo.1.Art(fanart))]</property>
-            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.1.RunningTime)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.1.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMusicVideo.1.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentMusicVideo.1.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMusicVideo.1.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMusicVideo.1.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMusicVideo.2.Title)]</label>
+            <label2>$INFO[Window(Home).Property(RecentMusicVideo.2.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecentMusicVideo.2.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RecentMusicVideo.2.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMusicVideo.2.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMusicVideo.2.Art(fanart))]</property>
-            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.2.RunningTime)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.2.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMusicVideo.2.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentMusicVideo.2.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMusicVideo.2.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMusicVideo.2.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMusicVideo.3.Title)]</label>
+            <label2>$INFO[Window(Home).Property(RecentMusicVideo.3.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecentMusicVideo.3.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RecentMusicVideo.3.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMusicVideo.3.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMusicVideo.3.Art(fanart))]</property>
-            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.3.RunningTime)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.3.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMusicVideo.3.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentMusicVideo.3.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMusicVideo.3.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMusicVideo.3.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMusicVideo.4.Title)]</label>
+            <label2>$INFO[Window(Home).Property(RecentMusicVideo.4.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecentMusicVideo.4.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RecentMusicVideo.4.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMusicVideo.4.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMusicVideo.4.Art(fanart))]</property>
-            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.4.RunningTime)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.4.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMusicVideo.4.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentMusicVideo.4.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMusicVideo.4.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMusicVideo.4.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMusicVideo.5.Title)]</label>
+            <label2>$INFO[Window(Home).Property(RecentMusicVideo.5.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecentMusicVideo.5.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RecentMusicVideo.5.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMusicVideo.5.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMusicVideo.5.Art(fanart))]</property>
-            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.5.RunningTime)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.5.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMusicVideo.5.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentMusicVideo.5.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMusicVideo.5.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMusicVideo.5.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMusicVideo.6.Title)]</label>
+            <label2>$INFO[Window(Home).Property(RecentMusicVideo.6.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecentMusicVideo.6.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RecentMusicVideo.6.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMusicVideo.6.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMusicVideo.6.Art(fanart))]</property>
-            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.6.RunningTime)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.6.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMusicVideo.6.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentMusicVideo.6.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMusicVideo.6.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMusicVideo.6.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMusicVideo.7.Title)]</label>
+            <label2>$INFO[Window(Home).Property(RecentMusicVideo.7.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecentMusicVideo.7.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RecentMusicVideo.7.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMusicVideo.7.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMusicVideo.7.Art(fanart))]</property>
-            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.7.RunningTime)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.7.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMusicVideo.7.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentMusicVideo.7.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMusicVideo.7.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMusicVideo.7.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMusicVideo.8.Title)]</label>
+            <label2>$INFO[Window(Home).Property(RecentMusicVideo.8.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecentMusicVideo.8.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RecentMusicVideo.8.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMusicVideo.8.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMusicVideo.8.Art(fanart))]</property>
-            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.8.RunningTime)]</property>
+            <property name="RunningTime">$INFO[Window(Home).Property(RecentMusicVideo.8.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RecentMusicVideo.8.Year)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentMusicVideo.8.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMusicVideo.8.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMusicVideo.8.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmusicvideos)</visible>
         </item>
     </include>
     <include name="MusicvideoRandomItems">
         <item>
             <label>$INFO[Window(Home).Property(RandomMusicVideo.1.Title)]</label>
-            <property name="RootPath">$INFO[Window(Home).Property(RandomMusicVideo.1.Path)]</property>
+            <label2>$INFO[Window(Home).Property(RandomMusicVideo.1.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RandomMusicVideo.1.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RandomMusicVideo.1.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMusicVideo.1.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.1.Art(fanart))]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(RandomMusicVideo.1.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomMusicVideo.1.Year)]</property>
@@ -1715,13 +1771,13 @@
             <property name="Poster">$INFO[Window(Home).Property(RandomMusicVideo.1.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMusicVideo.1.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMusicVideo.2.Title)]</label>
-            <property name="RootPath">$INFO[Window(Home).Property(RandomMusicVideo.2.Path)]</property>
+            <label2>$INFO[Window(Home).Property(RandomMusicVideo.2.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RandomMusicVideo.2.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RandomMusicVideo.2.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMusicVideo.2.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.2.Art(fanart))]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(RandomMusicVideo.2.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomMusicVideo.2.Year)]</property>
@@ -1729,13 +1785,13 @@
             <property name="Poster">$INFO[Window(Home).Property(RandomMusicVideo.2.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMusicVideo.2.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMusicVideo.3.Title)]</label>
-            <property name="RootPath">$INFO[Window(Home).Property(RandomMusicVideo.3.Path)]</property>
+            <label2>$INFO[Window(Home).Property(RandomMusicVideo.3.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RandomMusicVideo.3.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RandomMusicVideo.3.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMusicVideo.3.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.3.Art(fanart))]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(RandomMusicVideo.3.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomMusicVideo.3.Year)]</property>
@@ -1743,13 +1799,13 @@
             <property name="Poster">$INFO[Window(Home).Property(RandomMusicVideo.3.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMusicVideo.3.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMusicVideo.4.Title)]</label>
-            <property name="RootPath">$INFO[Window(Home).Property(RandomMusicVideo.4.Path)]</property>
+            <label2>$INFO[Window(Home).Property(RandomMusicVideo.4.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RandomMusicVideo.4.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RandomMusicVideo.4.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMusicVideo.4.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.4.Art(fanart))]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(RandomMusicVideo.4.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomMusicVideo.4.Year)]</property>
@@ -1757,13 +1813,13 @@
             <property name="Poster">$INFO[Window(Home).Property(RandomMusicVideo.4.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMusicVideo.4.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMusicVideo.5.Title)]</label>
-            <property name="RootPath">$INFO[Window(Home).Property(RandomMusicVideo.5.Path)]</property>
+            <label2>$INFO[Window(Home).Property(RandomMusicVideo.5.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RandomMusicVideo.5.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RandomMusicVideo.5.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMusicVideo.5.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.5.Art(fanart))]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(RandomMusicVideo.5.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomMusicVideo.5.Year)]</property>
@@ -1771,13 +1827,13 @@
             <property name="Poster">$INFO[Window(Home).Property(RandomMusicVideo.5.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMusicVideo.5.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMusicVideo.6.Title)]</label>
-            <property name="RootPath">$INFO[Window(Home).Property(RandomMusicVideo.6.Path)]</property>
+            <label2>$INFO[Window(Home).Property(RandomMusicVideo.6.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RandomMusicVideo.6.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RandomMusicVideo.6.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMusicVideo.6.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.6.Art(fanart))]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(RandomMusicVideo.6.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomMusicVideo.6.Year)]</property>
@@ -1785,13 +1841,13 @@
             <property name="Poster">$INFO[Window(Home).Property(RandomMusicVideo.6.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMusicVideo.6.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMusicVideo.7.Title)]</label>
-            <property name="RootPath">$INFO[Window(Home).Property(RandomMusicVideo.7.Path)]</property>
+            <label2>$INFO[Window(Home).Property(RandomMusicVideo.7.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RandomMusicVideo.7.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RandomMusicVideo.7.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMusicVideo.7.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.7.Art(fanart))]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(RandomMusicVideo.7.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomMusicVideo.7.Year)]</property>
@@ -1799,13 +1855,13 @@
             <property name="Poster">$INFO[Window(Home).Property(RandomMusicVideo.7.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMusicVideo.7.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommusicvideos)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMusicVideo.8.Title)]</label>
-            <property name="RootPath">$INFO[Window(Home).Property(RandomMusicVideo.8.Path)]</property>
+            <label2>$INFO[Window(Home).Property(RandomMusicVideo.8.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RandomMusicVideo.8.Play)]</property>
-            <property name="Artist">$INFO[Window(Home).Property(RandomMusicVideo.8.Artist)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMusicVideo.8.DBID)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMusicVideo.8.Art(fanart))]</property>
             <property name="RunningTime">$INFO[Window(Home).Property(RandomMusicVideo.8.Runtime)]</property>
             <property name="Year">$INFO[Window(Home).Property(RandomMusicVideo.8.Year)]</property>
@@ -1813,7 +1869,7 @@
             <property name="Poster">$INFO[Window(Home).Property(RandomMusicVideo.8.Art(thumb))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMusicVideo.8.Plot)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommusicvideos)</visible>
         </item>
     </include>
     <include name="WatchListMusicVideosItems">
@@ -1824,11 +1880,12 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedMusicVideo.1.Play)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMusicVideo.1.Art(fanart))]</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMusicVideo.1.Year)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMusicVideo.1.DBID)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RecommendedMusicVideo.1.Genre)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMusicVideo.1.Plot)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMusicVideo.1.Art(thumb))]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.1.Title))</visible>
         </item>
         <item>
@@ -1838,11 +1895,12 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedMusicVideo.2.Play)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMusicVideo.2.Art(fanart))]</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMusicVideo.2.Year)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMusicVideo.2.DBID)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RecommendedMusicVideo.2.Genre)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMusicVideo.2.Plot)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMusicVideo.2.Art(thumb))]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.2.Title))</visible>
         </item>
         <item>
@@ -1852,11 +1910,12 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedMusicVideo.3.Play)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMusicVideo.3.Art(fanart))]</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMusicVideo.3.Year)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMusicVideo.3.DBID)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RecommendedMusicVideo.3.Genre)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMusicVideo.3.Plot)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMusicVideo.3.Art(thumb))]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.3.Title))</visible>
         </item>
         <item>
@@ -1866,11 +1925,12 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedMusicVideo.4.Play)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMusicVideo.4.Art(fanart))]</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMusicVideo.4.Year)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMusicVideo.4.DBID)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RecommendedMusicVideo.4.Genre)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMusicVideo.4.Plot)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMusicVideo.4.Art(thumb))]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.4.Title))</visible>
         </item>
         <item>
@@ -1880,11 +1940,12 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedMusicVideo.5.Play)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMusicVideo.5.Art(fanart))]</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMusicVideo.5.Year)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMusicVideo.5.DBID)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RecommendedMusicVideo.5.Genre)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMusicVideo.5.Plot)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMusicVideo.5.Art(thumb))]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.5.Title))</visible>
         </item>
         <item>
@@ -1894,11 +1955,12 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedMusicVideo.6.Play)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMusicVideo.6.Art(fanart))]</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMusicVideo.6.Year)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMusicVideo.6.DBID)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RecommendedMusicVideo.6.Genre)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMusicVideo.6.Plot)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMusicVideo.6.Art(thumb))]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.6.Title))</visible>
         </item>
         <item>
@@ -1908,11 +1970,12 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedMusicVideo.7.Play)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMusicVideo.7.Art(fanart))]</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMusicVideo.7.Year)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMusicVideo.7.DBID)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RecommendedMusicVideo.7.Genre)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMusicVideo.7.Plot)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMusicVideo.7.Art(thumb))]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.7.Title))</visible>
         </item>
         <item>
@@ -1922,11 +1985,12 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedMusicVideo.8.Play)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMusicVideo.8.Art(fanart))]</property>
             <property name="Year">$INFO[Window(Home).Property(RecommendedMusicVideo.8.Year)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMusicVideo.8.DBID)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RecommendedMusicVideo.8.Genre)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMusicVideo.8.Plot)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMusicVideo.8.Art(thumb))]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmusicvideos)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMusicVideo.8.Title))</visible>
         </item>
     </include>
@@ -1934,6 +1998,7 @@
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.1.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecommendedMovie.1.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecommendedMovie.1.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecommendedMovie.1.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedMovie.1.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedMovie.1.AudioCodec)]</property>
@@ -1955,13 +2020,16 @@
             <property name="Rating">$INFO[Window(Home).Property(RecommendedMovie.1.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMovie.1.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMovie.1.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecommendedMovie.1.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMovie.1.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.2.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecommendedMovie.2.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecommendedMovie.2.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecommendedMovie.2.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedMovie.2.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedMovie.2.AudioCodec)]</property>
@@ -1983,13 +2051,16 @@
             <property name="Rating">$INFO[Window(Home).Property(RecommendedMovie.2.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMovie.2.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMovie.2.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecommendedMovie.2.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMovie.2.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.2.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.3.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecommendedMovie.3.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecommendedMovie.3.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecommendedMovie.3.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedMovie.3.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedMovie.3.AudioCodec)]</property>
@@ -2011,13 +2082,16 @@
             <property name="Rating">$INFO[Window(Home).Property(RecommendedMovie.3.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMovie.3.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMovie.3.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecommendedMovie.3.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMovie.3.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.3.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.4.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecommendedMovie.4.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecommendedMovie.4.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecommendedMovie.4.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedMovie.4.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedMovie.4.AudioCodec)]</property>
@@ -2039,13 +2113,16 @@
             <property name="Rating">$INFO[Window(Home).Property(RecommendedMovie.4.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMovie.4.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMovie.4.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecommendedMovie.4.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMovie.4.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.4.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.5.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecommendedMovie.5.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecommendedMovie.5.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecommendedMovie.5.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedMovie.5.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedMovie.5.AudioCodec)]</property>
@@ -2067,13 +2144,16 @@
             <property name="Rating">$INFO[Window(Home).Property(RecommendedMovie.5.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMovie.5.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMovie.5.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecommendedMovie.5.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMovie.5.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.5.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.6.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecommendedMovie.6.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecommendedMovie.6.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecommendedMovie.6.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedMovie.6.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedMovie.6.AudioCodec)]</property>
@@ -2095,13 +2175,16 @@
             <property name="Rating">$INFO[Window(Home).Property(RecommendedMovie.6.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMovie.6.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMovie.6.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecommendedMovie.6.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMovie.6.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.6.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.7.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecommendedMovie.7.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecommendedMovie.7.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecommendedMovie.7.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedMovie.7.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedMovie.7.AudioCodec)]</property>
@@ -2123,13 +2206,16 @@
             <property name="Rating">$INFO[Window(Home).Property(RecommendedMovie.7.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMovie.7.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMovie.7.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecommendedMovie.7.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMovie.7.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.7.Title))</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.8.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecommendedMovie.8.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecommendedMovie.8.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecommendedMovie.8.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecommendedMovie.8.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecommendedMovie.8.AudioCodec)]</property>
@@ -2151,8 +2237,10 @@
             <property name="Rating">$INFO[Window(Home).Property(RecommendedMovie.8.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecommendedMovie.8.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedMovie.8.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecommendedMovie.8.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedMovie.8.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistmovies)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.8.Title))</visible>
         </item>
     </include>
@@ -2160,6 +2248,7 @@
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.1.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RandomMovie.1.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RandomMovie.1.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.1.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.1.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.1.AudioCodec)]</property>
@@ -2181,12 +2270,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RandomMovie.1.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomMovie.1.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMovie.1.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RandomMovie.1.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMovie.1.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.2.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RandomMovie.2.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RandomMovie.2.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.2.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.2.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.2.AudioCodec)]</property>
@@ -2208,12 +2300,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RandomMovie.2.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomMovie.2.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMovie.2.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RandomMovie.2.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMovie.2.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.3.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RandomMovie.3.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RandomMovie.3.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.3.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.3.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.3.AudioCodec)]</property>
@@ -2235,12 +2330,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RandomMovie.3.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomMovie.3.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMovie.3.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RandomMovie.3.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMovie.3.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.4.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RandomMovie.4.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RandomMovie.4.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.4.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.4.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.4.AudioCodec)]</property>
@@ -2262,12 +2360,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RandomMovie.4.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomMovie.4.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMovie.4.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RandomMovie.4.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMovie.4.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.5.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RandomMovie.5.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RandomMovie.5.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.5.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.5.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.5.AudioCodec)]</property>
@@ -2289,12 +2390,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RandomMovie.5.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomMovie.5.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMovie.5.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RandomMovie.5.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMovie.5.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.6.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RandomMovie.6.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RandomMovie.6.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.6.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.6.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.6.AudioCodec)]</property>
@@ -2316,12 +2420,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RandomMovie.6.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomMovie.6.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMovie.6.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RandomMovie.6.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMovie.6.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.7.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RandomMovie.7.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RandomMovie.7.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.7.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.7.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.7.AudioCodec)]</property>
@@ -2343,12 +2450,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RandomMovie.7.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomMovie.7.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMovie.7.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RandomMovie.7.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMovie.7.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.8.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RandomMovie.8.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RandomMovie.8.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.8.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.8.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.8.AudioCodec)]</property>
@@ -2370,14 +2480,17 @@
             <property name="Rating">$INFO[Window(Home).Property(RandomMovie.8.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RandomMovie.8.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomMovie.8.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RandomMovie.8.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomMovie.8.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies)</visible>
         </item>
     </include>
     <include name="LatestMoviesItems">
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.1.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecentMovie.1.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecentMovie.1.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.1.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.1.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.1.AudioCodec)]</property>
@@ -2399,12 +2512,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RecentMovie.1.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMovie.1.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMovie.1.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecentMovie.1.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMovie.1.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.2.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecentMovie.2.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecentMovie.2.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.2.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.2.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.2.AudioCodec)]</property>
@@ -2426,12 +2542,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RecentMovie.2.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMovie.2.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMovie.2.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecentMovie.2.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMovie.2.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.3.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecentMovie.3.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecentMovie.3.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.3.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.3.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.3.AudioCodec)]</property>
@@ -2453,12 +2572,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RecentMovie.3.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMovie.3.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMovie.3.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecentMovie.3.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMovie.3.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.4.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecentMovie.4.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecentMovie.4.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.4.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.4.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.4.AudioCodec)]</property>
@@ -2480,12 +2602,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RecentMovie.4.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMovie.4.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMovie.4.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecentMovie.4.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMovie.4.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.5.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecentMovie.5.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecentMovie.5.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.5.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.5.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.5.AudioCodec)]</property>
@@ -2507,12 +2632,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RecentMovie.5.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMovie.5.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMovie.5.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecentMovie.5.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMovie.5.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.6.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecentMovie.6.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecentMovie.6.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.6.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.6.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.6.AudioCodec)]</property>
@@ -2534,12 +2662,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RecentMovie.6.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMovie.6.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMovie.6.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecentMovie.6.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMovie.6.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.7.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecentMovie.7.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecentMovie.7.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.7.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.7.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.7.AudioCodec)]</property>
@@ -2561,12 +2692,15 @@
             <property name="Rating">$INFO[Window(Home).Property(RecentMovie.7.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMovie.7.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMovie.7.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecentMovie.7.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMovie.7.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.8.Title)]</label>
             <property name="Director">$INFO[Window(Home).Property(RecentMovie.8.Director)]</property>
+            <property name="Country">$INFO[Window(Home).Property(RecentMovie.8.Country)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.8.Play)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.8.AudioChannels)]</property>
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.8.AudioCodec)]</property>
@@ -2588,8 +2722,10 @@
             <property name="Rating">$INFO[Window(Home).Property(RecentMovie.8.Rating)]</property>
             <property name="Poster">$INFO[Window(Home).Property(RecentMovie.8.Art(poster))]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentMovie.8.Plot)]</property>
+            <property name="mpaa">$INFO[Window(Home).Property(RecentMovie.8.mpaa)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentMovie.8.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies)</visible>
         </item>
     </include>
     <include name="BornActorsItems">
@@ -2684,7 +2820,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.1.Version)]</property>
             <icon>$INFO[Window(Home).Property(RandomAddon.1.Art(thumb))]</icon>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomaddons)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAddon.2.Title)]</label>
@@ -2695,7 +2831,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.2.Version)]</property>
             <icon>$INFO[Window(Home).Property(RandomAddon.2.Art(thumb))]</icon>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomaddons)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAddon.3.Title)]</label>
@@ -2706,7 +2842,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.3.Version)]</property>
             <icon>$INFO[Window(Home).Property(RandomAddon.3.Art(thumb))]</icon>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomaddons)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAddon.4.Title)]</label>
@@ -2717,7 +2853,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.4.Version)]</property>
             <icon>$INFO[Window(Home).Property(RandomAddon.4.Art(thumb))]</icon>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomaddons)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAddon.5.Title)]</label>
@@ -2728,7 +2864,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.5.Version)]</property>
             <icon>$INFO[Window(Home).Property(RandomAddon.5.Art(thumb))]</icon>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomaddons)</visible>
         </item>
     </include>
     <include name="RandomAddonsItemsHome">
@@ -2741,7 +2877,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.6.Version)]</property>
             <icon>$INFO[Window(Home).Property(RandomAddon.6.Art(thumb))]</icon>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomaddons)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAddon.7.Title)]</label>
@@ -2752,7 +2888,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.7.Version)]</property>
             <icon>$INFO[Window(Home).Property(RandomAddon.7.Art(thumb))]</icon>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomaddons)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAddon.8.Title)]</label>
@@ -2763,7 +2899,7 @@
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.8.Version)]</property>
             <icon>$INFO[Window(Home).Property(RandomAddon.8.Art(thumb))]</icon>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomaddons)</visible>
         </item>
     </include>
     <include name="WatchlistMusicItems">
@@ -2780,7 +2916,7 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.1.Play)]</property>
             <thumb>$INFO[Window(Home).Property(RecommendedAlbum.1.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedAlbum.2.Title)]</label>
@@ -2795,7 +2931,7 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.2.Play)]</property>
             <thumb>$INFO[Window(Home).Property(RecommendedAlbum.2.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedAlbum.3.Title)]</label>
@@ -2810,7 +2946,7 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.3.Play)]</property>
             <thumb>$INFO[Window(Home).Property(RecommendedAlbum.3.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedAlbum.4.Title)]</label>
@@ -2825,7 +2961,7 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.4.Play)]</property>
             <thumb>$INFO[Window(Home).Property(RecommendedAlbum.4.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedAlbum.5.Title)]</label>
@@ -2840,7 +2976,7 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.5.Play)]</property>
             <thumb>$INFO[Window(Home).Property(RecommendedAlbum.5.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistalbums)</visible>
         </item>
     </include>
     <include name="WatchlistMusicItemsHome">
@@ -2857,7 +2993,7 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.6.Play)]</property>
             <thumb>$INFO[Window(Home).Property(RecommendedAlbum.6.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedAlbum.7.Title)]</label>
@@ -2872,7 +3008,7 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.7.Play)]</property>
             <thumb>$INFO[Window(Home).Property(RecommendedAlbum.7.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedAlbum.8.Title)]</label>
@@ -2887,7 +3023,7 @@
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.8.Play)]</property>
             <thumb>$INFO[Window(Home).Property(RecommendedAlbum.8.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),watchlistalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlistalbums)</visible>
         </item>
     </include>
     <include name="RandomAlbumsItems">
@@ -2904,7 +3040,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAlbum.2.Title)]</label>
@@ -2919,7 +3055,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomAlbum.2.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAlbum.3.Title)]</label>
@@ -2934,7 +3070,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomAlbum.3.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAlbum.4.Title)]</label>
@@ -2949,7 +3085,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomAlbum.4.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAlbum.5.Title)]</label>
@@ -2964,7 +3100,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomAlbum.5.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums)</visible>
         </item>
     </include>
     <include name="RandomAlbumsItemsHome">
@@ -2981,7 +3117,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomAlbum.6.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAlbum.7.Title)]</label>
@@ -2996,7 +3132,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomAlbum.7.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomAlbum.8.Title)]</label>
@@ -3011,7 +3147,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomAlbum.8.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums)</visible>
         </item>
     </include>
     <include name="RandomArtistsItems">
@@ -3024,7 +3160,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.1.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomArtist.2.Title)]</label>
@@ -3035,7 +3171,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.2.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomArtist.3.Title)]</label>
@@ -3046,7 +3182,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.3.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomArtist.4.Title)]</label>
@@ -3057,7 +3193,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.4.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomArtist.5.Title)]</label>
@@ -3068,7 +3204,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.5.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
     </include>
     <include name="RandomArtistsItemsHome">
@@ -3081,7 +3217,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.6.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomArtist.7.Title)]</label>
@@ -3092,7 +3228,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.7.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomArtist.8.Title)]</label>
@@ -3103,7 +3239,7 @@
             <icon>DefaultArtist.png</icon>
             <thumb>$INFO[Window(Home).Property(RandomArtist.8.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomartists,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
         </item>
     </include>
     <include name="LatestAlbumsItems">
@@ -3120,7 +3256,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RecentAlbum.1.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentAlbum.2.Title)]</label>
@@ -3135,7 +3271,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RecentAlbum.2.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentAlbum.3.Title)]</label>
@@ -3150,7 +3286,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RecentAlbum.3.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentAlbum.4.Title)]</label>
@@ -3165,7 +3301,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RecentAlbum.4.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentAlbum.5.Title)]</label>
@@ -3180,7 +3316,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RecentAlbum.5.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums)</visible>
         </item>
     </include>
     <include name="LatestAlbumsItemsHome">
@@ -3197,7 +3333,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RecentAlbum.6.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentAlbum.7.Title)]</label>
@@ -3212,7 +3348,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RecentAlbum.7.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentAlbum.8.Title)]</label>
@@ -3227,7 +3363,7 @@
             <icon>DefaultAlbumCover.png</icon>
             <thumb>$INFO[Window(Home).Property(RecentAlbum.8.Art(thumb))]</thumb>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums)</visible>
         </item>
     </include>
     <include name="WatchListTVItems">
@@ -3252,9 +3388,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecommendedEpisode.1.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedEpisode.1.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedEpisode.1.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedEpisode.1.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecommendedEpisode.1.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlisttv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title))</visible>
         </item>
         <item>
@@ -3278,9 +3415,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecommendedEpisode.2.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedEpisode.2.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedEpisode.2.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedEpisode.2.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecommendedEpisode.2.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlisttv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.2.Title))</visible>
         </item>
         <item>
@@ -3304,10 +3442,11 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecommendedEpisode.3.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedEpisode.3.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedEpisode.3.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedEpisode.3.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecommendedEpisode.3.Art(thumb))]</thumb>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.3.Title))</visible>
-            <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlisttv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.4.Title)]</label>
@@ -3330,10 +3469,11 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecommendedEpisode.4.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedEpisode.4.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedEpisode.4.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedEpisode.4.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecommendedEpisode.4.Art(thumb))]</thumb>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.4.Title))</visible>
-            <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlisttv)</visible>
         </item>
     </include>
     <include name="WatchListTVItemsHome">
@@ -3358,10 +3498,11 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecommendedEpisode.5.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedEpisode.5.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedEpisode.5.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedEpisode.5.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecommendedEpisode.5.Art(thumb))]</thumb>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.5.Title))</visible>
-            <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlisttv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.6.Title)]</label>
@@ -3384,10 +3525,11 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecommendedEpisode.6.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedEpisode.6.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedEpisode.6.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedEpisode.6.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecommendedEpisode.6.Art(thumb))]</thumb>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.6.Title))</visible>
-            <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlisttv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.7.Title)]</label>
@@ -3410,10 +3552,11 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecommendedEpisode.7.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedEpisode.7.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedEpisode.7.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedEpisode.7.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecommendedEpisode.7.Art(thumb))]</thumb>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.7.Title))</visible>
-            <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlisttv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.8.Title)]</label>
@@ -3436,10 +3579,11 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecommendedEpisode.8.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedEpisode.8.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecommendedEpisode.8.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecommendedEpisode.8.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecommendedEpisode.8.Art(thumb))]</thumb>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.8.Title))</visible>
-            <visible>Substring(Control.GetLabel(4321),watchlisttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),watchlisttv)</visible>
         </item>
     </include>
     <include name="RandomEpisodesItems">
@@ -3464,9 +3608,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisode.1.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomEpisode.1.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomEpisode.1.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomEpisode.1.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RandomEpisode.1.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.2.Title)]</label>
@@ -3489,9 +3634,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisode.2.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomEpisode.2.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomEpisode.2.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomEpisode.2.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RandomEpisode.2.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.3.Title)]</label>
@@ -3514,9 +3660,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisode.3.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomEpisode.3.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomEpisode.3.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomEpisode.3.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RandomEpisode.3.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.4.Title)]</label>
@@ -3539,9 +3686,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisode.4.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomEpisode.4.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomEpisode.4.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomEpisode.4.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RandomEpisode.4.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv)</visible>
         </item>
     </include>
     <include name="RandomEpisodesItemsHome">
@@ -3566,9 +3714,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisode.5.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomEpisode.5.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomEpisode.5.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomEpisode.5.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RandomEpisode.5.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.6.Title)]</label>
@@ -3591,9 +3740,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisode.6.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomEpisode.6.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomEpisode.6.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomEpisode.6.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RandomEpisode.6.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.7.Title)]</label>
@@ -3616,9 +3766,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisode.7.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomEpisode.7.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomEpisode.7.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomEpisode.7.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RandomEpisode.7.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.8.Title)]</label>
@@ -3641,9 +3792,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisode.8.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RandomEpisode.8.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RandomEpisode.8.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RandomEpisode.8.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RandomEpisode.8.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv)</visible>
         </item>
     </include>
     <include name="LatestEpisodesItems">
@@ -3668,9 +3820,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.1.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.1.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.1.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentEpisode.1.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecentEpisode.1.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.2.Title)]</label>
@@ -3693,9 +3846,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.2.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.2.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.2.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentEpisode.2.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecentEpisode.2.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.3.Title)]</label>
@@ -3718,9 +3872,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.3.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.3.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.3.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentEpisode.3.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecentEpisode.3.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.4.Title)]</label>
@@ -3742,10 +3897,11 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.fanart))]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.4.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.4.Rating)]</property>
-            <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.4.Plot)]</property>
+            <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.3.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentEpisode.3.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecentEpisode.4.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv)</visible>
         </item>
     </include>
     <include name="LatestEpisodesItemsHome">
@@ -3770,9 +3926,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.5.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.5.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.5.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentEpisode.5.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecentEpisode.5.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.6.Title)]</label>
@@ -3795,9 +3952,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.6.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.6.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.6.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentEpisode.6.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecentEpisode.6.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.7.Title)]</label>
@@ -3820,9 +3978,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.7.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.7.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.7.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentEpisode.7.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecentEpisode.7.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.8.Title)]</label>
@@ -3845,9 +4004,10 @@
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.8.EpisodeNo)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.8.Rating)]</property>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.8.Plot)]</property>
+            <property name="DBID">$INFO[Window(Home).Property(RecentEpisode.8.DBID)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(RecentEpisode.8.Art(thumb))]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv)</visible>
         </item>
     </include>
     <include name="RandomPicturesItems">
@@ -3858,7 +4018,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.1.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.1.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randompics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randompics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.2.Name)]</label>
@@ -3867,7 +4027,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.2.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.2.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randompics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randompics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.3.Name)]</label>
@@ -3876,7 +4036,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.3.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.3.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randompics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randompics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.4.Name)]</label>
@@ -3885,7 +4045,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.4.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.4.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randompics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randompics)</visible>
         </item>
     </include>
     <include name="RandomPicturesItemsHome">
@@ -3896,7 +4056,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.5.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.5.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randompics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randompics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.6.Name)]</label>
@@ -3905,7 +4065,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.6.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.6.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randompics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randompics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.7.Name)]</label>
@@ -3914,7 +4074,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.7.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.7.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randompics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randompics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.8.Name)]</label>
@@ -3923,7 +4083,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.8.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.8.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),randompics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),randompics)</visible>
         </item>
     </include>
     <include name="LatestPicturesItems">
@@ -3934,7 +4094,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.1.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.1.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recentpics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentpics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.2.Name)]</label>
@@ -3943,7 +4103,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.2.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.2.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recentpics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentpics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.3.Name)]</label>
@@ -3952,7 +4112,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.3.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.3.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recentpics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentpics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.4.Name)]</label>
@@ -3961,7 +4121,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.4.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.4.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recentpics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentpics)</visible>
         </item>
     </include>
     <include name="LatestPicturesItemsHome">
@@ -3972,7 +4132,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.5.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.5.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recentpics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentpics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.6.Name)]</label>
@@ -3981,7 +4141,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.6.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.6.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recentpics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentpics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.7.Name)]</label>
@@ -3990,7 +4150,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.7.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.7.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recentpics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentpics)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.8.Name)]</label>
@@ -3999,7 +4159,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.8.Path)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.8.Path)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),recentpics,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentpics)</visible>
         </item>
     </include>
     <include name="MostPlayedRomsItems">
@@ -4015,7 +4175,7 @@
             <property name="Id">$INFO[Window(Home).Property(MostPlayedROM.1.Id)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.1.Thumb)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),mostplayedroms,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),mostplayedroms)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.2.Title)]</label>
@@ -4029,7 +4189,7 @@
             <property name="Id">$INFO[Window(Home).Property(MostPlayedROM.2.Id)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.2.Thumb)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),mostplayedroms,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),mostplayedroms)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.3.Title)]</label>
@@ -4043,7 +4203,7 @@
             <property name="Id">$INFO[Window(Home).Property(MostPlayedROM.3.Id)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.3.Thumb)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),mostplayedroms,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),mostplayedroms)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.4.Title)]</label>
@@ -4057,7 +4217,7 @@
             <property name="Id">$INFO[Window(Home).Property(MostPlayedROM.4.Id)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.4.Thumb)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),mostplayedroms,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),mostplayedroms)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.5.Title)]</label>
@@ -4071,7 +4231,7 @@
             <property name="Id">$INFO[Window(Home).Property(MostPlayedROM.5.Id)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.5.Thumb)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),mostplayedroms,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),mostplayedroms)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.6.Title)]</label>
@@ -4085,7 +4245,7 @@
             <property name="Id">$INFO[Window(Home).Property(MostPlayedROM.6.Id)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.6.Thumb)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),mostplayedroms,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),mostplayedroms)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.7.Title)]</label>
@@ -4099,7 +4259,7 @@
             <property name="Id">$INFO[Window(Home).Property(MostPlayedROM.7.Id)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.7.Thumb)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),mostplayedroms,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),mostplayedroms)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.8.Title)]</label>
@@ -4113,7 +4273,7 @@
             <property name="Id">$INFO[Window(Home).Property(MostPlayedROM.8.Id)]</property>
             <onclick>SetFocus(5014)</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.8.Thumb)]</thumb>
-            <visible>Substring(Control.GetLabel(4321),mostplayedroms,left)</visible>
+            <visible>Substring(Control.GetLabel(4321),mostplayedroms)</visible>
         </item>
     </include>
     <include name="RSS1WidgetContent1124">
@@ -4668,38 +4828,38 @@
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/$INFO[System.Date(yyyy)]/$INFO[System.Date(mm)]/babe_$INFO[System.Date(mm)]-$INFO[System.Date(dd)]-$INFO[System.Date(yyyy)].jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/$INFO[System.Date(yyyy)]/$INFO[System.Date(mm)]/babe_$INFO[System.Date(mm)]-$INFO[System.Date(dd)]-$INFO[System.Date(yyyy)].jpg</thumb>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/01/babe_01-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/01/babe_01-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/02/babe_02-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/02/babe_02-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/03/babe_03-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/03/babe_03-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/04/babe_04-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/04/babe_04-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/wp-content/uploads/2012/05/babe_05-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/wp-content/uploads/2012/05/babe_05-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
         </item>
     </include>
     <include name="TheBigPictureContent">
@@ -4708,7 +4868,7 @@
             <property name="Fanart">$INFO[Window(home).Property(bigpictures.photo.0.pic)]</property>
             <property name="Plot">$INFO[Window(home).Property(bigpictures.photo.0.description)]</property>
             <thumb>$INFO[Window(home).Property(bigpictures.photo.0.pic)]</thumb>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),thebigpicture)</visible>
         </item>
         <item>
@@ -4716,7 +4876,7 @@
             <property name="Fanart">$INFO[Window(home).Property(bigpictures.photo.1.pic)]</property>
             <property name="Plot">$INFO[Window(home).Property(bigpictures.photo.1.description)]</property>
             <thumb>$INFO[Window(home).Property(bigpictures.photo.1.pic)]</thumb>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),thebigpicture)</visible>
         </item>
         <item>
@@ -4724,7 +4884,7 @@
             <property name="Fanart">$INFO[Window(home).Property(bigpictures.photo.2.pic)]</property>
             <property name="Plot">$INFO[Window(home).Property(bigpictures.photo.2.description)]</property>
             <thumb>$INFO[Window(home).Property(bigpictures.photo.2.pic)]</thumb>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),thebigpicture)</visible>
         </item>
         <item>
@@ -4732,7 +4892,7 @@
             <property name="Fanart">$INFO[Window(home).Property(bigpictures.photo.3.pic)]</property>
             <property name="Plot">$INFO[Window(home).Property(bigpictures.photo.3.description)]</property>
             <thumb>$INFO[Window(home).Property(bigpictures.photo.3.pic)]</thumb>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),thebigpicture)</visible>
         </item>
         <item>
@@ -4740,7 +4900,7 @@
             <property name="Fanart">$INFO[Window(home).Property(bigpictures.photo.4.pic)]</property>
             <property name="Plot">$INFO[Window(home).Property(bigpictures.photo.4.description)]</property>
             <thumb>$INFO[Window(home).Property(bigpictures.photo.4.pic)]</thumb>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),thebigpicture)</visible>
         </item>
         <item>
@@ -4748,7 +4908,7 @@
             <property name="Fanart">$INFO[Window(home).Property(bigpictures.photo.5.pic)]</property>
             <property name="Plot">$INFO[Window(home).Property(bigpictures.photo.5.description)]</property>
             <thumb>$INFO[Window(home).Property(bigpictures.photo.5.pic)]</thumb>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),thebigpicture)</visible>
         </item>
         <item>
@@ -4756,7 +4916,7 @@
             <property name="Fanart">$INFO[Window(home).Property(bigpictures.photo.6.pic)]</property>
             <property name="Plot">$INFO[Window(home).Property(bigpictures.photo.6.description)]</property>
             <thumb>$INFO[Window(home).Property(bigpictures.photo.6.pic)]</thumb>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),thebigpicture)</visible>
         </item>
         <item>
@@ -4764,7 +4924,7 @@
             <property name="Fanart">$INFO[Window(home).Property(bigpictures.photo.7.pic)]</property>
             <property name="Plot">$INFO[Window(home).Property(bigpictures.photo.7.description)]</property>
             <thumb>$INFO[Window(home).Property(bigpictures.photo.7.pic)]</thumb>
-            <onclick>SetFocus(22222)</onclick>
+            <onclick>SetFocus(5014)</onclick>
             <visible>Substring(Control.GetLabel(4321),thebigpicture)</visible>
         </item>
     </include>

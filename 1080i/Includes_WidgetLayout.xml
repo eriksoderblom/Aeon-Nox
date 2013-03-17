@@ -2,7 +2,6 @@
 <includes>
     <include name="AlternateTimeAndStats">
         <control type="group">
-            <posy>472</posy>
             <visible>Skin.HasSetting(AlternateTimeStats) + [!Skin.HasSetting(DisableLibraryStats) | !Skin.HasSetting(DisableTimePanel)]</visible>
             <animation effect="slide" end="-1920,0" time="240">WindowClose</animation>
             <animation effect="slide" start="-1920,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
@@ -75,7 +74,6 @@
     </include>
     <include name="LibraryStats">
         <control type="group">
-            <posy>472</posy>
             <visible>!Skin.HasSetting(DisableLibraryStats) + !Skin.HasSetting(AlternateTimeStats)</visible>
             <visible>!IsEmpty(Control.GetLabel(4323)) | Window.IsActive(1131)</visible>
             <animation effect="slide" end="-750,0" time="240">WindowClose</animation>
@@ -85,6 +83,7 @@
             <animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)] + !Skin.HasSetting(totalshomehigh)">Conditional</animation>
             <animation effect="slide" end="0,-472" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
             <control type="image">
+                <posy>0</posy>
                 <width>794</width>
                 <height>87</height>
                 <texture flipy="true" flipx="true">$VAR[TimePanelImageVar]</texture>
@@ -118,7 +117,6 @@
     <include name="TimePanel">
         <control type="group">
             <posx>748r</posx>
-            <posy>472</posy>
             <visible>!Skin.HasSetting(DisableTimePanel) + !Skin.HasSetting(AlternateTimeStats)</visible>
             <animation effect="slide" end="750,0" time="240">WindowClose</animation>
             <animation effect="slide" start="750,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
@@ -198,24 +196,25 @@
                     <height>87</height>
                     <texture flipy="true">$VAR[NavBarImageVar]</texture>
                     <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
+                    <animation effect="slide" end="0,5" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
                     <animation effect="rotatex" end="180" time="320" center="22" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow) | WIndow.IsActive(1115)">Conditional</animation>
                 </control>
                 <control type="group">
                     <control type="label">
                         <posy>3</posy>
                         <width>1920</width>
-                        <height>3</height>
+                        <height>40</height>
                         <textoffsetx>5</textoffsetx>
                         <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=grey]$INFO[Window.Property(peopleborntoday.1.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.2.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.3.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.4.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.5.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.6.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.7.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.8.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.9.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=grey]$INFO[Window.Property(peopleborntoday.10.job), • ][/COLOR]</label>
                         <font>Font_Reg15</font>
-                        <textcolor>$VAR[RSSLabelColorVar]</textcolor>
+                        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                         <scroll>true</scroll>
                         <wrapmultiline>false</wrapmultiline>
                         <scrollspeed>40</scrollspeed>
                         <visible>Skin.HasSetting(ActorBirthdayRSS)</visible>
                     </control>
                     <control type="rss">
-                        <posy>3</posy>
+                        <posy>7</posy>
                         <width>1920</width>
                         <height>50</height>
                         <aligny>center</aligny>
@@ -245,11 +244,11 @@
                     <posx>165</posx>
                     <posy>3</posy>
                     <width>1880</width>
-                    <height>3</height>
+                    <height>40</height>
                     <textoffsetx>0</textoffsetx>
                     <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.1.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.2.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.3.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.4.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.5.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.6.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.7.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.8.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.9.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.10.job), • ][/COLOR]</label>
                     <font>Font_Reg15</font>
-                    <textcolor>$VAR[RSSLabelColorVar]</textcolor>
+                    <textcolor>FF666666</textcolor>
                     <scroll>true</scroll>
                     <wrapmultiline>false</wrapmultiline>
                     <scrollspeed>40</scrollspeed>
@@ -1571,7 +1570,7 @@
                         <posx>38</posx>
                         <posy>101</posy>
                         <width>915</width>
-                        <height>278</height>
+                        <height>190</height>
                         <aligny>top</aligny>
                         <label>$INFO[Container(8000).ListItem.Property(Plot)]</label>
                         <font>Font_Reg20</font>
@@ -1605,6 +1604,40 @@
                     <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                     <bordersize>19.5</bordersize>
                     <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                </control>
+                <control type="grouplist">
+                    <posx>205</posx>
+                    <posy>310</posy>
+                    <width>1100</width>
+                    <align>center</align>
+                    <visible>Substring(Control.GetLabel(4321),movie)</visible>
+                    <orientation>horizontal</orientation>
+                    <itemgap>40</itemgap>
+                    <control type="image">
+                        <texture>$INFO[Container(8000).ListItem.Property(AudioCodec),flags/audio/]$INFO[Container(8000).ListItem.Property(AudioChannels),,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
+                    <control type="image">
+                        <texture>$INFO[Container(8000).ListItem.Property(VideoResolution),flags/resolution/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
+                    <control type="image">
+                        <texture>$INFO[Container(8000).ListItem.Property(VideoCodec),flags/source/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
+                    <control type="image">
+                        <texture>$INFO[Container(8000).ListItem.Property(VideoAspect),flags/aspectratio/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
+                    <!--                     <control type="image">
+                        <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[WidgetRatingFlagVar,flags/rating/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                        <visible>!IsEmpty(Window(home).Property(mpaa))</visible>
+                    </control> -->
+                    <control type="image">
+                        <texture fallback="flags/studios/default-studio.png">$INFO[Container(8000).ListItem.Property(Studio),flags/studios/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
                 </control>
             </control>
             <!--Focused Random/Latest Episodes-->
@@ -1907,7 +1940,7 @@
                             <posx>1</posx>
                             <width>390</width>
                             <height>34</height>
-                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <texture border="8">views/tripanel/listselect_fo.png</texture>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <animation effect="fade" start="100" end="70" time="800" pulse="true" condition="!IsEmpty(Container(8000).ListItem.Property(Trailer))">Conditional</animation>
                         </control>
@@ -2006,7 +2039,7 @@
                             <posx>1</posx>
                             <width>390</width>
                             <height>68</height>
-                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <texture border="8">views/tripanel/listselect_fo.png</texture>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         </control>
                         <control type="label">
@@ -2018,63 +2051,60 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <item>
-                            <label>$LOCALIZE[208]</label>
-                            <onclick condition="Substring(Control.GetLabel(4321),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(8000).ListItem.Property(Path)],return)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),album)">Playlist.Clear</onclick>
-                            <onclick condition="!Substring(Control.GetLabel(4321),artist) + !Substring(Control.GetLabel(4321),addons) + !Substring(Control.GetLabel(4321),artists) + !Substring(Control.GetLabel(4321),rss) + !Substring(Control.GetLabel(4321),roms)">$INFO[Container(8000).ListItem.Property(Path)]</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),addons)">RunAddon($INFO[Container(8000).ListItem.Property(Path)])</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),rss)">PlayMedia($ESCINFO[Container(8000).ListItem.Property(Media)])</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4321),actor)">RunScript(script.metadata.actors,$INFO[Container(8000).ListItem.Label])</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Container(8000).ListItem.Property(Id)])</onclick>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[20410]</label>
-                            <onclick>PlayMedia($ESCINFO[Container(8000).ListItem.Property(Trailer)])</onclick>
-                            <visible>!IsEmpty(Container(8000).ListItem.Property(Trailer))</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31087]</label>
-                            <onclick condition="SubString(Control.GetLabel(4321),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4321),2custom)">$INFO[Skin.String(SmartPlaylist2.Call)]</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4321),3custom)">$INFO[Skin.String(SmartPlaylist3.Call)]</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4321),4custom)">$INFO[Skin.String(SmartPlaylist4.Call)]</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4321),5custom)">$INFO[Skin.String(SmartPlaylist5.Call)]</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4321),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),actors)">RunScript(script.metadata.actors,borntoday,10,random)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4321),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
-                            <onclick condition="!Substring(Control.GetLabel(4321),custom) + !Substring(Control.GetLabel(4321),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
-                            <visible>Substring(Control.GetLabel(4321),random) | Substring(Control.GetLabel(4321),actors)</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31066]</label>
-                            <onclick>SetFocus(8000)</onclick>
-                        </item>
+                        <include>ClassicWidgetPlayItems</include>
                     </content>
                 </control>
             </control>
-            <control type="button" id="5014">
-                <include>HiddenObject</include>
-                <onfocus condition="Substring(Control.GetLabel(4321),babe)">SetFocus(22222)</onfocus>
-                <onfocus condition="!Substring(Control.GetLabel(4321),babe)">SetFocus(8020)</onfocus>
-            </control>
-            <!--         <control type="button" id="5014">
-                <include>HiddenObject</include>
-                <onfocus condition="Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),tv)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),rss)">PlayMedia($ESCINFO[Container(5010).ListItem.Property(Media)])</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),roms)">System.Exec($ESCINFO[Container(5010).ListItem.Property(Path)])</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),babe)">SetFocus(22222)</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),album)">Playlist.Clear</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),album)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
-                <onfocus condition="!Substring(Control.GetLabel(4321),artist) + !Substring(Control.GetLabel(4321),addons)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),addons)">RunAddon($INFO[Container(5010).ListItem.Property(Path)])</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),randompics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),recentpics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onfocus>
-            </control>
- -->
         </control>
+    </include>
+    <include name="ClassicWidgetPlayItems">
+        <item>
+            <label>$LOCALIZE[208]</label>
+            <onclick condition="Substring(Window(home).Property(WidgetType),artist)">ActivateWindow(musiclibrary,$ESCINFO[Window(home).Property(Path)],return)</onclick>
+            <onclick condition="Substring(Window(home).Property(WidgetType),album)">Playlist.Clear</onclick>
+            <onclick condition="Substring(Window(home).Property(WidgetType),movies)">Runscript(service.skin.widgets,movieid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
+            <onclick condition="Substring(Window(home).Property(WidgetType),tv)">Runscript(service.skin.widgets,episodeid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
+            <onclick condition="Substring(Window(home).Property(WidgetType),musicvideo)">Runscript(service.skin.widgets,musicvideoid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
+            <onclick condition="!Substring(Window(home).Property(WidgetType),artist) + !Substring(Window(home).Property(WidgetType),addons) + !Substring(Window(home).Property(WidgetType),artists) + !Substring(Window(home).Property(WidgetType),rss) + !Substring(Window(home).Property(WidgetType),roms) + !Substring(Window(home).Property(WidgetType),musicvideo) + !Substring(Window(home).Property(WidgetType),tv) + !Substring(Window(home).Property(WidgetType),movie)">$INFO[Window(home).Property(Path)]</onclick>
+            <onclick condition="Substring(Window(home).Property(WidgetType),addons)">RunAddon($INFO[Window(home).Property(Path)])</onclick>
+            <onclick condition="Substring(Window(home).Property(WidgetType),rss)">PlayMedia($ESCINFO[Window(home).Property(Media)])</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),actor)">RunScript(script.metadata.actors,$INFO[Window(home).Label])</onclick>
+            <onclick condition="Substring(Window(home).Property(WidgetType),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Window(home).Property(Id)])</onclick>
+        </item>
+        <item>
+            <label>Resume $INFO[Window(home).Property(PercentPlayed),(,)]</label>
+            <onclick>$INFO[Window(home).Property(Path)]</onclick>
+            <visible>!IsEmpty(Window(home).Property(DBID)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
+        </item>
+        <item>
+            <label>$LOCALIZE[20410]</label>
+            <onclick>PlayMedia($ESCINFO[Window(home).Property(Trailer)])</onclick>
+            <visible>!IsEmpty(Window(home).Property(Trailer))</visible>
+        </item>
+        <item>
+            <label>$LOCALIZE[31087]</label>
+            <onclick condition="SubString(Window(home).Property(WidgetType),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),2custom)">$INFO[Skin.String(SmartPlaylist2.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),3custom)">$INFO[Skin.String(SmartPlaylist3.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),4custom)">$INFO[Skin.String(SmartPlaylist4.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),5custom)">$INFO[Skin.String(SmartPlaylist5.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),7custom)">$INFO[Skin.String(SmartPlaylist7.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),8custom)">$INFO[Skin.String(SmartPlaylist8.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),9custom)">$INFO[Skin.String(SmartPlaylist9.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),10custom)">$INFO[Skin.String(SmartPlaylist10.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),11custom)">$INFO[Skin.String(SmartPlaylist11.Call)]</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),12custom)">$INFO[Skin.String(SmartPlaylist12.Call)]</onclick>
+            <onclick condition="Substring(Window(home).Property(WidgetType),actors)">RunScript(script.metadata.actors,borntoday,10,random)</onclick>
+            <onclick condition="Substring(Window(home).Property(WidgetType),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
+            <onclick condition="!Substring(Window(home).Property(WidgetType),custom) + !Substring(Window(home).Property(WidgetType),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
+            <visible>Substring(Window(home).Property(WidgetType),random) | Substring(Window(home).Property(WidgetType),actors)</visible>
+        </item>
+        <item>
+            <label>$LOCALIZE[31066]</label>
+            <onclick condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">SetFocus(8000)</onclick>
+            <onclick condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">SetFocus(7000)</onclick>
+        </item>
     </include>
     <include name="HomePanelWidget">
         <control type="group" id="5000">
@@ -2106,8 +2136,6 @@
                 <control type="group">
                     <include>Animation_VisibleChange200</include>
                     <visible>Substring(Control.GetLabel(4321),default) | Substring(Control.GetLabel(4321),glass)</visible>
-                    <animation effect="zoom" end="70,100" center="0" time="320" easing="in" tween="cubic" condition="Stringcompare(Container(5010).NumItems,2)">Conditional</animation>
-                    <animation effect="zoom" end="35,100" center="0" time="320" easing="in" tween="cubic" condition="Stringcompare(Container(5010).NumItems,1)">Conditional</animation>
                     <control type="image">
                         <width>1650</width>
                         <height>402</height>
@@ -2188,7 +2216,7 @@
                             <control type="image">
                                 <width>399</width>
                                 <height>116</height>
-                                <texture>views/tripanel/listselect_fo.png</texture>
+                                <texture border="8">views/tripanel/listselect_fo.png</texture>
                                 <visible>Control.HasFocus(5051)</visible>
                                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             </control>
@@ -2556,8 +2584,6 @@
                     <width>1608</width>
                     <height>360</height>
                     <texture border="50">featured/panel_featured_overlay.png</texture>
-                    <animation effect="zoom" end="70,100" center="0" time="320" easing="in" tween="cubic" condition="Stringcompare(Container(5010).NumItems,2)">Conditional</animation>
-                    <animation effect="zoom" end="35,100" center="0" time="320" easing="in" tween="cubic" condition="Stringcompare(Container(5010).NumItems,1)">Conditional</animation>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     <include>Animation_VisibleChange200</include>
                     <visible>Substring(Control.GetLabel(4321),default)</visible>
@@ -2587,79 +2613,41 @@
                     <include>Animation_DialogPopup</include>
                 </control>
             </control>
-            <control type="button" id="5014">
-                <include>HiddenObject</include>
-                <onfocus>SetProperty(PanelWidgetInfo,true,home)</onfocus>
-                <onfocus>SetProperty(WidgetType,$INFO[Control.GetLabel(4321)],home)</onfocus>
-                <onfocus>SetProperty(Label,$INFO[Container(5010).ListItem.Label])</onfocus>
-                <onfocus>SetProperty(Label2,$INFO[Container(5010).ListItem.Label2])</onfocus>
-                <onfocus>SetProperty(Icon,$INFO[Container(5010).ListItem.Icon])</onfocus>
-                <onfocus>SetProperty(Fanart,$INFO[Container(5010).ListItem.Property(Fanart)])</onfocus>
-                <onfocus>SetProperty(Thumb,$INFO[Container(5010).ListItem.Thumb])</onfocus>
-                <onfocus>SetProperty(Path,$INFO[Container(5010).ListItem.Property(Path)])</onfocus>
-                <onfocus>SetProperty(Poster,$INFO[Container(5010).ListItem.Property(Poster)])</onfocus>
-                <onfocus>SetProperty(Logo,$INFO[Container(5010).ListItem.Property(Logo)])</onfocus>
-                <onfocus>SetProperty(ClearArt,$INFO[Container(5010).ListItem.Property(ClearArt)])</onfocus>
-                <onfocus>SetProperty(Landscape,$INFO[Container(5010).ListItem.Property(Landscape)])</onfocus>
-                <onfocus>SetProperty(Banner,$INFO[Container(5010).ListItem.Property(Banner)])</onfocus>
-                <onfocus>SetProperty(CharacterArt,$INFO[Container(5010).ListItem.Property(CharacterArt)])</onfocus>
-                <onfocus>SetProperty(Discart,$INFO[Container(5010).ListItem.Property(Discart)])</onfocus>
-                <onfocus>SetProperty(Year,$INFO[Container(5010).ListItem.Property(Year)])</onfocus>
-                <onfocus>Skin.SetString(Plot,$INFO[Container(5010).ListItem.Property(Plot)])</onfocus>
-                <onfocus>SetProperty(Tagline,$INFO[Container(5010).ListItem.Property(Tagline)])</onfocus>
-                <onfocus>SetProperty(RunningTime,$INFO[Container(5010).ListItem.Property(RunningTime)])</onfocus>
-                <onfocus>SetProperty(Director,$INFO[Container(5010).ListItem.Property(Director)])</onfocus>
-                <onfocus>SetProperty(Rating,$INFO[Container(5010).ListItem.Property(Rating)])</onfocus>
-                <onfocus>SetProperty(StatusID,$INFO[Container(5010).ListItem.Property(StatusID)])</onfocus>
-                <onfocus>SetProperty(Status,$INFO[Container(5010).ListItem.Property(Status)])</onfocus>
-                <onfocus>SetProperty(NextTitle,$INFO[Container(5010).ListItem.Property(NextTitle)])</onfocus>
-                <onfocus>SetProperty(LatestTitle,$INFO[Container(5010).ListItem.Property(LatestTitle)])</onfocus>
-                <onfocus>SetProperty(LatestDate,$INFO[Container(5010).ListItem.Property(LatestDate)])</onfocus>
-                <onfocus>SetProperty(Studio,$INFO[Container(5010).ListItem.Property(Studio)])</onfocus>
-                <onfocus>SetProperty(Network,$INFO[Container(5010).ListItem.Property(Network)])</onfocus>
-                <onfocus>SetProperty(PercentPlayed,$INFO[Container(5010).ListItem.Property(PercentPlayed)])</onfocus>
-                <onfocus>SetProperty(AudioChannels,$INFO[Container(5010).ListItem.Property(AudioChannels)])</onfocus>
-                <onfocus>SetProperty(AudioCodec,$INFO[Container(5010).ListItem.Property(AudioCodec)])</onfocus>
-                <onfocus>SetProperty(VideoCodec,$INFO[Container(5010).ListItem.Property(AudioCodec)])</onfocus>
-                <onfocus>SetProperty(VideoAspect,$INFO[Container(5010).ListItem.Property(VideoAspect)])</onfocus>
-                <onfocus>SetProperty(VideoResolution,$INFO[Container(5010).ListItem.Property(VideoResolution)])</onfocus>
-                <onfocus>SetProperty(extrafanart,$INFO[Container(5010).ListItem.Property(VideoResolution)])</onfocus>
-                <onfocus>SetProperty(extrathumb,$INFO[Container(5010).ListItem.Property(extrathumb)])</onfocus>
-                <onfocus>SetProperty(Id,$INFO[Container(5010).ListItem.Property(Id)])</onfocus>
-                <onfocus>SetProperty(Media,$INFO[Container(5010).ListItem.Property(Media)])</onfocus>
-                <onfocus>SetProperty(Channel,$INFO[Container(5010).ListItem.Property(Channel)])</onfocus>
-                <onfocus>SetProperty(Date,$INFO[Container(5010).ListItem.Property(Date)])</onfocus>
-                <onfocus>SetProperty(Publisher,$INFO[Container(5010).ListItem.Property(Publisher)])</onfocus>
-                <onfocus>SetProperty(Description,$INFO[Container(5010).ListItem.Property(Description)])</onfocus>
-                <onfocus>SetProperty(Genre,$INFO[Container(5010).ListItem.Property(Genre)])</onfocus>
-                <onfocus>SetProperty(RecordLabel,$INFO[Container(5010).ListItem.Property(RecordLabel)])</onfocus>
-                <onfocus>SetProperty(Premiered,$INFO[Container(5010).ListItem.Property(Premiered)])</onfocus>
-                <onfocus>SetProperty(Folder,$INFO[Container(5010).ListItem.Property(Folder)])</onfocus>
-                <onfocus>SetProperty(EpisodeNumber,$INFO[Container(5010).ListItem.Property(EpisodeNumber)])</onfocus>
-                <onfocus>SetProperty(Version,$INFO[Container(5010).ListItem.Property(Version)])</onfocus>
-                <onfocus>SetProperty(Trailer,$INFO[Container(5010).ListItem.Property(Trailer)])</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors) | Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),roms)">SetFocus(5020)</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),babe)">ClearProperty(PanelWidgetInfo,home)</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),babe)">SetFocus(22222)</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),album)  | Substring(Control.GetLabel(4321),artist) | Substring(Control.GetLabel(4321),rss) | Substring(Control.GetLabel(4321),pics)">SetFocus(5030)</onfocus>
-            </control>
-            <control type="group">
-                <visible>!IsEmpty(Window(home).Property(WidgetType)) + !IsEmpty(Window(home).Property(PanelWidgetInfo))</visible>
-                <animation type="Visible" reversible="false">
-                    <include condition="Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp1</include>
-                    <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipDown1</include>
-                </animation>
-                <animation type="Hidden" reversible="false">
-                    <include condition="Skin.HasSetting(lowermainmenu)">Animation_PanelFlipDown2</include>
-                    <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp2</include>
-                </animation>
-                <include>WidgetInfoPanel</include>
-
-            </control>
         </control>
     </include>
     <include name="WidgetInfoPanel">
+        <control type="button" id="5055">
+            <include>HiddenObject</include>
+            <onfocus condition="Substring(Window(home).Property(WidgetType),movie) | Substring(Window(home).Property(WidgetType),musicvideo) | Substring(Window(home).Property(WidgetType),actors) | Substring(Window(home).Property(WidgetType),tv) | Substring(Window(home).Property(WidgetType),roms)">SetFocus(5020)</onfocus>
+            <onfocus condition="Substring(Window(home).Property(WidgetType),babe)">ClearProperty(PanelWidget2Info,home)</onfocus>
+            <onfocus condition="Substring(Window(home).Property(WidgetType),babe)">ClearProperty(PanelWidgetInfo,home)</onfocus>
+            <onfocus condition="Substring(Window(home).Property(WidgetType),babe)">SetFocus(22222)</onfocus>
+            <onfocus condition="Substring(Window(home).Property(WidgetType),addons) | Substring(Window(home).Property(WidgetType),album)  | Substring(Window(home).Property(WidgetType),artist) | Substring(Window(home).Property(WidgetType),rss) | Substring(Window(home).Property(WidgetType),pics)">SetFocus(5030)</onfocus>
+        </control>
         <control type="group">
+            <posx>135</posx>
+            <include>Animation_OpenCloseZoom</include>
+            <posy>389</posy>
+            <width>1920</width>
+            <height>825</height>
+            <animation type="Conditional" condition="true">
+                <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
+            </animation>
+            <animation effect="slide" end="0,285" time="0" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Stringcompare(Window(home).Property(WidgetPosition),Widget1)">Conditional</animation>
+            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+            <animation effect="slide" end="0,-31" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
+            <visible>!IsEmpty(Window(home).Property(WidgetType)) + [!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))]</visible>
+            <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">
+                <include condition="Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipUp1</include>
+                <include condition="!Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipDown1</include>
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <include condition="Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipDown2</include>
+                <include condition="!Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipUp2</include>
+            </animation>
+            <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">
+                <include>Animation_LargePanelFlipUp1</include>
+            </animation>
             <control type="image">
                 <posx>-100</posx>
                 <posy>-350</posy>
@@ -2761,9 +2749,22 @@
                     <control type="button" id="5015">
                         <label>$LOCALIZE[208]</label>
                         <include>WidgetMenuLabel</include>
+                        <onclick condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))">SetFocus(5010)</onclick>
+                        <onclick condition="!IsEmpty(Window(home).Property(PanelWidget2Info))">SetFocus(6010)</onclick>
+                        <onclick condition="Substring(Window(home).Property(WidgetType),movies)">Runscript(service.skin.widgets,movieid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
+                        <onclick condition="Substring(Window(home).Property(WidgetType),tv)">Runscript(service.skin.widgets,episodeid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
+                        <onclick condition="Substring(Window(home).Property(WidgetType),musicvideo)">Runscript(service.skin.widgets,musicvideoid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
                         <onclick condition="Substring(Window(home).Property(WidgetType),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Window(home).Property(Id)])</onclick>
-                        <onclick condition="!SubString(Window(home).Property(WidgetType),actor) + !Substring(Window(home).Property(WidgetType),roms)">$INFO[Window(home).Property(Path)]</onclick>
+                        <onclick condition="!SubString(Window(home).Property(WidgetType),actor) + !Substring(Window(home).Property(WidgetType),roms) + !Substring(Window(home).Property(WidgetType),movies) + !Substring(Window(home).Property(WidgetType),tv) + !Substring(Window(home).Property(WidgetType),musicvideo)">$INFO[Window(home).Property(Path)]</onclick>
                         <onclick condition="SubString(Window(home).Property(WidgetType),actor)">RunScript(script.metadata.actors,$INFO[Window(home).Property(Label)])</onclick>
+                        <onclick condition="Substring(Window(home).Property(WidgetType),nextaired)">$INFO[Window(home).Property(Path)]</onclick>
+                    </control>
+                    <control type="button" id="5018">
+                        <label>Resume $INFO[Window(home).Property(PercentPlayed),(,)]</label>
+                        <include>WidgetMenuLabel</include>
+                        <onclick>$INFO[Window(home).Property(Path)]</onclick>
+                        <visible>!Substring(Window(home).Property(WidgetType),nextaired)</visible>
+                        <visible>!IsEmpty(Window(home).Property(DBID)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
                     </control>
                     <control type="button" id="5016">
                         <label>$LOCALIZE[20410]</label>
@@ -2786,6 +2787,10 @@
                         <onclick condition="SubString(Window(home).Property(WidgetType),5custom)">$INFO[Skin.String(SmartPlaylist5.Call)]</onclick>
                         <onclick condition="SubString(Window(home).Property(WidgetType),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
                         <onclick condition="SubString(Window(home).Property(WidgetType),random) + !SubString(Window(home).Property(WidgetType),custom)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
+                        <onclick condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))">SetFocus(5010)</onclick>
+                        <onclick condition="!IsEmpty(Window(home).Property(PanelWidget2Info))">SetFocus(6010)</onclick>
+                        <onclick>ClearProperty(PanelWidgetInfo,Home)</onclick>
+                        <onclick>ClearProperty(PanelWidget2Info,Home)</onclick>
                         <include>WidgetMenuLabel</include>
                         <visible>Substring(Window(home).Property(WidgetType),random) | Substring(Window(home).Property(WidgetType),custom)</visible>
                     </control>
@@ -2818,22 +2823,11 @@
                     </animation>
                     <visible>!IsEmpty(Window(home).Property(Logo))</visible>
                 </control>
-                <control type="progress">
-                    <posx>470</posx>
-                    <posy>-140</posy>
-                    <width>220</width>
-                    <height>9</height>
-                    <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
-                    <lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
-                    <midtexture border="0,0,0,0">dialogs/progress/progress_mid.png</midtexture>
-                    <righttexture border="0,0,12,0">dialogs/progress/progress_right.png</righttexture>
-                    <info>Window(home).Property(PercentPlayed)</info>
-                    <visible>!IsEmpty(Window(home).Property(PercentPlayed)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
-                </control>
                 <control type="grouplist">
                     <posx>470</posx>
                     <posy>-320</posy>
                     <orientation>vertical</orientation>
+                    <usecontrolcoords>true</usecontrolcoords>
                     <itemgap>0</itemgap>
                     <control type="label">
                         <width>800</width>
@@ -2851,6 +2845,23 @@
                         <font>Font_MainClassic3</font>
                         <visible>IsEmpty(Window(home).Property(Logo))</visible>
                     </control>
+                    <control type="grouplist">
+                        <width>1100</width>
+                        <height>40</height>
+                        <orientation>horizontal</orientation>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <visible>!IsEmpty(Window(home).Property(TagLine))</visible>
+                        <control type="image" id="12020">
+                            <posx>15</posx>
+                            <posy>3</posy>
+                            <width>35</width>
+                            <height>35</height>
+                            <aspectratio align="right">keep</aspectratio>
+                            <texture background="true">$INFO[Window(home).Property(Country),flags/language/,.png]</texture>
+                            <fadetime>200</fadetime>
+                            <colordiffuse>AAFFFFFF</colordiffuse>
+                            <visible>!IsEmpty(Control.GetLabel(12020))</visible>
+                        </control>
                     <control type="label">
                         <width>800</width>
                         <height>40</height>
@@ -2858,7 +2869,7 @@
                         <label>$INFO[Window(home).Property(Tagline)]</label>
                         <font>Font_Reg19</font>
                         <textcolor>white3</textcolor>
-                        <visible>!IsEmpty(Window(home).Property(TagLine)) + !IsEmpty(Window(home).Property(Logo))</visible>
+                        <visible>!IsEmpty(Window(home).Property(Logo))</visible>
                     </control>
                     <control type="label">
                         <width>1100</width>
@@ -2867,11 +2878,10 @@
                         <label>$INFO[Window(home).Property(Tagline)]</label>
                         <font>Font_Reg19</font>
                         <textcolor>white3</textcolor>
-                        <visible>!IsEmpty(Window(home).Property(TagLine)) + IsEmpty(Window(home).Property(Logo))</visible>
+                        <visible>IsEmpty(Window(home).Property(Logo))</visible>
+                    </control>
                     </control>
                     <control type="label">
-                        <posx>610</posx>
-                        <posy>58</posy>
                         <width>986</width>
                         <height>30</height>
                         <textoffsetx>15</textoffsetx>
@@ -2881,8 +2891,6 @@
                         <visible>!IsEmpty(Window(home).Property(EpisodeNumber))</visible>
                     </control>
                     <control type="label">
-                        <posx>610</posx>
-                        <posy>58</posy>
                         <width>986</width>
                         <height>30</height>
                         <textoffsetx>15</textoffsetx>
@@ -2891,13 +2899,29 @@
                         <textcolor>white2</textcolor>
                         <visible>!IsEmpty(Window(home).Property(EpisodeNumber))</visible>
                     </control>
-                    <control type="label">
-                        <width>1373</width>
+                    <control type="grouplist">
                         <height>40</height>
-                        <textoffsetx>15</textoffsetx>
-                        <label>$INFO[Window(home).Property(Year),, • ]$INFO[Window(home).Property(RunningTime),, $LOCALIZE[12391]]</label>
-                        <font>Font_Reg19</font>
-                        <textcolor>grey2</textcolor>
+                        <orientation>horizontal</orientation>
+                        <itemgap>0</itemgap>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <control type="image">
+                            <posy>-3</posy>
+                            <width>50</width>
+                            <height>50</height>
+                            <aspectratio align="right">keep</aspectratio>
+                            <colordiffuse>white</colordiffuse>
+                             <animation effect="slide" end="9,0" time="0" condition="true">Conditional</animation>
+                            <texture>dialogs/circle/$INFO[Window(home).Property(PercentPlayed)].png</texture>
+                            <visible>!IsEmpty(Window(home).Property(PercentPlayed)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
+                        </control>
+                        <control type="label">
+                            <width>1373</width>
+                            <height>40</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[Window(home).Property(Year),, • ]$INFO[Window(home).Property(RunningTime),, $LOCALIZE[12391]]</label>
+                            <font>Font_Reg19</font>
+                            <textcolor>grey2</textcolor>
+                        </control>
                     </control>
                 </control>
                 <control type="group">
@@ -2907,7 +2931,7 @@
                         <width>1290</width>
                         <height>308</height>
                         <aligny>top</aligny>
-                        <label>$INFO[Skin.String(Plot)]</label>
+                        <label>$INFO[Window(home).Property(Plot)]</label>
                         <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
                         <pagecontrol>5019</pagecontrol>
@@ -2920,7 +2944,7 @@
                         <width>960</width>
                         <height>308</height>
                         <aligny>top</aligny>
-                        <label>$INFO[Skin.String(Plot)]</label>
+                        <label>$INFO[Window(home).Property(Plot)]</label>
                         <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
                         <pagecontrol>5019</pagecontrol>
@@ -2933,7 +2957,7 @@
                         <width>860</width>
                         <height>308</height>
                         <aligny>top</aligny>
-                        <label>$INFO[Skin.String(Plot)]$INFO[Window(home).Property(LatestDate),[COLOR grey]Previous Episode:[/COLOR][CR][CR]]$INFO[Window(home).Property(LatestTitle),:  ]</label>
+                        <label>$INFO[Window(home).Property(Plot)]$INFO[Window(home).Property(LatestDate),[COLOR grey]Previous Episode:[/COLOR][CR][CR]]$INFO[Window(home).Property(LatestTitle),:  ]</label>
                         <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
                         <pagecontrol>5019</pagecontrol>
@@ -2946,7 +2970,7 @@
                     <posy>245</posy>
                     <texture>tvguide/$INFO[Window(home).Property(StatusID),,.png]</texture>
                     <width>150</width>
-                    <height>100</height>
+                    <height>70</height>
                     <aspectratio>keep</aspectratio>
                     <fadetime>IconCrossfadeTime2</fadetime>
                     <colordiffuse>white2</colordiffuse>
@@ -2954,34 +2978,65 @@
                 </control>
                 <control type="grouplist">
                     <posx>495</posx>
-                    <posy>250</posy>
+                    <posy>270</posy>
                     <width>1300</width>
                     <align>center</align>
+                    <usecontrolcoords>true</usecontrolcoords>
                     <orientation>horizontal</orientation>
-                    <itemgap>72</itemgap>
+                    <itemgap>40</itemgap>
                     <control type="image">
                         <texture>$INFO[Window(home).Property(AudioCodec),flags/audio/]$INFO[Window(home).Property(AudioChannels),,.png]</texture>
-                        <include>HomeInfoWidgetVars</include>
+                        <include>OSDFlagVars</include>
                     </control>
                     <control type="image">
                         <texture>$INFO[Window(home).Property(VideoResolution),flags/resolution/,.png]</texture>
-                        <include>HomeInfoWidgetVars</include>
+                        <include>OSDFlagVars</include>
                     </control>
                     <control type="image">
                         <texture>$INFO[Window(home).Property(VideoCodec),flags/source/,.png]</texture>
-                        <include>HomeInfoWidgetVars</include>
+                        <include>OSDFlagVars</include>
                     </control>
                     <control type="image">
                         <texture>$INFO[Window(home).Property(VideoAspect),flags/aspectratio/,.png]</texture>
-                        <include>HomeInfoWidgetVars</include>
+                        <include>OSDFlagVars</include>
                     </control>
                     <control type="image">
-                        <texture>$INFO[Window(home).Property(Rating),stars/,.png]</texture>
-                        <include>HomeInfoWidgetVars</include>
+                        <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[WidgetRatingFlagVar,flags/rating/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                        <visible>!IsEmpty(Window(home).Property(mpaa))</visible>
                     </control>
+                    <control type="group">
+                            <width>150</width>
+        <height>64</height>
+        <visible>IsEmpty(Window(home).Property(NextTitle))</visible>
+                    <control type="image">
+                        <texture>flags/imdb.png</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
+                    <control type="label">
+                        <posy>21</posy>
+                        <width>150</width>
+                        <height>38</height>
+                        <align>center</align>
+                        <label fallback="?">$INFO[Window(home).Property(Rating)]</label>
+                        <font>Font_Bold22</font>
+                        <textcolor>floor</textcolor>
+                    </control>
+        
+                    </control>
+<!--                     <control type="image">
+                        <texture>$INFO[Window(home).Property(Rating),stars/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control> -->
                     <control type="image">
                         <texture>$INFO[Window(home).Property(Studio),flags/studios/,.png]</texture>
-                        <include>HomeInfoWidgetVars</include>
+                        <width>150</width>
+                        <height>90</height>
+                        <posy>-11</posy>
+                        <aspectratio>keep</aspectratio>
+                        <fadetime>IconCrossfadeTime2</fadetime>
+                        <colordiffuse>white2</colordiffuse>
+                        <animation effect="fade" time="200">VisibleChange</animation>
                         <visible>!IsEmpty(Window(home).Property(Studio))</visible>
                     </control>
                 </control>
@@ -3153,6 +3208,10 @@
                         <label>$LOCALIZE[31087]</label>
                         <onclick condition="Substring(Window(home).Property(WidgetType),randompics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
                         <onclick condition="Substring(Window(home).Property(WidgetType),random) + !Substring(Window(home).Property(WidgetType),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
+                        <onclick condition="!IsEmpty(Window(home).Property(PanelWidgetInfo))">SetFocus(5010)</onclick>
+                        <onclick condition="!IsEmpty(Window(home).Property(PanelWidget2Info))">SetFocus(6010)</onclick>
+                        <onclick>ClearProperty(PanelWidgetInfo,Home)</onclick>
+                        <onclick>ClearProperty(PanelWidget2Info,Home)</onclick>
                         <include>WidgetMenuLabel</include>
                         <visible>Substring(Window(home).Property(WidgetType),random)</visible>
                     </control>
@@ -3392,7 +3451,7 @@
                         <posx>38</posx>
                         <posy>101</posy>
                         <width>915</width>
-                        <height>278</height>
+                        <height>190</height>
                         <aligny>top</aligny>
                         <label>$INFO[Container(7000).ListItem.Property(Plot)]</label>
                         <font>Font_Reg20</font>
@@ -3426,6 +3485,40 @@
                     <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                     <bordersize>19.5</bordersize>
                     <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                </control>
+                <control type="grouplist">
+                    <posx>205</posx>
+                    <posy>310</posy>
+                    <width>1100</width>
+                    <align>center</align>
+                    <visible>Substring(Control.GetLabel(4325),movie)</visible>
+                    <orientation>horizontal</orientation>
+                    <itemgap>40</itemgap>
+                    <control type="image">
+                        <texture>$INFO[Container(7000).ListItem.Property(AudioCodec),flags/audio/]$INFO[Container(7000).ListItem.Property(AudioChannels),,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
+                    <control type="image">
+                        <texture>$INFO[Container(7000).ListItem.Property(VideoResolution),flags/resolution/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
+                    <control type="image">
+                        <texture>$INFO[Container(7000).ListItem.Property(VideoCodec),flags/source/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
+                    <control type="image">
+                        <texture>$INFO[Container(7000).ListItem.Property(VideoAspect),flags/aspectratio/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
+                    <!--                     <control type="image">
+                        <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[WidgetRatingFlagVar,flags/rating/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                        <visible>!IsEmpty(Window(home).Property(mpaa))</visible>
+                    </control> -->
+                    <control type="image">
+                        <texture fallback="flags/studios/default-studio.png">$INFO[Container(7000).ListItem.Property(Studio),flags/studios/,.png]</texture>
+                        <include>OSDFlagVars</include>
+                    </control>
                 </control>
             </control>
             <!--Focused Random/Latest Episodes-->
@@ -3618,7 +3711,7 @@
             <control type="group">
                 <posx>513</posx>
                 <posy>-18</posy>
-                <animation effect="slide" end="-570,0" time="400" easing="inout" tween="cubic" condition="Control.HasFocus(7000)">Conditional</animation>
+                <animation effect="slide" end="-570,0" time="400" easing="inout" tween="cubic" condition="Control.HasFocus(7000) | Control.HasFocus(7020)">Conditional</animation>
                 <animation type="Conditional" condition="true">
                     <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
                 </animation>
@@ -3699,6 +3792,7 @@
                     <onright>7993</onright>
                     <include>NavigationWidget2</include>
                     <preloaditems>2</preloaditems>
+                    <animation effect="fade" time="160" start="100" end="0" condition="Control.HasFocus(7020)">Conditional</animation>
                     <scrolltime tween="quadratic">200</scrolltime>
                     <itemlayout height="34" width="450">
                         <control type="image">
@@ -3720,7 +3814,7 @@
                             <posx>1</posx>
                             <width>390</width>
                             <height>34</height>
-                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <texture border="8">views/tripanel/listselect_fo.png</texture>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <animation effect="fade" start="100" end="70" time="800" pulse="true" condition="!IsEmpty(Container(7000).ListItem.Property(Trailer))">Conditional</animation>
                         </control>
@@ -3818,7 +3912,7 @@
                             <posx>1</posx>
                             <width>390</width>
                             <height>68</height>
-                            <texture>views/tripanel/listselect_fo.png</texture>
+                            <texture border="8">views/tripanel/listselect_fo.png</texture>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         </control>
                         <control type="label">
@@ -3830,45 +3924,9 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <item>
-                            <label>$LOCALIZE[208]</label>
-                            <onclick condition="Substring(Control.GetLabel(4325),artist)">ActivateWindow(musiclibrary,$ESCINFO[Container(7000).ListItem.Property(Path)],return)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),album)">Playlist.Clear</onclick>
-                            <onclick condition="!Substring(Control.GetLabel(4325),artist) + !Substring(Control.GetLabel(4325),addons) + !Substring(Control.GetLabel(4325),artists) + !Substring(Control.GetLabel(4325),rss) + !Substring(Control.GetLabel(4325),roms)">$INFO[Container(7000).ListItem.Property(Path)]</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),addons)">RunAddon($INFO[Container(7000).ListItem.Property(Path)])</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),rss)">PlayMedia($ESCINFO[Container(7000).ListItem.Property(Media)])</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4325),actor)">RunScript(script.metadata.actors,$INFO[Container(7000).ListItem.Label])</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Container(7000).ListItem.Property(Id)])</onclick>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[20410]</label>
-                            <onclick>PlayMedia($ESCINFO[Container(7000).ListItem.Property(Trailer)])</onclick>
-                            <visible>!IsEmpty(Container(7000).ListItem.Property(Trailer))</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31087]</label>
-                            <onclick condition="SubString(Control.GetLabel(4325),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4325),2custom)">$INFO[Skin.String(SmartPlaylist2.Call)]</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4325),3custom)">$INFO[Skin.String(SmartPlaylist3.Call)]</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4325),4custom)">$INFO[Skin.String(SmartPlaylist4.Call)]</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4325),5custom)">$INFO[Skin.String(SmartPlaylist5.Call)]</onclick>
-                            <onclick condition="SubString(Control.GetLabel(4325),6custom)">$INFO[Skin.String(SmartPlaylist6.Call)]</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),actors)">RunScript(script.metadata.actors,borntoday,10,random)</onclick>
-                            <onclick condition="Substring(Control.GetLabel(4325),pics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
-                            <onclick condition="!Substring(Control.GetLabel(4325),custom) + !Substring(Control.GetLabel(4325),pics)">SetProperty(SkinWidgets_RandomItems_Update,true)</onclick>
-                            <visible>Substring(Control.GetLabel(4325),random) | Substring(Control.GetLabel(4325),actors)</visible>
-                        </item>
-                        <item>
-                            <label>$LOCALIZE[31066]</label>
-                            <onclick>SetFocus(7000)</onclick>
-                        </item>
+                        <include>ClassicWidgetPlayItems</include>
                     </content>
                 </control>
-            </control>
-            <control type="button" id="6014">
-                <include>HiddenObject</include>
-                <onfocus condition="Substring(Control.GetLabel(4325),babe)">SetFocus(22223)</onfocus>
-                <onfocus condition="!Substring(Control.GetLabel(4325),babe)">SetFocus(7020)</onfocus>
             </control>
         </control>
     </include>
@@ -3893,13 +3951,12 @@
                     <include>Animation_PanelFlipUp2</include>
                 </animation>
                 <animation type="Conditional" condition="IsEmpty(Window(Home).Property(PanelWidget2Info))" reversible="false">
-                    <include>Animation_PanelFlipDown1</include>
+                    <include condition="!Skin.HasSetting(lowermainmenu)">Animation_PanelFlipUp1</include>
+                    <include condition="Skin.HasSetting(lowermainmenu)">Animation_PanelFlipDown1</include>
                 </animation>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4325),default) | Substring(Control.GetLabel(4325),glass)</visible>
                     <include>Animation_VisibleChange200</include>
-                    <animation effect="zoom" end="70,100" center="0" time="320" easing="in" tween="cubic" condition="Stringcompare(Container(6010).NumItems,2)">Conditional</animation>
-                    <animation effect="zoom" end="35,100" center="0" time="320" easing="in" tween="cubic" condition="Stringcompare(Container(6010).NumItems,1)">Conditional</animation>
                     <control type="image">
                         <width>1650</width>
                         <height>402</height>
@@ -3980,7 +4037,7 @@
                             <control type="image">
                                 <width>399</width>
                                 <height>116</height>
-                                <texture>views/tripanel/listselect_fo.png</texture>
+                                <texture border="8">views/tripanel/listselect_fo.png</texture>
                                 <visible>Control.HasFocus(6051)</visible>
                                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             </control>
@@ -4350,8 +4407,6 @@
                     <height>360</height>
                     <texture border="50">featured/panel_featured_overlay.png</texture>
                     <include>Animation_VisibleChange200</include>
-                    <animation effect="zoom" end="70,100" center="0" time="320" easing="in" tween="cubic" condition="Stringcompare(Container(6010).NumItems,2)">Conditional</animation>
-                    <animation effect="zoom" end="35,100" center="0" time="320" easing="in" tween="cubic" condition="Stringcompare(Container(6010).NumItems,1)">Conditional</animation>
                     <visible>Substring(Control.GetLabel(4325),default)</visible>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
@@ -4379,74 +4434,6 @@
                     <visible>Control.HasFocus(6010) + Container(6010).HasNext</visible>
                     <include>Animation_DialogPopup</include>
                 </control>
-            </control>
-            <control type="button" id="6014">
-                <include>HiddenObject</include>
-                <onfocus>SetProperty(PanelWidget2Info,true,home)</onfocus>
-                <onfocus>SetProperty(WidgetType,$INFO[Control.GetLabel(4325)],home)</onfocus>
-                <onfocus>SetProperty(Label,$INFO[Container(6010).ListItem.Label])</onfocus>
-                <onfocus>SetProperty(Label2,$INFO[Container(6010).ListItem.Label2])</onfocus>
-                <onfocus>SetProperty(Icon,$INFO[Container(6010).ListItem.Icon])</onfocus>
-                <onfocus>SetProperty(Fanart,$INFO[Container(6010).ListItem.Property(Fanart)])</onfocus>
-                <onfocus>SetProperty(Thumb,$INFO[Container(6010).ListItem.Thumb])</onfocus>
-                <onfocus>SetProperty(Path,$INFO[Container(6010).ListItem.Property(Path)])</onfocus>
-                <onfocus>SetProperty(Poster,$INFO[Container(6010).ListItem.Property(Poster)])</onfocus>
-                <onfocus>SetProperty(Logo,$INFO[Container(6010).ListItem.Property(Logo)])</onfocus>
-                <onfocus>SetProperty(ClearArt,$INFO[Container(6010).ListItem.Property(ClearArt)])</onfocus>
-                <onfocus>SetProperty(Landscape,$INFO[Container(6010).ListItem.Property(Landscape)])</onfocus>
-                <onfocus>SetProperty(Banner,$INFO[Container(6010).ListItem.Property(Banner)])</onfocus>
-                <onfocus>SetProperty(CharacterArt,$INFO[Container(6010).ListItem.Property(CharacterArt)])</onfocus>
-                <onfocus>SetProperty(Discart,$INFO[Container(6010).ListItem.Property(Discart)])</onfocus>
-                <onfocus>SetProperty(Year,$INFO[Container(6010).ListItem.Property(Year)])</onfocus>
-                <onfocus>Skin.SetString(Plot,$INFO[Container(6010).ListItem.Property(Plot)])</onfocus>
-                <onfocus>SetProperty(Tagline,$INFO[Container(6010).ListItem.Property(Tagline)])</onfocus>
-                <onfocus>SetProperty(RunningTime,$INFO[Container(6010).ListItem.Property(RunningTime)])</onfocus>
-                <onfocus>SetProperty(Director,$INFO[Container(6010).ListItem.Property(Director)])</onfocus>
-                <onfocus>SetProperty(Rating,$INFO[Container(6010).ListItem.Property(Rating)])</onfocus>
-                <onfocus>SetProperty(StatusID,$INFO[Container(6010).ListItem.Property(StatusID)])</onfocus>
-                <onfocus>SetProperty(Status,$INFO[Container(6010).ListItem.Property(Status)])</onfocus>
-                <onfocus>SetProperty(NextTitle,$INFO[Container(6010).ListItem.Property(NextTitle)])</onfocus>
-                <onfocus>SetProperty(LatestTitle,$INFO[Container(6010).ListItem.Property(LatestTitle)])</onfocus>
-                <onfocus>SetProperty(LatestDate,$INFO[Container(6010).ListItem.Property(LatestDate)])</onfocus>
-                <onfocus>SetProperty(Studio,$INFO[Container(6010).ListItem.Property(Studio)])</onfocus>
-                <onfocus>SetProperty(Network,$INFO[Container(6010).ListItem.Property(Network)])</onfocus>
-                <onfocus>SetProperty(PercentPlayed,$INFO[Container(6010).ListItem.Property(PercentPlayed)])</onfocus>
-                <onfocus>SetProperty(AudioChannels,$INFO[Container(6010).ListItem.Property(AudioChannels)])</onfocus>
-                <onfocus>SetProperty(AudioCodec,$INFO[Container(6010).ListItem.Property(AudioCodec)])</onfocus>
-                <onfocus>SetProperty(VideoCodec,$INFO[Container(6010).ListItem.Property(AudioCodec)])</onfocus>
-                <onfocus>SetProperty(VideoAspect,$INFO[Container(6010).ListItem.Property(VideoAspect)])</onfocus>
-                <onfocus>SetProperty(VideoResolution,$INFO[Container(6010).ListItem.Property(VideoResolution)])</onfocus>
-                <onfocus>SetProperty(extrafanart,$INFO[Container(6010).ListItem.Property(VideoResolution)])</onfocus>
-                <onfocus>SetProperty(extrathumb,$INFO[Container(6010).ListItem.Property(extrathumb)])</onfocus>
-                <onfocus>SetProperty(Id,$INFO[Container(6010).ListItem.Property(Id)])</onfocus>
-                <onfocus>SetProperty(Media,$INFO[Container(6010).ListItem.Property(Media)])</onfocus>
-                <onfocus>SetProperty(Channel,$INFO[Container(6010).ListItem.Property(Channel)])</onfocus>
-                <onfocus>SetProperty(Date,$INFO[Container(6010).ListItem.Property(Date)])</onfocus>
-                <onfocus>SetProperty(Publisher,$INFO[Container(6010).ListItem.Property(Publisher)])</onfocus>
-                <onfocus>SetProperty(Description,$INFO[Container(6010).ListItem.Property(Description)])</onfocus>
-                <onfocus>SetProperty(Genre,$INFO[Container(6010).ListItem.Property(Genre)])</onfocus>
-                <onfocus>SetProperty(RecordLabel,$INFO[Container(6010).ListItem.Property(RecordLabel)])</onfocus>
-                <onfocus>SetProperty(Premiered,$INFO[Container(6010).ListItem.Property(Premiered)])</onfocus>
-                <onfocus>SetProperty(Folder,$INFO[Container(6010).ListItem.Property(Folder)])</onfocus>
-                <onfocus>SetProperty(EpisodeNumber,$INFO[Container(6010).ListItem.Property(EpisodeNumber)])</onfocus>
-                <onfocus>SetProperty(Version,$INFO[Container(6010).ListItem.Property(Version)])</onfocus>
-                <onfocus>SetProperty(Trailer,$INFO[Container(6010).ListItem.Property(Trailer)])</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors) | Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),roms)">SetFocus(5020)</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4325),babe)">ClearProperty(PanelWidget2Info,home)</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4325),babe)">SetFocus(22223)</onfocus>
-                <onfocus condition="Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),album) | Substring(Control.GetLabel(4325),artist) | Substring(Control.GetLabel(4325),pics) | Substring(Control.GetLabel(4325),rss)">SetFocus(5030)</onfocus>
-            </control>
-            <control type="group">
-                <visible>!IsEmpty(Window(home).Property(WidgetType)) + !IsEmpty(Window(home).Property(PanelWidget2Info))</visible>
-                <posy>350</posy>
-                <animation type="Visible" reversible="false">
-                    <include>Animation_PanelFlipUp1</include>
-                </animation>
-                <animation type="Hidden" reversible="false">
-                    <include>Animation_PanelFlipDown2</include>
-                </animation>
-                <include>WidgetInfoPanel</include>
-
             </control>
         </control>
     </include>
@@ -4832,6 +4819,12 @@
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widgetlist),Icon1panel)">IconPanel1Items</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widgetlist),Icon2panel)">IconPanel2Items</include>
                     <include condition="Window.IsActive(1124) | Substring(Skin.String(widgetlist),favouriteIconpanel)">FavouritesItems</include>
+<!--                     <item>
+                        <label>Show all</label>
+                        <onclick condition="Substring(Control.GetLabel(4321),watchlisttv)">ActivateWindow(Videos,library://video/inprogressshows.xml,return)</onclick>
+                        <visible>Control.HasFocus(5010)</visible>
+                        <visible>Substring(Control.GetLabel(4321),watchlisttv)</visible>
+                    </item> -->
                 </content>
             </control>
         </control>
@@ -5246,7 +5239,6 @@
             <visible>SubString(Control.GetLabel(4325),panel)</visible>
         </control>
     </include>
-
     <include name="ConcertsPanelContent1124">
         <item id="1">
             <label>$INFO[Window(Home).Property(NearEvents.1.Artists)]</label>
@@ -6576,10 +6568,10 @@
                     <texture background="true">$INFO[ListItem.Property(Network),flags/studios/,.png]</texture>
                 </control>
                 <control type="image">
-                    <posx>595</posx>
-                    <posy>214</posy>
+                    <posx>605</posx>
+                    <posy>254</posy>
                     <width>150</width>
-                    <height>150</height>
+                    <height>70</height>
                     <aspectratio>keep</aspectratio>
                     <texture>tvguide/$INFO[ListItem.Property(StatusID)].png</texture>
                 </control>
@@ -6695,7 +6687,7 @@
         <height>42</height>
         <align>center</align>
         <aligny>top</aligny>
-        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
+        <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
         <font>Font_Reg19_Caps</font>
         <textcolor>grey</textcolor>
         <focusedcolor>white2</focusedcolor>
