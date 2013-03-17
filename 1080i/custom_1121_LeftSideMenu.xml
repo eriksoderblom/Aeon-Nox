@@ -355,12 +355,13 @@
                     <onclick condition="!IsEmpty(Skin.String(DisableShowcaseVL)) + !StringCompare(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableShowcaseVL)</onclick>
                     <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
                 </item>
-             
-                
-                
-                
-                
-                
+                <item>
+                    <label>$LOCALIZE[31249]</label>
+                   <thumb>$INFO[Skin.String(DisableSimpleListVL)]</thumb>
+                    <onclick condition="IsEmpty(Skin.String(DisableSimpleListVL))">Skin.SetString(DisableSimpleListVL,true)</onclick>
+                    <onclick condition="!IsEmpty(Skin.String(DisableSimpleListVL)) + !StringCompare(ListItem.Label,Container.Viewmode)">Skin.Reset(DisableSimpleListVL)</onclick>
+                    <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
+                </item>
                 
             </content>
         </control>

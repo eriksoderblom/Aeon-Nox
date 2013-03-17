@@ -34,16 +34,17 @@
         <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                 <control type="group"><!--left part -->
                     <animation effect="slide" end="1050" condition="Control.IsVisible(516)">Conditional</animation>
+                    <animation effect="slide" end="910" condition="Control.IsVisible(520)">Conditional</animation>
                 <control type="image">
                     <!--Source logo-->
                     <posx>15</posx>
                     <texture>$VAR[SourceFlagVar,flags/source/,.png]</texture>
                     <include>AudioFlagsVars</include>
-                    <animation effect="slide" end="64" condition="Control.IsVisible(512) | Control.IsVisible(550) | Control.IsVisible(520)">Conditional</animation>
+                    <animation effect="slide" end="64" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
                 </control>
                     <control type="group">
                         <!--studio logo-->
-                        <animation effect="slide" end="99" condition="Control.IsVisible(512) | Control.IsVisible(550) | Control.IsVisible(520)">Conditional</animation>
+                        <animation effect="slide" end="99" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
                         <control type="image" id="76">
                             <posx>165</posx>
                             <posy>-7</posy>
@@ -85,12 +86,12 @@
                         <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                         <!--                         <animation effect="zoom" start="100" end="115" center="auto" time="1500" tween="cubic" easing="inout" pulse="true" condition="Substring(ListItem.mpaa,18)">Conditional</animation>
  -->
-                        <animation effect="slide" end="118" condition="Control.IsVisible(512) | Control.IsVisible(550) | Control.IsVisible(520)">Conditional</animation>
+                        <animation effect="slide" end="118" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
                     </control>
                 </control>
                     <control type="group"><!--right part -->
-                        <animation effect="slide" end="-105" condition="Control.IsVisible(516)">Conditional</animation>
-                        <animation effect="slide" end="-900" condition="Control.IsVisible(512) | Control.IsVisible(550) | Control.IsVisible(520)">Conditional</animation>
+                        <animation effect="slide" end="-105" condition="Control.IsVisible(516) | Control.IsVisible(520)">Conditional</animation>
+                        <animation effect="slide" end="-900" condition="Control.IsVisible(512) | Control.IsVisible(550)">Conditional</animation>
                     <control type="image">
                         <!--AspectRatio logo-->
                         <posx>1470</posx>
