@@ -247,8 +247,7 @@
                 <animation effect="slide" time="250" end="0,400" tween="cubic" easing="in">Hidden</animation>
                 <control type="group">
                     <!--left part -->
-                    <animation effect="slide" end="1070" condition="Control.IsVisible(516)">Conditional</animation>
-                    <animation effect="slide" end="910" condition="Control.IsVisible(520)">Conditional</animation>
+                    <animation effect="slide" end="1070" condition="Control.IsVisible(516) | Control.IsVisible(520)">Conditional</animation>
                     <control type="image">
                         <!--Source logo-->
                         <posx>15</posx>
