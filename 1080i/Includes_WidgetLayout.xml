@@ -171,8 +171,8 @@
         <control type="group">
             <posy>610</posy>
             <visible>[system.getbool(lookandfeel.enablerssfeeds) | Skin.HasSetting(ActorBirthdayRSS)] + !Skin.HasSetting(DisableRSS)</visible>
-            <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info))">Conditional</animation>
-            <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
+            <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info)) + !Window.IsActive(1115)">Conditional</animation>
+            <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo)) + !Window.IsActive(1115)">Conditional</animation>
             <animation effect="slide" end="1920,0" time="240">WindowClose</animation>
             <animation effect="slide" start="1880,0" end="0,0" delay="WidgetSlideDelay" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
             <animation effect="slide" start="1880,0" end="0,0" delay="2000" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
@@ -2068,7 +2068,7 @@
             <onclick condition="!Substring(Window(home).Property(WidgetType),artist) + !Substring(Window(home).Property(WidgetType),addons) + !Substring(Window(home).Property(WidgetType),artists) + !Substring(Window(home).Property(WidgetType),rss) + !Substring(Window(home).Property(WidgetType),roms) + !Substring(Window(home).Property(WidgetType),musicvideo) + !Substring(Window(home).Property(WidgetType),tv) + !Substring(Window(home).Property(WidgetType),movie)">$INFO[Window(home).Property(Path)]</onclick>
             <onclick condition="Substring(Window(home).Property(WidgetType),addons)">RunAddon($INFO[Window(home).Property(Path)])</onclick>
             <onclick condition="Substring(Window(home).Property(WidgetType),rss)">PlayMedia($ESCINFO[Window(home).Property(Media)])</onclick>
-            <onclick condition="SubString(Window(home).Property(WidgetType),actor)">RunScript(script.metadata.actors,$INFO[Window(home).Label])</onclick>
+            <onclick condition="SubString(Window(home).Property(WidgetType),actor)">RunScript(script.metadata.actors,$ESCINFO[Window(home).Label])</onclick>
             <onclick condition="Substring(Window(home).Property(WidgetType),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Window(home).Property(Id)])</onclick>
         </item>
         <item>
@@ -2302,7 +2302,7 @@
                             <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,randommovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,randomalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$INFO[Container(5001).ListItem.Label],home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5001).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
                         <control type="wraplist" id="5001">
@@ -2383,7 +2383,7 @@
                             <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,randomtv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$INFO[Container(5002).ListItem.Label],home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5002).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
                         <control type="wraplist" id="5002">
@@ -2476,7 +2476,7 @@
                             <onclick condition="Substring(Control.GetLabel(4321),movies)">SetProperty(Featured,recentmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),tv)">SetProperty(Featured,recenttv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4321),music)">SetProperty(Featured,recentalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$INFO[Container(5003).ListItem.Label],home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(5003).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
                         <control type="wraplist" id="5003">
@@ -2616,38 +2616,19 @@
         </control>
     </include>
     <include name="WidgetInfoPanel">
+        <control type="group">
+
         <control type="button" id="5055">
             <include>HiddenObject</include>
+            <onfocus condition="Substring(Window(home).Property(WidgetType),movie) + System.HasAddon(script.videolanguage)">RunScript(script.videolanguage,type=movie&amp;movieid=$INFO[Window(home).Property(DBID)])</onfocus>
+            <onfocus condition="Substring(Window(home).Property(WidgetType),musicvideo) + System.HasAddon(script.videolanguage)">RunScript(script.videolanguage,type=musicvideo&amp;movieid=$INFO[Window(home).Property(DBID)])</onfocus>
+            <onfocus condition="Substring(Window(home).Property(WidgetType),tv) + !Substring(Window(home).Property(WidgetType),nextaired) + System.HasAddon(script.videolanguage)">RunScript(script.videolanguage,type=episode&amp;movieid=$INFO[Window(home).Property(DBID)])</onfocus>
             <onfocus condition="Substring(Window(home).Property(WidgetType),movie) | Substring(Window(home).Property(WidgetType),musicvideo) | Substring(Window(home).Property(WidgetType),actors) | Substring(Window(home).Property(WidgetType),tv) | Substring(Window(home).Property(WidgetType),roms)">SetFocus(5020)</onfocus>
             <onfocus condition="Substring(Window(home).Property(WidgetType),babe)">ClearProperty(PanelWidget2Info,home)</onfocus>
             <onfocus condition="Substring(Window(home).Property(WidgetType),babe)">ClearProperty(PanelWidgetInfo,home)</onfocus>
             <onfocus condition="Substring(Window(home).Property(WidgetType),babe)">SetFocus(22222)</onfocus>
             <onfocus condition="Substring(Window(home).Property(WidgetType),addons) | Substring(Window(home).Property(WidgetType),album)  | Substring(Window(home).Property(WidgetType),artist) | Substring(Window(home).Property(WidgetType),rss) | Substring(Window(home).Property(WidgetType),pics)">SetFocus(5030)</onfocus>
         </control>
-        <control type="group">
-            <posx>135</posx>
-            <include>Animation_OpenCloseZoom</include>
-            <posy>389</posy>
-            <width>1920</width>
-            <height>825</height>
-            <animation type="Conditional" condition="true">
-                <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
-            </animation>
-            <animation effect="slide" end="0,285" time="0" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Stringcompare(Window(home).Property(WidgetPosition),Widget1)">Conditional</animation>
-            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
-            <animation effect="slide" end="0,-31" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
-            <visible>!IsEmpty(Window(home).Property(WidgetType)) + [!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))]</visible>
-            <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">
-                <include condition="Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipUp1</include>
-                <include condition="!Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipDown1</include>
-            </animation>
-            <animation type="Hidden" reversible="false">
-                <include condition="Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipDown2</include>
-                <include condition="!Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipUp2</include>
-            </animation>
-            <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">
-                <include>Animation_LargePanelFlipUp1</include>
-            </animation>
             <control type="image">
                 <posx>-100</posx>
                 <posy>-350</posy>
@@ -2684,15 +2665,16 @@
                     <visible>!IsEmpty(Window(home).Property(Fanart))</visible>
                 </control>
                 <control type="image">
-                    <posx>1455</posx>
+                    <posx>1460</posx>
                     <posy>-70</posy>
-                    <width>300</width>
-                    <height>300</height>
+                    <width>320</width>
+                    <height>320</height>
                     <aspectratio>keep</aspectratio>
                     <texture background="true">$INFO[Window(home).Property(Discart)]</texture>
-                    <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="false">
+                    <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="true">
                         <effect type="slide" start="-1400,0" end="0,0" delay="880" time="1600" tween="cubic" />
                         <effect type="rotate" start="0" center="auto" end="-720" delay="880" time="1600" tween="cubic" />
+                        <effect type="zoom" start="104" center="auto" end="100" delay="2520" time="140" tween="quadratic" easing="out" />
                     </animation>
                     <visible>!IsEmpty(Window(home).Property(Discart))</visible>
                 </control>
@@ -2701,6 +2683,8 @@
                     <posy>-70</posy>
                     <width>400</width>
                     <height>300</height>
+            <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
+            <bordersize>7</bordersize>
                     <aspectratio align="center" aligny="top">scale</aspectratio>
                     <texture background="true">$INFO[Window(home).Property(Thumb)]</texture>
                     <visible>!IsEmpty(Window(home).Property(Thumb)) + Substring(Window(home).Property(WidgetType),tv)</visible>
@@ -2756,7 +2740,7 @@
                         <onclick condition="Substring(Window(home).Property(WidgetType),musicvideo)">Runscript(service.skin.widgets,musicvideoid=$INFO[Window(home).Property(DBID)],resume=false)</onclick>
                         <onclick condition="Substring(Window(home).Property(WidgetType),roms)">RunScript(script.games.rom.collection.browser,launchid=$INFO[Window(home).Property(Id)])</onclick>
                         <onclick condition="!SubString(Window(home).Property(WidgetType),actor) + !Substring(Window(home).Property(WidgetType),roms) + !Substring(Window(home).Property(WidgetType),movies) + !Substring(Window(home).Property(WidgetType),tv) + !Substring(Window(home).Property(WidgetType),musicvideo)">$INFO[Window(home).Property(Path)]</onclick>
-                        <onclick condition="SubString(Window(home).Property(WidgetType),actor)">RunScript(script.metadata.actors,$INFO[Window(home).Property(Label)])</onclick>
+                        <onclick condition="SubString(Window(home).Property(WidgetType),actor)">RunScript(script.metadata.actors,$ESCINFO[Window(home).Property(Label)])</onclick>
                         <onclick condition="Substring(Window(home).Property(WidgetType),nextaired)">$INFO[Window(home).Property(Path)]</onclick>
                     </control>
                     <control type="button" id="5018">
@@ -2817,7 +2801,7 @@
                     <height>260</height>
                     <aspectratio>keep</aspectratio>
                     <texture background="true">$INFO[Window(home).Property(Logo)]</texture>
-                    <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="false">
+                    <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="true">
                         <effect type="fade" start="0" end="100" delay="960" time="960" tween="cubic" />
                         <effect type="zoom" start="0" end="100" delay="960" time="960" center="auto" tween="cubic" />
                     </animation>
@@ -2847,35 +2831,53 @@
                     </control>
                     <control type="grouplist">
                         <width>1100</width>
-                        <height>40</height>
+                        <height>36</height>
                         <orientation>horizontal</orientation>
                         <usecontrolcoords>true</usecontrolcoords>
-                        <visible>!IsEmpty(Window(home).Property(TagLine))</visible>
+                        <visible>!IsEmpty(Window(home).Property(Genre))</visible>
                         <control type="image" id="12020">
                             <posx>15</posx>
                             <posy>3</posy>
                             <width>35</width>
-                            <height>35</height>
+                            <height>37</height>
                             <aspectratio align="right">keep</aspectratio>
                             <texture background="true">$INFO[Window(home).Property(Country),flags/language/,.png]</texture>
                             <fadetime>200</fadetime>
                             <colordiffuse>AAFFFFFF</colordiffuse>
                             <visible>!IsEmpty(Control.GetLabel(12020))</visible>
                         </control>
+                        <control type="label">
+                            <width min="15" max="500">auto</width>
+                            <height>36</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[Window(home).Property(Year),• , • ]</label>
+                            <font>Font_Reg19</font>
+                            <textcolor>grey2</textcolor>
+                            <visible>!IsEmpty(Control.GetLabel(12020))</visible>
+                        </control>
+                        <control type="label">
+                            <width min="15" max="500">auto</width>
+                            <height>36</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[Window(home).Property(Year),, • ]</label>
+                            <font>Font_Reg19</font>
+                            <textcolor>grey2</textcolor>
+                            <visible>IsEmpty(Control.GetLabel(12020))</visible>
+                        </control>
                     <control type="label">
-                        <width>800</width>
-                        <height>40</height>
+                        <width>700</width>
+                        <height>36</height>
                         <textoffsetx>15</textoffsetx>
-                        <label>$INFO[Window(home).Property(Tagline)]</label>
+                        <label>$INFO[Window(home).Property(Genre)]</label>
                         <font>Font_Reg19</font>
                         <textcolor>white3</textcolor>
                         <visible>!IsEmpty(Window(home).Property(Logo))</visible>
                     </control>
                     <control type="label">
-                        <width>1100</width>
-                        <height>40</height>
+                        <width>1000</width>
+                        <height>36</height>
                         <textoffsetx>15</textoffsetx>
-                        <label>$INFO[Window(home).Property(Tagline)]</label>
+                        <label>$INFO[Window(home).Property(Genre)]</label>
                         <font>Font_Reg19</font>
                         <textcolor>white3</textcolor>
                         <visible>IsEmpty(Window(home).Property(Logo))</visible>
@@ -2883,28 +2885,23 @@
                     </control>
                     <control type="label">
                         <width>986</width>
-                        <height>30</height>
+                        <height>36</height>
                         <textoffsetx>15</textoffsetx>
                         <label>$INFO[Window(home).Property(Label2)]</label>
                         <font>Font_Reg19</font>
                         <textcolor>grey2</textcolor>
-                        <visible>!IsEmpty(Window(home).Property(EpisodeNumber))</visible>
+                        <visible>Substring(Window(home).Property(WidgetType),tv)</visible>
                     </control>
                     <control type="label">
                         <width>986</width>
-                        <height>30</height>
+                        <height>36</height>
                         <textoffsetx>15</textoffsetx>
                         <label>$INFO[Window(home).Property(EpisodeNumber),[UPPERCASE],[/UPPERCASE]]$INFO[Window(home).Property(NextTitle),:  ]</label>
                         <font>Font_Reg19</font>
                         <textcolor>white2</textcolor>
-                        <visible>!IsEmpty(Window(home).Property(EpisodeNumber))</visible>
+                        <visible>Substring(Window(home).Property(WidgetType),tv)</visible>
                     </control>
-                    <control type="grouplist">
-                        <height>40</height>
-                        <orientation>horizontal</orientation>
-                        <itemgap>0</itemgap>
-                        <usecontrolcoords>true</usecontrolcoords>
-                        <control type="image">
+<!--                         <control type="image">
                             <posy>-3</posy>
                             <width>50</width>
                             <height>50</height>
@@ -2913,21 +2910,85 @@
                              <animation effect="slide" end="9,0" time="0" condition="true">Conditional</animation>
                             <texture>dialogs/circle/$INFO[Window(home).Property(PercentPlayed)].png</texture>
                             <visible>!IsEmpty(Window(home).Property(PercentPlayed)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
+                        </control> -->
+                     <control type="grouplist">
+                        <height>36</height>
+                        <posx>7</posx>
+                        <orientation>horizontal</orientation>
+                        <itemgap>0</itemgap>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <visible>!IsEmpty(Window(home).Property(Director))</visible>
+
+                        <control type="image">
+                            <posy>-6</posy>
+                            <width>50</width>
+                            <height>50</height>
+                            <aspectratio align="right">keep</aspectratio>
+                            <colordiffuse>white</colordiffuse>
+                            <texture>common/director-icon.png</texture>
                         </control>
                         <control type="label">
                             <width>1373</width>
-                            <height>40</height>
-                            <textoffsetx>15</textoffsetx>
-                            <label>$INFO[Window(home).Property(Year),, • ]$INFO[Window(home).Property(RunningTime),, $LOCALIZE[12391]]</label>
+                            <height>36</height>
+                            <textoffsetx>5</textoffsetx>
+                            <label>$INFO[Window(home).Property(Director)]</label>
+                            <font>Font_Reg19</font>
+                            <textcolor>grey2</textcolor>
+                        </control>
+                    </control>
+                     <control type="grouplist">
+                        <height>36</height>
+                        <posx>7</posx>
+                        <orientation>horizontal</orientation>
+                        <itemgap>0</itemgap>
+                        <usecontrolcoords>true</usecontrolcoords>
+                        <visible>!IsEmpty(Window(home).Property(Writer))</visible>
+
+                        <control type="image">
+                            <posy>-6</posy>
+                            <width>50</width>
+                            <height>50</height>
+                            <aspectratio align="right">keep</aspectratio>
+                            <colordiffuse>white</colordiffuse>
+                            <texture>common/writer-icon.png</texture>
+                        </control>
+                        <control type="label">
+                            <width>1373</width>
+                            <height>36</height>
+                            <textoffsetx>5</textoffsetx>
+                            <label>$INFO[Window(home).Property(Writer)]</label>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
                         </control>
                     </control>
                 </control>
-                <control type="group">
-                    <control type="textbox" id="5060">
+                <control type="grouplist">
+                    <orientation>vertical</orientation>
                         <posx>482</posx>
                         <posy>-70</posy>
+                        <width>2000</width>
+                        <height>308</height>
+                        <control type="label">
+                            <width>1290</width>
+                            <height>30</height>
+                            <textoffsetx>0</textoffsetx>
+                            <align>left</align>
+                            <label>$INFO[Window(home).Property(Tagline)]</label>
+                            <font>Font_Bold18</font>
+                            <textcolor>white2</textcolor>
+                            <visible>!IsEmpty(Window(home).Property(Tagline)) + IsEmpty(Window(home).Property(Discart))</visible>
+                        </control>
+                        <control type="label">
+                            <width>960</width>
+                            <height>30</height>
+                            <textoffsetx>0</textoffsetx>
+                            <align>left</align>
+                            <label>$INFO[Window(home).Property(Tagline)]</label>
+                            <font>Font_Bold18</font>
+                            <textcolor>white2</textcolor>
+                            <visible>!IsEmpty(Window(home).Property(Tagline)) + !IsEmpty(Window(home).Property(Discart))</visible>
+                        </control>
+                    <control type="textbox" id="5060">
                         <width>1290</width>
                         <height>308</height>
                         <aligny>top</aligny>
@@ -2939,8 +3000,6 @@
                         <visible>IsEmpty(Window(home).Property(Discart)) + !Substring(Window(home).Property(WidgetType),tv)</visible>
                     </control>
                     <control type="textbox" id="5060">
-                        <posx>482</posx>
-                        <posy>-70</posy>
                         <width>960</width>
                         <height>308</height>
                         <aligny>top</aligny>
@@ -2952,8 +3011,6 @@
                         <visible>!IsEmpty(Window(home).Property(Discart))</visible>
                     </control>
                     <control type="textbox" id="5060">
-                        <posx>482</posx>
-                        <posy>-70</posy>
                         <width>860</width>
                         <height>308</height>
                         <aligny>top</aligny>
@@ -2975,7 +3032,22 @@
                     <fadetime>IconCrossfadeTime2</fadetime>
                     <colordiffuse>white2</colordiffuse>
                     <animation effect="fade" time="200">VisibleChange</animation>
+                    <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="true">
+                        <effect type="fade" start="0" end="100" delay="960" time="960" tween="cubic" />
+                        <effect type="zoom" start="100,0" end="100,100" delay="960" time="960" center="auto" tween="cubic" />
+                    </animation>
+                    </control>
+                <control type="image">
+                    <posx>495</posx>
+                    <posy>256</posy>
+                    <width>1270</width>
+                        <height>1</height>
+                        <texture>views/lowlistpanel_line.png</texture>
+                    <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="true">
+                        <effect type="fade" start="0" end="100" delay="2520" time="560" tween="cubic" />
+                    </animation>
                 </control>
+
                 <control type="grouplist">
                     <posx>495</posx>
                     <posy>270</posy>
@@ -2983,62 +3055,149 @@
                     <align>center</align>
                     <usecontrolcoords>true</usecontrolcoords>
                     <orientation>horizontal</orientation>
-                    <itemgap>40</itemgap>
+                    <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="true">
+                        <effect type="fade" start="0" end="100" delay="960" time="960" tween="cubic" />
+                        <effect type="zoom" start="100,0" end="100,100" delay="960" time="960" center="auto" tween="cubic" />
+                    </animation>
+                    <itemgap>0</itemgap>
+<!--                         <control type="image">
+                            <posy>-14</posy>
+                            <width>143</width>
+                            <height>95</height>
+                            <aspectratio align="left">keep</aspectratio>
+                            <colordiffuse>white</colordiffuse>
+                            <texture>dialogs/circle/$INFO[Window(home).Property(PercentPlayed)].png</texture>
+                            <visible>!IsEmpty(Window(home).Property(PercentPlayed)) + !Stringcompare(Window(home).Property(PercentPlayed),0%)</visible>
+                        </control> -->
+                   <control type="grouplist" id="12100">
+                    <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+                        <width>30</width>
+                        <height>70</height>
+                        <orientation>vertical</orientation>
+                        <control type="image">
+                            <width>26</width>
+                            <height>22</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture>$INFO[Window(movieinformation).Property(AudioLanguage.1),flags/language/,.png]</texture>
+                            <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.1))</visible>
+                            <include>Animation_VisibleChange200</include>
+                            <fadetime>400</fadetime>
+                        </control>
+                        <control type="image">
+                            <width>26</width>
+                            <height>22</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture>$INFO[Window(movieinformation).Property(AudioLanguage.2),flags/language/,.png]</texture>
+                            <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.2))</visible>
+                            <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.2))</visible>
+                            <include>Animation_VisibleChange200</include>
+                            <fadetime>400</fadetime>
+                        </control>
+                        <control type="image">
+                            <width>26</width>
+                            <height>22</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture>$INFO[Window(movieinformation).Property(AudioLanguage.3),flags/language/,.png]</texture>
+                            <visible>!IsEmpty(Window(movieinformation).Property(AudioLanguage.3))</visible>
+                            <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.1),Window(movieinformation).Property(AudioLanguage.3))</visible>
+                            <visible>!Stringcompare(Window(movieinformation).Property(AudioLanguage.2),Window(movieinformation).Property(AudioLanguage.3))</visible>
+                            <include>Animation_VisibleChange200</include>
+                            <fadetime>400</fadetime>
+                        </control>
+                    </control>
                     <control type="image">
                         <texture>$INFO[Window(home).Property(AudioCodec),flags/audio/]$INFO[Window(home).Property(AudioChannels),,.png]</texture>
-                        <include>OSDFlagVars</include>
+                    <height>64</height>
+                    <width>160</width>
+                    <aspectratio align="left">keep</aspectratio>
+                    <fadetime>IconCrossfadeTime2</fadetime>
+                    <colordiffuse>white2</colordiffuse>
+                    <animation effect="fade" time="200">VisibleChange</animation>
                     </control>
                     <control type="image">
                         <texture>$INFO[Window(home).Property(VideoResolution),flags/resolution/,.png]</texture>
-                        <include>OSDFlagVars</include>
+                        <include>WidgetFlagVars</include>
+                        <visible>!IsEmpty(Window(home).Property(VideoAspect))</visible>
                     </control>
                     <control type="image">
                         <texture>$INFO[Window(home).Property(VideoCodec),flags/source/,.png]</texture>
-                        <include>OSDFlagVars</include>
+                        <include>WidgetFlagVars</include>
                     </control>
                     <control type="image">
                         <texture>$INFO[Window(home).Property(VideoAspect),flags/aspectratio/,.png]</texture>
-                        <include>OSDFlagVars</include>
-                    </control>
-                    <control type="image">
-                        <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[WidgetRatingFlagVar,flags/rating/,.png]</texture>
-                        <include>OSDFlagVars</include>
-                        <visible>!IsEmpty(Window(home).Property(mpaa))</visible>
+                        <include>WidgetFlagVars</include>
                     </control>
                     <control type="group">
-                            <width>150</width>
-        <height>64</height>
-        <visible>IsEmpty(Window(home).Property(NextTitle))</visible>
+                    <width>160</width>
+                    <height>64</height>
+                    <visible>IsEmpty(Window(home).Property(NextTitle))</visible>
                     <control type="image">
-                        <texture>flags/imdb.png</texture>
-                        <include>OSDFlagVars</include>
+                        <texture>flags/time.png</texture>
+                        <include>WidgetFlagVars</include>
                     </control>
                     <control type="label">
                         <posy>21</posy>
-                        <width>150</width>
+                        <width>160</width>
+                        <height>38</height>
+                        <align>center</align>
+                        <label fallback="?">$INFO[Window(home).Property(RunningTime)]</label>
+                        <font>Font_Bold20</font>
+                        <textcolor>floor</textcolor>
+                    </control>
+        
+                    </control>
+                    <control type="image">
+                        <texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[WidgetRatingFlagVar,flags/rating/,.png]</texture>
+                        <include>WidgetFlagVars</include>
+                        <visible>!IsEmpty(Window(home).Property(mpaa))</visible>
+                    </control>
+                    <control type="group">
+                    <width>160</width>
+                    <height>64</height>
+                    <visible>IsEmpty(Window(home).Property(NextTitle))</visible>
+                    <control type="image">
+                        <texture>flags/IMDB.png</texture>
+                        <include>WidgetFlagVars</include>
+                    </control>
+                    <control type="label">
+                        <posy>21</posy>
+                        <width>160</width>
                         <height>38</height>
                         <align>center</align>
                         <label fallback="?">$INFO[Window(home).Property(Rating)]</label>
-                        <font>Font_Bold22</font>
+                        <font>Font_Bold20</font>
                         <textcolor>floor</textcolor>
                     </control>
         
                     </control>
 <!--                     <control type="image">
                         <texture>$INFO[Window(home).Property(Rating),stars/,.png]</texture>
-                        <include>OSDFlagVars</include>
+                        <include>WidgetFlagVars</include>
                     </control> -->
-                    <control type="image">
+                    <control type="image" id="13300">
                         <texture>$INFO[Window(home).Property(Studio),flags/studios/,.png]</texture>
-                        <width>150</width>
+                        <width>160</width>
                         <height>90</height>
                         <posy>-11</posy>
                         <aspectratio>keep</aspectratio>
                         <fadetime>IconCrossfadeTime2</fadetime>
                         <colordiffuse>white2</colordiffuse>
                         <animation effect="fade" time="200">VisibleChange</animation>
-                        <visible>!IsEmpty(Window(home).Property(Studio))</visible>
+                        <visible>!IsEmpty(Window(home).Property(Studio)) + !IsEmpty(Control.GetLabel(13300))</visible>
                     </control>
+                        <control type="label">
+                            <posx>-5</posx>
+                            <posy>-4</posy>
+                            <width>170</width>
+                            <height>70</height>
+                            <align>center</align>
+                            <label>$INFO[Window(home).Property(Studio)]</label>
+                            <font>Font_Reg14_Caps</font>
+                            <textcolor>grey</textcolor>
+                            <textcolor>BBa4a4a4</textcolor>
+                            <wrapmultiline>true</wrapmultiline>
+                            <visible>!IsEmpty(Window(home).Property(Studio)) + IsEmpty(Control.GetLabel(13300))</visible>
+                        </control>
                 </control>
             </control>
             <control type="group">
@@ -3094,7 +3253,34 @@
                         <textoffsetx>15</textoffsetx>
                         <label>$INFO[Window(home).Property(Label2)]</label>
                         <font>Font_Reg19</font>
+                        <textcolor>white2</textcolor>
+                    </control>
+                    <control type="label">
+                        <width>1251</width>
+                        <height>30</height>
+                        <textoffsetx>15</textoffsetx>
+                        <label>$INFO[Window(home).Property(Born),$LOCALIZE[21893]: ]$INFO[Window(home).Property(Formed),$LOCALIZE[21894]: ]</label>
+                        <font>Font_Reg19</font>
                         <textcolor>grey2</textcolor>
+                        <visible>!IsEmpty(Window(home).Property(Born)) | !IsEmpty(Window(home).Property(Formed))</visible>
+                    </control>
+                    <control type="label">
+                        <width>1251</width>
+                        <height>30</height>
+                        <textoffsetx>15</textoffsetx>
+                        <label>$INFO[Window(home).Property(Died),$LOCALIZE[21897]: ]$INFO[Window(home).Property(Disbanded),$LOCALIZE[21896]: ]</label>
+                        <font>Font_Reg19</font>
+                        <textcolor>grey2</textcolor>
+                        <visible>!IsEmpty(Window(home).Property(Died)) | !IsEmpty(Window(home).Property(Disbanded))</visible>
+                    </control>
+                    <control type="label">
+                        <width>1251</width>
+                        <height>30</height>
+                        <textoffsetx>15</textoffsetx>
+                        <label>$INFO[Window(home).Property(YearsActive)]</label>
+                        <font>Font_Reg19</font>
+                        <textcolor>grey2</textcolor>
+                        <visible>!IsEmpty(Window(home).Property(YearsActive))</visible>
                     </control>
                 </control>
                 <control type="label">
@@ -3108,39 +3294,11 @@
                     <textcolor>grey2</textcolor>
                     <visible>Substring(Window(home).Property(WidgetType),pics)</visible>
                 </control>
-                <control type="grouplist">
-                    <posx>710</posx>
-                    <posy>100</posy>
-                    <width>1200</width>
-                    <align>left</align>
-                    <orientation>horizontal</orientation>
-                    <itemgap>30</itemgap>
-                    <control type="image">
-                        <width>160</width>
-                        <height>80</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[Window(home).Property(Rating),stars/,.png]</texture>
-                        <fadetime>IconCrossfadeTime2</fadetime>
-                        <colordiffuse>white2</colordiffuse>
-                        <animation effect="fade" time="200">VisibleChange</animation>
-                        <visible>!IsEmpty(Window(home).Property(Rating))</visible>
-                    </control>
-                    <control type="image">
-                        <width>120</width>
-                        <height>70</height>
-                        <aspectratio>keep</aspectratio>
-                        <texture>$INFO[Window(home).Property(RecordLabel),flags/music/recordlabel/,.png]</texture>
-                        <fadetime>IconCrossfadeTime2</fadetime>
-                        <colordiffuse>white2</colordiffuse>
-                        <animation effect="fade" time="200">VisibleChange</animation>
-                        <visible>!IsEmpty(Window(home).Property(RecordLabel))</visible>
-                    </control>
-                </control>
                 <control type="textbox">
                     <posx>700</posx>
                     <posy>245</posy>
                     <width>1050</width>
-                    <height>425</height>
+                    <height>338</height>
                     <aligny>top</aligny>
                     <label fallback="414">$VAR[WidgetTextboxVar]</label>
                     <font>Font_Reg19</font>
@@ -3153,7 +3311,7 @@
                     <posx>700</posx>
                     <posy>245</posy>
                     <width>740</width>
-                    <height>425</height>
+                    <height>338</height>
                     <aligny>top</aligny>
                     <label fallback="414">$VAR[WidgetTextboxVar]</label>
                     <font>Font_Reg19</font>
@@ -3161,6 +3319,86 @@
                     <pagecontrol>5034</pagecontrol>
                     <visible>![Substring(Control.GetLabel(5130),empty.png) | IsEmpty(Skin.String(ArtistsLogosPath))]</visible>
                     <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                </control>
+                <control type="image">
+                    <posx>725</posx>
+                    <posy>600</posy>
+                    <width>1040</width>
+                        <height>1</height>
+                        <texture>views/lowlistpanel_line.png</texture>
+                    <animation type="Conditional" condition="!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))" reversible="true">
+                        <effect type="fade" start="0" end="100" delay="1520" time="560" tween="cubic" />
+                    </animation>
+                </control>
+                <control type="grouplist">
+                    <posx>710</posx>
+                    <posy>610</posy>
+                    <width>1200</width>
+                    <align>left</align>
+                    <orientation>horizontal</orientation>
+                    <itemgap>30</itemgap>
+                    <control type="image">
+                        <width>160</width>
+                        <height>80</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>$INFO[Window(home).Property(Rating),stars/,.png]</texture>
+                        <fadetime>IconCrossfadeTime2</fadetime>
+                        <colordiffuse>white2</colordiffuse>
+                        <animation effect="fade" time="200">VisibleChange</animation>
+                        <visible>!IsEmpty(Window(home).Property(Rating)) + !Stringcompare(Window(home).Property(Rating),-1)</visible>
+                    </control>
+                    <control type="image"><!--todo fallback label-->
+                        <width>160</width>
+                        <height>70</height>
+                        <aspectratio>keep</aspectratio>
+                        <texture>$INFO[Window(home).Property(RecordLabel),flags/music/recordlabel/,.png]</texture>
+                        <fadetime>IconCrossfadeTime2</fadetime>
+                        <colordiffuse>white2</colordiffuse>
+                        <animation effect="fade" time="200">VisibleChange</animation>
+                        <visible>!IsEmpty(Window(home).Property(RecordLabel))</visible>
+                    </control>
+                <control type="grouplist">
+                    <posy>10</posy>
+                    <width>1030</width>
+                    <orientation>vertical</orientation>
+                    <height>84</height>
+                    <control type="label">
+                        <width>1251</width>
+                        <height>28</height>
+                        <textoffsetx>0</textoffsetx>
+                        <label>$INFO[Window(home).Property(Theme)]</label>
+                        <font>Font_Reg14_Caps</font>
+                        <textcolor>grey2</textcolor>
+                        <visible>!IsEmpty(Window(home).Property(Theme))</visible>
+                    </control>
+                    <control type="label">
+                        <width>1251</width>
+                        <height>28</height>
+                        <textoffsetx>0</textoffsetx>
+                        <label>$INFO[Window(home).Property(Instrument)]</label>
+                        <font>Font_Reg14_Caps</font>
+                        <textcolor>grey2</textcolor>
+                        <visible>!IsEmpty(Window(home).Property(Instrument))</visible>
+                    </control>
+                    <control type="label">
+                        <width>1251</width>
+                        <height>28</height>
+                        <textoffsetx>0</textoffsetx>
+                        <label>$INFO[Window(home).Property(Style)]</label>
+                        <font>Font_Reg14_Caps</font>
+                        <textcolor>grey2</textcolor>
+                        <visible>!IsEmpty(Window(home).Property(Style))</visible>
+                    </control>
+                    <control type="label">
+                        <width>1251</width>
+                        <height>28</height>
+                        <textoffsetx>0</textoffsetx>
+                        <label>$INFO[Window(home).Property(Mood)]</label>
+                        <font>Font_Reg14_Caps</font>
+                        <textcolor>grey2</textcolor>
+                        <visible>!IsEmpty(Window(home).Property(Mood))</visible>
+                    </control>
+                </control>
                 </control>
                 <control type="image">
                     <posx>1331</posx>
@@ -4123,7 +4361,7 @@
                             <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,randommovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,watchlisttv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,randomalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$INFO[Container(6001).ListItem.Label],home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6001).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                             <visible>SubString(Control.GetLabel(4325),featured)</visible>
                         </control>
@@ -4205,7 +4443,7 @@
                             <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,randomtv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,watchlistmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,watchlistalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$INFO[Container(6002).ListItem.Label],home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6002).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
                         <control type="wraplist" id="6002">
@@ -4298,7 +4536,7 @@
                             <onclick condition="Substring(Control.GetLabel(4325),movies)">SetProperty(Featured,recentmovies,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),tv)">SetProperty(Featured,recenttv,home)</onclick>
                             <onclick condition="Substring(Control.GetLabel(4325),music)">SetProperty(Featured,recentalbums,home)</onclick>
-                            <onclick>SetProperty(FocusedItem,$INFO[Container(6003).ListItem.Label],home)</onclick>
+                            <onclick>SetProperty(FocusedItem,$ESCINFO[Container(6003).ListItem.Label],home)</onclick>
                             <onclick>ActivateWindow(1140)</onclick>
                         </control>
                         <control type="wraplist" id="6003">
@@ -4640,7 +4878,16 @@
                             <width>389</width>
                             <height>340</height>
                             <aspectratio>scale</aspectratio>
-                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="image">
+                            <posx>5</posx>
+                            <posy>5</posy>
+                            <width>389</width>
+                            <height>340</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Property(Fanart)]</texture>
+                            <visible>IsEmpty(ListItem.Icon)</visible>
                         </control>
                         <control type="image">
                             <posx>5</posx>
@@ -4652,12 +4899,23 @@
                         </control>
                         <control type="label">
                             <posx>5</posx>
-                            <posy>275</posy>
+                            <posy>280</posy>
                             <width>389</width>
                             <height>30</height>
                             <textoffsetx>15</textoffsetx>
                             <label>$INFO[ListItem.Label2]</label>
-                            <font>Font_Reg19</font>
+                            <font>Font_Reg15</font>
+                            <textcolor>white2</textcolor>
+                        </control>
+                        <control type="label">
+                            <posx>5</posx>
+                            <posy>280</posy>
+                            <width>389</width>
+                            <height>30</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[ListItem.Property(Year),, • ]$INFO[ListItem.Property(Rating),, • ]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391]]</label>
+                            <visible>!IsEmpty(ListItem.Property(Director))</visible>
+                            <font>Font_Reg15</font>
                             <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
@@ -4670,6 +4928,7 @@
                             <font>Font_Reg15</font>
                             <textcolor>white2</textcolor>
                         </control>
+                    </control>
                         <control type="image">
                             <posx>5</posx>
                             <posy>5</posy>
@@ -4680,7 +4939,6 @@
                             <include>Animation_VisibleChange400</include>
                             <visible>Control.HasFocus(5010)</visible>
                         </control>
-                    </control>
                 </itemlayout>
                 <focusedlayout width="399" height="340" condition="Substring(Control.GetLabel(4321),panelcoverepisode)">
                     <control type="group">
@@ -4690,7 +4948,16 @@
                             <width>389</width>
                             <height>340</height>
                             <aspectratio>scale</aspectratio>
-                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="image">
+                            <posx>5</posx>
+                            <posy>5</posy>
+                            <width>389</width>
+                            <height>340</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Property(Fanart)]</texture>
+                            <visible>IsEmpty(ListItem.Icon)</visible>
                         </control>
                         <control type="image">
                             <posx>5</posx>
@@ -4702,12 +4969,23 @@
                         </control>
                         <control type="label">
                             <posx>5</posx>
-                            <posy>275</posy>
+                            <posy>280</posy>
                             <width>389</width>
                             <height>30</height>
                             <textoffsetx>15</textoffsetx>
                             <label>$INFO[ListItem.Label2]</label>
-                            <font>Font_Reg19</font>
+                            <font>Font_Reg15</font>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
+                        </control>
+                        <control type="label">
+                            <posx>5</posx>
+                            <posy>280</posy>
+                            <width>389</width>
+                            <height>30</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[ListItem.Property(Year),, • ]$INFO[ListItem.Property(Rating),, • ]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391]]</label>
+                            <visible>!IsEmpty(ListItem.Property(Director))</visible>
+                            <font>Font_Reg15</font>
                             <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                         <control type="label">
@@ -5045,7 +5323,16 @@
                             <width>389</width>
                             <height>340</height>
                             <aspectratio>scale</aspectratio>
-                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="image">
+                            <posx>5</posx>
+                            <posy>5</posy>
+                            <width>389</width>
+                            <height>340</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Property(Fanart)]</texture>
+                            <visible>IsEmpty(ListItem.Icon)</visible>
                         </control>
                         <control type="image">
                             <posx>5</posx>
@@ -5057,12 +5344,23 @@
                         </control>
                         <control type="label">
                             <posx>5</posx>
-                            <posy>275</posy>
+                            <posy>280</posy>
                             <width>389</width>
                             <height>30</height>
                             <textoffsetx>15</textoffsetx>
                             <label>$INFO[ListItem.Label2]</label>
-                            <font>Font_Reg19</font>
+                            <font>Font_Reg15</font>
+                            <textcolor>white2</textcolor>
+                        </control>
+                        <control type="label">
+                            <posx>5</posx>
+                            <posy>280</posy>
+                            <width>389</width>
+                            <height>30</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[ListItem.Property(Year),, • ]$INFO[ListItem.Property(Rating),, • ]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391]]</label>
+                            <visible>!IsEmpty(ListItem.Property(Director))</visible>
+                            <font>Font_Reg15</font>
                             <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
@@ -5075,16 +5373,6 @@
                             <font>Font_Reg15</font>
                             <textcolor>white2</textcolor>
                         </control>
-                        <control type="image">
-                            <posx>5</posx>
-                            <posy>5</posy>
-                            <width>389</width>
-                            <height>340</height>
-                            <texture>common/black.png</texture>
-                            <colordiffuse>99FFFFFF</colordiffuse>
-                            <include>Animation_VisibleChange400</include>
-                            <visible>Control.HasFocus(6010)</visible>
-                        </control>
                     </control>
                 </itemlayout>
                 <focusedlayout width="399" height="340" condition="Substring(Control.GetLabel(4325),panelcoverepisode)">
@@ -5095,7 +5383,16 @@
                             <width>389</width>
                             <height>340</height>
                             <aspectratio>scale</aspectratio>
-                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Icon]</texture>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                        </control>
+                        <control type="image">
+                            <posx>5</posx>
+                            <posy>5</posy>
+                            <width>389</width>
+                            <height>340</height>
+                            <aspectratio>scale</aspectratio>
+                            <texture background="true" fallback="DefaultTVShows.png">$INFO[ListItem.Property(Fanart)]</texture>
+                            <visible>IsEmpty(ListItem.Icon)</visible>
                         </control>
                         <control type="image">
                             <posx>5</posx>
@@ -5107,12 +5404,23 @@
                         </control>
                         <control type="label">
                             <posx>5</posx>
-                            <posy>275</posy>
+                            <posy>280</posy>
                             <width>389</width>
                             <height>30</height>
                             <textoffsetx>15</textoffsetx>
                             <label>$INFO[ListItem.Label2]</label>
-                            <font>Font_Reg19</font>
+                            <font>Font_Reg15</font>
+                            <textcolor>$VAR[FontColorVar]</textcolor>
+                        </control>
+                        <control type="label">
+                            <posx>5</posx>
+                            <posy>280</posy>
+                            <width>389</width>
+                            <height>30</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[ListItem.Property(Year),, • ]$INFO[ListItem.Property(Rating),, • ]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391]]</label>
+                            <visible>!IsEmpty(ListItem.Property(Director))</visible>
+                            <font>Font_Reg15</font>
                             <textcolor>$VAR[FontColorVar]</textcolor>
                         </control>
                         <control type="label">
@@ -5245,7 +5553,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.1.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.1.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.1.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.1.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.1.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),0)</visible>
@@ -5255,7 +5562,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.2.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.2.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.2.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.2.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.2.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),1)</visible>
@@ -5265,7 +5571,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.3.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.3.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.3.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.3.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.3.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),2)</visible>
@@ -5275,7 +5580,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.4.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.4.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.4.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.4.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.4.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),3)</visible>
@@ -5285,7 +5589,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.5.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.5.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.5.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.5.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.5.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),4)</visible>
@@ -5295,7 +5598,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.6.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.6.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.6.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.6.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.6.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),5)</visible>
@@ -5305,7 +5607,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.7.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.7.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.7.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.7.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.7.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),6)</visible>
@@ -5315,7 +5616,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.8.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.8.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.8.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.8.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.8.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),7)</visible>
@@ -5325,7 +5625,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.9.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.9.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.9.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.9.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.9.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),8)</visible>
@@ -5335,7 +5634,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.10.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.10.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.10.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.10.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.10.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),9)</visible>
@@ -5345,7 +5643,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.11.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.11.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.11.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.11.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.11.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),10)</visible>
@@ -5355,7 +5652,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.12.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.12.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.12.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.12.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.12.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),11)</visible>
@@ -5367,7 +5663,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.13.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.13.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.13.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.13.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.13.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),12)</visible>
@@ -5377,7 +5672,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.14.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.14.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.14.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.14.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.14.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),13)</visible>
@@ -5387,7 +5681,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.15.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.15.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.15.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.15.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.15.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),14)</visible>
@@ -5397,7 +5690,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.16.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.16.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.16.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.16.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.16.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),15)</visible>
@@ -5407,7 +5699,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.17.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.17.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.17.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.17.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.17.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),16)</visible>
@@ -5417,7 +5708,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.18.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.18.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.18.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.18.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.18.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),17)</visible>
@@ -5427,7 +5717,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.19.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.19.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.19.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.19.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.19.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),18)</visible>
@@ -5437,7 +5726,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.20.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.20.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.20.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.20.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.20.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),19)</visible>
@@ -5447,7 +5735,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.21.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.21.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.21.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.21.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.21.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),20)</visible>
@@ -5457,7 +5744,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.22.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.22.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.22.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.22.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.22.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),21)</visible>
@@ -5467,7 +5753,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.23.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.23.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.23.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.23.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.23.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),22)</visible>
@@ -5477,7 +5762,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.24.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.24.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.24.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.24.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.24.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),23)</visible>
@@ -5487,7 +5771,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.25.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.25.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.25.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.25.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.25.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),24)</visible>
@@ -5497,7 +5780,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.26.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.26.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.26.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.26.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.26.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),25)</visible>
@@ -5507,7 +5789,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.27.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.27.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.27.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.27.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.27.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),26)</visible>
@@ -5517,7 +5798,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.28.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.28.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.28.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.28.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.28.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),27)</visible>
@@ -5527,7 +5807,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.29.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.29.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.29.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.29.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.29.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),28)</visible>
@@ -5537,7 +5816,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.30.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.30.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.30.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.30.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.30.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),29)</visible>
@@ -5547,7 +5825,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.31.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.31.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.31.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.31.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.31.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),30)</visible>
@@ -5557,7 +5834,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.32.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.32.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.32.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.32.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.32.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),31)</visible>
@@ -5567,7 +5843,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.33.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.33.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.33.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.33.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.33.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),32)</visible>
@@ -5577,7 +5852,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.34.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.34.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.34.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.34.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.34.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),33)</visible>
@@ -5587,7 +5861,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.35.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.35.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.35.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.35.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.35.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),34)</visible>
@@ -5597,7 +5870,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.36.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.36.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.36.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.36.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.36.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),35)</visible>
@@ -5607,7 +5879,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.37.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.37.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.37.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.37.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.37.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),36)</visible>
@@ -5617,7 +5888,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.38.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.38.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.38.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.38.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.38.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),37)</visible>
@@ -5627,7 +5897,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.39.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.39.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.39.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.39.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.39.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),38)</visible>
@@ -5637,7 +5906,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.40.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.40.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.40.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.40.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.40.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),39)</visible>
@@ -5647,7 +5915,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.41.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.41.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.41.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.41.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.41.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),40)</visible>
@@ -5657,7 +5924,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.42.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.42.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.42.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.42.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.42.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),41)</visible>
@@ -5667,7 +5933,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.43.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.43.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.43.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.43.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.43.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),42)</visible>
@@ -5677,7 +5942,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.44.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.44.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.44.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.44.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.44.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),43)</visible>
@@ -5687,7 +5951,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.45.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.45.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.45.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.45.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.45.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),44)</visible>
@@ -5697,7 +5960,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.46.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.46.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.46.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.46.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.46.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),45)</visible>
@@ -5707,7 +5969,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.47.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.47.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.47.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.47.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.47.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),46)</visible>
@@ -5717,7 +5978,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.48.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.48.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.48.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.48.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.48.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),47)</visible>
@@ -5727,7 +5987,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.49.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.49.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.49.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.49.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.49.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),48)</visible>
@@ -5737,7 +5996,6 @@
             <label2>$INFO[Window(Home).Property(NearEvents.50.Date)]</label2>
             <property name="City">$INFO[Window(Home).Property(NearEvents.50.City)]</property>
             <property name="Name">$INFO[Window(Home).Property(NearEvents.50.Name)]</property>
-            <onclick>Skin.SetString(SearchPictures,$INFO[Window(Home).Property(NearEvents.50.Artists)])</onclick>
             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[Window(Home).Property(NearEvents.50.Artists)],return)</onclick>
             <onclick>Dialog.Close(1139)</onclick>
             <visible>IntegerGreaterThan(Window(Home).Property(NearEvents.Count),49)</visible>
@@ -5827,225 +6085,237 @@
     </include>
     <include name="InteractiveCasesBackground">
         <control type="group">
-            <animation effect="fade" time="480">VisibleChange</animation>
+            <animation effect="fade" time="600">VisibleChange</animation>
             <include>Animation_WindowFade250</include>
             <visible>Substring(Control.GetLabel(4322),dvdcase,left)</visible>
             <control type="group">
                 <control type="group">
-                    <posx>1170</posx>
-                    <posy>1030</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-65" end="-65" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>334</height>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case1Var]</texture>
-                        <fadetime>600</fadetime>
-                    </control>
-                    <control type="image">
-                        <width>276</width>
-                        <height>360</height>
-                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
                     <posx>800</posx>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
+                    <posy>-150</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
                         <posy>9</posy>
                         <width>223</width>
-                        <height>334</height>
+                        <height>335</height>
+                        <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case2Var]</texture>
-                        <fadetime>600</fadetime>
                     </control>
                     <control type="image">
+                        <posy>-20</posy>
                         <width>276</width>
-                        <height>360</height>
-                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                        <height>380</height>
+                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase2Var]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
-                    <posx>500</posx>
-                    <posy>150</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
+                    <posx>580</posx>
+                    <posy>180</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
                         <posy>9</posy>
                         <width>223</width>
-                        <height>334</height>
+                        <height>335</height>
+                        <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case3Var]</texture>
-                        <fadetime>600</fadetime>
                     </control>
                     <control type="image">
+                        <posy>-20</posy>
                         <width>276</width>
-                        <height>360</height>
-                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                        <height>380</height>
+                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase3Var]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
-                    <posx>1550</posx>
-                    <posy>300</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
+                    <posx>500</posx>
+                    <posy>1170</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="285" end="285" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
                         <posy>9</posy>
                         <width>223</width>
-                        <height>334</height>
-                        <align>center</align>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case4Var]</texture>
+                        <height>335</height>
                         <fadetime>600</fadetime>
-                    </control>
-                    <control type="image">
-                        <width>276</width>
-                        <height>360</height>
-                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
-                    </control>
-                </control>
-                <control type="group">
-                    <posx>1000</posx>
-                    <posy>170</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
-                    <control type="image">
-                        <posx>39</posx>
-                        <posy>9</posy>
-                        <width>223</width>
-                        <height>334</height>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case5Var]</texture>
-                        <fadetime>600</fadetime>
                     </control>
                     <control type="image">
+                        <posy>-20</posy>
                         <width>276</width>
-                        <height>360</height>
-                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                        <height>380</height>
+                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase5Var]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
-                    <posx>1900</posx>
-                    <posy>-100</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
+                    <posx>1950</posx>
+                    <posy>0</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
                         <posy>9</posy>
                         <width>223</width>
-                        <height>334</height>
+                        <height>335</height>
+                        <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case6Var]</texture>
-                        <fadetime>600</fadetime>
                     </control>
                     <control type="image">
+                        <posy>-20</posy>
                         <width>276</width>
-                        <height>360</height>
-                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                        <height>380</height>
+                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase6Var]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
-                    <posx>1500</posx>
-                    <posy>800</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
+                    <posx>1550</posx>
+                    <posy>300</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
                         <posy>9</posy>
                         <width>223</width>
-                        <height>334</height>
+                        <height>335</height>
+                        <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case7Var]</texture>
-                        <fadetime>600</fadetime>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case4Var]</texture>
                     </control>
                     <control type="image">
+                        <posy>-20</posy>
                         <width>276</width>
-                        <height>360</height>
-                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                        <height>380</height>
+                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase4Var]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
-                    <posx>1450</posx>
+                    <posx>1380</posx>
                     <posy>650</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-35" end="-35" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
                         <posy>9</posy>
                         <width>223</width>
-                        <height>334</height>
+                        <height>335</height>
+                        <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case8Var]</texture>
-                        <fadetime>600</fadetime>
                     </control>
                     <control type="image">
+                        <posy>-20</posy>
                         <width>276</width>
-                        <height>360</height>
-                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                        <height>380</height>
+                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase8Var]p.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <posx>1650</posx>
+                    <posy>650</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                        <width>223</width>
+                        <height>335</height>
+                        <fadetime>600</fadetime>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case7Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posy>-20</posy>
+                        <width>276</width>
+                        <height>380</height>
+                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase7Var]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
                     <posx>1100</posx>
                     <posy>400</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
                     <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
                         <posy>9</posy>
                         <width>223</width>
-                        <height>334</height>
+                        <height>335</height>
+                        <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case9Var]</texture>
-                        <fadetime>600</fadetime>
                     </control>
                     <control type="image">
+                        <posy>-20</posy>
                         <width>276</width>
-                        <height>360</height>
-                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                        <height>380</height>
+                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase9Var]p.png</texture>
                     </control>
                 </control>
                 <control type="group">
-                    <posx>700</posx>
+                    <posx>800</posx>
                     <posy>400</posy>
-                    <animation effect="zoom" start="180" end="180" center="auto" time="0" condition="true">Conditional</animation>
-                    <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="16" end="16" time="0" condition="true">Conditional</animation>
                     <control type="image">
                         <posx>39</posx>
                         <posy>9</posy>
                         <width>223</width>
-                        <height>334</height>
+                        <height>335</height>
+                        <fadetime>600</fadetime>
                         <align>center</align>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case10Var]</texture>
-                        <fadetime>600</fadetime>
                     </control>
                     <control type="image">
+                        <posy>-20</posy>
                         <width>276</width>
-                        <height>360</height>
-                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                        <height>380</height>
+                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase10Var]p.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <posx>1100</posx>
+                    <posy>1230</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="-65" end="-65" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                        <width>223</width>
+                        <height>335</height>
+                        <fadetime>600</fadetime>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case1Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posy>-20</posy>
+                        <width>276</width>
+                        <height>380</height>
+                        <texture background="true" fallback="thumbs/boxes/movies/p.png">thumbs/boxes/$VAR[LiveBGCase]/$VAR[ResCase1Var]p.png</texture>
                     </control>
                 </control>
             </control>
         </control>
     </include>
+    <!-- CD Case -->
     <include name="LiveCDCasesbackground">
         <control type="group">
-            <animation effect="fade" time="480">VisibleChange</animation>
+            <animation effect="fade" time="600">VisibleChange</animation>
             <include>Animation_WindowFade250</include>
             <visible>Substring(Control.GetLabel(4322),case,left)</visible>
             <control type="group">
@@ -6060,15 +6330,22 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase1Var]</texture>
                         <fadetime>600</fadetime>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase1Var]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
+                    </control>
+                    <control type="image">
+                        <width>375</width>
+                        <height>342</height>
+                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -6080,15 +6357,22 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase2Var]</texture>
                         <fadetime>600</fadetime>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase2Var]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
+                    </control>
+                    <control type="image">
+                        <width>375</width>
+                        <height>342</height>
+                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -6101,15 +6385,22 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase3Var]</texture>
                         <fadetime>600</fadetime>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
+                    </control>
+                    <control type="image">
+                        <width>375</width>
+                        <height>342</height>
+                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -6122,15 +6413,22 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase4Var]</texture>
                         <fadetime>600</fadetime>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase4Var]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
+                    </control>
+                    <control type="image">
+                        <width>375</width>
+                        <height>342</height>
+                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -6143,15 +6441,22 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase5Var]</texture>
                         <fadetime>600</fadetime>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
+                    </control>
+                    <control type="image">
+                        <width>375</width>
+                        <height>342</height>
+                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -6164,15 +6469,22 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase6Var]</texture>
                         <fadetime>600</fadetime>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase6Var]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
+                    </control>
+                    <control type="image">
+                        <width>375</width>
+                        <height>342</height>
+                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -6185,15 +6497,22 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase7Var]</texture>
                         <fadetime>600</fadetime>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase7Var]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
+                    </control>
+                    <control type="image">
+                        <width>375</width>
+                        <height>342</height>
+                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -6205,16 +6524,23 @@
                         <posx>54</posx>
                         <posy>17</posy>
                         <width>302</width>
-                        <height>302</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase8Var]</texture>
                         <fadetime>600</fadetime>
+                        <height>302</height>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase8Var]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
+                    </control>
+                    <control type="image">
+                        <width>375</width>
+                        <height>342</height>
+                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -6227,15 +6553,22 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase9Var]</texture>
                         <fadetime>600</fadetime>
+                        <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase9Var]</texture>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
+                    </control>
+                    <control type="image">
+                        <width>375</width>
+                        <height>342</height>
+                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
                 <control type="group">
@@ -6248,15 +6581,22 @@
                         <posy>17</posy>
                         <width>302</width>
                         <height>302</height>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
                         <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase10Var]</texture>
                         <fadetime>600</fadetime>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
                     <control type="image">
                         <width>375</width>
                         <height>342</height>
-                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
                         <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                        <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                        <visible>!Skin.HasSetting(LiveBGCDCase)</visible>
+                    </control>
+                    <control type="image">
+                        <width>375</width>
+                        <height>342</height>
+                        <texture background="true">thumbs/boxes/cd_box_closed.png</texture>
+                        <visible>Skin.HasSetting(LiveBGCDCase)</visible>
                     </control>
                 </control>
             </control>

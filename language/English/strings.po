@@ -130,6 +130,8 @@ msgctxt "#31030"
 msgid "Change info labels"
 msgstr ""
 
+#empty string with id 31031
+
 msgctxt "#31032"
 msgid "Nothing"
 msgstr ""
@@ -609,9 +611,7 @@ msgctxt "#31186"
 msgid "Kiosk mode"
 msgstr ""
 
-msgctxt "#31187"
-msgid "Time-out for auto hide infopanel (seconds)"
-msgstr ""
+
 
 msgctxt "#31188"
 msgid "Show Status"
@@ -633,7 +633,9 @@ msgctxt "#31192"
 msgid "Choose font color"
 msgstr ""
 
-#empty string with id 31193
+msgctxt "#31193"
+msgid "Infopanel Delay"
+msgstr ""
 
 msgctxt "#31194"
 msgid "Delayed"
@@ -647,7 +649,9 @@ msgctxt "#31196"
 msgid "Small Shift view"
 msgstr ""
 
-#empty string with id 31197
+msgctxt "#31197"
+msgid "Show related movies from your database"
+msgstr ""
 
 msgctxt "#31198"
 msgid "Extrathumbs"
@@ -1544,7 +1548,9 @@ msgctxt "#31696"
 msgid "Alternative layout"
 msgstr ""
 
-#empty string with id 31697
+msgctxt "#31697"
+msgid "Choose cover type"
+msgstr ""
 
 msgctxt "#31698"
 msgid "Show list of actors/artists birthdays"
@@ -1562,7 +1568,9 @@ msgctxt "#31701"
 msgid "Supplied backgrounds"
 msgstr ""
 
-#empty string with id 31702
+msgctxt "#31702"
+msgid "Cover settings"
+msgstr ""
 
 msgctxt "#31703"
 msgid "Set InfoLine"
@@ -2032,7 +2040,9 @@ msgctxt "#31886"
 msgid "Search Trailer on Youtube"
 msgstr ""
 
-#empty string with id 31887
+msgctxt "#31887"
+msgid "Music Info Mode"
+msgstr ""
 
 msgctxt "#31888"
 msgid "PRESS ANY KEY"
@@ -2180,7 +2190,9 @@ msgctxt "#31951"
 msgid "Custom"
 msgstr ""
 
-#empty string with id 31952
+msgctxt "#31952"
+msgid "Language flags"
+msgstr ""
 
 msgctxt "#31953"
 msgid "Favourite"

@@ -108,10 +108,10 @@
             <visible>[Control.IsVisible(503) + Skin.HasSetting(landscapeonelogo) + !Container.Content(episodes) + !Container.Content(seasons)] | Control.IsVisible(509) | [Control.IsVisible(500) + !StringCompare(Container.FolderName,youtube)] | Control.IsVisible(508) | Control.IsVisible(501)</visible>
             <include>Animation_WindowFade200</include>
             <visible>[Control.IsVisible(8822) + !Container.OnNext + !Container.OnPrevious + Stringcompare(Control.GetLabel(8822),empty.png)] | !Control.IsVisible(8822) | Container.Content(seasons) | Container.Content(albums)</visible>
+            <posx>410</posx>
             <control type="label">
-                <posx>510</posx>
                 <posy>1050</posy>
-                <width>900</width>
+                <width>1100</width>
                 <align>center</align>
                 <label>$VAR[SecondLabelVar]</label>
                 <font>Font_Info_Caps</font>
@@ -121,9 +121,8 @@
                 <include>Animation_VisibleChange400</include>
             </control>
             <control type="label">
-                <posx>510</posx>
                 <posy>1012</posy>
-                <width>900</width>
+                <width>1100</width>
                 <align>center</align>
                 <label>$VAR[FirstLabelVar]</label>
                 <font>Font_ShowcaseMainLabel2_Caps</font>
@@ -359,7 +358,7 @@
         <onclick condition="Window.IsActive(videoplaylist)">SetProperty(activewindow,videoplaylist,home)</onclick>
         <onclick condition="Window.IsActive(videos)">SetProperty(activewindow,videos,home)</onclick>
         <onclick condition="Window.IsActive(programs)">SetProperty(activewindow,programs,home)</onclick>
-        <onclick>SetProperty(containerpath,$INFO[Container.FolderPath],home)</onclick>
+        <onclick>SetProperty(containerpath,$ESCINFO[Container.FolderPath],home)</onclick>
         <onclick>Dialog.Close(1126)</onclick>
         <onclick>ReplaceWindow(1141)</onclick>
     </include>
@@ -368,7 +367,7 @@
             <posy>39</posy>
             <width>1920</width>
             <height>750</height>
-            <visible>Control.IsVisible(197) | Control.HasFocus(7000) | Stringcompare(Control.GetLabel(4421),infopanelon)</visible>
+            <visible>Window.IsActive(1112) | Control.IsVisible(197) | Control.HasFocus(7000) | Stringcompare(Control.GetLabel(4421),infopanelon)</visible>
             <visible>Control.IsVisible(9900)</visible>
             <visible>Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(509) | Control.IsVisible(501) | [Control.IsVisible(57) + Skin.HasSetting(smallshiftview)]</visible>
             <animation effect="slide" start="0,-1200" end="0,0" time="600" tween="cubic">VisibleChange</animation>
@@ -433,6 +432,14 @@
                 <texture>$VAR[WatchedIconVar]</texture>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <visible>!StringCompare(ListItem.Overlay,OverlayWatched.png) | Container.ListItem.IsResumable</visible>
+            </control>
+            <control type="image">
+                <posx>136</posx>
+                <posy>20</posy>
+                <width>32</width>
+                <height>32</height>
+                <texture background="true">$VAR[CountryFlagVar]</texture>
+                <colordiffuse>CCFFFFFF</colordiffuse>
             </control>
             <control type="group">
                 <visible>Container.Content(movies) | [Container.Content(tvshows) + Control.isVisible(8858)]</visible>
@@ -751,7 +758,7 @@
                         <width>391</width>
                         <height>220</height>
                         <aspectratio>keep</aspectratio>
-                        <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb3.jpg]</texture>
+                        <texture fallback="fallback.png" background="true">$VAR[ExtraThumb3Var]</texture>
                         <fadetime>400</fadetime>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
@@ -761,7 +768,7 @@
                         <width>391</width>
                         <height>220</height>
                         <aspectratio>keep</aspectratio>
-                        <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb4.jpg]</texture>
+                        <texture fallback="fallback.png" background="true">$VAR[ExtraThumb4Var]</texture>
                         <fadetime>400</fadetime>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
@@ -778,7 +785,7 @@
                         <width>391</width>
                         <height>220</height>
                         <aspectratio>keep</aspectratio>
-                        <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb1.jpg]</texture>
+                        <texture fallback="fallback.png" background="true">$VAR[ExtraThumb1Var]</texture>
                         <fadetime>400</fadetime>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
@@ -788,7 +795,7 @@
                         <width>391</width>
                         <height>220</height>
                         <aspectratio>keep</aspectratio>
-                        <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,extrathumbs/thumb2.jpg]</texture>
+                        <texture fallback="fallback.png" background="true">$VAR[ExtraThumb2Var]</texture>
                         <fadetime>400</fadetime>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>

@@ -211,11 +211,11 @@
     <include name="Objects_MediaMenuButtonIcons">
         <width>450</width>
         <height>95</height>
-        <textoffsetx>96</textoffsetx>
+        <textoffsetx>82</textoffsetx>
         <textoffsety>28</textoffsety>
         <aligny>top</aligny>
         <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus>settings/listselect_nf2.png</texturenofocus>
+        <texturenofocus border="3">settings/listselect_nf2.png</texturenofocus>
         <alttexturefocus>views/tripanel/listselect_fo.png</alttexturefocus>
         <alttexturenofocus>settings/listselect_nf2.png</alttexturenofocus>
         <font>Font_Reg18</font>
@@ -795,7 +795,6 @@
         <onload>Skin.SetBool(MoreFullscreenInfo)</onload>
         <onload>Skin.SetBool(lowlist)</onload>
         <onload>Skin.SetBool(lowermainmenu)</onload>
-        <onload>Skin.SetBool(wallgenretv)</onload>
         <onload>Skin.SetString(InfopanelDelay,2)</onload>
         <onload>Skin.SetBool(GlobalNowPlaying)</onload>
         <onload>Skin.SetBool(altoverlayinfowall)</onload>
@@ -924,7 +923,7 @@
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
         <texturefocus border="8">views/tripanel/listselect_fo.png</texturefocus>
-        <texturenofocus>settings/listselect_nf.png</texturenofocus>
+        <texturenofocus border="3">settings/listselect_nf.png</texturenofocus>
         <alttexturefocus>views/tripanel/listselect_fo.png</alttexturefocus>
         <alttexturenofocus>settings/listselect_nf.png</alttexturenofocus>
         <font>Font_Reg19</font>
@@ -949,7 +948,7 @@
         <focusedcolor>white2</focusedcolor>
         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
         <onup>CancelAlarm(ActorIconMove,true)</onup>
-        <onup>50</onup>
+        <onup>600</onup>
     </include>
     <include name="DialogBackFade">
         <control type="image">
@@ -1685,19 +1684,19 @@
                 <onfocus>Action(Close)</onfocus>
                 <onfocus condition="Stringcompare(Container(800).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(800).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(800).ListItem.Property(Path),videodb://1/)">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
                 <onfocus condition="stringcompare(Container(800).ListItem.Property(Type),0) | stringcompare(Container(800).ListItem.Property(Type),1) | stringcompare(Container(800).ListItem.Property(Type),2) | stringcompare(Container(800).ListItem.Property(Type),3)">RunAddon($INFO[Container(800).ListItem.Property(Path)])</onfocus>
-                <onfocus condition="stringcompare(Container(800).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(800).ListItem.Property(Path)],return)</onfocus>
-                <onfocus condition="stringcompare(Container(800).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(800).ListItem.Property(Path)],return)</onfocus>
+                <onfocus condition="stringcompare(Container(800).ListItem.Property(Type),4)">ActivateWindow(Videos,$ESCINFO[Container(800).ListItem.Property(Path)],return)</onfocus>
+                <onfocus condition="stringcompare(Container(800).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$ESCINFO[Container(800).ListItem.Property(Path)],return)</onfocus>
                 <onfocus condition="stringcompare(Container(800).ListItem.Property(Type),6) | Stringcompare(Container(800).ListItem.Property(Type),7)  | Stringcompare(Container(800).ListItem.Property(Type),custom)">$INFO[Container(800).ListItem.Property(Path)]</onfocus>
                 <visible>IsEmpty(Window(home).Property(quicknavsetup))</visible>
             </control>
             <control type="button" id="810">
                 <include>HiddenObject</include>
                 <onfocus>SetFocus(800)</onfocus>
-                <onfocus>Skin.Setstring(ItemToEdit.Label,$INFO[Container(800).ListItem.Label])</onfocus>
-                <onfocus>Skin.Setstring(ItemToEdit.MultiFanart,$INFO[Container(800).ListItem.Thumb])</onfocus>
+                <onfocus>Skin.Setstring(ItemToEdit.Label,$ESCINFO[Container(800).ListItem.Label])</onfocus>
+                <onfocus>Skin.Setstring(ItemToEdit.MultiFanart,$ESCINFO[Container(800).ListItem.Thumb])</onfocus>
                 <onfocus>Skin.Setstring(ItemToEdit.Disable,$INFO[Container(800).ListItem.Property(DisableIcon)])</onfocus>
-                <onfocus>Skin.Setstring(ItemToEdit.Type,$INFO[Container(800).ListItem.Property(Type)])</onfocus>
-                <onfocus>Skin.Setstring(ItemToEdit.Path,$INFO[Container(800).ListItem.Property(Path)])</onfocus>
+                <onfocus>Skin.Setstring(ItemToEdit.Type,$ESCINFO[Container(800).ListItem.Property(Type)])</onfocus>
+                <onfocus>Skin.Setstring(ItemToEdit.Path,$ESCINFO[Container(800).ListItem.Property(Path)])</onfocus>
                 <onfocus>ActivateWindow(1136)</onfocus>
                 <visible>!IsEmpty(Window(home).Property(quicknavsetup))</visible>
             </control>

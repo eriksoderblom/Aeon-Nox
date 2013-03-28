@@ -7,7 +7,6 @@
     <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),randompics) | Substring(Skin.String(widget2list),randompics) | Substring(Skin.String(backgroundlist),randompics)]">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
     <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),random) | Substring(Skin.String(widget2list),random) | Substring(Skin.String(backgroundlist),random)]">SetProperty(SkinWidgets_RandomItems_Update,true)</onload>
     <onload>ClearProperty(DontRunTVShowScripts,Home)</onload>
-    <onload>AlarmClock(BGMove,Control.Move(4324,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(WidgetMove,Control.Move(8000,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(Widget2Move,Control.Move(7000,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(HomeTileLeft,Control.Move(5001,1),00:07,silent,loop)</onload>
@@ -38,7 +37,6 @@
     <onunload>CancelAlarm(HomeTile2Mid,true)</onunload>
     <onunload>CancelAlarm(WidgetMove,true)</onunload>
     <onunload>CancelAlarm(Widget2Move,true)</onunload>
-    <onunload>CancelAlarm(BGMove,true)</onunload>
     <onunload>ClearProperty(PanelWidgetInfo,Home)</onunload>
     <onunload>ClearProperty(PanelWidget2Info,Home)</onunload>
     <allowoverlay>yes</allowoverlay>
@@ -60,8 +58,8 @@
             <!--             <onclick condition="IsEmpty(Skin.String(TVShowHomeItem.Type)) + !Library.HasContent(TVShows)">Notification($LOCALIZE[257],$LOCALIZE[31895])</onclick>
  -->
             <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),0) | stringcompare(Container(9000).ListItem.Property(Type),1) | stringcompare(Container(9000).ListItem.Property(Type),2) | stringcompare(Container(9000).ListItem.Property(Type),3)">RunAddon($INFO[Container(9000).ListItem.Property(Path)])</onfocus>
-            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(9000).ListItem.Property(Path)],return)</onfocus>
-            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(9000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),4)">ActivateWindow(Videos,$ESCINFO[Container(9000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$ESCINFO[Container(9000).ListItem.Property(Path)],return)</onfocus>
             <onfocus condition="stringcompare(Container(9000).ListItem.Property(Type),6) | Stringcompare(Container(9000).ListItem.Property(Type),7)  | Stringcompare(Container(9000).ListItem.Property(Type),custom)">$INFO[Container(9000).ListItem.Property(Path)]</onfocus>
         </control>
         <control type="button" id="9007">
@@ -69,15 +67,15 @@
             <onfocus condition="Control.IsVisible(5000)">SetFocus(5010)</onfocus>
             <onfocus condition="Control.IsVisible(5000) + [Stringcompare(Container(5010).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(5010).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(5010).ListItem.Property(Path),videodb://1/)]">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
             <onfocus condition="Control.IsVisible(5000) + [stringcompare(Container(5010).ListItem.Property(Type),0) | stringcompare(Container(5010).ListItem.Property(Type),1) | stringcompare(Container(5010).ListItem.Property(Type),2) | stringcompare(Container(5010).ListItem.Property(Type),3)]">RunAddon($INFO[Container(5010).ListItem.Property(Path)])</onfocus>
-            <onfocus condition="Control.IsVisible(5000) + stringcompare(Container(5010).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
-            <onfocus condition="Control.IsVisible(5000) + stringcompare(Container(5010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(5000) + stringcompare(Container(5010).ListItem.Property(Type),4)">ActivateWindow(Videos,$ESCINFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(5000) + stringcompare(Container(5010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$ESCINFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
             <onfocus condition="Control.IsVisible(5000) + [stringcompare(Container(5010).ListItem.Property(Type),6) | Stringcompare(Container(5010).ListItem.Property(Type),7)  | Stringcompare(Container(5010).ListItem.Property(Type),custom)]">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
             <onfocus condition="Control.IsVisible(5000) + IsEmpty(Container(5010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
             <onfocus condition="Control.IsVisible(8998)">SetFocus(8000)</onfocus>
             <onfocus condition="Control.IsVisible(8998) + [Stringcompare(Container(8000).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(8000).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(8000).ListItem.Property(Path),videodb://1/)]">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
             <onfocus condition="Control.IsVisible(8998) + [stringcompare(Container(8000).ListItem.Property(Type),0) | stringcompare(Container(8000).ListItem.Property(Type),1) | stringcompare(Container(8000).ListItem.Property(Type),2) | stringcompare(Container(8000).ListItem.Property(Type),3)]">RunAddon($INFO[Container(8000).ListItem.Property(Path)])</onfocus>
-            <onfocus condition="Control.IsVisible(8998) + stringcompare(Container(8000).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(8000).ListItem.Property(Path)],return)</onfocus>
-            <onfocus condition="Control.IsVisible(8998) + stringcompare(Container(8000).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(8000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(8998) + stringcompare(Container(8000).ListItem.Property(Type),4)">ActivateWindow(Videos,$ESCINFO[Container(8000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(8998) + stringcompare(Container(8000).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$ESCINFO[Container(8000).ListItem.Property(Path)],return)</onfocus>
             <onfocus condition="Control.IsVisible(8998) + [stringcompare(Container(8000).ListItem.Property(Type),6) | Stringcompare(Container(8000).ListItem.Property(Type),7)  | Stringcompare(Container(8000).ListItem.Property(Type),custom)]">$INFO[Container(8000).ListItem.Property(Path)]</onfocus>
             <onfocus condition="Control.IsVisible(8998) + IsEmpty(Container(8000).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
         </control>
@@ -87,15 +85,15 @@
             <onfocus condition="Control.IsVisible(6000)">SetFocus(6010)</onfocus>
             <onfocus condition="Control.IsVisible(6000) + [Stringcompare(Container(6010).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(6010).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(6010).ListItem.Property(Path),videodb://1/)]">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
             <onfocus condition="Control.IsVisible(6000) + [stringcompare(Container(6010).ListItem.Property(Type),0) | stringcompare(Container(6010).ListItem.Property(Type),1) | stringcompare(Container(6010).ListItem.Property(Type),2) | stringcompare(Container(6010).ListItem.Property(Type),3)]">RunAddon($INFO[Container(6010).ListItem.Property(Path)])</onfocus>
-            <onfocus condition="Control.IsVisible(6000) + stringcompare(Container(6010).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
-            <onfocus condition="Control.IsVisible(6000) + stringcompare(Container(6010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(6000) + stringcompare(Container(6010).ListItem.Property(Type),4)">ActivateWindow(Videos,$ESCINFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(6000) + stringcompare(Container(6010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$ESCINFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
             <onfocus condition="Control.IsVisible(6000) + [stringcompare(Container(6010).ListItem.Property(Type),6) | Stringcompare(Container(6010).ListItem.Property(Type),7)  | Stringcompare(Container(6010).ListItem.Property(Type),custom)]">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
             <onfocus condition="Control.IsVisible(6000) + IsEmpty(Container(6010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
             <onfocus condition="Control.IsVisible(7998)">SetFocus(7000)</onfocus>
             <onfocus condition="Control.IsVisible(7998) + [Stringcompare(Container(7000).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(7000).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(7000).ListItem.Property(Path),videodb://1/)]">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
             <onfocus condition="Control.IsVisible(7998) + [stringcompare(Container(7000).ListItem.Property(Type),0) | stringcompare(Container(7000).ListItem.Property(Type),1) | stringcompare(Container(7000).ListItem.Property(Type),2) | stringcompare(Container(7000).ListItem.Property(Type),3)]">RunAddon($INFO[Container(7000).ListItem.Property(Path)])</onfocus>
-            <onfocus condition="Control.IsVisible(7998) + stringcompare(Container(7000).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(7000).ListItem.Property(Path)],return)</onfocus>
-            <onfocus condition="Control.IsVisible(7998) + stringcompare(Container(7000).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(7000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(7998) + stringcompare(Container(7000).ListItem.Property(Type),4)">ActivateWindow(Videos,$ESCINFO[Container(7000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(7998) + stringcompare(Container(7000).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$ESCINFO[Container(7000).ListItem.Property(Path)],return)</onfocus>
             <onfocus condition="Control.IsVisible(7998) + [stringcompare(Container(7000).ListItem.Property(Type),6) | Stringcompare(Container(7000).ListItem.Property(Type),7)  | Stringcompare(Container(7000).ListItem.Property(Type),custom)]">$INFO[Container(7000).ListItem.Property(Path)]</onfocus>
             <onfocus condition="Control.IsVisible(7998) + IsEmpty(Container(7000).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
         </control>
@@ -141,8 +139,10 @@
             <onfocus>SetProperty(Year,$ESCINFO[Container(5010).ListItem.Property(Year)])</onfocus>
             <onfocus>SetProperty(Plot,$ESCINFO[Container(5010).ListItem.Property(Plot)])</onfocus>
             <onfocus>SetProperty(Tagline,$ESCINFO[Container(5010).ListItem.Property(Tagline)])</onfocus>
+            <onfocus>SetProperty(OriginalTitle,$ESCINFO[Container(5010).ListItem.Property(OriginalTitle)])</onfocus>
             <onfocus>SetProperty(RunningTime,$ESCINFO[Container(5010).ListItem.Property(RunningTime)])</onfocus>
             <onfocus>SetProperty(Director,$ESCINFO[Container(5010).ListItem.Property(Director)])</onfocus>
+            <onfocus>SetProperty(Artist,$ESCINFO[Container(5010).ListItem.Property(Artist)])</onfocus>
             <onfocus>SetProperty(Rating,$ESCINFO[Container(5010).ListItem.Property(Rating)])</onfocus>
             <onfocus>SetProperty(StatusID,$ESCINFO[Container(5010).ListItem.Property(StatusID)])</onfocus>
             <onfocus>SetProperty(Status,$ESCINFO[Container(5010).ListItem.Property(Status)])</onfocus>
@@ -158,7 +158,7 @@
             <onfocus>SetProperty(VideoCodec,$ESCINFO[Container(5010).ListItem.Property(VideoCodec)])</onfocus>
             <onfocus>SetProperty(VideoAspect,$ESCINFO[Container(5010).ListItem.Property(VideoAspect)])</onfocus>
             <onfocus>SetProperty(VideoResolution,$ESCINFO[Container(5010).ListItem.Property(VideoResolution)])</onfocus>
-            <onfocus>SetProperty(extrafanart,$ESCINFO[Container(5010).ListItem.Property(VideoResolution)])</onfocus>
+            <onfocus>SetProperty(extrafanart,$ESCINFO[Container(5010).ListItem.Property(extrafanart)])</onfocus>
             <onfocus>SetProperty(extrathumb,$ESCINFO[Container(5010).ListItem.Property(extrathumb)])</onfocus>
             <onfocus>SetProperty(mpaa,$ESCINFO[Container(5010).ListItem.Property(mpaa)])</onfocus>
             <onfocus>SetProperty(Id,$ESCINFO[Container(5010).ListItem.Property(Id)])</onfocus>
@@ -175,6 +175,18 @@
             <onfocus>SetProperty(Version,$ESCINFO[Container(5010).ListItem.Property(Version)])</onfocus>
             <onfocus>SetProperty(DBID,$ESCINFO[Container(5010).ListItem.Property(DBID)])</onfocus>
             <onfocus>SetProperty(Trailer,$ESCINFO[Container(5010).ListItem.Property(Trailer)])</onfocus>
+            <onfocus>SetProperty(Mood,$ESCINFO[Container(5010).ListItem.Property(Mood)],home)</onfocus>
+            <onfocus>SetProperty(Style,$ESCINFO[Container(5010).ListItem.Property(Style)],home)</onfocus>
+            <onfocus>SetProperty(Theme,$ESCINFO[Container(5010).ListItem.Property(Theme)],home)</onfocus>
+            <onfocus>SetProperty(Instrument,$ESCINFO[Container(5010).ListItem.Property(Instrument)],home)</onfocus>
+            <onfocus>SetProperty(Born,$ESCINFO[Container(5010).ListItem.Property(Born)],home)</onfocus>
+            <onfocus>SetProperty(Died,$ESCINFO[Container(5010).ListItem.Property(Died)],home)</onfocus>
+            <onfocus>SetProperty(Formed,$ESCINFO[Container(5010).ListItem.Property(Formed)],home)</onfocus>
+            <onfocus>SetProperty(Disbanded,$ESCINFO[Container(5010).ListItem.Property(Disbanded)],home)</onfocus>
+            <onfocus>SetProperty(YearsActive,$ESCINFO[Container(5010).ListItem.Property(YearsActive)],home)</onfocus>
+            <onfocus>SetProperty(Watched,$ESCINFO[Container(5010).ListItem.Property(Watched)],home)</onfocus>
+            <onfocus>SetProperty(Writer,$ESCINFO[Container(5010).ListItem.Property(Writer)],home)</onfocus>
+            <onfocus>SetProperty(Top250,$INFO[Container(5010).ListItem.Property(Top250)],home)</onfocus>
             <onfocus condition="Substring(Control.GetLabel(4321),babe) | Substring(Control.GetLabel(4321),bigpicture)">SetFocus(22222)</onfocus>
             <onfocus condition="!Substring(Control.GetLabel(4321),babe) + !Substring(Control.GetLabel(4321),bigpicture)">SetFocus(5055)</onfocus>
             <visible>!Substring(Control.GetLabel(4321),classic)</visible>
@@ -215,8 +227,10 @@
             <onfocus>SetProperty(Year,$ESCINFO[Container(6010).ListItem.Property(Year)])</onfocus>
             <onfocus>SetProperty(Plot,$ESCINFO[Container(6010).ListItem.Property(Plot)])</onfocus>
             <onfocus>SetProperty(Tagline,$ESCINFO[Container(6010).ListItem.Property(Tagline)])</onfocus>
+            <onfocus>SetProperty(OriginalTitle,$ESCINFO[Container(6010).ListItem.Property(OriginalTitle)])</onfocus>
             <onfocus>SetProperty(RunningTime,$ESCINFO[Container(6010).ListItem.Property(RunningTime)])</onfocus>
             <onfocus>SetProperty(Director,$ESCINFO[Container(6010).ListItem.Property(Director)])</onfocus>
+            <onfocus>SetProperty(Artist,$ESCINFO[Container(6010).ListItem.Property(Artist)])</onfocus>
             <onfocus>SetProperty(Rating,$ESCINFO[Container(6010).ListItem.Property(Rating)])</onfocus>
             <onfocus>SetProperty(StatusID,$ESCINFO[Container(6010).ListItem.Property(StatusID)])</onfocus>
             <onfocus>SetProperty(Status,$ESCINFO[Container(6010).ListItem.Property(Status)])</onfocus>
@@ -232,7 +246,7 @@
             <onfocus>SetProperty(VideoCodec,$ESCINFO[Container(6010).ListItem.Property(VideoCodec)])</onfocus>
             <onfocus>SetProperty(VideoAspect,$ESCINFO[Container(6010).ListItem.Property(VideoAspect)])</onfocus>
             <onfocus>SetProperty(VideoResolution,$ESCINFO[Container(6010).ListItem.Property(VideoResolution)])</onfocus>
-            <onfocus>SetProperty(extrafanart,$ESCINFO[Container(6010).ListItem.Property(VideoResolution)])</onfocus>
+            <onfocus>SetProperty(extrafanart,$ESCINFO[Container(6010).ListItem.Property(extrafanart)])</onfocus>
             <onfocus>SetProperty(extrathumb,$ESCINFO[Container(6010).ListItem.Property(extrathumb)])</onfocus>
             <onfocus>SetProperty(mpaa,$ESCINFO[Container(6010).ListItem.Property(mpaa)])</onfocus>
             <onfocus>SetProperty(Id,$ESCINFO[Container(6010).ListItem.Property(Id)])</onfocus>
@@ -249,6 +263,18 @@
             <onfocus>SetProperty(Version,$ESCINFO[Container(6010).ListItem.Property(Version)])</onfocus>
             <onfocus>SetProperty(DBID,$ESCINFO[Container(6010).ListItem.Property(DBID)])</onfocus>
             <onfocus>SetProperty(Trailer,$ESCINFO[Container(6010).ListItem.Property(Trailer)])</onfocus>
+            <onfocus>SetProperty(Mood,$ESCINFO[Container(6010).ListItem.Property(Mood)],home)</onfocus>
+            <onfocus>SetProperty(Style,$ESCINFO[Container(6010).ListItem.Property(Style)],home)</onfocus>
+            <onfocus>SetProperty(Theme,$ESCINFO[Container(6010).ListItem.Property(Theme)],home)</onfocus>
+            <onfocus>SetProperty(Instrument,$ESCINFO[Container(6010).ListItem.Property(Instrument)],home)</onfocus>
+            <onfocus>SetProperty(Born,$ESCINFO[Container(6010).ListItem.Property(Born)],home)</onfocus>
+            <onfocus>SetProperty(Died,$ESCINFO[Container(6010).ListItem.Property(Died)],home)</onfocus>
+            <onfocus>SetProperty(Formed,$ESCINFO[Container(6010).ListItem.Property(Formed)],home)</onfocus>
+            <onfocus>SetProperty(Disbanded,$ESCINFO[Container(6010).ListItem.Property(Disbanded)],home)</onfocus>
+            <onfocus>SetProperty(YearsActive,$ESCINFO[Container(6010).ListItem.Property(YearsActive)],home)</onfocus>
+            <onfocus>SetProperty(Watched,$ESCINFO[Container(6010).ListItem.Property(Watched)],home)</onfocus>
+            <onfocus>SetProperty(Writer,$ESCINFO[Container(6010).ListItem.Property(Writer)],home)</onfocus>
+            <onfocus>SetProperty(Top250,$ESCINFO[Container(6010).ListItem.Property(Top250)],home)</onfocus>
             <onfocus condition="Substring(Control.GetLabel(4325),babe) | Substring(Control.GetLabel(4325),bigpicture)">SetFocus(22222)</onfocus>
             <onfocus condition="!Substring(Control.GetLabel(4325),babe) + !Substring(Control.GetLabel(4325),bigpicture)">SetFocus(5055)</onfocus>
             <visible>!Substring(Control.GetLabel(4321),classic)</visible>
@@ -265,7 +291,7 @@
  -->
             <control type="multiimage">
                 <aspectratio align="center" aligny="top">scale</aspectratio>
-                <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
+                <imagepath background="true" fallback="special://skin/backgrounds/videos">$VAR[HomeMainFanartVar]</imagepath>
                 <fadetime>600</fadetime>
                 <animation effect="fade" time="480">Visible</animation>
                 <animation effect="fade" time="480">Hidden</animation>
@@ -365,8 +391,8 @@
         <include>RSSPanel</include>
         <include>MainMenuBottomBar</include>
         <control type="group">
-            <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info))">Conditional</animation>
-            <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo))">Conditional</animation>
+            <animation effect="slide" end="0,330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidget2Info)) + !Window.IsActive(1115)">Conditional</animation>
+            <animation effect="slide" end="0,-330" time="560" tween="cubic" delay="160" condition="!Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(home).Property(PanelWidgetInfo)) + !Window.IsActive(1115)">Conditional</animation>
             <animation effect="slide" end="0,330" time="480" tween="cubic" delay="160" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + [Window.IsActive(1115) | Window.IsActive(1154)]">Conditional</animation>
             <control type="group">
                 <posy>472</posy>
@@ -540,7 +566,35 @@
             <include condition="!IsEmpty(Weather.Plugin) + SubString(Skin.String(widget2list),weather)">Weather_Widget2</include>
             <include>RecentWidget2</include>
         </control>
+        <control type="group">
+                    <posx>135</posx>
+            <include>Animation_OpenCloseZoom</include>
+            <posy>389</posy>
+            <width>1920</width>
+            <height>825</height>
+            <animation type="Conditional" condition="true">
+                <effect type="zoom" start="100" end="97" center="960,540" time="240" tween="cubic" />
+            </animation>
+            <animation effect="slide" end="0,285" time="0" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Stringcompare(Window(home).Property(WidgetPosition),Widget1)">Conditional</animation>
+            <animation effect="slide" end="0,18" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+            <animation effect="slide" end="0,-31" time="320" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
+            <visible>!IsEmpty(Window(home).Property(WidgetType))</visible>
+            <visible>[!IsEmpty(Window(home).Property(PanelWidgetInfo)) | !IsEmpty(Window(home).Property(PanelWidget2Info))]</visible>
+            <visible>!Window.IsActive(1115)</visible>
+            <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget1)">
+                <include condition="Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipUp1</include>
+                <include condition="!Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipDown1</include>
+            </animation>
+            <animation type="Hidden" reversible="false">
+                <include condition="Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipDown2</include>
+                <include condition="!Skin.HasSetting(lowermainmenu)">Animation_LargePanelFlipUp2</include>
+            </animation>
+            <animation type="Visible" reversible="false" condition="Stringcompare(Window(home).Property(WidgetPosition),Widget2)">
+                <include>Animation_LargePanelFlipUp1</include>
+            </animation>
         <include>WidgetInfoPanel</include>
+        
+        </control>
         <include condition="!Skin.HasSetting(nohomepageMusicinfo) | !Skin.HasSetting(homepageVideoinfo)">Furniture_HomeNowPlaying</include>
         <control type="group">
             <posx>0</posx>
