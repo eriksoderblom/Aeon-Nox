@@ -39,7 +39,7 @@
                         <posx>150</posx>
                         <posy>14</posy>
                         <width>600</width>
-                        <font>Font_Reg22</font>
+                        <font>Font_Reg38</font>
                         <textcolor>white2</textcolor>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
@@ -49,7 +49,7 @@
                         <posy>14</posy>
                         <width>100</width>
                         <align>right</align>
-                        <font>Font_Reg19</font>
+                        <font>Font_Reg30_2</font>
                         <textcolor>grey</textcolor>
                         <label>$INFO[ListItem.Year]</label>
                     </control>
@@ -69,7 +69,7 @@
                         <posx>150</posx>
                         <posy>14</posy>
                         <width>600</width>
-                        <font>Font_Bold30</font>
+                        <font>Font_Bold40</font>
                         <scrollspeed>60</scrollspeed>
                         <scrollsuffix>  •  </scrollsuffix>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
@@ -81,7 +81,7 @@
                         <posy>14</posy>
                         <width>100</width>
                         <align>right</align>
-                        <font>Font_Reg21</font>
+                        <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <label>$INFO[ListItem.Year]</label>
                     </control>
@@ -118,7 +118,7 @@
                     <posy>100</posy>
                     <width>1100</width>
                     <height>30</height>
-                    <font>Font_Reg38</font>
+                    <font>Font_Reg57</font>
                     <label>$INFO[ListItem.Title]</label>
                 </control>
 
@@ -127,7 +127,7 @@
                     <posy>145</posy>
                     <width>1100</width>
                     <height>30</height>
-                    <font>Font_Reg14</font>
+                    <font>Font_Reg26</font>
                     <textcolor>grey</textcolor>
                     <label>$INFO[ListItem.Tagline]</label>
                 </control>
@@ -178,7 +178,7 @@
                     <posy>660</posy>
                     <width>100</width>
                     <height>30</height>
-                    <font>Font_Reg25</font>
+                    <font>Font_Reg42</font>
                     <textcolor>white</textcolor>
                     <align>center</align>
                     <label>$INFO[ListItem.Rating]</label>
@@ -189,7 +189,7 @@
                     <posy>605</posy>
                     <width>1100</width>
                     <height>30</height>
-                    <font>Font_Reg14</font>
+                    <font>Font_Reg25</font>
                     <textcolor>grey</textcolor>
                     <label>$INFO[ListItem.Duration,, minutes]$INFO[ListItem.Genre, • ]</label>
                 </control>
@@ -202,7 +202,7 @@
                         <posy>710</posy>
                         <width>280</width>
                         <height>30</height>
-                        <font>Font_Reg14</font>
+                        <font>Font_Reg25</font>
                         <textcolor>white6</textcolor>
                         <label>$LOCALIZE[20339]:</label>
                     </control>
@@ -212,7 +212,7 @@
                         <posy>735</posy>
                         <width>280</width>
                         <height>30</height>
-                        <font>Font_Reg14</font>
+                        <font>Font_Reg25</font>
                         <textcolor>grey</textcolor>
                         <scroll>true</scroll>
                         <scrollsuffix>  •  </scrollsuffix>
@@ -224,7 +224,7 @@
                         <posy>780</posy>
                         <width>280</width>
                         <height>30</height>
-                        <font>Font_Reg14</font>
+                        <font>Font_Reg25</font>
                         <textcolor>white6</textcolor>
                         <label>$LOCALIZE[20417]:</label>
                     </control>
@@ -234,7 +234,7 @@
                         <posy>805</posy>
                         <width>280</width>
                         <height>30</height>
-                        <font>Font_Reg14</font>
+                        <font>Font_Reg25</font>
                         <textcolor>grey</textcolor>
                         <scroll>true</scroll>
                         <scrollsuffix>  •  </scrollsuffix>
@@ -251,7 +251,7 @@
                         <posy>710</posy>
                         <width>300</width>
                         <height>30</height>
-                        <font>Font_Reg14</font>
+                        <font>Font_Reg25</font>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <align>right</align>
                         <scroll>true</scroll>
@@ -264,7 +264,7 @@
                         <posy>740</posy>
                         <width>300</width>
                         <height>30</height>
-                        <font>Font_Reg14</font>
+                        <font>Font_Reg25</font>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <align>right</align>
                         <scroll>true</scroll>
@@ -279,7 +279,7 @@
                     <posy>640</posy>
                     <width>750</width>
                     <height>200</height>
-                    <font>Font_Reg14</font>
+                    <font>Font_Reg25</font>
                     <aligny>top</aligny>
                     <textcolor>white6</textcolor>
                     <wrapmultiline>true</wrapmultiline>
