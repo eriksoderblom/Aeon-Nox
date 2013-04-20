@@ -69,7 +69,7 @@
                         <posx>150</posx>
                         <posy>14</posy>
                         <width>600</width>
-                        <font>Font_Bold40</font>
+                        <font>Font_Bold46</font>
                         <scrollspeed>60</scrollspeed>
                         <scrollsuffix>  •  </scrollsuffix>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
