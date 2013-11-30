@@ -140,7 +140,7 @@
                     <fadetime>100</fadetime>
                     <aspectratio scalediffuse="false" align="right" aligny="center">scale</aspectratio>
                     <texture fallback="DefaultVideoCover.png">$INFO[ListItem.Icon]</texture>
-                    <bordertexture border="5">views/thumbborderwhite_l.png</bordertexture>
+                    <bordertexture border="5">views/thumbborderround_l.png</bordertexture>
                     <bordersize>4</bordersize>
                 </control>
 
@@ -152,7 +152,7 @@
                     <fadetime>100</fadetime>
                     <aspectratio align="left" aligny="top">scale</aspectratio>
                     <texture>$INFO[ListItem.Property(Fanart_Image)]</texture>
-                    <bordertexture border="5">views/thumbborderwhite_r.png</bordertexture>
+                    <bordertexture border="5">views/thumbborderround_r.png</bordertexture>
                     <bordersize>4</bordersize>
                 </control>
 
