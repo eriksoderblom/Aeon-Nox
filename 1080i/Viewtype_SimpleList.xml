@@ -133,32 +133,32 @@
                 </control>
 
                 <control type="image">
-                    <posx>795</posx>
+                    <posx>792</posx>
                     <posy>180</posy>
                     <width>320</width>
                     <height>422</height>
                     <fadetime>100</fadetime>
-                    <aspectratio scalediffuse="false" align="right" aligny="center">keep</aspectratio>
+                    <aspectratio scalediffuse="false" align="right" aligny="center">scale</aspectratio>
                     <texture fallback="DefaultVideoCover.png">$INFO[ListItem.Icon]</texture>
-                    <bordertexture border="5">views/thumbborderwhite.png</bordertexture>
-                    <bordersize>6</bordersize>
+                    <bordertexture border="5">views/thumbborderwhite_l.png</bordertexture>
+                    <bordersize>4</bordersize>
                 </control>
 
-                <control type="image">
-                    <posx>1104</posx>
+                <control type="largeimage">
+                    <posx>1108</posx>
                     <posy>180</posy>
                     <width>750</width>
                     <height>422</height>
                     <fadetime>100</fadetime>
                     <aspectratio align="left" aligny="top">scale</aspectratio>
                     <texture>$INFO[ListItem.Property(Fanart_Image)]</texture>
-                    <bordertexture border="5">views/thumbborderwhite.png</bordertexture>
-                    <bordersize>6</bordersize>
+                    <bordertexture border="5">views/thumbborderwhite_r.png</bordertexture>
+                    <bordersize>4</bordersize>
                 </control>
 
                 <control type="image">
-                    <posx>1014</posx>
-                    <posy>186</posy>
+                    <posx>1018</posx>
+                    <posy>184</posy>
                     <width>90</width>
                     <height>90</height>
                     <include>OverlayVisibility0</include>
