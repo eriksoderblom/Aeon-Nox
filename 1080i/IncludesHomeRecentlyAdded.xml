@@ -99,7 +99,7 @@
 					</control>
 					<control type="label">
 						<height>2</height>
-						<label>$LOCALIZE[31002]</label>
+						<label>-</label>
 					</control>
 					<control type="label">
 						<width>900</width>
@@ -184,7 +184,7 @@
 					</control>
 					<control type="label">
 						<height>2</height>
-						<label>$LOCALIZE[31002]</label>
+						<label>-</label>
 					</control>
 					<control type="textbox">
 						<description>Plot</description>
@@ -225,7 +225,7 @@
 					</control>
 					<control type="label">
 						<height>2</height>
-						<label>$LOCALIZE[31002]</label>
+						<label>-</label>
 					</control>
 					<control type="label">
 						<width>900</width>
@@ -237,7 +237,7 @@
 					</control>
 					<control type="label">
 						<height>2</height>
-						<label>$LOCALIZE[31002]</label>
+						<label>-</label>
 					</control>
 					<control type="textbox">
 						<description>Plot</description>
@@ -306,7 +306,7 @@
 				</control>
 				<control type="group">
 					<animation effect="fade" start="100" end="0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(8000)">Conditional</animation>
-					<animation type="Conditional" condition="Control.HasFocus(8000) | Control.HasFocus(8001)">
+					<animation type="Conditional" condition="Control.HasFocus(8000)">
 						<effect type="rotatey" start="-180" end="0" center="221,0" time="400" tween="sine" easing="inout" />
 						<effect type="fade" start="0" end="100" time="10" delay="200" />
 					</animation>
@@ -587,7 +587,7 @@
 				</control>
 				<control type="label">
 					<height>2</height>
-					<label>$LOCALIZE[31002]</label>
+					<label>-</label>
 				</control>
 				<control type="label">
 					<posx>90</posx>
@@ -618,7 +618,7 @@
 				</control>
 				<control type="label">
 					<height>2</height>
-					<label>$LOCALIZE[31002]</label>
+					<label>-</label>
 				</control>
 				<control type="label">
 					<description>Time Label</description>

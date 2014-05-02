@@ -133,6 +133,14 @@
 					<onclick>Dialog.Close(1124)</onclick>
 				</item>
 				<item>
+					<label>$INFO[System.AddonTitle(plugin.video.the.trailers)]</label>
+					<onclick>Skin.SetString(ItemToEdit.Widget,plugin://plugin.video.the.trailers/apple/movies/)</onclick>
+					<onclick>Skin.SetString(ItemToEdit.WidgetLabel,$INFO[System.AddonTitle(plugin.video.the.trailers)])</onclick>
+					<onclick>Skin.SetString(ItemToEdit.WidgetType,1)</onclick>
+					<onclick>Dialog.Close(1124)</onclick>
+					<visible>System.HasAddon(plugin.video.the.trailers)</visible>
+				</item>
+				<item>
 					<label>$LOCALIZE[31030]</label>
 					<onclick>Skin.SetString(ItemToEdit.Widget,special://skin/extras/playlists/recentepisodes.xsp)</onclick>
 					<onclick>Skin.SetString(ItemToEdit.WidgetLabel,$LOCALIZE[31030])</onclick>
@@ -209,6 +217,13 @@
 					<onclick>Skin.SetString(ItemToEdit.WidgetLabel,$LOCALIZE[1037])</onclick>
 					<onclick>Dialog.Close(1124)</onclick>
 					<onclick>Skin.SetString(ItemToEdit.WidgetType,1)</onclick>
+				</item>
+				<item>
+					<label>$LOCALIZE[636] ($LOCALIZE[1037])</label>
+					<onclick>Skin.SetString(ItemToEdit.Widget)</onclick>
+					<onclick>Skin.SetString(ItemToEdit.WidgetLabel)</onclick>
+					<onclick>Skin.SetString(ItemToEdit.WidgetType,1)</onclick>
+					<onclick>Dialog.Close(1124)</onclick>
 				</item>
 				<item>
 					<label>$LOCALIZE[1038]</label>
