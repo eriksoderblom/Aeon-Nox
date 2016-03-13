@@ -474,7 +474,7 @@
 								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
-								<left>-18</left>
+								<left>-1</left>
 								<top>0</top>
 								<width>100</width>
 								<height>120</height>
@@ -568,7 +568,7 @@
 								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
-								<left>-18</left>
+								<left>-1</left>
 								<top>0</top>
 								<width>100</width>
 								<height>120</height>
@@ -650,7 +650,7 @@
 								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
-								<left>-18</left>
+								<left>-1</left>
 								<top>0</top>
 								<width>100</width>
 								<height>120</height>
@@ -740,7 +740,7 @@
 								<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0) + IsEmpty(ListItem.Overlay)</visible>
 							</control>
 							<control type="label">
-								<left>-18</left>
+								<left>-1</left>
 								<top>0</top>
 								<width>100</width>
 								<height>120</height>
