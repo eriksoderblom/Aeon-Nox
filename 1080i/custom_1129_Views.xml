@@ -116,6 +116,12 @@
 					<visible>[Container.Content(artists) | Container.Content(albums)]</visible>
 				</item>
 				<item>
+					<label>$LOCALIZE[31701]</label>
+					<onclick>Container.SetViewMode(550)</onclick>
+					<visible>Window.IsActive(videos)</visible>
+					<visible>Container.Content(genres) | Container.Content(tvshows) | Container.Content(movies) | Container.Content(sets)</visible>
+				</item>
+				<item>
 					<label>$LOCALIZE[536]</label>
 					<onclick>Container.SetViewMode(500)</onclick>
 					<visible>!Window.IsActive(eventlog)</visible>
@@ -155,6 +161,12 @@
 				<item>
 					<label>Episode</label>
 					<onclick>Container.SetViewMode(502)</onclick>
+					<visible>Window.IsActive(videos)</visible>
+					<visible>Container.Content(episodes)</visible>
+				</item>
+				<item>
+					<label>$LOCALIZE[31702]</label>
+					<onclick>Container.SetViewMode(551)</onclick>
 					<visible>Window.IsActive(videos)</visible>
 					<visible>Container.Content(episodes)</visible>
 				</item>

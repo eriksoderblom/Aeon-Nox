@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <!-- Video List -->
-    <include name="SimpleList">
+    <include name="Video_550_SimpleList">
         <control type="group">
             <visible>Control.IsVisible(550) + !Window.IsActive(addoninformation)</visible>
             <animation effect="fade" time="500" delay="200">VisibleChange</animation>
-            
+
             <control type="image">
                 <description>background image</description>
                 <left>0</left>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <!-- Video List -->
-    <include name="Episode">
+    <include name="Video_551_Episode">
         <control type="group">
             <visible>Control.IsVisible(551) + !Window.IsActive(addoninformation)</visible>
             <animation effect="fade" time="500" delay="200">VisibleChange</animation>

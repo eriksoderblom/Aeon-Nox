@@ -892,6 +892,19 @@ msgctxt "#31511"
 msgid "Channel Options"
 msgstr ""
 
+#Aeon Sox
+msgctxt "#31701"
+msgid "Simple list"
+msgstr ""
+
+msgctxt "#31702"
+msgid "Episode Nox"
+msgstr ""
+
+msgctxt "#31703"
+msgid "Mvid List"
+msgstr ""
+
 msgctxt "#31901"
 msgid "36 Hour Forecast"
 msgstr ""
