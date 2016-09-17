@@ -171,6 +171,11 @@
 					<visible>Container.Content(episodes)</visible>
 				</item>
 				<item>
+					<label>$LOCALIZE[31703]</label>
+					<onclick>Container.SetViewMode(552)</onclick>
+					<visible>Window.IsActive(videos)</visible>
+				</item>
+				<item>
 					<label>Posters</label>
 					<onclick>Container.SetViewMode(56)</onclick>
 					<visible>Window.IsActive(videos)</visible>

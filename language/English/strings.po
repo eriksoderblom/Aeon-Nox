@@ -902,7 +902,7 @@ msgid "Episode Nox"
 msgstr ""
 
 msgctxt "#31703"
-msgid "Mvid List"
+msgid "Large Thumbs"
 msgstr ""
 
 msgctxt "#31901"

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <!-- Video List -->
+    <include name="Video_552_Largethumb">
+        <control type="group">
+            <visible>Control.IsVisible(552) + !Window.IsActive(addoninformation)</visible>
+            <animation effect="fade" time="500" delay="200">VisibleChange</animation>
+
+            <control type="image">
+                <description>background image</description>
+                <left>0</left>
+                <top>-1400</top>
+                <width>1920</width>
+                <height>2500</height>
+                <texture>back.png</texture>
+                <colordiffuse>FF000000</colordiffuse>
+            </control>
+            <control type="group">
+                <left>10</left>
+                <top>0</top>
+                <control type="fixedlist" id="552">
+                    <animation effect="slide" tween="cubic" time="200" start="0" end="20,0" condition="Control.HasFocus(60)">Conditional</animation>
+                    <left>0</left>
+                    <top>60</top>
+                    <width>900</width>
+                    <height>1000</height>
+                    <onleft>60</onleft>
+                    <onright>SetFocus(9050)</onright>
+                    <onright>SetProperty(MediaMenu,True,home)</onright>
+                    <onup>552</onup>
+                    <ondown>552</ondown>
+                    <viewtype label="31703">list</viewtype>
+                    <pagecontrol>60</pagecontrol>
+                    <focusposition>7</focusposition>
+                    <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                    <itemlayout height="62" width="900" condition="Container.Content(movies) | Container.Content(sets)">
+                        <control type="image">
+                            <left>0</left>
+                            <top>18</top>
+                            <width>60</width>
+                            <height>60</height>
+                            <aspectratio>keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
+                            <colordiffuse>grey2</colordiffuse>
+                            <visible>String.StartsWith(ListItem.Icon,Default)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>18</top>
+                            <width>60</width>
+                            <height>60</height>
+                            <aspectratio>keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <visible>!String.StartsWith(ListItem.Icon,Default)</visible>
+                        </control>
+                        <control type="label">
+                            <left>70</left>
+                            <top>30</top>
+                            <width>400</width>
+                            <height>62</height>
+                            <font>font10</font>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>selected</selectedcolor>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Size]$INFO[ListItem.Date, - ]$INFO[ListItem.Duration, - , $LOCALIZE[12391]]</label>
+                        </control>
+                        <control type="label">
+                            <left>60</left>
+                            <top>0</top>
+                            <width>700</width>
+                            <height>62</height>
+                            <font>font13</font>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>selected</selectedcolor>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="70" width="900" condition="Container.Content(movies) | Container.Content(sets)">
+                        <control type="image">
+                            <left>0</left>
+                            <top>18</top>
+                            <width>900</width>
+                            <height>62</height>
+                            <texture border="4">listselect_fo.png</texture>
+                            <visible>Control.HasFocus(50)</visible>
+                            <include>VisibleFadeAnimation</include>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>18</top>
+                            <width>60</width>
+                            <height>60</height>
+                            <aspectratio>keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon,views/list/]</texture>
+                            <colordiffuse>grey2</colordiffuse>
+                            <visible>String.StartsWith(ListItem.Icon,Default)</visible>
+                        </control>
+                        <control type="image">
+                            <left>0</left>
+                            <top>18</top>
+                            <width>60</width>
+                            <height>60</height>
+                            <aspectratio>keep</aspectratio>
+                            <texture background="true">$INFO[ListItem.Icon]</texture>
+                            <visible>!String.StartsWith(ListItem.Icon,Default)</visible>
+                        </control>
+                        <control type="label">
+                            <left>75</left>
+                            <top>30</top>
+                            <width>400</width>
+                            <height>62</height>
+                            <font>font10</font>
+                            <textcolor>grey2</textcolor>
+                            <selectedcolor>selected</selectedcolor>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Size]$INFO[ListItem.Date, - ]$INFO[ListItem.Duration, - , $LOCALIZE[12391]]</label>
+                        </control>
+                        <control type="label">
+                            <left>65</left>
+                            <top>0</top>
+                            <width>700</width>
+                            <height>70</height>
+                            <font>font13</font>
+                            <textcolor>white</textcolor>
+                            <selectedcolor>selected</selectedcolor>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </focusedlayout>
+                </control>
+                <control type="scrollbar" id="60">
+                    <animation effect="slide" tween="cubic" time="200" start="0" end="30,0">Focus</animation>
+                    <left>-30</left>
+                    <top>180</top>
+                    <width>14</width>
+                    <height>840</height>
+                    <onup>60</onup>
+                    <ondown>60</ondown>
+                    <onleft>SetProperty(MediaMenu,True,home)</onleft>
+                    <onleft>SetFocus(9050)</onleft>
+                    <onright>552</onright>
+                    <texturesliderbackground>-</texturesliderbackground>
+                    <texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+                    <texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+                    <showonepage>true</showonepage>
+                    <orientation>vertical</orientation>
+                </control>
+            </control>
+
+            <control type="group">
+                <left>900</left>
+                <top>80</top>
+
+                <control type="label">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>995</width>
+                    <height>70</height>
+                    <font>font48</font>
+                    <textcolor>white</textcolor>
+                    <scroll>true</scroll>
+                    <selectedcolor>selected</selectedcolor>
+                    <align>left</align>
+                    <aligny>top</aligny>
+                    <label>$INFO[ListItem.Label]</label>
+                </control>
+                <control type="image">
+                    <left>268</left>
+                    <top>105</top>
+                    <width>729</width>
+                    <height>410</height>
+                    <aspectratio>scale</aspectratio>
+                    <texture background="true">$VAR[GlobalBackgroundVar]</texture>
+                    <fadetime>400</fadetime>
+                    <bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+                    <bordersize>8</bordersize>
+                </control>
+                <control type="image">
+                    <left>0</left>
+                    <top>105</top>
+                    <width>960</width>
+                    <height>540</height>
+                    <aspectratio>keep</aspectratio>
+                    <texture background="true">$VAR[PosterThumb]</texture>
+                    <fadetime>400</fadetime>
+                    <bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+                    <bordersize>8</bordersize>
+                </control>
+                <control type="image">
+                    <left>180</left>
+                    <top>112</top>
+                    <width>80</width>
+                    <height>80</height>
+                    <texture>$VAR[OverlayVar]</texture>
+                    <aspectratio align="center" aligny="top">keep</aspectratio>
+                    <bordersize>1</bordersize>
+                </control>
+            </control>
+        </control>
+    </include>
+
+</includes>
