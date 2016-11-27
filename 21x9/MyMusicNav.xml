@@ -57,7 +57,7 @@
 					<left>410</left>
 					<top>1010</top>
 					<control type="label">
-						<width>1100</width>
+						<width>1740</width>
 						<height>48</height>
 						<align>center</align>
 						<font>font16_title_bold</font>
@@ -68,7 +68,7 @@
 					</control>
 					<control type="label">
 						<top>45</top>
-						<width>1100</width>
+						<width>1740</width>
 						<height>30</height>
 						<align>center</align>
 						<font>font13_title</font>
@@ -78,7 +78,6 @@
 					</control>
 				</control>
 				<control type="group">
-					<left>0</left>
 					<top>1010</top>
 					<width>100%</width>
 					<visible>[Container.Content(albums) | Container.Content(songs)]</visible>
@@ -96,7 +95,7 @@
 						</control>
 					</control>
 					<control type="image">
-						<left>1600</left>
+						<left>2240</left>
 						<colordiffuse>white</colordiffuse>
 						<width>200</width>
 						<fadetime>50</fadetime>
@@ -113,9 +112,8 @@
 					<left>90</left>
 					<top>1010</top>
 					<control type="label">
-						<width>1150</width>
+						<width>1790</width>
 						<height>48</height>
-						<align>left</align>
 						<font>font16_title_bold</font>
 						<textcolor>white</textcolor>
 						<scroll>true</scroll>
@@ -124,9 +122,8 @@
 					</control>
 					<control type="label">
 						<top>45</top>
-						<width>1100</width>
+						<width>1740</width>
 						<height>30</height>
-						<align>left</align>
 						<font>font13_title</font>
 						<textcolor>white</textcolor>
 						<label>$VAR[FloorLabel2Var]</label>
@@ -134,12 +131,10 @@
 					</control>
 				</control>
 				<control type="grouplist">
-					<left>0</left>
 					<top>1000</top>
 					<width>1840</width>
 					<height>90</height>
 					<align>right</align>
-					<itemgap>0</itemgap>
 					<orientation>horizontal</orientation>
 					<visible>Container.Content(albums) | Container.Content(songs)</visible>
 					<control type="image">
@@ -260,6 +255,16 @@
 					<label>13350</label>
 					<onclick>ActivateWindow(musicplaylist)</onclick>
 					<visible>!String.IsEqual(Playlist.Length(music),0)</visible>
+				</control>
+				<control type="button" id="616">
+					<description>Go to playercontrols</description>
+					<include>ButtonCommonValues</include>
+					<label>$LOCALIZE[31177]</label>
+					<onclick condition="Player.HasAudio">ActivateWindow(playercontrols)</onclick>
+					<onclick condition="Player.HasVideo">Fullscreen</onclick>
+					<onclick condition="Player.HasVideo">ActivateWindow(videoosd)</onclick>
+					<onclick>ClearProperty(MediaMenu,Home)</onclick>
+					<visible>Player.HasMedia</visible>
 				</control>
 			</control>
 		</control>

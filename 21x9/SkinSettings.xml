@@ -6,14 +6,14 @@
 		<include>CommonBackground</include>
 		<include>Topbar</include>
 		<control type="group">
-			<left>0</left>
+			<left>320</left>
 			<top>128</top>
 			<include>WindowOpenCloseAnimation</include>
 			<include>SystemLeftPanel</include>
 			<control type="panel" id="9000">
 				<left>82</left>
 				<top>32</top>
-				<width>576</width>
+				<width>356</width>
 				<height>840</height>
 				<onleft>9010</onleft>
 				<onright>9010</onright>
@@ -26,45 +26,43 @@
 				<itemlayout height="90" width="356">
 					<control type="image">
 						<top>30</top>
-						<width>576</width>
+						<width>356</width>
 						<height>60</height>
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="label">
-						<width>576</width>
+						<width>356</width>
 						<height>90</height>
 						<font>font15</font>
 						<textoffsetx>20</textoffsetx>
 						<textcolor>grey2</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout height="90" width="356">
 					<control type="image">
 						<top>30</top>
-						<width>576</width>
+						<width>356</width>
 						<height>60</height>
 						<texture border="1">separator2.png</texture>
 					</control>
 					<control type="image">
-						<width>576</width>
+						<width>356</width>
 						<height>90</height>
 						<texture border="4">listselect_fo.png</texture>
 						<visible>Control.HasFocus(9000)</visible>
 						<include>VisibleFadeAnimation</include>
 					</control>
 					<control type="label">
-						<width>576</width>
+						<width>356</width>
 						<height>90</height>
 						<font>font15</font>
 						<textoffsetx>20</textoffsetx>
 						<textcolor>white</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<align>right</align>
-						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(9000)">Conditional</animation>
 					</control>
@@ -96,7 +94,7 @@
 				<description>LOGO</description>
 				<left>82</left>
 				<top>752</top>
-				<width>576</width>
+				<width>356</width>
 				<height>120</height>
 				<aspectratio>keep</aspectratio>
 				<texture>aeon-nox-logo.png</texture>
@@ -104,20 +102,19 @@
 			<include>SystemRightPanel</include>
 			<control type="image">
 				<description>separator image</description>
-				<left>742</left>
+				<left>522</left>
 				<top>692</top>
-				<width>1736</width>
+				<width>1316</width>
 				<height>60</height>
 				<texture border="1">separator2.png</texture>
 			</control>
 			<control type="textbox">
 				<description>description area</description>
-				<left>772</left>
+				<left>552</left>
 				<top>754</top>
-				<width>1676</width>
+				<width>1256</width>
 				<height>120</height>
 				<font>font15_textbox</font>
-				<align>left</align>
 				<textcolor>grey2</textcolor>
 				<label>$VAR[SkinSettingsDescriptionVar]</label>
 				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
@@ -130,11 +127,10 @@
 				<include>SettingsFadeAnimation</include>
 				<control type="grouplist" id="9001">
 					<description>control area</description>
-					<left>742</left>
+					<left>522</left>
 					<top>32</top>
-					<width>1736</width>
+					<width>1316</width>
 					<height>720</height>
-					<itemgap>0</itemgap>
 					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
 					<onright>60</onright>
@@ -142,7 +138,7 @@
 					<ondown>9001</ondown>
 					<visible>Container(9000).HasFocus(1)</visible>
 					<control type="button" id="100">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -151,7 +147,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="button" id="101">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -161,7 +157,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="106">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -172,7 +168,7 @@
 						<enable>system.getbool(lookandfeel.enablerssfeeds)</enable>
 					</control>
 					<control type="radiobutton" id="102">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -182,7 +178,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="103">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -192,7 +188,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="button" id="104">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -217,11 +213,10 @@
 				</control>
 				<control type="grouplist" id="9002">
 					<description>control area</description>
-					<left>742</left>
+					<left>522</left>
 					<top>32</top>
-					<width>1736</width>
+					<width>1316</width>
 					<height>720</height>
-					<itemgap>0</itemgap>
 					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
 					<onright>60</onright>
@@ -229,7 +224,7 @@
 					<ondown>9002</ondown>
 					<visible>Container(9000).HasFocus(2)</visible>
 					<control type="radiobutton" id="200">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -249,7 +244,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="button" id="204">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -259,7 +254,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="201">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -269,7 +264,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="202">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -281,11 +276,10 @@
 				</control>
 				<control type="grouplist" id="9003">
 					<description>control area</description>
-					<left>742</left>
+					<left>522</left>
 					<top>32</top>
-					<width>1736</width>
+					<width>1316</width>
 					<height>720</height>
-					<itemgap>0</itemgap>
 					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
 					<onright>60</onright>
@@ -299,12 +293,12 @@
 						<font>font15</font>
 						<label>$LOCALIZE[31150]</label>
 						<label2>[COLOR labelheader]$INFO[Skin.String(StudioLogos.name)][/COLOR]</label2>
-						<onclick>RunScript(script.image.resource.select,property=StudioLogos&amp;type=resource.images.studios)</onclick>
+						<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=StudioLogos&amp;type=resource.images.studios)</onclick>
+						<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
 						<texturenofocus border="1">separator5.png</texturenofocus>
-						<visible>System.HasAddon(script.image.resource.select)</visible>
 					</control>
 					<control type="radiobutton" id="305">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -312,6 +306,18 @@
 						<onclick>Skin.ToggleSetting(Disable.NextAired)</onclick>
 						<selected>!Skin.HasSetting(Disable.NextAired)</selected>
 						<texturenofocus border="1">separator5.png</texturenofocus>
+						<visible>System.HasAddon(script.tv.show.next.aired)</visible>
+					</control>
+					<control type="radiobutton" id="307">
+						<width>1316</width>
+						<height>90</height>
+						<textoffsetx>30</textoffsetx>
+						<font>font15</font>
+						<label>31083</label>
+						<onclick>InstallAddon(script.tv.show.next.aired)</onclick>
+						<selected>false</selected>
+						<texturenofocus border="1">separator5.png</texturenofocus>
+						<visible>!System.HasAddon(script.tv.show.next.aired)</visible>
 					</control>
 					<control type="radiobutton" id="304">
 						<width>1316</width>
@@ -319,13 +325,14 @@
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
 						<label>$LOCALIZE[31121]</label>
-						<onclick>Skin.ToggleSetting(Disable.Autocomplete)</onclick>
-						<selected>Skin.HasSetting(Disable.Autocomplete)</selected>
+						<onclick condition="System.HasAddon(plugin.program.autocompletion)">Skin.ToggleSetting(Disable.Autocomplete)</onclick>
+						<onclick condition="!System.HasAddon(plugin.program.autocompletion)">InstallAddon(plugin.program.autocompletion)</onclick>
+						<selected>Skin.HasSetting(Disable.Autocomplete) | !System.HasAddon(plugin.program.autocompletion)</selected>
 						<texturenofocus border="1">separator5.png</texturenofocus>
 						<visible>System.HasAddon(plugin.program.autocompletion)</visible>
 					</control>
 					<control type="button" id="300">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -335,7 +342,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="button" id="302">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -345,7 +352,7 @@
 						<visible>!String.IsEmpty(Skin.String(VideoGenreFanartPath))</visible>
 					</control>
 					<control type="button" id="301">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -355,7 +362,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="button" id="303">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -367,11 +374,10 @@
 				</control>
 				<control type="grouplist" id="9004">
 					<description>control area</description>
-					<left>742</left>
+					<left>522</left>
 					<top>32</top>
-					<width>1736</width>
+					<width>1316</width>
 					<height>720</height>
-					<itemgap>0</itemgap>
 					<pagecontrol>60</pagecontrol>
 					<onleft>9000</onleft>
 					<onright>60</onright>
@@ -379,7 +385,7 @@
 					<ondown>9004</ondown>
 					<visible>Container(9000).HasFocus(4)</visible>
 					<control type="button" id="401">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -389,7 +395,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="402">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -399,7 +405,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="button" id="403">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -409,7 +415,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="button" id="404">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -418,7 +424,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="button" id="405">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>
@@ -428,7 +434,7 @@
 						<texturenofocus border="1">separator5.png</texturenofocus>
 					</control>
 					<control type="radiobutton" id="406">
-						<width>1736</width>
+						<width>1316</width>
 						<height>90</height>
 						<textoffsetx>30</textoffsetx>
 						<font>font15</font>

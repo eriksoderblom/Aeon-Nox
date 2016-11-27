@@ -11,8 +11,6 @@
 		<control type="group">
 			<control type="image">
 				<description>background image</description>
-				<left>0</left>
-				<top>0</top>
 				<width>1122</width>
 				<height>750</height>
 				<texture border="40">dialogs/default/bg.png</texture>
@@ -65,7 +63,6 @@
 							<textoffsetx>15</textoffsetx>
 						</control>
 						<control type="label">
-							<top>0</top>
 							<width>738</width>
 							<height>45</height>
 							<font>font14</font>
@@ -83,7 +80,6 @@
 							<texture border="1">separator2.png</texture>
 						</control>
 						<control type="image">
-							<top>0</top>
 							<width>738</width>
 							<height>90</height>
 							<texture border="4">listselect_fo.png</texture>
@@ -102,7 +98,6 @@
 							<textoffsetx>15</textoffsetx>
 						</control>
 						<control type="label">
-							<top>0</top>
 							<width>738</width>
 							<height>45</height>
 							<font>font14</font>
@@ -184,7 +179,7 @@
 						<onleft>60</onleft>
 						<onright>60</onright>
 						<ondown>9001</ondown>
-						<control type="image">
+						<control type="image" id="10">
 							<width>310</width>
 							<height>332</height>
 							<aspectratio aligny="top">keep</aspectratio>
@@ -192,13 +187,11 @@
 							<bordertexture border="5">dialogs/default/inner.png</bordertexture>
 							<bordersize>1</bordersize>
 						</control>
-						<control type="button" id="10">
-							<description>Ok Button</description>
+						<control type="button" id="9">
+							<description>Add timer Button</description>
 							<width>310</width>
-							<label />
+							<label>19061</label>
 							<height>60</height>
-							<font />
-							<enable>no</enable>
 						</control>
 						<control type="button" id="5">
 							<description>Switch to Channel</description>

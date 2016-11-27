@@ -8,7 +8,7 @@
 	<controls>
 		<include>CommonBackground</include>
 		<control type="group">
-			<left>0</left>
+			<left>320</left>
 			<top>128</top>
 			<include>WindowOpenCloseAnimation</include>
 			<include>SystemLeftPanel</include>
@@ -16,9 +16,8 @@
 				<description>button area</description>
 				<left>82</left>
 				<top>32</top>
-				<width>576</width>
+				<width>356</width>
 				<height>840</height>
-				<itemgap>0</itemgap>
 				<onleft>61</onleft>
 				<onright>5</onright>
 				<onup>3</onup>
@@ -44,7 +43,7 @@
 				<description>separator image</description>
 				<left>82</left>
 				<top>692</top>
-				<width>576</width>
+				<width>356</width>
 				<height>60</height>
 				<texture border="1">separator2.png</texture>
 				<visible>!Container(3).HasNext</visible>
@@ -52,21 +51,20 @@
 			<include>SystemRightPanel</include>
 			<control type="image">
 				<description>separator image</description>
-				<left>742</left>
+				<left>522</left>
 				<top>692</top>
-				<width>1736</width>
+				<width>1316</width>
 				<height>60</height>
 				<texture border="1">separator2.png</texture>
 				<visible>!Container(5).HasNext</visible>
 			</control>
 			<control type="textbox" id="6">
 				<description>description area</description>
-				<left>772</left>
+				<left>552</left>
 				<top>754</top>
-				<width>1676</width>
+				<width>1256</width>
 				<height>120</height>
 				<font>font15_textbox</font>
-				<align>left</align>
 				<textcolor>grey2</textcolor>
 				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
 				<animation effect="fade" start="0" end="100" time="300" tween="sine" easing="inout">Visible</animation>
@@ -75,11 +73,10 @@
 			</control>
 			<control type="grouplist" id="5">
 				<description>control area</description>
-				<left>742</left>
+				<left>522</left>
 				<top>32</top>
-				<width>1736</width>
+				<width>1316</width>
 				<height>720</height>
-				<itemgap>0</itemgap>
 				<pagecontrol>60</pagecontrol>
 				<onleft>3</onleft>
 				<onright>60</onright>
@@ -87,7 +84,7 @@
 				<ondown>5</ondown>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>2478</left>
+				<left>1838</left>
 				<top>32</top>
 				<width>14</width>
 				<height>720</height>
@@ -113,20 +110,15 @@
 		<control type="button" id="10">
 			<description>Default Category Button</description>
 			<height>90</height>
-			<width>576</width>
+			<width>356</width>
 			<textoffsetx>15</textoffsetx>
 			<align>right</align>
-			<aligny>center</aligny>
 			<font>font15</font>
-			<textcolor>grey2</textcolor>
-			<focusedcolor>white</focusedcolor>
 			<texturefocus border="3">listselect_fo.png</texturefocus>
 			<texturenofocus border="1">separator5.png</texturenofocus>
 		</control>
 		<control type="button" id="7">
 			<description>Default Button</description>
-			<left>0</left>
-			<top>0</top>
 			<width>1136</width>
 			<height>90</height>
 			<font>font15</font>
@@ -138,9 +130,7 @@
 		</control>
 		<control type="radiobutton" id="8">
 			<description>Default RadioButton</description>
-			<left>0</left>
-			<top>0</top>
-			<width>1736</width>
+			<width>1316</width>
 			<height>90</height>
 			<font>font15</font>
 			<textcolor>grey2</textcolor>
@@ -151,9 +141,7 @@
 		</control>
 		<control type="spincontrolex" id="9">
 			<description>Default SpinControlex</description>
-			<left>0</left>
-			<top>0</top>
-			<width>1736</width>
+			<width>1316</width>
 			<height>90</height>
 			<font>font15</font>
 			<textcolor>grey2</textcolor>
@@ -161,15 +149,12 @@
 			<focusedcolor>white</focusedcolor>
 			<texturefocus border="3">listselect_fo.png</texturefocus>
 			<texturenofocus border="1">separator5.png</texturenofocus>
-			<aligny>center</aligny>
 			<reverse>yes</reverse>
 			<spinposx>10</spinposx>
 		</control>
 		<control type="sliderex" id="13">
 			<description>Default Slider</description>
-			<left>0</left>
-			<top>0</top>
-			<width>1736</width>
+			<width>1316</width>
 			<height>90</height>
 			<font>font15</font>
 			<textcolor>grey2</textcolor>
@@ -194,13 +179,18 @@
 		</control>
 		<control type="label" id="2">
 			<description>Fake Label so we can pass it value down to the one below</description>
-			<left>0</left>
-			<top>0</top>
 			<width>0</width>
 			<height>0</height>
 			<font />
 			<visible>false</visible>
 		</control>
 		<include>Topbar</include>
+		<control type="group">
+			<left>-440</left>
+			<include>SideBladeLeft</include>
+			<control type="grouplist" id="9050">
+				<include>NoMediaMenu</include>
+			</control>
+		</control>		
 	</controls>
 </window>

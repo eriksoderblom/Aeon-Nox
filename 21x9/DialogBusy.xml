@@ -3,8 +3,6 @@
 	<controls>
 		<control type="progress" id="10">
 			<description>progress control</description>
-			<left>0</left>
-			<top>0</top>
 			<width>1</width>
 			<height>1</height>
 			<texturebg />
@@ -26,7 +24,7 @@
 			<visible>String.IsEmpty(Window(Home).Property(script.cinemavision.running))</visible>
 			<control type="group">
 				<visible>!System.Platform.Linux.RaspberryPi</visible>
-				<left>1552</left>
+				<left>1232</left>
 				<top>492</top>
 				<control type="image">
 					<description>Busy animation</description>

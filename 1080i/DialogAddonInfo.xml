@@ -7,7 +7,6 @@
 		</control>
 		<control type="group">
 			<include>WindowASViewAnimation</include>
-			<left>0</left>
 			<top>128</top>
 			<control type="group">
 				<include>SystemLeftPanel</include>
@@ -30,14 +29,12 @@
 					<onright>60</onright>
 					<onup>9000</onup>
 					<ondown>9000</ondown>
-					<itemgap>0</itemgap>
 					<animation effect="fade" start="100" end="50" time="300" tween="sine" easing="inout" condition="Window.IsActive(textviewer)">Conditional</animation>
 					<control type="button" id="9">
 						<description>Configure Addon</description>
 						<width>356</width>
 						<height>68.57</height>
 						<label>24020</label>
-						<align>left</align>
 						<font>font15</font>
 					</control>
 					<control type="button" id="8">
@@ -45,7 +42,6 @@
 						<width>356</width>
 						<height>68.57</height>
 						<label>24069</label>
-						<align>left</align>
 						<font>font15</font>
 					</control>
 					<control type="button" id="200">
@@ -53,7 +49,6 @@
 						<width>356</width>
 						<height>68.57</height>
 						<label>$LOCALIZE[1000]</label>
-						<align>left</align>
 						<font>font15</font>
 						<onclick>SetFocus(50)</onclick>
 						<onclick>Action(select)</onclick>
@@ -65,7 +60,6 @@
 						<width>356</width>
 						<height>68.57</height>
 						<label>518</label>
-						<align>left</align>
 						<font>font15</font>
 					</control>
 					<control type="button" id="6">
@@ -73,7 +67,6 @@
 						<width>356</width>
 						<height>68.57</height>
 						<label>24022</label>
-						<align>left</align>
 						<font>font15</font>
 					</control>
 					<control type="button" id="7">
@@ -81,7 +74,6 @@
 						<width>356</width>
 						<height>68.57</height>
 						<label>24021</label>
-						<align>left</align>
 						<font>font15</font>
 					</control>
 					<control type="radiobutton" id="13">
@@ -89,7 +81,6 @@
 						<width>356</width>
 						<height>68.57</height>
 						<label>21340</label>
-						<align>left</align>
 						<font>font15</font>
 					</control>
 				</control>
@@ -109,10 +100,19 @@
 							<label>[COLOR labelheader]$LOCALIZE[21863]:[/COLOR][CR]$INFO[ListItem.AddonCreator]</label>
 							<include>SettingsPanelButtonsValues</include>
 						</control>
+						<control type="group">
 						<control type="button">
+							<width>329</width>
 							<label>[COLOR labelheader]$LOCALIZE[24051][/COLOR][CR]$INFO[ListItem.AddonVersion]</label>
 							<include>SettingsPanelButtonsValues</include>
 						</control>
+						<control type="button">
+							<left>329</left>
+							<width>329</width>
+							<label>[COLOR labelheader]$LOCALIZE[22031]:[/COLOR][CR]$INFO[ListItem.AddonSize]</label>
+							<include>SettingsPanelButtonsValues</include>
+						</control>
+					</control>
 					</control>
 					<control type="grouplist">
 						<left>690</left>
@@ -120,10 +120,20 @@
 						<itemgap>10</itemgap>
 						<width>658</width>
 						<usecontrolcoords>true</usecontrolcoords>
+						<control type="group">
+							<height>90</height>
 						<control type="button">
+							<width>329</width>
+							<label>[COLOR labelheader]$LOCALIZE[12013]:[/COLOR][CR]$INFO[ListItem.AddonInstallDate]</label>
+							<include>SettingsPanelButtonsValues</include>
+						</control>
+						<control type="button">
+							<left>329</left>
+							<width>329</width>
 							<label>[COLOR labelheader]$LOCALIZE[146][/COLOR][CR]$INFO[ListItem.AddonType]</label>
 							<include>SettingsPanelButtonsValues</include>
 						</control>
+					</control>
 						<control type="button">
 							<label>[COLOR labelheader]$LOCALIZE[560]:[/COLOR][CR]$INFO[ListItem.Property(Addon.ID)]</label>
 							<include>SettingsPanelButtonsValues</include>
@@ -132,7 +142,9 @@
 					<control type="grouplist">
 						<left>47</left>
 						<top>230</top>
+						<height>640</height>
 						<usecontrolcoords>true</usecontrolcoords>
+						<pagecontrol>60</pagecontrol>
 						<control type="textbox" id="400">
 							<description>Description</description>
 							<width>1256</width>
@@ -176,6 +188,20 @@
 							<align>justify</align>
 							<visible>!String.IsEmpty(ListItem.AddonDisclaimer)</visible>
 						</control>
+					</control>
+					<control type="scrollbar" id="60">
+						<left>1347</left>
+						<top>232</top>
+						<width>14</width>
+						<height>640</height>
+						<onleft>9000</onleft>
+						<onright>9000</onright>
+						<ondown>60</ondown>
+						<onup>60</onup>
+						<showonepage>false</showonepage>
+						<texturesliderbackground>-</texturesliderbackground>
+						<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+						<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					</control>
 				</control>
 			</control>
