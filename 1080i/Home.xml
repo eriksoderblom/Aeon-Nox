@@ -13,10 +13,8 @@
 		<include>WeatherWidget</include>
 		<include>LiveTVWidget</include>
 		<control type="group">
-			<top>424</top>
 			<depth>MaxDepth</depth>
 			<control type="group">
-				<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 				<animation effect="slide" end="-1870,0" time="240">WindowClose</animation>
 				<animation effect="slide" start="-1870,0" end="0,0" delay="300" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
 				<animation effect="slide" start="-1870" end="0" time="240">VisibleChange</animation>
@@ -24,11 +22,10 @@
 				<control type="image">
 					<width>1920</width>
 					<height>87</height>
-					<texture flipy="true">submenu_bar.png</texture>
+					<texture>submenu_bar.png</texture>
 				</control>
 				<include condition="System.HasAddon(service.library.data.provider)">PlayListStatsList</include>
 				<control type="label">
-					<top>46</top>
 					<width>1780</width>
 					<height>40</height>
 					<label>$VAR[LibraryStatsVar]</label>
@@ -38,8 +35,7 @@
 					<shadowcolor>shadow</shadowcolor>
 				</control>
 				<control type="grouplist" id="9020">
-					<top>46</top>
-					<width>1780</width>
+					<width>1910</width>
 					<height>41</height>
 					<align>right</align>
 					<orientation>horizontal</orientation>
