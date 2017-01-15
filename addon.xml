@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.aeon.sox" version="5.9.6" name="Aeon Nox" provider-name="BigNoid|eriksoderblom">
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.aeon.sox" version="6.0.0" name="Aeon Nox" provider-name="BigNoid|eriksoderblom">
 	<requires>
-		<import addon="xbmc.gui" version="5.12.0"/>
+		<import addon="xbmc.gui" version="5.13.0"/>
 		<import addon="script.grab.fanart" version="0.12.8"/>
 		<import addon="script.skinshortcuts" version="0.4.5"/>
 		<import addon="service.library.data.provider" version="0.0.7"/>
@@ -10,14 +10,14 @@
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false" effectslowdown="0.75">
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
-		<res width="2560" height="1080" aspect="21:9" default="false" folder="21x9" />
+		<res width="2560" height="1080" aspect="21:9" default="false" folder="1080i" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Aeon Nox 5: Redux</summary>
 		<description lang="en">Redux: Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
 		<disclaimer lang="en_GB">Mouse control is supported, althoug not recommended. It may not work correctly in all cases.</disclaimer>
 		<platform>all</platform>
-		<license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
+		<license>CC BY-NC-SA 4.0</license>
 		<forum>http://forum.kodi.tv/showthread.php?tid=183504</forum>
 		<website>https://github.com/BigNoid/Aeon-Nox</website>
 		<email>big.noid@kodi.tv</email>
@@ -34,6 +34,7 @@
 			<screenshot>resources/screenshot-06.jpg</screenshot>
 			<screenshot>resources/screenshot-07.jpg</screenshot>
 			<screenshot>resources/screenshot-08.jpg</screenshot>
+			<screenshot>resources/screenshot-09.jpg</screenshot>
 		</assets>
 	</extension>
 </addon>

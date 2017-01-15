@@ -74,7 +74,7 @@
 			<control type="fixedlist" id="57">
 				<left>-120</left>
 				<top>300</top>
-				<width>2100</width>
+				<width>109.37%</width>
 				<height>750</height>
 				<onup>SetProperty(MediaMenu,True,home)</onup>
 				<onup>SetFocus(9050)</onup>
@@ -134,7 +134,7 @@
 			<control type="fixedlist" id="57">
 				<left>-120</left>
 				<top>300</top>
-				<width>2100</width>
+				<width>109.37%</width>
 				<height>750</height>
 				<onup>SetProperty(MediaMenu,True,home)</onup>
 				<onup>SetFocus(9050)</onup>
@@ -146,7 +146,7 @@
 				<pagecontrol>61</pagecontrol>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<focusposition>1</focusposition>
-				<visible>Container.Content(addons) | Container.Content(songs) | Container.Content(artists) | Container.Content(albums) | Container.Content(genres)</visible>
+				<visible>Container.Content(games) | Container.Content(addons) | Container.Content(songs) | Container.Content(artists) | Container.Content(albums) | Container.Content(genres)</visible>
 				<itemlayout width="315" height="750">
 					<include>ShiftSquareThumbs</include>
 				</itemlayout>

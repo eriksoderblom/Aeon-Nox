@@ -6,6 +6,7 @@
         <include>CommonBackground</include>
         <control type="group">
             <top>128</top>
+            <left>SettingsLeft</left>
             <animation effect="slide" tween="cubic" time="720" start="0,1080" end="0,0">WindowOpen</animation>
             <animation effect="slide" tween="cubic" time="720" end="0,1080" start="0,0">WindowClose</animation>
             <include>SystemLeftPanel</include>
@@ -303,7 +304,7 @@
                             <font>font12</font>
                             <textcolor>blue</textcolor>
                             <label>$ADDON[service.libreelec.settings 601]: [COLOR=grey2]$INFO[ListItem.Property(Interface)][/COLOR]</label>
-                            <visible>!IsEmpty(ListItem.Property(Interface))</visible>
+                            <visible>!String.IsEmpty(ListItem.Property(Interface))</visible>
                         </control>
                         <!-- Signal strength value -->
                         <control type="label">
@@ -432,7 +433,7 @@
                                 <font>font12</font>
                                 <textcolor>blue</textcolor>
                                 <label>$ADDON[service.libreelec.settings 601]: [COLOR=grey2]$INFO[ListItem.Property(Interface)][/COLOR]</label>
-                                <visible>!IsEmpty(ListItem.Property(Interface))</visible>
+                                <visible>!String.IsEmpty(ListItem.Property(Interface))</visible>
                             </control>
                             <!-- Signal strength value -->
                             <control type="label">
@@ -499,7 +500,7 @@
                                 <font>font12</font>
                                 <textcolor>blue</textcolor>
                                 <label>$ADDON[service.libreelec.settings 601]: [COLOR=white]$INFO[ListItem.Property(Interface)][/COLOR]</label>
-                                <visible>!IsEmpty(ListItem.Property(Interface))</visible>
+                                <visible>!String.IsEmpty(ListItem.Property(Interface))</visible>
                             </control>
                             <!-- Signal strength value -->
                             <control type="label">

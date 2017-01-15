@@ -5,6 +5,7 @@
 		<system>1</system>
 		<left>457</left>
 		<top>240</top>
+		<origin x="777" y="240">String.IsEqual(Skin.AspectRatio,21:9)</origin>
 	</coordinates>
 	<include>DialogOpenCloseAnimation</include>
 	<onunload condition="!String.IsEmpty(Skin.String(ItemToEdit.Widget))">Skin.SetString($INFO[Window(Home).Property(Nox.Widget)],$INFO[Skin.String(ItemToEdit.Widget)])</onunload>
@@ -120,7 +121,6 @@
 					<onclick>Skin.SetString(ItemToEdit.WidgetLabel,$LOCALIZE[31157])</onclick>
 					<onclick>Skin.SetString(ItemToEdit.WidgetType,6)</onclick>
 					<onclick>Dialog.Close(1124)</onclick>
-					<visible>System.HasAddon(script.extendedinfo)</visible>
 				</item>
 				<item>
 					<label>$LOCALIZE[31029]</label>

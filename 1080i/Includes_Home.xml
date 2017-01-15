@@ -4,7 +4,7 @@
 	<include name="MainMenuListContent">
 		<left>-290</left>
 		<top>62</top>
-		<width>2800</width>
+		<right>-590</right>
 		<height>100</height>
 		<onleft>9000</onleft>
 		<onright>9000</onright>
@@ -18,6 +18,7 @@
 		<include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
 		<include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
 		<orientation>Horizontal</orientation>
+		<animation effect="slide" start="0" end="-180" time="320" tween="cubic" easing="inout" condition="String.IsEqual(Skin.AspectRatio,21:9)">Conditional</animation>
 		<animation effect="slide" start="0" end="-350,0" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(biggergap)">Conditional</animation>
 		<animation effect="slide" start="0" end="126,0" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(mainmenuicons)">Conditional</animation>
 		<itemlayout height="100" width="500" condition="![Skin.HasSetting(biggergap) | Skin.HasSetting(mainmenuicons)]">
@@ -110,12 +111,6 @@
 		<control type="wraplist" id="9000">
 			<include>MainMenuListContent</include>
 		</control>
-	</include>
-	<include name="FocusPosition4">
-		<focusposition>4</focusposition>
-	</include>
-	<include name="FocusPosition2">
-		<focusposition>2</focusposition>
 	</include>
 	<!--Main Menu-->
 	<include name="PicturesMainMenu">
@@ -235,6 +230,23 @@
 			<property name="InfoLine">$INFO[Skin.String(ProgramsHomeItem.InfoLine)]</property>
 			<property name="submenuVisibility" fallback="x1">$INFO[Skin.String(ProgramsHomeItem.SubMenu)]</property>
 			<property name="Disable">$INFO[Skin.String(ProgramsHomeItem.Disable)]</property>
+		</item>
+	</include>
+	<include name="GamesMainMenu">
+		<item id="14">
+			<label fallback="15016">$INFO[Skin.String(GamesHomeItem.Label)]</label>
+			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
+			<icon fallback="views/list/DefaultProgram.png">$INFO[Skin.String(GamesHomeItem.Icon)]</icon>
+			<thumb>$INFO[Skin.String(GamesHomeItem.MultiFanart)]</thumb>
+			<property name="Path" fallback="ActivateWindow(games)">$INFO[Skin.String(GamesHomeItem.Path)]</property>
+			<property name="Item">Games</property>
+			<property name="BGType">$INFO[Skin.String(GamesHomeItem.BGType)]</property>
+			<property name="Widget">$INFO[Skin.String(GamesHomeItem.Widget)]</property>
+			<property name="WidgetLabel">$INFO[Skin.String(GamesHomeItem.WidgetLabel)]</property>
+			<property name="WidgetType">$INFO[Skin.String(GamesHomeItem.WidgetType)]</property>
+			<property name="InfoLine">$INFO[Skin.String(GamesHomeItem.InfoLine)]</property>
+			<property name="submenuVisibility" fallback="x14">$INFO[Skin.String(GamesHomeItem.SubMenu)]</property>
+			<property name="Disable">$INFO[Skin.String(GamesHomeItem.Disable)]</property>
 		</item>
 	</include>
 	<include name="SettingsMainMenu">
@@ -438,6 +450,7 @@
 			<include condition="String.IsEmpty(Skin.String(Custom5HomeItem.Disable)) + !String.IsEmpty(Skin.String(Custom5HomeItem.Path))">CustomMainMenuItem5</include>
 			<include condition="String.IsEmpty(Skin.String(Custom6HomeItem.Disable)) + !String.IsEmpty(Skin.String(Custom6HomeItem.Path))">CustomMainMenuItem6</include>
 			<include condition="String.IsEmpty(Skin.String(VideosHomeItem.Disable))">VideosMainMenu</include>
+			<include condition="String.IsEmpty(Skin.String(GamesHomeItem.Disable)) + System.GetBool(gamesgeneral.enable)">GamesMainMenu</include>
 			<include condition="String.IsEmpty(Skin.String(ProgramsHomeItem.Disable))">ProgramsMainMenu</include>
 			<include condition="String.IsEmpty(Skin.String(SettingsHomeItem.Disable))">SettingsMainMenu</include>
 			<include condition="String.IsEmpty(Skin.String(ShutdownHomeItem.Disable))">ShutdownMainMenu</include>
