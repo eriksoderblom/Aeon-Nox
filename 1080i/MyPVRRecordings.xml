@@ -5,13 +5,13 @@
 	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<menucontrol>9051</menucontrol>
+	<views>50</views>
 	<controls>
 		<include>CommonBackground</include>
 		<control type="group">
 			<description>Recordings group</description>
 			<visible>Control.IsVisible(50)</visible>
-			<animation effect="slide" tween="cubic" time="720" start="0,1080" end="0,0">WindowOpen</animation>
-			<animation effect="slide" tween="cubic" time="720" end="0,1080" start="0,0">WindowClose</animation>
+			<include>WindowOpenCloseAnimation</include>
 			<include>ViewAnimation</include>
 			<left>60</left>
 			<top>-40</top>
@@ -188,7 +188,7 @@
 						<height>262</height>
 						<font>font12</font>
 						<wrapmultiline>true</wrapmultiline>
-						<label>$INFO[ListItem.Date][CR][CR]$INFO[ListItem.Duration]</label>
+						<label>$INFO[ListItem.Date][CR][CR]$VAR[DurationMinutesVar]</label>
 					</control>
 				</control>
 				<!-- Plot -->
@@ -279,7 +279,7 @@
 									<left>10</left>
 									<height>50</height>
 									<width>580</width>
-									<label>[COLOR themecolor]$INFO[ListItem.Duration][/COLOR]  -  $INFO[ListItem.Label]</label>
+									<label>[COLOR themecolor]$VAR[DurationMinutesVar][/COLOR]  -  $INFO[ListItem.Label]</label>
 									<font>font12</font>
 								</control>
 							</focusedlayout>
@@ -288,7 +288,7 @@
 									<left>10</left>
 									<height>50</height>
 									<width>580</width>
-									<label>[COLOR themecolor]$INFO[ListItem.Duration][/COLOR]  -  $INFO[ListItem.Label]</label>
+									<label>[COLOR themecolor]$VAR[DurationMinutesVar][/COLOR]  -  $INFO[ListItem.Label]</label>
 									<font>font12</font>
 								</control>
 							</itemlayout>
