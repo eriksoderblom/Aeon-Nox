@@ -17,15 +17,15 @@
 			<depth>MaxDepth</depth>
 			<control type="group">
 				<animation type="WindowClose" reversible="false">
-					<effect type="slide" end="-1870" time="240" />
+					<effect type="slide" end="-1920" time="240" />
 					<effect type="fade" end="0" time="240" />
 				</animation>
 				<animation type="WindowOpen" reversible="false" condition="!Window.Previous(startup)">
-					<effect type="slide" start="-1870" time="240" delay="300" />
+					<effect type="slide" start="-1920" time="240" delay="300" />
 					<effect type="fade" end="100" time="240" delay="300"/>
 				</animation>
 				<animation type="WindowOpen" reversible="false" condition="Window.Previous(startup)">
-					<effect type="slide" start="-1870" time="240" delay="800" />
+					<effect type="slide" start="-1920" time="240" delay="800" />
 					<effect type="fade" end="100" time="240" delay="800" />
 				</animation>
 				<control type="image">
