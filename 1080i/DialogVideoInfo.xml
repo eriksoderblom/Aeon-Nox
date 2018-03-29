@@ -174,7 +174,7 @@
 							<width>160</width>
 							<height>60</height>
 							<align>center</align>
-							<label>$VAR[DurationVar]</label>
+							<label>$INFO[ListItem.Duration(mins)]</label>
 							<font>font48_bold</font>
 							<textcolor>grey</textcolor>
 						</control>
@@ -931,7 +931,7 @@
 						<visible>!String.IsEmpty(ListItem.Genre)</visible>
 					</item>
 					<item>
-						<label>$VAR[DurationMinutesVar,, $LOCALIZE[12391]]</label>
+						<label>$INFO[ListItem.Duration(mins),, $LOCALIZE[12391]]</label>
 						<label2>$LOCALIZE[2050]:</label2>
 						<onclick>SetProperty(TextViewerHeader,$LOCALIZE[515],Home)</onclick>
 						<onclick>SetProperty(TextViewerContent,$ESCINFO[ListItem.Duration],Home)</onclick>
@@ -945,6 +945,38 @@
 						<onclick>SetProperty(TextViewerContent,$ESCINFO[ListItem.Year],Home)</onclick>
 						<onclick>ActivateWindow(1132)</onclick>
 						<visible>!String.IsEmpty(ListItem.Year) + !String.IsEqual(ListItem.DBType,tvshow)</visible>
+					</item>
+					<item>
+						<label>$INFO[ListItem.Rating(imdb)]$INFO[ListItem.Votes(imdb), (, $LOCALIZE[205])]</label>
+						<label2>$LOCALIZE[368]:</label2>
+						<onclick>SetProperty(TextViewerHeader,$LOCALIZE[368],Home)</onclick>
+						<onclick>SetProperty(TextViewerContent,$INFO[ListItem.Rating(imdb)]$INFO[ListItem.Votes(imdb), (, $LOCALIZE[205])],Home)</onclick>
+						<onclick>ActivateWindow(1132)</onclick>
+						<visible>!String.IsEqual(ListItem.Rating(imdb),0.0)</visible>
+					</item>
+					<item>
+						<label>$INFO[ListItem.Rating(tmdb)]$INFO[ListItem.Votes(tmdb), (, $LOCALIZE[205])]</label>
+						<label2>$LOCALIZE[31120]:</label2>
+						<onclick>SetProperty(TextViewerHeader,$LOCALIZE[31120],Home)</onclick>
+						<onclick>SetProperty(TextViewerContent,$INFO[ListItem.Rating(tmdb)]$INFO[ListItem.Votes(tmdb), (, $LOCALIZE[205])],Home)</onclick>
+						<onclick>ActivateWindow(1132)</onclick>
+						<visible>!String.IsEqual(ListItem.Rating(tmdb),0.0)</visible>
+					</item>
+					<item>
+						<label>$INFO[ListItem.Rating(metacritic)]$INFO[ListItem.Votes(metacritic), (, $LOCALIZE[31179])]</label>
+						<label2>MetaCritic:</label2>
+						<onclick>SetProperty(TextViewerHeader,MetaCritic,Home)</onclick>
+						<onclick>SetProperty(TextViewerContent,$INFO[ListItem.Rating(metacritic)]$INFO[ListItem.Votes(metacritic), (, $LOCALIZE[205])],Home)</onclick>
+						<onclick>ActivateWindow(1132)</onclick>
+						<visible>!String.IsEqual(ListItem.Rating(metacritic),0.0)</visible>
+					</item>
+					<item>
+						<label>$INFO[ListItem.Rating(rottentomatoes)]$INFO[ListItem.Votes(rottentomatoes), (, $LOCALIZE[205])]</label>
+						<label2>RottenTomatoes:</label2>
+						<onclick>SetProperty(TextViewerHeader,RottenTomatoes,Home)</onclick>
+						<onclick>SetProperty(TextViewerContent,$INFO[ListItem.Rating(rottentomatoes)]$INFO[ListItem.Votes(rottentomatoes), (, $LOCALIZE[205])],Home)</onclick>
+						<onclick>ActivateWindow(1132)</onclick>
+						<visible>!String.IsEqual(ListItem.Rating(rottentomatoes),0.0)</visible>
 					</item>
 					<item>
 						<label>$INFO[ListItem.Premiered]</label>
