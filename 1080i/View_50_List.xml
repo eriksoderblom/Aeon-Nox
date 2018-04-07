@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<!-- Video List -->
 	<include name="VideoList">
@@ -30,10 +30,9 @@
 					<top>180</top>
 					<width>1140</width>
 					<height>840</height>
-					<onright condition="!Control.IsVisible(62)">SetProperty(MediaMenu,True,home)</onright>
-					<onright condition="!Control.IsVisible(62)">SetFocus(9050)</onright>
-					<onright condition="Control.IsVisible(62)">62</onright>
-					<onleft>60</onleft>
+					<onleft>SetProperty(MediaMenu,True,home)</onleft>
+					<onleft>SetFocus(9050)</onleft>
+					<onright>60</onright>
 					<onup>50</onup>
 					<ondown>50</ondown>
 					<viewtype label="535">list</viewtype>
@@ -1038,17 +1037,17 @@
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>-17</left>
+					<left>1140</left>
 					<top>180</top>
 					<width>14</width>
 					<height>840</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
-					<onright>50</onright>
-					<onleft condition="!Control.IsVisible(62) + !Control.IsVisible(8000)">SetProperty(MediaMenu,True,home)</onleft>
-					<onleft condition="!Control.IsVisible(62) + !Control.IsVisible(8000)">SetFocus(9050)</onleft>
-					<onleft condition="Control.IsVisible(62) + !Control.IsVisible(8000)">62</onleft>
-					<onleft condition="Control.IsVisible(8000)">8000</onleft>
+					<onleft>50</onleft>
+					<onright condition="!Control.IsVisible(62) + !Control.IsVisible(8000)">SetProperty(MediaMenu,True,home)</onright>
+					<onright condition="!Control.IsVisible(62) + !Control.IsVisible(8000)">SetFocus(9050)</onright>
+					<onright condition="Control.IsVisible(62) + !Control.IsVisible(8000)">62</onright>
+					<onright condition="Control.IsVisible(8000)">8000</onright>
 					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
@@ -1742,14 +1741,14 @@
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>-17</left>
+					<left>1140</left>
 					<top>180</top>
 					<width>14</width>
 					<height>840</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
-					<onleft>9002</onleft>
-					<onright>50</onright>
+					<onleft>50</onleft>
+					<onright>9002</onright>
 					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
@@ -1835,9 +1834,9 @@
 					<top>180</top>
 					<width>1140</width>
 					<height>840</height>
-					<onleft>60</onleft>
-					<onright>SetProperty(MediaMenu,True,home)</onright>
-					<onright>SetFocus(9050)</onright>
+					<onleft>SetProperty(MediaMenu,True,home)</onleft>
+					<onleft>SetFocus(9050)</onleft>
+					<onright>60</onright>
 					<onup>50</onup>
 					<ondown>50</ondown>
 					<viewtype label="535">list</viewtype>
@@ -1965,14 +1964,14 @@
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>-17</left>
+					<left>1140</left>
 					<top>180</top>
 					<width>14</width>
 					<height>840</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
-					<onleft>9002</onleft>
-					<onright>50</onright>
+					<onleft>50</onleft>
+					<onright>9002</onright>
 					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
@@ -2034,9 +2033,9 @@
 					<top>180</top>
 					<width>1140</width>
 					<height>840</height>
-					<onleft>60</onleft>
-					<onright>SetProperty(MediaMenu,True,home)</onright>
-					<onright>SetFocus(9050)</onright>
+					<onleft>SetProperty(MediaMenu,True,home)</onleft>
+					<onleft>SetFocus(9050)</onleft>
+					<onright>60</onright>
 					<onup>50</onup>
 					<ondown>50</ondown>
 					<viewtype label="535">list</viewtype>
@@ -2262,14 +2261,14 @@
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>-17</left>
+					<left>1140</left>
 					<top>180</top>
 					<width>14</width>
 					<height>840</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
-					<onleft>9002</onleft>
-					<onright>50</onright>
+					<onleft>50</onleft>
+					<onright>9002</onright>
 					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
@@ -2331,9 +2330,9 @@
 					<top>180</top>
 					<width>1140</width>
 					<height>840</height>
-					<onleft>60</onleft>
-					<onright>SetProperty(MediaMenu,True,home)</onright>
-					<onright>SetFocus(9050)</onright>
+					<onleft>SetProperty(MediaMenu,True,home)</onleft>
+					<onleft>SetFocus(9050)</onleft>
+					<onright>60</onright>
 					<onup>50</onup>
 					<ondown>50</ondown>
 					<viewtype label="535">list</viewtype>
@@ -2541,15 +2540,15 @@
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>-18</left>
+					<left>1140</left>
 					<top>180</top>
 					<width>14</width>
 					<height>840</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
-					<onright>50</onright>
-					<onleft>SetProperty(MediaMenu,True,home)</onleft>
-					<onleft>SetFocus(9050)</onleft>
+					<onleft>50</onleft>
+					<onright>SetProperty(MediaMenu,True,home)</onright>
+					<onright>SetFocus(9050)</onright>
 					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
@@ -2762,15 +2761,15 @@
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>-17</left>
+					<left>1140</left>
 					<top>180</top>
 					<width>14</width>
 					<height>840</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
-					<onright>50</onright>
-					<onleft>SetProperty(MediaMenu,True,home)</onleft>
-					<onleft>SetFocus(9050)</onleft>
+					<onleft>50</onleft>
+					<onright>SetProperty(MediaMenu,True,home)</onright>
+					<onright>SetFocus(9050)</onright>
 					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
@@ -2832,9 +2831,9 @@
 					<top>180</top>
 					<width>1140</width>
 					<height>840</height>
-					<onleft>60</onleft>
-					<onright>SetProperty(MediaMenu,True,home)</onright>
-					<onright>SetFocus(9050)</onright>
+					<onleft>SetProperty(MediaMenu,True,home)</onleft>
+					<onleft>SetFocus(9050)</onleft>
+					<onright>60</onright>
 					<onup>50</onup>
 					<ondown>50</ondown>
 					<viewtype label="535">list</viewtype>
@@ -2905,15 +2904,15 @@
 					</focusedlayout>
 				</control>
 				<control type="scrollbar" id="60">
-					<left>-17</left>
+					<left>1140</left>
 					<top>180</top>
 					<width>14</width>
 					<height>840</height>
 					<onup>60</onup>
 					<ondown>60</ondown>
-					<onright>50</onright>
-					<onleft>SetProperty(MediaMenu,True,home)</onleft>
-					<onleft>SetFocus(9050)</onleft>
+					<onleft>50</onleft>
+					<onright>SetProperty(MediaMenu,True,home)</onright>
+					<onright>SetFocus(9050)</onright>
 					<texturesliderbackground />
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
