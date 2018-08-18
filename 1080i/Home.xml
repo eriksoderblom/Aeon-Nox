@@ -14,36 +14,27 @@
 		<include>WeatherWidget</include>
 		<include>LiveTVWidget</include>
 		<control type="group">
-			<top>424</top>
 			<depth>MaxDepth</depth>
 			<control type="group">
-				<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 				<animation type="WindowClose" reversible="false">
-					<effect type="slide" end="-1870" time="240" />
+					<effect type="slide" end="-1920" time="240" />
 					<effect type="fade" end="0" time="240" />
 				</animation>
 				<animation type="WindowOpen" reversible="false" condition="!Window.Previous(startup)">
-					<effect type="slide" start="-1870" time="240" delay="300" />
+					<effect type="slide" start="-1920" time="240" delay="300" />
 					<effect type="fade" end="100" time="240" delay="300"/>
 				</animation>
 				<animation type="WindowOpen" reversible="false" condition="Window.Previous(startup)">
-					<effect type="slide" start="-1870" time="240" delay="800" />
+					<effect type="slide" start="-1920" time="240" delay="800" />
 					<effect type="fade" end="100" time="240" delay="800" />
 				</animation>
 				<control type="image">
-					<right>140</right>
+					<right>1920</right>
 					<height>87</height>
 					<texture flipy="true">submenu_bar.png</texture>
 				</control>
-				<control type="image">
-					<right>50</right>
-					<width>90</width>
-					<height>87</height>
-					<texture flipx="true" flipy="true">submenu_end.png</texture>
-				</control>
 				<include condition="System.HasAddon(service.library.data.provider)">PlayListStatsList</include>
 				<control type="label">
-					<top>46</top>
 					<width>1780</width>
 					<height>40</height>
 					<label>$VAR[LibraryStatsVar]</label>
@@ -53,9 +44,7 @@
 					<shadowcolor>shadow</shadowcolor>
 				</control>
 				<control type="grouplist" id="9020">
-					<right>140</right>
-					<top>46</top>
-					<width>1780</width>
+					<width>1910</width>
 					<height>41</height>
 					<align>right</align>
 					<orientation>horizontal</orientation>
@@ -160,7 +149,8 @@
 					<texture>submenu_end.png</texture>
 				</control>
 				<control type="image">
-					<left>140</left>
+					<left>0</left>
+					<width>1920</width>
 					<height>87</height>
 					<texture>submenu_bar.png</texture>
 				</control>
