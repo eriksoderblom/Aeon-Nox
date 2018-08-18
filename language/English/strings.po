@@ -918,7 +918,7 @@ msgid "Simple list"
 msgstr ""
 
 msgctxt "#31702"
-msgid "Episode Nox"
+msgid "Episode Sox"
 msgstr ""
 
 msgctxt "#31703"
