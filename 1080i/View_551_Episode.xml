@@ -55,7 +55,7 @@
                             <top>0</top>
                             <width>60</width>
                             <height>80</height>
-                            <font>font30</font>
+                            <font>font16</font>
                             <textcolor>grey3</textcolor>
                             <selectedcolor>selected</selectedcolor>
                             <align>center</align>
@@ -100,7 +100,7 @@
                             <top>0</top>
                             <width>60</width>
                             <height>280</height>
-                            <font>font60</font>
+                            <font>font30</font>
                             <textcolor>grey</textcolor>
                             <selectedcolor>selected</selectedcolor>
                             <align>center</align>
