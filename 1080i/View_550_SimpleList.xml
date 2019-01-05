@@ -194,7 +194,7 @@
                         <textcolor>grey</textcolor>
                         <align>left</align>
                         <aligny>top</aligny>
-                        <label>$INFO[ListItem.Duration,, $LOCALIZE[12391] - ]$INFO[ListItem.Genre]</label>
+                        <label>$INFO[ListItem.Duration(mins),, $LOCALIZE[12391] - ]$INFO[ListItem.Genre]</label>
                     </control>
                     <control type="textbox">
                         <left>274</left>
