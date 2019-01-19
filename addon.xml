@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon id="skin.aeon.sox" version="7.0.2" name="Aeon Sox" provider-name="BigNoid|ErikS">
 	<requires>
-		<import addon="xbmc.gui" version="5.13.0"/>
+		<import addon="xbmc.gui" version="5.14.0"/>
 		<import addon="script.grab.fanart" version="0.12.8"/>
 		<import addon="script.skinshortcuts" version="0.4.5"/>
 		<import addon="service.library.data.provider" version="0.0.7"/>
