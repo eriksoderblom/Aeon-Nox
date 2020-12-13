@@ -123,6 +123,12 @@
 					<visible>!Window.IsActive(pvr)</visible>
 				</item>
 				<item>
+					<label>ThumbWall</label>
+					<onclick>Container.SetViewMode(553)</onclick>
+					<visible>Window.IsActive(videos)</visible>
+					<visible>Container.Content(files)</visible>
+				</item>
+				<item>
 					<label>Wall</label>
 					<onclick>Container.SetViewMode(503)</onclick>
 					<visible>Window.IsActive(videos) | Window.IsActive(music)</visible>

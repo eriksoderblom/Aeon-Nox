@@ -33,6 +33,7 @@
 	<include file="View_550_SimpleList.xml" />
 	<include file="View_551_Episode.xml" />
 	<include file="View_552_Largethumb.xml" />
+	<include file="View_553_ThumbWall.xml" />
 	<include file="variables.xml" />
 	<include file="script-skinshortcuts-includes.xml" />
 	<constant name="FanartCrossfadeTime">500</constant>
