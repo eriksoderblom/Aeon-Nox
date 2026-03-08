@@ -19,19 +19,19 @@
                 <left>10</left>
                 <top>0</top>
                 <control type="fixedlist" id="550">
-                    <animation effect="slide" tween="cubic" time="200" start="0" end="20,0" condition="Control.HasFocus(60)">Conditional</animation>
+                    <animation effect="slide" tween="cubic" time="200" start="0" end="20,0" condition="Control.HasFocus(55060)">Conditional</animation>
                     <left>0</left>
                     <top>60</top>
                     <width>900</width>
                     <height>1000</height>
-                    <onleft>60</onleft>
+                    <onleft>55060</onleft>
                     <onright>SetFocus(9050)</onright>
                     <onright>SetProperty(MediaMenu,True,home)</onright>
                     <onup>550</onup>
                     <ondown>550</ondown>
                     <viewtype label="31701">list</viewtype>
                     <visible>Container.Content(movies) | Container.Content(sets)</visible>
-                    <pagecontrol>60</pagecontrol>
+                    <pagecontrol>55060</pagecontrol>
                     <focusposition>7</focusposition>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <itemlayout height="62" width="900" condition="Container.Content(movies) | Container.Content(sets)">
@@ -103,14 +103,14 @@
                         </control>
                     </focusedlayout>
                 </control>
-                <control type="scrollbar" id="60">
+                <control type="scrollbar" id="55060">
                     <animation effect="slide" tween="cubic" time="200" start="0" end="30,0">Focus</animation>
                     <left>-30</left>
                     <top>180</top>
                     <width>14</width>
                     <height>840</height>
-                    <onup>60</onup>
-                    <ondown>60</ondown>
+                    <onup>55060</onup>
+                    <ondown>55060</ondown>
                     <onleft>SetProperty(MediaMenu,True,home)</onleft>
                     <onleft>SetFocus(9050)</onleft>
                     <onright>550</onright>
@@ -194,7 +194,7 @@
                         <textcolor>grey</textcolor>
                         <align>left</align>
                         <aligny>top</aligny>
-                        <label>$INFO[ListItem.Duration,, $LOCALIZE[12391] - ]$INFO[ListItem.Genre]</label>
+                        <label>$INFO[ListItem.Duration(mins),, $LOCALIZE[12391] - ]$INFO[ListItem.Genre]</label>
                     </control>
                     <control type="textbox">
                         <left>274</left>
@@ -205,7 +205,7 @@
                         <textcolor>white</textcolor>
                         <align>left</align>
                         <aligny>top</aligny>
-                        <autoscroll delay="8000" time="1800" repeat="14000">!Control.HasFocus(60)</autoscroll>
+                        <autoscroll delay="8000" time="1800" repeat="14000">!Control.HasFocus(55060)</autoscroll>
                         <label>$INFO[ListItem.Plot]</label>
                     </control>
                     <control type="image">

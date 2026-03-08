@@ -19,18 +19,18 @@
                 <left>10</left>
                 <top>0</top>
                 <control type="fixedlist" id="552">
-                    <animation effect="slide" tween="cubic" time="200" start="0" end="20,0" condition="Control.HasFocus(60)">Conditional</animation>
+                    <animation effect="slide" tween="cubic" time="200" start="0" end="20,0" condition="Control.HasFocus(55260)">Conditional</animation>
                     <left>0</left>
                     <top>60</top>
                     <width>900</width>
                     <height>1000</height>
-                    <onleft>60</onleft>
+                    <onleft>55260</onleft>
                     <onright>SetFocus(9050)</onright>
                     <onright>SetProperty(MediaMenu,True,home)</onright>
                     <onup>552</onup>
                     <ondown>552</ondown>
                     <viewtype label="31703">list</viewtype>
-                    <pagecontrol>60</pagecontrol>
+                    <pagecontrol>55260</pagecontrol>
                     <focusposition>7</focusposition>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <itemlayout height="62" width="900" condition="Container.Content(movies) | Container.Content(sets)">
@@ -133,14 +133,14 @@
                         </control>
                     </focusedlayout>
                 </control>
-                <control type="scrollbar" id="60">
+                <control type="scrollbar" id="55260">
                     <animation effect="slide" tween="cubic" time="200" start="0" end="30,0">Focus</animation>
                     <left>-30</left>
                     <top>180</top>
                     <width>14</width>
                     <height>840</height>
-                    <onup>60</onup>
-                    <ondown>60</ondown>
+                    <onup>55260</onup>
+                    <ondown>55260</ondown>
                     <onleft>SetProperty(MediaMenu,True,home)</onleft>
                     <onleft>SetFocus(9050)</onleft>
                     <onright>552</onright>

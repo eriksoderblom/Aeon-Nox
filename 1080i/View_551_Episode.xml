@@ -27,19 +27,19 @@
                 <left>500</left>
                 <top>0</top>
                 <control type="list" id="551">
-                    <animation effect="slide" tween="cubic" time="200" start="0" end="-20,0" condition="Control.HasFocus(60)">Conditional</animation>
+                    <animation effect="slide" tween="cubic" time="200" start="0" end="-20,0" condition="Control.HasFocus(55160)">Conditional</animation>
                     <left>0</left>
                     <top>80</top>
                     <width>1400</width>
                     <height>920</height>
-                    <onright>60</onright>
+                    <onright>55160</onright>
                     <onleft>SetFocus(9050)</onleft>
                     <onleft>SetProperty(MediaMenu,True,home)</onleft>
                     <onup>551</onup>
                     <ondown>551</ondown>
                     <viewtype label="31702">list</viewtype>
                     <visible>Container.Content(episodes)</visible>
-                    <pagecontrol>60</pagecontrol>
+                    <pagecontrol>55160</pagecontrol>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <itemlayout height="80" width="1400" condition="Container.Content(episodes)">
                         <control type="image">
@@ -55,7 +55,7 @@
                             <top>0</top>
                             <width>60</width>
                             <height>80</height>
-                            <font>font30</font>
+                            <font>font16</font>
                             <textcolor>grey3</textcolor>
                             <selectedcolor>selected</selectedcolor>
                             <align>center</align>
@@ -100,7 +100,7 @@
                             <top>0</top>
                             <width>60</width>
                             <height>280</height>
-                            <font>font60</font>
+                            <font>font30</font>
                             <textcolor>grey</textcolor>
                             <selectedcolor>selected</selectedcolor>
                             <align>center</align>
@@ -168,19 +168,19 @@
                             <textcolor>grey</textcolor>
                             <align>right</align>
                             <aligny>top</aligny>
-                            <autoscroll delay="3000" time="1000" repeat="10000">!Control.HasFocus(60)</autoscroll>
+                            <autoscroll delay="3000" time="1000" repeat="10000">!Control.HasFocus(55160)</autoscroll>
                             <label>$INFO[ListItem.Plot]</label>
                         </control>
                     </focusedlayout>
                 </control>
-                <control type="scrollbar" id="60">
+                <control type="scrollbar" id="55160">
                     <animation effect="slide" tween="cubic" time="200" start="0" end="-100,0">Focus</animation>
                     <left>1500</left>
                     <top>180</top>
                     <width>14</width>
                     <height>840</height>
-                    <onup>60</onup>
-                    <ondown>60</ondown>
+                    <onup>55160</onup>
+                    <ondown>55160</ondown>
                     <onright>SetProperty(MediaMenu,True,home)</onright>
                     <onright>SetFocus(9050)</onright>
                     <onleft>551</onleft>

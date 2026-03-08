@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.aeon.sox" version="7.0.2" name="Aeon Sox" provider-name="BigNoid|eriksoderblom">
+<addon id="skin.aeon.sox" version="7.0.2" name="Aeon Sox" provider-name="BigNoid|ErikS">
 	<requires>
-		<import addon="xbmc.gui" version="5.13.0"/>
+		<import addon="xbmc.gui" version="5.17.0"/>
 		<import addon="script.grab.fanart" version="0.12.8"/>
 		<import addon="script.skinshortcuts" version="0.4.5"/>
 		<import addon="service.library.data.provider" version="0.0.7"/>
@@ -10,11 +10,10 @@
 	</requires>
 	<extension point="xbmc.gui.skin" debugging="false" effectslowdown="0.75">
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i" />
-		<res width="2560" height="1080" aspect="21:9" default="false" folder="1080i" />
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Aeon Nox 5: Redux</summary>
-		<description lang="en">Redux: Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
+		<summary lang="en_US">Aeon Sox</summary>
+		<description lang="en_US">Redux: Completely redesigned to create a modern look, while retaining the classic Aeon feel.</description>
 		<disclaimer lang="en_GB">Mouse control is supported, althoug not recommended. It may not work correctly in all cases.</disclaimer>
 		<platform>all</platform>
 		<license>CC BY-NC-SA 4.0</license>

@@ -12,7 +12,7 @@
 			<description>Seek Slider</description>
 			<top>1014</top>
 			<width>100%</width>
-			<height>64</height>
+			<height>66</height>
 			<texturesliderbar>seekslider2.png</texturesliderbar>
 			<textureslidernib />
 			<textureslidernibfocus>osd/osd_slider_nib.png</textureslidernibfocus>

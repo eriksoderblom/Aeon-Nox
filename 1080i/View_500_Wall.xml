@@ -73,7 +73,7 @@
 				<pagecontrol>50060</pagecontrol>
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
-				<itemlayout height="360" width="240" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos)">
+				<itemlayout height="360" width="240" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | Container.Content(favourites)">
 					<control type="image">
 						<width>240</width>
 						<height>360</height>
@@ -97,7 +97,7 @@
 					</control>
 					<include>WallPosterOverlay</include>
 				</itemlayout>
-				<focusedlayout height="360" width="240" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos)">
+				<focusedlayout height="360" width="240" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets) | Container.Content(musicvideos) | Container.Content(favourites)">
 					<control type="image">
 						<width>240</width>
 						<height>360</height>
